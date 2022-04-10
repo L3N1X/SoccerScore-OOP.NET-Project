@@ -37,14 +37,17 @@ namespace SoccerScoreData.Dal
             ISet<Player> players = new HashSet<Player>();
             foreach (var match in matchesData)
             {
+                match.AwayTeam.TeamGender = gender;
+                match.HomeTeam.TeamGender = gender;
+
                 TeamStatistics awayTeamStatistics = match.AwayTeamStatistics;
                 TeamStatistics homeTeamStatistics = match.HomeTeamStatistics;
 
-                awayTeamStatistics.Substitutes.ForEach(player => players.Add(player));
-                awayTeamStatistics.StartingEleven.ForEach(player => players.Add(player));
+                awayTeamStatistics.Substitutes.ForEach(player => { player.NationalTeam = match.AwayTeam; players.Add(player); });
+                awayTeamStatistics.StartingEleven.ForEach(player => { player.NationalTeam = match.AwayTeam; players.Add(player); });
 
-                homeTeamStatistics.Substitutes.ForEach(player => players.Add(player));
-                homeTeamStatistics.StartingEleven.ForEach(player => players.Add(player));
+                homeTeamStatistics.Substitutes.ForEach(player => { player.NationalTeam = match.HomeTeam; players.Add(player); });
+                homeTeamStatistics.StartingEleven.ForEach(player => { player.NationalTeam = match.HomeTeam; players.Add(player); });
             }
             return players.ToList();
         }

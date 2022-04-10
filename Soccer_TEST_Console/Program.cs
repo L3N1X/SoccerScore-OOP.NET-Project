@@ -16,7 +16,7 @@ namespace Soccer_TEST_Console
             IList<Player> players;
             try
             {
-                players = await repo.GetPlayers(Gender.Female);
+                players = await repo.GetPlayers(Gender.Male);
                 int index = 0;
                 players.ToList().ForEach(p => Console.WriteLine($"{++index}|{p}"));
                 Console.WriteLine(players.Count);
