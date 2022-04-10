@@ -18,7 +18,7 @@ namespace SoccerScoreData.Models
         public bool Captain { get; set; }
 
         [JsonProperty("shirt_number")]
-        public long ShirtNumber { get; set; }
+        public int ShirtNumber { get; set; }
 
         [JsonProperty("position")]
         public Position Position { get; set; }
@@ -38,6 +38,6 @@ namespace SoccerScoreData.Models
             return hashCode;
         }
         public override string ToString()
-            => $"{Name} - {NationalTeam}";
+            => $"{Name} - Number: {ShirtNumber} - Postion: {Position.ToString()}";
     }
 }
