@@ -21,8 +21,11 @@ namespace Soccer_TEST_Console
                     Console.WriteLine(nationalTeam);
                     Console.WriteLine($"Total players in team: {nationalTeam.AllPlayers.Count}");
                     Console.WriteLine("");
+                    Console.WriteLine($"\tCaptain: {nationalTeam.AllPlayers.FirstOrDefault(p => p.Captain.Equals(true)).Name}");
+                    Console.WriteLine("");
                     nationalTeam.AllPlayers.ForEach(p => Console.WriteLine($"\t{p}"));
                     Console.WriteLine("");
+
                 }
             }
             catch (Exception ex)

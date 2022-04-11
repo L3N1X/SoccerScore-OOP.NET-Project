@@ -11,8 +11,17 @@ namespace SoccerScoreData.Dal
 {
     public class OnlineRepo : Irepo
     {
+        public async Task<IList<Match>> GetMatches(Gender gender, string fifaCode)
+        {
+            string endpoint = gender == Gender.Male ? Endpoints.MensMatches : Endpoints.WomensMatches;
+            var matchesData = await GetMatchesData(endpoint);
+
+            return matchesData;
+        }
+
         public async Task<NationalTeam> GetNationalTeam(Gender gender, string fifacode)
         {
+            //deprecated
             fifacode = fifacode.ToUpper();
             string endpoint = gender == Gender.Male ? Endpoints.MensNationalTeams : Endpoints.WomensNationalTeams;
             var teamsData = await GetTeamsData(endpoint);
@@ -21,6 +30,50 @@ namespace SoccerScoreData.Dal
             return teamsData.ToList().FirstOrDefault(team => team.FifaCode.Equals(fifacode));
         }
 
+        public bool CheckIfGoal(string eventType)
+        {
+            bool goal = false;
+            if ("goal".Equals(eventType))
+                goal = true;
+            if ("goal-own".Equals(eventType))
+                goal = true;
+            if ("goal-penalty".Equals(eventType))
+                goal = true;
+            return goal;
+        }
+
+        public IDictionary<string, int> GoalDict(IList<Match> matchesData)
+        {
+            IDictionary<string, int> events = new Dictionary<string, int>();
+            ISet<string> keys = new HashSet<string>();
+            matchesData.ToList().ForEach(m => { m.AwayTeam.AllPlayers.ForEach(p => keys.Add(p.Name.ToUpper())); });
+            matchesData.ToList().ForEach(m => { m.HomeTeam.AllPlayers.ForEach(p => keys.Add(p.Name.ToUpper())); });
+            foreach (var key in keys)
+            {
+                events.Add(key, 0);
+            }
+
+            foreach (var match in matchesData)
+            {
+                foreach (var gameEvent in match.AwayTeamEvents)
+                {
+                    if (CheckIfGoal(gameEvent.EventType))
+                    {
+                        events[gameEvent.PlayerName.ToUpper()]++;
+                    }
+                }
+                foreach (var gameEvent in match.HomeTeamEvents)
+                {
+                    if (CheckIfGoal(gameEvent.EventType))
+                    {
+                        events[gameEvent.PlayerName.ToUpper()]++;
+                    }
+                }
+            }
+            return events;
+        }
+
+        //Primary data source
         public async Task<IList<NationalTeam>> GetNationalTeams(Gender gender)
         {
             string endpoint = gender == Gender.Male ? Endpoints.MensNationalTeams : Endpoints.WomensNationalTeams;
@@ -37,8 +90,8 @@ namespace SoccerScoreData.Dal
                 match.AwayTeam.TeamGender = gender;
                 match.HomeTeam.TeamGender = gender;
 
-                TeamStatistics awayTeamStatistics = match.AwayTeamStatistics;
-                TeamStatistics homeTeamStatistics = match.HomeTeamStatistics;
+                TeamStatisticsData awayTeamStatistics = match.AwayTeamStatistics;
+                TeamStatisticsData homeTeamStatistics = match.HomeTeamStatistics;
 
                 match.AwayTeam.Substitutes = awayTeamStatistics.Substitutes;
                 match.AwayTeam.StartingEleven = awayTeamStatistics.StartingEleven;
@@ -60,6 +113,12 @@ namespace SoccerScoreData.Dal
                 }
             }
 
+            var dict = GoalDict(matchesData);
+            foreach (var team in teamsSet)
+            {
+                team.AllPlayers.ForEach(p => p.Goals = dict[p.Name.ToUpper()]);
+            }
+
             return teamsSet.ToList();    
         }
 
@@ -73,8 +132,8 @@ namespace SoccerScoreData.Dal
                 match.AwayTeam.TeamGender = gender;
                 match.HomeTeam.TeamGender = gender;
 
-                TeamStatistics awayTeamStatistics = match.AwayTeamStatistics;
-                TeamStatistics homeTeamStatistics = match.HomeTeamStatistics;
+                TeamStatisticsData awayTeamStatistics = match.AwayTeamStatistics;
+                TeamStatisticsData homeTeamStatistics = match.HomeTeamStatistics;
 
                 match.AwayTeam.Substitutes = awayTeamStatistics.Substitutes;
                 match.AwayTeam.StartingEleven = awayTeamStatistics.StartingEleven;

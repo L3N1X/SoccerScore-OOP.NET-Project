@@ -56,12 +56,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Endpoints.resx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\Constants.cs" />
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\NationalTeam.cs" />
     <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\TeamStatistics.cs" />
-    <Compile Include="Models\WomensNationalTeam.cs" />
+    <Compile Include="Models\TeamEvent.cs" />
+    <Compile Include="Models\TeamStatisticsData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -9,6 +9,8 @@ namespace SoccerScoreData.Models
 {
     public class Player
     {
+        public int Goals { get; set; }
+        public int YellowCards { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -41,6 +43,6 @@ namespace SoccerScoreData.Models
             return hashCode;
         }
         public override string ToString()
-            => $"({this.ShirtNumber}) {this.Name} [{this.Position}]";
+            => $"Yellow cards:{YellowCards}\t\tGoals:{Goals}\t\t({this.ShirtNumber}) {this.Name} [{this.Position}]";
     }
 }

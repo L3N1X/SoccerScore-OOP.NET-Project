@@ -49,9 +49,18 @@ namespace SoccerScoreData.Models
         public NationalTeam AwayTeam { get; set; }
 
         [JsonProperty("home_team_statistics")]
-        public TeamStatistics HomeTeamStatistics { get; set; }
+        public TeamStatisticsData HomeTeamStatistics { get; set; }
 
         [JsonProperty("away_team_statistics")]
-        public TeamStatistics AwayTeamStatistics { get; set; }
+        public TeamStatisticsData AwayTeamStatistics { get; set; }
+
+        [JsonProperty("attendance")]
+        public int Attendance { get; set; }
+
+        [JsonProperty("home_team_events")]
+        public List<TeamEvent> HomeTeamEvents { get; set; }
+
+        [JsonProperty("away_team_events")]
+        public List<TeamEvent> AwayTeamEvents { get; set; }
     }
 }
