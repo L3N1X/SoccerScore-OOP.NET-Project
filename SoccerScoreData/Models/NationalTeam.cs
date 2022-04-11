@@ -57,20 +57,14 @@ namespace SoccerScoreData.Models
         {
             return obj is NationalTeam team &&
                    TeamGender == team.TeamGender &&
-                   Id == team.Id &&
-                   Country == team.Country &&
-                   FifaCode == team.FifaCode &&
-                   GroupId == team.GroupId;
+                   FifaCode == team.FifaCode;
         }
 
         public override int GetHashCode()
         {
             int hashCode = -872732333;
             hashCode = hashCode * -1521134295 + TeamGender.GetHashCode();
-            hashCode = hashCode * -1521134295 + Id.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Country);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(FifaCode);
-            hashCode = hashCode * -1521134295 + GroupId.GetHashCode();
             return hashCode;
         }
 

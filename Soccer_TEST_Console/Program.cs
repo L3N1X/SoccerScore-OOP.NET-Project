@@ -20,6 +20,12 @@ namespace Soccer_TEST_Console
                 int index = 0;
                 players.ToList().ForEach(p => Console.WriteLine($"{++index}|{p}"));
                 Console.WriteLine(players.Count);
+                NationalTeam team = players.Last().NationalTeam;
+                Console.WriteLine("\n\n\n\n\n");
+                Console.WriteLine($"last national team: {team}");
+                var lastplayers = await repo.GetPlayers(Gender.Male, team);
+                lastplayers.ToList().ForEach(p => Console.WriteLine(p));
+                Console.WriteLine(lastplayers.Count);
             }
             catch (Exception ex)
             {

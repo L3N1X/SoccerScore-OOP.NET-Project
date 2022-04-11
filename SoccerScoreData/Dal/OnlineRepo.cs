@@ -52,6 +52,12 @@ namespace SoccerScoreData.Dal
             return players.ToList();
         }
 
+        public async Task<IList<Player>> GetPlayers(Gender gender, NationalTeam nationalTeam)
+        {
+            IList<Player> players = await GetPlayers(gender);
+            return players.Where(player => player.NationalTeam == nationalTeam).ToList();
+        }
+
         private Task<IList<Match>> GetMatchesData(string endpoint)
         {
             return Task.Run(() =>

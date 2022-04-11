@@ -12,5 +12,6 @@ namespace SoccerScoreData.Dal
         Task<IList<NationalTeam>> GetNationalTeams(Gender gender);
         Task<NationalTeam> GetNationalTeam(Gender gender, string fifacode);
         Task<IList<Player>> GetPlayers(Gender gender);
+        Task<IList<Player>> GetPlayers(Gender gender, NationalTeam nationalTeam);
     }
 }
