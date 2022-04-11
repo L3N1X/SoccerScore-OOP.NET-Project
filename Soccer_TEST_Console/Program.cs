@@ -13,24 +13,37 @@ namespace Soccer_TEST_Console
         static async Task Main(string[] args)
         {
             Irepo repo = RepoFactory.GetRepo();
-            IList<Player> players;
             try
             {
-                players = await repo.GetPlayers(Gender.Male);
-                int index = 0;
-                players.ToList().ForEach(p => Console.WriteLine($"{++index}|{p}"));
-                Console.WriteLine(players.Count);
-                NationalTeam team = players.Last().NationalTeam;
-                Console.WriteLine("\n\n\n\n\n");
-                Console.WriteLine($"last national team: {team}");
-                var lastplayers = await repo.GetPlayers(Gender.Male, team);
-                lastplayers.ToList().ForEach(p => Console.WriteLine(p));
-                Console.WriteLine(lastplayers.Count);
+                IList<NationalTeam> nationalTeams = await repo.GetNationalTeams(Gender.Male);
+                foreach (NationalTeam nationalTeam in nationalTeams)
+                {
+                    Console.WriteLine(nationalTeam);
+                    Console.WriteLine($"Total players in team: {nationalTeam.AllPlayers.Count}");
+                    Console.WriteLine("");
+                    nationalTeam.AllPlayers.ForEach(p => Console.WriteLine($"\t{p}"));
+                    Console.WriteLine("");
+                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+
             }
+            //Irepo repo = RepoFactory.GetRepo();
+            //try
+            //{
+            //    IList<Player> players = await repo.GetPlayers(Gender.Male);
+            //    foreach (var player in players)
+            //    {
+            //        Console.WriteLine(player);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+
+            //}
         }
     }
 }

@@ -10,6 +10,15 @@ namespace SoccerScoreData.Models
     public class NationalTeam
     {
         public Gender TeamGender { get; set; }
+        public List<Player> StartingEleven { get; set; }
+        public List<Player> Substitutes { get; set; }
+        public List<Player> AllPlayers
+        {
+            get
+            {
+                return this.StartingEleven.Concat(this.Substitutes).ToList();
+            }
+        }
 
         [JsonProperty("id")]
         public long Id { get; set; }

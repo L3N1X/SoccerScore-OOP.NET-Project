@@ -9,7 +9,6 @@ namespace SoccerScoreData.Models
 {
     public class Player
     {
-        public NationalTeam NationalTeam { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -26,18 +25,22 @@ namespace SoccerScoreData.Models
         public override bool Equals(object obj)
         {
             return obj is Player player &&
-                   EqualityComparer<NationalTeam>.Default.Equals(NationalTeam, player.NationalTeam) &&
-                   Name == player.Name;
+                   Name == player.Name &&
+                   Captain == player.Captain &&
+                   ShirtNumber == player.ShirtNumber &&
+                   Position == player.Position;
         }
 
         public override int GetHashCode()
         {
-            int hashCode = -700376964;
-            hashCode = hashCode * -1521134295 + EqualityComparer<NationalTeam>.Default.GetHashCode(NationalTeam);
+            int hashCode = 412083565;
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Name);
+            hashCode = hashCode * -1521134295 + Captain.GetHashCode();
+            hashCode = hashCode * -1521134295 + ShirtNumber.GetHashCode();
+            hashCode = hashCode * -1521134295 + Position.GetHashCode();
             return hashCode;
         }
         public override string ToString()
-            => $"{Name} - Number: {ShirtNumber} - Postion: {Position.ToString()}";
+            => $"({this.ShirtNumber}) {this.Name} [{this.Position}]";
     }
 }
