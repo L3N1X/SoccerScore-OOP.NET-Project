@@ -32,18 +32,13 @@ namespace SoccerScoreData.Dal
 
         public bool CheckIfGoal(string eventType)
         {
-            bool goal = false;
-            if ("goal".Equals(eventType))
-                goal = true;
-            if ("goal-own".Equals(eventType))
-                goal = true;
-            if ("goal-penalty".Equals(eventType))
-                goal = true;
-            return goal;
+            IList<string> options = new List<string>(new string[] { "goal", "goal-penalty"/*, "goal-own"*/ });
+            return options.Contains(eventType);
         }
 
-        public IDictionary<string, int> GoalDict(IList<Match> matchesData)
+        private IDictionary<string, int> GoalDict(IList<Match> matchesData)
         {
+            //Make 2D Dict for yellow cards
             IDictionary<string, int> events = new Dictionary<string, int>();
             ISet<string> keys = new HashSet<string>();
             matchesData.ToList().ForEach(m => { m.AwayTeam.AllPlayers.ForEach(p => keys.Add(p.Name.ToUpper())); });
@@ -76,6 +71,7 @@ namespace SoccerScoreData.Dal
         //Primary data source
         public async Task<IList<NationalTeam>> GetNationalTeams(Gender gender)
         {
+            //TODO: MAKE ENDPOINT FOR FIFACODE, ONLY USE ONLY ONE NATIONAL TEAM, NOT ALL....
             string endpoint = gender == Gender.Male ? Endpoints.MensNationalTeams : Endpoints.WomensNationalTeams;
             var teamsData = await GetTeamsData(endpoint);
             if (gender == Gender.Male)
@@ -101,16 +97,6 @@ namespace SoccerScoreData.Dal
 
                 teamsSet.Add(match.AwayTeam);
                 teamsSet.Add(match.HomeTeam);
-            }
-
-            foreach (var team in teamsSet)
-            {
-                NationalTeam searchedTeam = teamsData.FirstOrDefault(t => t.Equals(team));
-                if (searchedTeam != null)
-                {
-                    searchedTeam.StartingEleven = team.StartingEleven;
-                    searchedTeam.Substitutes = team.Substitutes;
-                }
             }
 
             var dict = GoalDict(matchesData);
