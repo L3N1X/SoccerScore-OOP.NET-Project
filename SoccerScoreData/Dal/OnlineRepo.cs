@@ -19,9 +19,52 @@ namespace SoccerScoreData.Dal
             return matchesData;
         }
 
+        private bool CheckIfGoal(string eventType)
+        {
+            IList<string> options = new List<string>(new string[] { "goal", "goal-penalty" });
+            return options.Contains(eventType);
+        }
+
+        private bool CheckIfYellowCard(string eventType)
+            => "yellow-card".Equals(eventType);
+
+        private IDictionary<string, int> GameEventDict(IList<Match> matchesData, Predicate<string> eventCondition)
+        {
+            IDictionary<string, int> events = new Dictionary<string, int>();
+            ISet<string> keys = new HashSet<string>();
+            
+            matchesData.ToList().ForEach(m => { m.AwayTeam.AllPlayers.ForEach(p => keys.Add(p.Name.ToUpper())); });
+            matchesData.ToList().ForEach(m => { m.HomeTeam.AllPlayers.ForEach(p => keys.Add(p.Name.ToUpper())); });
+            foreach (var key in keys)
+            {
+                events.Add(key, 0);
+            }
+            foreach (var match in matchesData)
+            {
+                foreach (var gameEvent in match.AwayTeamEvents)
+                {
+                    if (eventCondition(gameEvent.EventType))
+                    {
+                        //Contains key is used because of errors in JSON like player name typos eg. HATAN BAHBIR/BAHBRI
+                        if (events.ContainsKey(gameEvent.PlayerName.ToUpper()))
+                            events[gameEvent.PlayerName.ToUpper()]++;
+                    }
+                }
+                foreach (var gameEvent in match.HomeTeamEvents)
+                {
+                    if (eventCondition(gameEvent.EventType))
+                    {
+                        if (events.ContainsKey(gameEvent.PlayerName.ToUpper()))
+                            events[gameEvent.PlayerName.ToUpper()]++;
+                    }
+                }
+            }
+            
+            return events;
+        }
+
         public async Task<NationalTeam> GetNationalTeam(Gender gender, string fifacode)
         {
-            //deprecated
             fifacode = fifacode.ToUpper();
             string endpoint = gender == Gender.Male ? Endpoints.MensSpecificMatch : Endpoints.WomensSpecificMatch;
             endpoint = $"{endpoint}{fifacode}";
@@ -29,6 +72,7 @@ namespace SoccerScoreData.Dal
             var matchesData = await GetMatchesDataByFifaCode(endpoint);
 
             ISet<NationalTeam> teamsSet = new HashSet<NationalTeam>();
+
             foreach (var match in matchesData)
             {
                 match.AwayTeam.TeamGender = gender;
@@ -47,57 +91,22 @@ namespace SoccerScoreData.Dal
                 teamsSet.Add(match.HomeTeam);
             }
 
-            var dict = GoalDict(matchesData);
+            var goalDict = GameEventDict(matchesData, CheckIfGoal);
+            var cardDict = GameEventDict(matchesData, CheckIfYellowCard);
+
             foreach (var team in teamsSet)
             {
-                team.AllPlayers.ForEach(p => p.Goals = dict[p.Name.ToUpper()]);
+                team.AllPlayers.ForEach(p => {
+                    p.Goals = goalDict[p.Name.ToUpper()];
+                    p.YellowCards = cardDict[p.Name.ToUpper()];
+                });
             }
 
             return teamsSet.FirstOrDefault(team => team.FifaCode.Equals(fifacode));
         }
 
-        public bool CheckIfGoal(string eventType)
-        {
-            IList<string> options = new List<string>(new string[] { "goal", "goal-penalty"/*, "goal-own"*/ });
-            return options.Contains(eventType);
-        }
-
-        private IDictionary<string, int> GoalDict(IList<Match> matchesData)
-        {
-            //Make 2D Dict for yellow cards
-            IDictionary<string, int> events = new Dictionary<string, int>();
-            ISet<string> keys = new HashSet<string>();
-            matchesData.ToList().ForEach(m => { m.AwayTeam.AllPlayers.ForEach(p => keys.Add(p.Name.ToUpper())); });
-            matchesData.ToList().ForEach(m => { m.HomeTeam.AllPlayers.ForEach(p => keys.Add(p.Name.ToUpper())); });
-            foreach (var key in keys)
-            {
-                events.Add(key, 0);
-            }
-
-            foreach (var match in matchesData)
-            {
-                foreach (var gameEvent in match.AwayTeamEvents)
-                {
-                    if (CheckIfGoal(gameEvent.EventType))
-                    {
-                        events[gameEvent.PlayerName.ToUpper()]++;
-                    }
-                }
-                foreach (var gameEvent in match.HomeTeamEvents)
-                {
-                    if (CheckIfGoal(gameEvent.EventType))
-                    {
-                        events[gameEvent.PlayerName.ToUpper()]++;
-                    }
-                }
-            }
-            return events;
-        }
-
-        //Primary data source
         public async Task<IList<NationalTeam>> GetNationalTeams(Gender gender)
         {
-            //TODO: MAKE ENDPOINT FOR FIFACODE, ONLY USE ONLY ONE NATIONAL TEAM, NOT ALL....
             string endpoint = gender == Gender.Male ? Endpoints.MensNationalTeams : Endpoints.WomensNationalTeams;
             var teamsData = await GetTeamsData(endpoint);
 
@@ -106,7 +115,9 @@ namespace SoccerScoreData.Dal
 
             endpoint = gender == Gender.Male ? Endpoints.MensMatches : Endpoints.WomensMatches;
             var matchesData = await GetMatchesData(endpoint);
+
             ISet<NationalTeam> teamsSet = new HashSet<NationalTeam>();
+
             foreach (var match in matchesData)
             {
                 match.AwayTeam.TeamGender = gender;
@@ -125,10 +136,15 @@ namespace SoccerScoreData.Dal
                 teamsSet.Add(match.HomeTeam);
             }
 
-            var dict = GoalDict(matchesData);
+            var goalDict = GameEventDict(matchesData, CheckIfGoal);
+            var cardDict = GameEventDict(matchesData, CheckIfYellowCard);
+
             foreach (var team in teamsSet)
             {
-                team.AllPlayers.ForEach(p => p.Goals = dict[p.Name.ToUpper()]);
+                team.AllPlayers.ForEach(p => {
+                    p.Goals = goalDict[p.Name.ToUpper()];
+                    p.YellowCards = cardDict[p.Name.ToUpper()];
+                });
             }
 
             return teamsSet.ToList();    

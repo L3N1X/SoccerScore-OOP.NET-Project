@@ -19,12 +19,4 @@ namespace SoccerScoreData.Models
         Midfield
     }
 
-    public static class EventTypes
-    {
-        public static readonly string goal = "goal";
-        public static readonly string substitution_in = "substitution-in";
-        public static readonly string substitution_out = "subsitution-out";
-        public static readonly string yellowCard = "yellow-card";
-    }
-
 }

@@ -50,7 +50,7 @@ namespace SoccerScoreData.Models
         [JsonProperty("tackles")]
         public int Tackles { get; set; }
 
-        [JsonProperty("yellow-cards")]
+        [JsonProperty("yellow_cards")]
         public int YellowCards { get; set; }
 
         [JsonProperty("red_cards")]

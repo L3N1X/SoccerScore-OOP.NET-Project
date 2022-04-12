@@ -25,8 +25,6 @@ namespace Soccer_TEST_Console
                     Console.WriteLine("");
                     nationalTeam.AllPlayers.ForEach(p => Console.WriteLine($"\t{p}"));
                     Console.WriteLine("");
-                    NationalTeam hrvatska = nationalTeams.FirstOrDefault(t => t.FifaCode.Equals("CRO"));
-                    Console.WriteLine(hrvatska);
                 }
 
                 //var team = await repo.GetNationalTeam(Gender.Male, "CRO");
@@ -36,6 +34,7 @@ namespace Soccer_TEST_Console
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
 
             }
             //Irepo repo = RepoFactory.GetRepo();
