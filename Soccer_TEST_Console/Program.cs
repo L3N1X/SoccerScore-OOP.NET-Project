@@ -25,8 +25,13 @@ namespace Soccer_TEST_Console
                     Console.WriteLine("");
                     nationalTeam.AllPlayers.ForEach(p => Console.WriteLine($"\t{p}"));
                     Console.WriteLine("");
-
+                    NationalTeam hrvatska = nationalTeams.FirstOrDefault(t => t.FifaCode.Equals("CRO"));
+                    Console.WriteLine(hrvatska);
                 }
+
+                //var team = await repo.GetNationalTeam(Gender.Male, "CRO");
+                //Console.WriteLine(team);
+                //team.AllPlayers.ForEach(player => Console.WriteLine(player));
             }
             catch (Exception ex)
             {

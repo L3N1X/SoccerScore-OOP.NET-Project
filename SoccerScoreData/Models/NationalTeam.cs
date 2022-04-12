@@ -39,19 +39,19 @@ namespace SoccerScoreData.Models
         public string GroupLetter { get; set; }
 
         [JsonProperty("wins")]
-        public long Wins { get; set; }
+        public int Wins { get; set; }
 
         [JsonProperty("draws")]
-        public long Draws { get; set; }
+        public int Draws { get; set; }
 
         [JsonProperty("losses")]
-        public long Losses { get; set; }
+        public int Losses { get; set; }
 
         [JsonProperty("games_played")]
-        public long GamesPlayed { get; set; }
+        public int GamesPlayed { get; set; }
 
         [JsonProperty("points")]
-        public long Points { get; set; }
+        public int Points { get; set; }
 
         [JsonProperty("goals_for")]
         public long GoalsFor { get; set; }
