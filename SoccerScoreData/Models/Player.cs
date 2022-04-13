@@ -9,6 +9,7 @@ namespace SoccerScoreData.Models
 {
     public class Player
     {
+        public bool IsFavourite { get; set; } = false;
         public int Goals { get; set; }
         public int YellowCards { get; set; }
 
@@ -43,6 +44,8 @@ namespace SoccerScoreData.Models
             return hashCode;
         }
         public override string ToString()
-            => $"Yellow cards:{YellowCards}\t\tGoals:{Goals}\t\t({this.ShirtNumber}) {this.Name} [{this.Position}]";
+            => $"{this.Name} {(this.IsFavourite ? "*" : "")}";
+        public string GetDetails()
+            => $"Goals: {this.Goals}\tYellow cards: {this.YellowCards}\t|\tPosition: {this.Position}\t({this.ShirtNumber})";
     }
 }

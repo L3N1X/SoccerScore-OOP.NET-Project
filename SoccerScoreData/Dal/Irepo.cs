@@ -9,8 +9,9 @@ namespace SoccerScoreData.Dal
 {
     public interface Irepo
     {
-        Task<IList<NationalTeam>> GetNationalTeams(Gender gender);
-        Task<NationalTeam> GetNationalTeam(Gender gender, string fifacode);
-        Task<IList<Match>> GetMatches(Gender gender, string fifaCode);
+        Task<IList<NationalTeam>> GetTeamsSelectionAsync(Gender gender);
+        Task<IList<NationalTeam>> GetNationalTeamsAsync(Gender gender);
+        Task<NationalTeam> GetNationalTeamAsync(Gender gender, string fifacode);
+        Task<IList<Match>> GetMatchesAsync(Gender gender, string fifaCode);
     }
 }

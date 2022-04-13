@@ -79,5 +79,8 @@ namespace SoccerScoreData.Models
 
         public override string ToString()
             => $"{this.FifaCode}|{this.Country} - {(this.TeamGender == Gender.Male ? "Men's" : "Women's")} National Team ";
+
+        public string Details()
+            => $"Wins: {this.Wins} | Losses: {this.Losses} | Points: {this.Points}";
     }
 }

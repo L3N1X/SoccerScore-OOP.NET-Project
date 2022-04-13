@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dal\DataManager.cs" />
+    <Compile Include="Dal\FileRepo.cs" />
     <Compile Include="Dal\Irepo.cs" />
     <Compile Include="Dal\OnlineRepo.cs" />
     <Compile Include="Dal\RepoFactory.cs" />
@@ -64,7 +66,9 @@
     <Compile Include="Models\TeamStatisticsData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Files\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Endpoints.resx">
       <Generator>ResXFileCodeGenerator</Generator>

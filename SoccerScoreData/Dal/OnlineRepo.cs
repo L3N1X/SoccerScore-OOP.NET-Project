@@ -55,6 +55,7 @@ namespace SoccerScoreData.Dal
 
         private ISet<NationalTeam> GetFilledTeamsSetWithPlayers(IList<Match> matchesData, Gender gender)
         {
+            //TO DO: Remove traversing trough all matches, not necesarry, first one is enough
             ISet<NationalTeam> teamsSet = new HashSet<NationalTeam>();
             foreach (var match in matchesData)
             {
@@ -76,7 +77,10 @@ namespace SoccerScoreData.Dal
             return teamsSet;
         }
 
-        public async Task<NationalTeam> GetNationalTeam(Gender gender, string fifacode)
+        //FOR WPF ADD METHOD THAT WILL GET ALL TEAMS SPECIFIC TEAM PLAYED AGAINST
+
+        //This will become deprecated, Because user will select his favourite team
+        public async Task<NationalTeam> GetNationalTeamAsync(Gender gender, string fifacode)
         {
             string endpoint = gender == Gender.Male ? Endpoints.MensSpecificMatch : Endpoints.WomensSpecificMatch;
             endpoint = $"{endpoint}{fifacode.ToUpper()}";
@@ -88,6 +92,17 @@ namespace SoccerScoreData.Dal
             var goalDict = GameEventDict(matchesData, CheckIfGoal);
             var cardDict = GameEventDict(matchesData, CheckIfYellowCard);
 
+            //
+            endpoint = gender == Gender.Male ? Endpoints.MensNationalTeams : Endpoints.WomensNationalTeams;
+            var detailedTeams = await GetTeamsData(endpoint);
+
+            IDictionary<string, NationalTeam> detailTeamDict = new Dictionary<string, NationalTeam>();
+            foreach (var team in detailedTeams)
+            {
+                detailTeamDict.Add(team.FifaCode, team);
+            }
+            //
+
             foreach (var team in teamsSet)
             {
                 team.AllPlayers.ForEach(p => {
@@ -95,21 +110,54 @@ namespace SoccerScoreData.Dal
                     p.YellowCards = cardDict[p.Name.ToUpper()];
                 });
             }
-            return teamsSet.FirstOrDefault(team => team.FifaCode.Equals(fifacode.ToUpper()));
+            NationalTeam searchedTeam = teamsSet.FirstOrDefault(team => team.FifaCode.Equals(fifacode.ToUpper()));
+            // Extract to method
+            searchedTeam.Draws = detailTeamDict[searchedTeam.FifaCode].Draws;
+            searchedTeam.GamesPlayed = detailTeamDict[(searchedTeam.FifaCode)].GamesPlayed;
+            searchedTeam.GoalDifferential = detailTeamDict[searchedTeam.FifaCode].GoalDifferential;
+            searchedTeam.GoalsAgainst = detailTeamDict[(searchedTeam.FifaCode)].GoalsAgainst;
+            searchedTeam.GoalsFor = detailTeamDict[(searchedTeam.FifaCode)].GoalsFor;
+            searchedTeam.Losses = detailTeamDict[(searchedTeam.FifaCode)].Losses;
+            searchedTeam.Points = detailTeamDict[(searchedTeam.FifaCode)].Points;
+            searchedTeam.Wins = detailTeamDict[(searchedTeam.FifaCode)].Wins;
+            //
+            return searchedTeam;
         }
 
-        public async Task<IList<NationalTeam>> GetNationalTeams(Gender gender)
+        public async Task<IList<NationalTeam>> GetNationalTeamsAsync(Gender gender)
         {
             string endpoint = gender == Gender.Male ? Endpoints.MensMatches : Endpoints.WomensMatches;
             var matchesData = await GetMatchesData(endpoint);
-
+            
             ISet<NationalTeam> teamsSet = GetFilledTeamsSetWithPlayers(matchesData, gender);
 
             var goalDict = GameEventDict(matchesData, CheckIfGoal);
             var cardDict = GameEventDict(matchesData, CheckIfYellowCard);
 
+            //
+            endpoint = gender == Gender.Male ? Endpoints.MensNationalTeams : Endpoints.WomensNationalTeams;
+            var detailedTeams = await GetTeamsData(endpoint);
+
+            IDictionary<string, NationalTeam> detailTeamDict = new Dictionary<string, NationalTeam>();
+            foreach (var team in detailedTeams)
+            {
+                detailTeamDict.Add(team.FifaCode, team);
+            }
+            //
+
             foreach (var team in teamsSet)
             {
+                // Extract to method
+                team.Draws = detailTeamDict[team.FifaCode].Draws;
+                team.GamesPlayed = detailTeamDict[(team.FifaCode)].GamesPlayed;
+                team.GoalDifferential = detailTeamDict[team.FifaCode].GoalDifferential;
+                team.GoalsAgainst = detailTeamDict[(team.FifaCode)].GoalsAgainst;
+                team.GoalsFor = detailTeamDict[(team.FifaCode)].GoalsFor;
+                team.Losses = detailTeamDict[(team.FifaCode)].Losses;
+                team.Points = detailTeamDict[(team.FifaCode)].Points;
+                team.Wins = detailTeamDict[(team.FifaCode)].Wins;
+                //
+
                 team.AllPlayers.ForEach(p => {
                     p.Goals = goalDict[p.Name.ToUpper()];
                     p.YellowCards = cardDict[p.Name.ToUpper()];
@@ -118,12 +166,29 @@ namespace SoccerScoreData.Dal
 
             return teamsSet.ToList();    
         }
+        async public Task<IList<NationalTeam>> GetTeamsSelectionAsync(Gender gender)
+        {
+            string endpoint = gender == Gender.Male ? Endpoints.MensNationalTeams : Endpoints.WomensNationalTeams;
+            var teamsData = await GetTeamsData(endpoint);
+            return teamsData;
+        }
 
-        public async Task<IList<Match>> GetMatches(Gender gender, string fifaCode)
+        public async Task<IList<Match>> GetMatchesAsync(Gender gender, string fifaCode)
         {
             string endpoint = gender == Gender.Male ? Endpoints.MensMatches : Endpoints.WomensMatches;
             var matchesData = await GetMatchesData(endpoint);
             return matchesData;
+        }
+
+        private Task<IList<NationalTeam>> GetTeamsData(string enpoint)
+        {
+            return Task.Run(() =>
+                {
+                    var apiClient = new RestClient(enpoint);
+                    var apiResult = apiClient.Execute<NationalTeam>(new RestRequest());
+                    return JsonConvert.DeserializeObject<IList<NationalTeam>>(apiResult.Content);
+                }
+            );
         }
 
         private Task<IList<Match>> GetMatchesData(string endpoint)
