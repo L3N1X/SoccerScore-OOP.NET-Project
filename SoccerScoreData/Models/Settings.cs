@@ -13,7 +13,10 @@ namespace SoccerScoreData.Models
         public Language Language { get; set; }
         public IList<Player> FavouritePlayers { get; set; }
         public string FormatForFileLine()
-            => $"{FavouriteTeam}|{Language}|{FavouritePlayers[0]}|{FavouritePlayers[1]}|{FavouritePlayers[2]}";
+            => $"{FavouriteTeam}|{Language}" +
+            $"|{(FavouritePlayers.Count > 0 ? FavouritePlayers[0] : null)}" +
+            $"|{(FavouritePlayers.Count > 1 ? FavouritePlayers[1] : null)}" +
+            $"|{(FavouritePlayers.Count > 2 ? FavouritePlayers[2] : null)}";
         Settings ParseFromFileLine(string line)
         {
             string[] data = line.Split('|');
@@ -23,9 +26,9 @@ namespace SoccerScoreData.Models
                 Language = (Language)Enum.Parse(typeof(Language), data[1]),
                 FavouritePlayers = new List<Player>()
                 {
-                    new Player{ Name = data[2], IsFavourite = true },
-                    new Player{ Name = data[3], IsFavourite = true },
-                    new Player{ Name = data[4], IsFavourite = true },
+                    new Player{ Name = data[2] != null ? data[2] : null, IsFavourite = true },
+                    new Player{ Name = data[3] != null ? data[3] : null, IsFavourite = true },
+                    new Player{ Name = data[4] != null ? data[4] : null, IsFavourite = true },
                 }
             };
         }

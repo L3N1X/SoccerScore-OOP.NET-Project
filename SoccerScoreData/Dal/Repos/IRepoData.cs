@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SoccerScoreData.Dal
 {
-    public interface Irepo
+    public interface IRepoData
     {
         Task<IList<NationalTeam>> GetTeamsSelectionAsync(Gender gender);
         Task<IList<NationalTeam>> GetNationalTeamsAsync(Gender gender);

@@ -9,7 +9,7 @@ namespace SoccerScoreData.Dal
 {
     public class DataManager
     {
-        private readonly Irepo repo;
+        private readonly IRepoData repo;
         public Gender FavouriteGender { get; }
         public NationalTeam FavouriteTeam { get; set; }
         public IList<Match> FavouriteTeamMatches { get; set; }
@@ -17,7 +17,7 @@ namespace SoccerScoreData.Dal
 
         public DataManager(Gender gender)
         {
-            repo = RepoFactory.GetRepo();
+            repo = RepoFactory.GetRepoData();
             this.FavouriteGender = gender;
         }
 

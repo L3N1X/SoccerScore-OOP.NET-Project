@@ -12,7 +12,7 @@ namespace Soccer_TEST_Console
     {
         static async Task Main(string[] args)
         {
-            Irepo repo = RepoFactory.GetRepo();
+            IRepoData repo = RepoFactory.GetRepoData();
             try
             {
                 //IList<NationalTeam> nationalTeams = await repo.GetNationalTeamsAsync(Gender.Male);

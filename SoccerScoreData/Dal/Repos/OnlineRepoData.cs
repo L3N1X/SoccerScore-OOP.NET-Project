@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SoccerScoreData.Dal
 {
-    public class OnlineRepo : Irepo
+    internal class OnlineRepoData : IRepoData
     {
         private bool CheckIfGoal(string eventType)
         {

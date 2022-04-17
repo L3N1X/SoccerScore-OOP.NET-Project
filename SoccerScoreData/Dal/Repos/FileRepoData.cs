@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SoccerScoreData.Dal
 {
-    internal class FileRepo : Irepo
+    internal class FileRepoData : IRepoData
     {
         //JSON JE JEDAN VELIKI STRING; KORISTI STRINGBUILDER!!!!!
         public Task<IList<Match>> GetMatchesAsync(Gender gender, string fifaCode)

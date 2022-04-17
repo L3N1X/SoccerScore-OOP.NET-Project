@@ -49,26 +49,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dal\DataManager.cs" />
-    <Compile Include="Dal\FileRepo.cs" />
-    <Compile Include="Dal\Irepo.cs" />
-    <Compile Include="Dal\OnlineRepo.cs" />
-    <Compile Include="Dal\RepoFactory.cs" />
+    <Compile Include="Dal\Repos\FileRepoConfig.cs" />
+    <Compile Include="Dal\Repos\FileRepoData.cs" />
+    <Compile Include="Dal\Repos\IRepoConfig.cs" />
+    <Compile Include="Dal\Repos\IRepoData.cs" />
+    <Compile Include="Dal\Repos\OnlineRepoData.cs" />
+    <Compile Include="Dal\Repos\RepoFactory.cs" />
     <Compile Include="Endpoints.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Endpoints.resx</DependentUpon>
     </Compile>
     <Compile Include="Models\Constants.cs" />
-    <Compile Include="Models\Match.cs" />
-    <Compile Include="Models\NationalTeam.cs" />
-    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\SoccerModels\Match.cs" />
+    <Compile Include="Models\SoccerModels\NationalTeam.cs" />
+    <Compile Include="Models\SoccerModels\Player.cs" />
     <Compile Include="Models\Settings.cs" />
-    <Compile Include="Models\TeamEvent.cs" />
-    <Compile Include="Models\TeamStatisticsData.cs" />
+    <Compile Include="Models\SoccerModels\TeamEvent.cs" />
+    <Compile Include="Models\SoccerModels\TeamStatisticsData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Files\" />
+    <Folder Include="Files\Config\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Endpoints.resx">
