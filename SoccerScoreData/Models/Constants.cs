@@ -18,5 +18,9 @@ namespace SoccerScoreData.Models
         Forward,
         Midfield
     }
-
+    public enum Language
+    {
+        ENG,
+        CRO
+    }
 }

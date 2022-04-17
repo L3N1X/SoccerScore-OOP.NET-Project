@@ -15,18 +15,21 @@ namespace Soccer_TEST_Console
             Irepo repo = RepoFactory.GetRepo();
             try
             {
-                IList<NationalTeam> nationalTeams = await repo.GetNationalTeamsAsync(Gender.Male);
-                foreach (NationalTeam nationalTeam in nationalTeams)
-                {
-                    Console.WriteLine(nationalTeam);
-                    Console.WriteLine(nationalTeam.Details());
-                    Console.WriteLine($"Total players in team: {nationalTeam.AllPlayers.Count}");
-                    Console.WriteLine("");
-                    Console.WriteLine($"\tCaptain: {nationalTeam.AllPlayers.FirstOrDefault(p => p.Captain.Equals(true)).Name}");
-                    Console.WriteLine("");
-                    nationalTeam.AllPlayers.ForEach(p => Console.WriteLine($"\t{p}\n\t{p.GetDetails()}"));
-                    Console.WriteLine("");
-                }
+                //IList<NationalTeam> nationalTeams = await repo.GetNationalTeamsAsync(Gender.Male);
+                //foreach (NationalTeam nationalTeam in nationalTeams)
+                //{
+                //    Console.WriteLine(nationalTeam);
+                //    Console.WriteLine(nationalTeam.Details());
+                //    Console.WriteLine($"Total players in team: {nationalTeam.AllPlayers.Count}");
+                //    Console.WriteLine("");
+                //    Console.WriteLine($"\tCaptain: {nationalTeam.AllPlayers.FirstOrDefault(p => p.Captain.Equals(true)).Name}");
+                //    Console.WriteLine("");
+                //    nationalTeam.AllPlayers.ForEach(p => Console.WriteLine($"\t{p}\n\t{p.GetDetails()}"));
+                //    Console.WriteLine("");
+                //}
+
+                Language language = (Language)Enum.Parse(typeof(Language), "ENG");
+                Console.WriteLine(language);
 
                 //var team = await repo.GetNationalTeam(Gender.Male, "CRO");
                 //Console.WriteLine(team);

@@ -9,10 +9,18 @@ namespace SoccerScoreData.Dal
 {
     public class DataManager
     {
-        public Gender[] Genders { get; } = { Gender.Male, Gender.Female };
-
         private readonly Irepo repo;
+        public Gender FavouriteGender { get; }
+        public NationalTeam FavouriteTeam { get; set; }
+        public IList<Match> FavouriteTeamMatches { get; set; }
         private readonly IList<NationalTeam> selectionTeams;
+
+        public DataManager(Gender gender)
+        {
+            repo = RepoFactory.GetRepo();
+            this.FavouriteGender = gender;
+        }
+
         public IList<NationalTeam> SelectionTeams
         {
             get
@@ -23,18 +31,14 @@ namespace SoccerScoreData.Dal
             }
         }
 
+        public async void LoadFavouriteTeam(NationalTeam selectedTeam)
+        {
+            this.FavouriteTeam = await repo.GetNationalTeamAsync(FavouriteGender, selectedTeam.FifaCode);
+        }
+
         private void LoadSelectionTeams()
         {
-            throw new NotImplementedException();
+            repo.GetTeamsSelectionAsync(FavouriteGender);
         }
-
-        private NationalTeam nationalTeam;
-
-        public DataManager()
-        {
-            repo = RepoFactory.GetRepo();
-        }
-        
-        
     }
 }
