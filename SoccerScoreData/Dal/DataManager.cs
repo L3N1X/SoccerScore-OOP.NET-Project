@@ -10,6 +10,7 @@ namespace SoccerScoreData.Dal
     public class DataManager
     {
         private readonly IRepoData repo;
+        private Settings settings;
         public Gender FavouriteGender { get; }
         public NationalTeam FavouriteTeam { get; set; }
         public IList<Match> FavouriteTeamMatches { get; set; }

@@ -8,27 +8,40 @@ namespace SoccerScoreData.Models
 {
     public class Settings
     {
+        private const int maxPlayers = 3;
         private const char DEL = '|';
         public NationalTeam FavouriteTeam { get; set; }
         public Language Language { get; set; }
-        public IList<Player> FavouritePlayers { get; set; }
+        public IList<Player> FavouritePlayers { get; private set; }
+        public void AddFavouritePlayer(Player newFavouirtePlayer)
+        {
+            //newFavouirtePlayer.IsFavourite = true;
+            //foreach (var player in this.FavouritePlayers)
+            //{
+            //    if (player is null)
+            //    {
+            //        player = newFavouirtePlayer;
+
+            //    }    
+            //}
+        }
         public string FormatForFileLine()
-            => $"{FavouriteTeam}|{Language}" +
-            $"|{(FavouritePlayers.Count > 0 ? FavouritePlayers[0] : null)}" +
-            $"|{(FavouritePlayers.Count > 1 ? FavouritePlayers[1] : null)}" +
-            $"|{(FavouritePlayers.Count > 2 ? FavouritePlayers[2] : null)}";
+            => $"{Language}{DEL}{FavouriteTeam}" +
+            $"{DEL}{FavouritePlayers?[0]}" +
+            $"{DEL}{FavouritePlayers?[1]}" +
+            $"{DEL}{FavouritePlayers?[2]}";
         public static Settings ParseFromFileLine(string line)
         {
-            string[] data = line.Split('|');
+            string[] data = line.Split(DEL);
             return new Settings
             {
-                FavouriteTeam = new NationalTeam { FifaCode = data[0] },
-                Language = (Language)Enum.Parse(typeof(Language), data[1]),
+                Language = (Language)Enum.Parse(typeof(Language), data[0]),
+                FavouriteTeam = data[1] != string.Empty ? new NationalTeam { FifaCode = data[1] } : null,
                 FavouritePlayers = new List<Player>()
                 {
-                    new Player{ Name = data[2] != null ? data[2] : null, IsFavourite = true },
-                    new Player{ Name = data[3] != null ? data[3] : null, IsFavourite = true },
-                    new Player{ Name = data[4] != null ? data[4] : null, IsFavourite = true },
+                    data[2] != string.Empty ? Player.ParseFromFileLine(data[2]) : null,
+                    data[3] != string.Empty ? Player.ParseFromFileLine(data[3]): null,
+                    data[4] != string.Empty ? Player.ParseFromFileLine(data[4]) : null,
                 }
             };
         }
