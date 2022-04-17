@@ -18,7 +18,11 @@ namespace SoccerScoreData.Dal.Repos
             {
                 Directory.CreateDirectory(DIR);
                 File.Create(SETTINGS_PATH);
+                Settings defaultSettings = new Settings() { Language = Language.ENG };
+                File.WriteAllText(SETTINGS_PATH, defaultSettings.FormatForFileLine());
             }
+            string[] lines = File.ReadAllLines(SETTINGS_PATH);
+            return Settings.ParseFromFileLine(lines[0]);
         }
 
         public void SaveSettings(Settings settings)

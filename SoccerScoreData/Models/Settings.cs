@@ -17,7 +17,7 @@ namespace SoccerScoreData.Models
             $"|{(FavouritePlayers.Count > 0 ? FavouritePlayers[0] : null)}" +
             $"|{(FavouritePlayers.Count > 1 ? FavouritePlayers[1] : null)}" +
             $"|{(FavouritePlayers.Count > 2 ? FavouritePlayers[2] : null)}";
-        Settings ParseFromFileLine(string line)
+        public static Settings ParseFromFileLine(string line)
         {
             string[] data = line.Split('|');
             return new Settings
