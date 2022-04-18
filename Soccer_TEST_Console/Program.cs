@@ -17,11 +17,8 @@ namespace Soccer_TEST_Console
             IRepoConfig repoconf = RepoFactory.GetRepoConfig();
             try
             {
-                NationalTeam team = await repo.GetNationalTeamAsync(Gender.Male, "CRO");
-                Settings settings = repoconf.GetSettings();
-                settings.AddFavouritePlayer(team.StartingEleven[0]);
-                Console.WriteLine(settings.FormatForFileLine());
-                repoconf.SaveSettings(settings);
+                NationalTeam team = await repo.GetNationalTeamAsync(Gender.Male, "cRo");
+                team.AllPlayers.ForEach(Console.WriteLine);
                 //team.AllPlayers.ForEach(player => Console.WriteLine(player));
             }
             catch (Exception ex)

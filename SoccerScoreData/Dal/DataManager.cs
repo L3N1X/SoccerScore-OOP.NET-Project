@@ -1,4 +1,5 @@
-﻿using SoccerScoreData.Models;
+﻿using SoccerScoreData.Dal.Repos;
+using SoccerScoreData.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +10,19 @@ namespace SoccerScoreData.Dal
 {
     public class DataManager
     {
-        private readonly IRepoData repo;
+        private readonly IRepoData repoData;
+        private readonly IRepoConfig repoConfig; 
+
         private Settings settings;
         public Gender FavouriteGender { get; }
         public NationalTeam FavouriteTeam { get; set; }
         public IList<Match> FavouriteTeamMatches { get; set; }
-        private readonly IList<NationalTeam> selectionTeams;
+        private IList<NationalTeam> selectionTeams;
 
         public DataManager(Gender gender)
         {
-            repo = RepoFactory.GetRepoData();
+            repoData = RepoFactory.GetRepoData();
+            repoConfig = RepoFactory.GetRepoConfig();
             this.FavouriteGender = gender;
         }
 
@@ -28,18 +32,18 @@ namespace SoccerScoreData.Dal
             {
                 if (selectionTeams is null)
                     this.LoadSelectionTeams();
-                return new List<NationalTeam>(SelectionTeams);
+                return new List<NationalTeam>(selectionTeams);
             }
         }
 
         public async void LoadFavouriteTeam(NationalTeam selectedTeam)
         {
-            this.FavouriteTeam = await repo.GetNationalTeamAsync(FavouriteGender, selectedTeam.FifaCode);
+            this.FavouriteTeam = await repoData.GetNationalTeamAsync(FavouriteGender, selectedTeam.FifaCode);
         }
 
-        private void LoadSelectionTeams()
+        private async void LoadSelectionTeams()
         {
-            repo.GetTeamsSelectionAsync(FavouriteGender);
+            this.selectionTeams = await repoData.GetTeamsSelectionAsync(FavouriteGender);
         }
     }
 }

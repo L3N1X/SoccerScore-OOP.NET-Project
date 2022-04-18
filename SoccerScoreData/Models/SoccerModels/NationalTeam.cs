@@ -9,6 +9,7 @@ namespace SoccerScoreData.Models
 {
     public class NationalTeam
     {
+        private const char DEL = ';';
         public Gender TeamGender { get; set; }
         public List<Player> StartingEleven { get; set; }
         public List<Player> Substitutes { get; set; }
@@ -80,7 +81,16 @@ namespace SoccerScoreData.Models
         public override string ToString()
             => $"{this.FifaCode}|{this.Country} - {(this.TeamGender == Gender.Male ? "Men's" : "Women's")} National Team ";
 
-        public string Details()
-            => $"Wins: {this.Wins} | Losses: {this.Losses} | Points: {this.Points}";
+        public string FormatForFileLine()
+            => $"{this.TeamGender}{DEL}{this.FifaCode}";
+        public static NationalTeam ParseFromFileLine(string line)
+        {
+            string[] data = line.Split(DEL);
+            return new NationalTeam()
+            {
+                TeamGender = (Gender)Enum.Parse(typeof(Gender), data[0]),
+                FifaCode = data[1],
+            };
+        }
     }
 }

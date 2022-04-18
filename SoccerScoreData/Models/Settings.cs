@@ -15,28 +15,24 @@ namespace SoccerScoreData.Models
         public IList<Player> FavouritePlayers { get; private set; }
         public void AddFavouritePlayer(Player newFavouirtePlayer)
         {
-            //newFavouirtePlayer.IsFavourite = true;
-            //foreach (var player in this.FavouritePlayers)
-            //{
-            //    if (player is null)
-            //    {
-            //        player = newFavouirtePlayer;
-
-            //    }    
-            //}
+            newFavouirtePlayer.IsFavourite = true;
+            if (FavouritePlayers.ToList().Contains(newFavouirtePlayer))
+                return;
+            if (FavouritePlayers.Remove(null))
+                FavouritePlayers.Add(newFavouirtePlayer);
         }
         public string FormatForFileLine()
-            => $"{Language}{DEL}{FavouriteTeam}" +
-            $"{DEL}{FavouritePlayers?[0]}" +
-            $"{DEL}{FavouritePlayers?[1]}" +
-            $"{DEL}{FavouritePlayers?[2]}";
+            => $"{Language}{DEL}{(FavouriteTeam != null ? FavouriteTeam.FormatForFileLine() : string.Empty)}" +
+            $"{DEL}{(FavouritePlayers[0] != null ? FavouritePlayers[0].FormatForFileLine() : string.Empty)}" +
+            $"{DEL}{(FavouritePlayers[1] != null ? FavouritePlayers[1].FormatForFileLine() : string.Empty)}" +
+            $"{DEL}{(FavouritePlayers[2] != null ? FavouritePlayers[2].FormatForFileLine() : string.Empty)}";
         public static Settings ParseFromFileLine(string line)
         {
             string[] data = line.Split(DEL);
             return new Settings
             {
                 Language = (Language)Enum.Parse(typeof(Language), data[0]),
-                FavouriteTeam = data[1] != string.Empty ? new NationalTeam { FifaCode = data[1] } : null,
+                FavouriteTeam = data[1] != string.Empty ? NationalTeam.ParseFromFileLine(data[1]) : null,
                 FavouritePlayers = new List<Player>()
                 {
                     data[2] != string.Empty ? Player.ParseFromFileLine(data[2]) : null,

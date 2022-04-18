@@ -10,12 +10,19 @@ namespace SoccerScoreData.Models
     public class Player
     {
         public static char DEL = ';';
+        
+
         public bool IsFavourite { get; set; } = false;
         public int Goals { get; set; }
         public int YellowCards { get; set; }
 
+        private string name;
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public string Name
+        {
+            get => name; 
+            set => name = value.Trim().ToUpper(); 
+        }
 
         [JsonProperty("captain")]
         public bool Captain { get; set; }
@@ -32,7 +39,7 @@ namespace SoccerScoreData.Models
                    Name == player.Name &&
                    Captain == player.Captain &&
                    ShirtNumber == player.ShirtNumber; /*&&*/
-                   //Position == player.Position;
+            //Position == player.Position;
         }
 
         public override int GetHashCode()
