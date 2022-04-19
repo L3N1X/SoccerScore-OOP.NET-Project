@@ -46,7 +46,7 @@ namespace SoccerScoreData.Dal
         public void SetFavouriteTeam(NationalTeam favouriteTeam)
         {
             this.settings.FavouriteTeam = favouriteTeam;
-            repoConfig.SaveSettings(settings);
+            SaveSettings();
         }
 
         public Task<IList<NationalTeam>> GetSelectionTeams()
@@ -54,10 +54,34 @@ namespace SoccerScoreData.Dal
             return repoData.GetNationalTeamsSelection(this.SelectedGender);
         }
 
+        public void AddFavouritePlayer(Player player)
+        {
+            this.settings.AddFavouritePlayer(player);
+            SaveSettings();
+        }
+
         public Task<NationalTeam> GetFavouriteTeam()
         {
             return repoData.GetNationalTeamAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
         }
 
+        public async Task LoadFavouriteTeam()
+        {
+            NationalTeam fullTeam = await repoData.GetNationalTeamAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
+            this.FavouriteTeam = fullTeam;
+            //Binds favourite players from settings
+            settings.FavouritePlayers.ToList().ForEach(player =>
+            {
+                if (player != null)
+                {
+                    Player realPlayer = this.FavouriteTeam.AllPlayers.Find(p => p.Equals(player));
+                    realPlayer.IsFavourite = true;
+                }
+            });
+        }
+        private void SaveSettings()
+        {
+            repoConfig.SaveSettings(settings);
+        }
     }
 }

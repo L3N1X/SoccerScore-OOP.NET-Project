@@ -19,8 +19,10 @@ namespace Soccer_TEST_Console
             dataManager.Initialize();
             try
             {
-                var team = await dataManager.GetFavouriteTeam();
-                team.AllPlayers.ForEach(Console.WriteLine); 
+                //var team = await dataManager.GetFavouriteTeam();
+                await dataManager.LoadFavouriteTeam();
+                var team = dataManager.FavouriteTeam;
+                team.AllPlayers.ForEach(Console.WriteLine);
             }
             catch (Exception ex)
             {

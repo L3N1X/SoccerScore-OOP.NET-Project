@@ -70,7 +70,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Files\Config\" />
     <Folder Include="Utils\Extentions\" />
   </ItemGroup>
   <ItemGroup>

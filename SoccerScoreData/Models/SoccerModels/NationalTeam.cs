@@ -92,5 +92,6 @@ namespace SoccerScoreData.Models
                 FifaCode = data[1],
             };
         }
+        public string Details() => $"Points: {this.Points} | Games played: {this.GamesPlayed}";
     }
 }
