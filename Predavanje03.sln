@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoccerScoreData", "SoccerSc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soccer_TEST_Console", "Soccer_TEST_Console\Soccer_TEST_Console.csproj", "{9F66D1C6-C6DC-4897-9929-98671A86A3E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoccerScore_TEST_GUI", "SoccerScore_TEST_GUI\SoccerScore_TEST_GUI.csproj", "{9418D460-71BB-4D9C-9E2C-DBC7F1B67817}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{9F66D1C6-C6DC-4897-9929-98671A86A3E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F66D1C6-C6DC-4897-9929-98671A86A3E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F66D1C6-C6DC-4897-9929-98671A86A3E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9418D460-71BB-4D9C-9E2C-DBC7F1B67817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9418D460-71BB-4D9C-9E2C-DBC7F1B67817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9418D460-71BB-4D9C-9E2C-DBC7F1B67817}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9418D460-71BB-4D9C-9E2C-DBC7F1B67817}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

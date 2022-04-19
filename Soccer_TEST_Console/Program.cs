@@ -23,6 +23,7 @@ namespace Soccer_TEST_Console
                 await dataManager.LoadFavouriteTeam();
                 var team = dataManager.FavouriteTeam;
                 team.AllPlayers.ForEach(Console.WriteLine);
+                
             }
             catch (Exception ex)
             {

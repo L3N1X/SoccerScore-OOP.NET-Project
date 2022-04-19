@@ -78,8 +78,10 @@ namespace SoccerScoreData.Models
             return hashCode;
         }
 
+        //public override string ToString()
+        //    => $"{this.FifaCode}|{this.Country} - {(this.TeamGender == Gender.Male ? "Men's" : "Women's")} National Team ";
         public override string ToString()
-            => $"{this.FifaCode}|{this.Country} - {(this.TeamGender == Gender.Male ? "Men's" : "Women's")} National Team ";
+            => this.FifaCode;
 
         public string FormatForFileLine()
             => $"{this.TeamGender}{DEL}{this.FifaCode}";

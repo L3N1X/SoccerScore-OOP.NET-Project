@@ -18,8 +18,9 @@ namespace SoccerScoreData.Dal
 
         private Settings settings;
         public Gender SelectedGender { get; private set; }
-        public NationalTeam FavouriteTeam { get; set; }
-        public IList<Match> FavouriteTeamMatches { get; set; }
+        public NationalTeam FavouriteTeam { get; private set; }
+        public IList<Match> FavouriteTeamMatches { get; private set; }
+
         public DataManager()
         {
             repoData = RepoFactory.GetRepoData();
@@ -37,7 +38,8 @@ namespace SoccerScoreData.Dal
                 this.FavouriteTeam = settings.FavouriteTeam;
             }
         }
-        //For getting selection teams
+
+        //For when default settings are detected
         public void SetGender(Gender gender)
         {
             this.SelectedGender = gender;
