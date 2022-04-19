@@ -77,9 +77,7 @@ namespace SoccerScoreData.Dal
             return teamsSet;
         }
 
-        //FOR WPF ADD METHOD THAT WILL GET ALL TEAMS SPECIFIC TEAM PLAYED AGAINST
-
-        //This will become deprecated, Because user will select his favourite team
+        //Interface implementation
         public async Task<NationalTeam> GetNationalTeamAsync(Gender gender, string fifacode)
         {
             string endpoint = gender == Gender.Male ? Endpoints.MensSpecificMatch : Endpoints.WomensSpecificMatch;
@@ -124,49 +122,7 @@ namespace SoccerScoreData.Dal
             return searchedTeam;
         }
 
-        public async Task<IList<NationalTeam>> GetNationalTeamsAsync(Gender gender)
-        {
-            string endpoint = gender == Gender.Male ? Endpoints.MensMatches : Endpoints.WomensMatches;
-            var matchesData = await GetMatchesData(endpoint);
-            
-            ISet<NationalTeam> teamsSet = GetFilledTeamsSetWithPlayers(matchesData, gender);
-
-            var goalDict = GameEventDict(matchesData, CheckIfGoal);
-            var cardDict = GameEventDict(matchesData, CheckIfYellowCard);
-
-            //
-            endpoint = gender == Gender.Male ? Endpoints.MensNationalTeams : Endpoints.WomensNationalTeams;
-            var detailedTeams = await GetTeamsData(endpoint);
-
-            IDictionary<string, NationalTeam> detailTeamDict = new Dictionary<string, NationalTeam>();
-            foreach (var team in detailedTeams)
-            {
-                detailTeamDict.Add(team.FifaCode, team);
-            }
-            //
-
-            foreach (var team in teamsSet)
-            {
-                // Extract to method
-                team.Draws = detailTeamDict[team.FifaCode].Draws;
-                team.GamesPlayed = detailTeamDict[(team.FifaCode)].GamesPlayed;
-                team.GoalDifferential = detailTeamDict[team.FifaCode].GoalDifferential;
-                team.GoalsAgainst = detailTeamDict[(team.FifaCode)].GoalsAgainst;
-                team.GoalsFor = detailTeamDict[(team.FifaCode)].GoalsFor;
-                team.Losses = detailTeamDict[(team.FifaCode)].Losses;
-                team.Points = detailTeamDict[(team.FifaCode)].Points;
-                team.Wins = detailTeamDict[(team.FifaCode)].Wins;
-                //
-
-                team.AllPlayers.ForEach(p => {
-                    p.Goals = goalDict[p.Name.ToUpper()];
-                    p.YellowCards = cardDict[p.Name.ToUpper()];
-                });
-            }
-
-            return teamsSet.ToList();    
-        }
-        async public Task<IList<NationalTeam>> GetTeamsSelectionAsync(Gender gender)
+        async public Task<IList<NationalTeam>> GetNationalTeamsSelection(Gender gender)
         {
             string endpoint = gender == Gender.Male ? Endpoints.MensNationalTeams : Endpoints.WomensNationalTeams;
             var teamsData = await GetTeamsData(endpoint);
@@ -179,11 +135,13 @@ namespace SoccerScoreData.Dal
 
         public async Task<IList<Match>> GetMatchesAsync(Gender gender, string fifaCode)
         {
-            string endpoint = gender == Gender.Male ? Endpoints.MensMatches : Endpoints.WomensMatches;
+            //string endpoint = gender == Gender.Male ? Endpoints.MensMatches : Endpoints.WomensMatches;
+            string endpoint = gender == Gender.Male ? $"{Endpoints.MensSpecificMatch}{fifaCode.ToUpper()}" : $"{Endpoints.WomensSpecificMatch}{fifaCode.ToUpper()}";
             var matchesData = await GetMatchesData(endpoint);
             return matchesData;
         }
 
+        //RAW DATA
         private Task<IList<NationalTeam>> GetTeamsData(string enpoint)
         {
             return Task.Run(() =>

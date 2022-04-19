@@ -25,7 +25,7 @@ namespace SoccerScoreData.Dal
             throw new NotImplementedException();
         }
 
-        public Task<IList<NationalTeam>> GetTeamsSelectionAsync(Gender gender)
+        public Task<IList<NationalTeam>> GetNationalTeamsSelection(Gender gender)
         {
             throw new NotImplementedException();
         }

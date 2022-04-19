@@ -10,8 +10,7 @@ namespace SoccerScoreData.Models
     public class Player
     {
         public static char DEL = ';';
-        
-
+        public string IconPath { get; set; }
         public bool IsFavourite { get; set; } = false;
         public int Goals { get; set; }
         public int YellowCards { get; set; }

@@ -51,7 +51,7 @@ namespace SoccerScoreData.Dal
 
         public Task<IList<NationalTeam>> GetSelectionTeams()
         {
-            return repoData.GetTeamsSelectionAsync(this.SelectedGender);
+            return repoData.GetNationalTeamsSelection(this.SelectedGender);
         }
 
         public Task<NationalTeam> GetFavouriteTeam()
