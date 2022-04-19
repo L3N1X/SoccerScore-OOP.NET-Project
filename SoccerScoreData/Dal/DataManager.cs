@@ -10,40 +10,54 @@ namespace SoccerScoreData.Dal
 {
     public class DataManager
     {
+        public delegate void DefaultSettingsFoundDelegate(object sender, EventArgs args);
+        public event DefaultSettingsFoundDelegate DefaultSettingsFound;
+
         private readonly IRepoData repoData;
         private readonly IRepoConfig repoConfig; 
 
         private Settings settings;
-        public Gender FavouriteGender { get; }
+        public Gender SelectedGender { get; private set; }
         public NationalTeam FavouriteTeam { get; set; }
         public IList<Match> FavouriteTeamMatches { get; set; }
-        private IList<NationalTeam> selectionTeams;
-
-        public DataManager(Gender gender)
+        public DataManager()
         {
             repoData = RepoFactory.GetRepoData();
             repoConfig = RepoFactory.GetRepoConfig();
-            this.FavouriteGender = gender;
         }
 
-        public IList<NationalTeam> SelectionTeams
+        public void Initialize()
         {
-            get
+            settings = repoConfig.GetSettings();
+            if (settings.IsDefault()) 
+                DefaultSettingsFound?.Invoke(this, new EventArgs());
+            else
             {
-                if (selectionTeams is null)
-                    this.LoadSelectionTeams();
-                return new List<NationalTeam>(selectionTeams);
+                this.SelectedGender = settings.FavouriteTeam.TeamGender;
+                this.FavouriteTeam = settings.FavouriteTeam;
             }
         }
-
-        public async void LoadFavouriteTeam(NationalTeam selectedTeam)
+        //For getting selection teams
+        public void SetGender(Gender gender)
         {
-            this.FavouriteTeam = await repoData.GetNationalTeamAsync(FavouriteGender, selectedTeam.FifaCode);
+            this.SelectedGender = gender;
         }
 
-        private async void LoadSelectionTeams()
+        public void SetFavouriteTeam(NationalTeam favouriteTeam)
         {
-            this.selectionTeams = await repoData.GetTeamsSelectionAsync(FavouriteGender);
+            this.settings.FavouriteTeam = favouriteTeam;
+            repoConfig.SaveSettings(settings);
         }
+
+        public Task<IList<NationalTeam>> GetSelectionTeams()
+        {
+            return repoData.GetTeamsSelectionAsync(this.SelectedGender);
+        }
+
+        public Task<NationalTeam> GetFavouriteTeam()
+        {
+            return repoData.GetNationalTeamAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
+        }
+
     }
 }

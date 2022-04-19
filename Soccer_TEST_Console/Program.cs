@@ -11,15 +11,16 @@ namespace Soccer_TEST_Console
 {
     internal class Program
     {
+        
         static async Task Main(string[] args)
         {
-            IRepoData repo = RepoFactory.GetRepoData();
-            IRepoConfig repoconf = RepoFactory.GetRepoConfig();
+            DataManager dataManager = new DataManager();
+            dataManager.DefaultSettingsFound += DataManager_DefaultSettingsFound;
+            dataManager.Initialize();
             try
             {
-                NationalTeam team = await repo.GetNationalTeamAsync(Gender.Male, "cRo");
-                team.AllPlayers.ForEach(Console.WriteLine);
-                //team.AllPlayers.ForEach(player => Console.WriteLine(player));
+                var team = await dataManager.GetFavouriteTeam();
+                team.AllPlayers.ForEach(Console.WriteLine); 
             }
             catch (Exception ex)
             {
@@ -27,20 +28,12 @@ namespace Soccer_TEST_Console
                 Console.WriteLine(ex.StackTrace);
 
             }
-            //Irepo repo = RepoFactory.GetRepo();
-            //try
-            //{
-            //    IList<Player> players = await repo.GetPlayers(Gender.Male);
-            //    foreach (var player in players)
-            //    {
-            //        Console.WriteLine(player);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine(ex.Message);
+        }
 
-            //}
+        private static void DataManager_DefaultSettingsFound(object sender, EventArgs args)
+        {
+            Console.WriteLine("DEFAULT!");
+            ((DataManager)sender).SetGender(Gender.Female);
         }
     }
 }

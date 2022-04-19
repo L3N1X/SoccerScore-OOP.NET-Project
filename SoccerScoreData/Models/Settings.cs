@@ -21,6 +21,10 @@ namespace SoccerScoreData.Models
             if (FavouritePlayers.Remove(null))
                 FavouritePlayers.Add(newFavouirtePlayer);
         }
+        public void ClearFavouritePlayers()
+            => FavouritePlayers = new List<Player>() { null, null, null };
+        public bool IsDefault()
+            => FavouriteTeam is null; //Nemoj komplicirati, ovo je dovoljno, ako tim nije odabran, onda nije nista ostalo
         public string FormatForFileLine()
             => $"{Language}{DEL}{(FavouriteTeam != null ? FavouriteTeam.FormatForFileLine() : string.Empty)}" +
             $"{DEL}{(FavouritePlayers[0] != null ? FavouritePlayers[0].FormatForFileLine() : string.Empty)}" +

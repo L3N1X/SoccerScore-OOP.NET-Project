@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="MensMatches" xml:space="preserve">
-    <value>https://world-cup-json-2018.herokuapp.com/matches/</value>
+    <value>http://world-cup-json-2018.herokuapp.com/matches/</value>
   </data>
   <data name="MensNationalTeams" xml:space="preserve">
-    <value>https://world-cup-json-2018.herokuapp.com/teams/results</value>
+    <value>http://world-cup-json-2018.herokuapp.com/teams/results</value>
   </data>
   <data name="MensSpecificMatch" xml:space="preserve">
-    <value>https://world-cup-json-2018.herokuapp.com/matches/country?fifa_code=</value>
+    <value>http://world-cup-json-2018.herokuapp.com/matches/country?fifa_code=</value>
     <comment>insert fifacode string like: fifa_code=ENG</comment>
   </data>
   <data name="WomensMatches" xml:space="preserve">
@@ -134,6 +134,6 @@
     <value>http://worldcup.sfg.io/teams/results</value>
   </data>
   <data name="WomensSpecificMatch" xml:space="preserve">
-    <value>https://worldcup.sfg.io/matches/country?fifa_code=</value>
+    <value>http://worldcup.sfg.io/matches/country?fifa_code=</value>
   </data>
 </root>

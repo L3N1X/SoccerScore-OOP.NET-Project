@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files\Config\" />
+    <Folder Include="Utils\Extentions\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Endpoints.resx">

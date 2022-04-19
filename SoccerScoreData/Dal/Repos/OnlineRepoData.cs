@@ -170,6 +170,10 @@ namespace SoccerScoreData.Dal
         {
             string endpoint = gender == Gender.Male ? Endpoints.MensNationalTeams : Endpoints.WomensNationalTeams;
             var teamsData = await GetTeamsData(endpoint);
+            foreach (var team in teamsData)
+            {
+                team.TeamGender = gender;
+            }
             return teamsData;
         }
 

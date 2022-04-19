@@ -61,7 +61,7 @@ namespace SoccerScoreData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://world-cup-json-2018.herokuapp.com/matches/.
+        ///   Looks up a localized string similar to http://world-cup-json-2018.herokuapp.com/matches/.
         /// </summary>
         internal static string MensMatches {
             get {
@@ -70,7 +70,7 @@ namespace SoccerScoreData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://world-cup-json-2018.herokuapp.com/teams/results.
+        ///   Looks up a localized string similar to http://world-cup-json-2018.herokuapp.com/teams/results.
         /// </summary>
         internal static string MensNationalTeams {
             get {
@@ -79,7 +79,7 @@ namespace SoccerScoreData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://world-cup-json-2018.herokuapp.com/matches/country?fifa_code=.
+        ///   Looks up a localized string similar to http://world-cup-json-2018.herokuapp.com/matches/country?fifa_code=.
         /// </summary>
         internal static string MensSpecificMatch {
             get {
@@ -106,7 +106,7 @@ namespace SoccerScoreData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://worldcup.sfg.io/matches/country?fifa_code=.
+        ///   Looks up a localized string similar to http://worldcup.sfg.io/matches/country?fifa_code=.
         /// </summary>
         internal static string WomensSpecificMatch {
             get {
