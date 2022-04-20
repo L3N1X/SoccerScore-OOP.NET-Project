@@ -32,13 +32,16 @@ namespace SoccerScore_TEST_GUI
 
         private async void FillPlayers()
         {
+            this.playersContainer.Visible = false;
             this.pbLoading.Visible = true;
             await dataManager.LoadFavouriteTeam();
-            this.pbLoading.Visible = false;
             foreach (var player in dataManager.FavouriteTeam.AllPlayers)
             {
                 this.playersContainer.Controls.Add(new PlayerView(player));
             }
+            this.pbLoading.Visible = false;
+            this.playersContainer.Visible = true;
+            
         }
 
         //Extract to utils
