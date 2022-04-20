@@ -32,37 +32,42 @@
             this.cbNationalTeams = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbInitialize = new System.Windows.Forms.GroupBox();
-            this.rbMale = new System.Windows.Forms.RadioButton();
-            this.rbFemale = new System.Windows.Forms.RadioButton();
+            this.pbLoading = new System.Windows.Forms.PictureBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.rbFemale = new System.Windows.Forms.RadioButton();
+            this.rbMale = new System.Windows.Forms.RadioButton();
             this.gbInitialize.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConfirm
             // 
             this.btnConfirm.Enabled = false;
-            this.btnConfirm.Location = new System.Drawing.Point(86, 365);
+            this.btnConfirm.Location = new System.Drawing.Point(52, 393);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(133, 43);
+            this.btnConfirm.Size = new System.Drawing.Size(198, 43);
             this.btnConfirm.TabIndex = 0;
-            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.Text = "Select";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // cbNationalTeams
             // 
             this.cbNationalTeams.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNationalTeams.Enabled = false;
             this.cbNationalTeams.FormattingEnabled = true;
-            this.cbNationalTeams.Location = new System.Drawing.Point(165, 193);
+            this.cbNationalTeams.Location = new System.Drawing.Point(108, 202);
             this.cbNationalTeams.Name = "cbNationalTeams";
-            this.cbNationalTeams.Size = new System.Drawing.Size(54, 21);
+            this.cbNationalTeams.Size = new System.Drawing.Size(73, 21);
             this.cbNationalTeams.TabIndex = 1;
             this.cbNationalTeams.SelectedIndexChanged += new System.EventHandler(this.cbNationalTeams_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(83, 196);
+            this.label1.Location = new System.Drawing.Point(105, 177);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 2;
@@ -70,6 +75,9 @@
             // 
             // gbInitialize
             // 
+            this.gbInitialize.Controls.Add(this.pbLoading);
+            this.gbInitialize.Controls.Add(this.lblName);
+            this.gbInitialize.Controls.Add(this.lblTitle);
             this.gbInitialize.Controls.Add(this.label2);
             this.gbInitialize.Controls.Add(this.rbFemale);
             this.gbInitialize.Controls.Add(this.rbMale);
@@ -81,20 +89,43 @@
             this.gbInitialize.Size = new System.Drawing.Size(303, 471);
             this.gbInitialize.TabIndex = 3;
             this.gbInitialize.TabStop = false;
-            this.gbInitialize.Enter += new System.EventHandler(this.gbInitialize_Enter);
             // 
-            // rbMale
+            // pbLoading
             // 
-            this.rbMale.AutoSize = true;
-            this.rbMale.Location = new System.Drawing.Point(86, 128);
-            this.rbMale.Name = "rbMale";
-            this.rbMale.Size = new System.Drawing.Size(106, 17);
-            this.rbMale.TabIndex = 3;
-            this.rbMale.TabStop = true;
-            this.rbMale.Tag = "Male";
-            this.rbMale.Text = "Men\'s World-Cup";
-            this.rbMale.UseVisualStyleBackColor = true;
-            this.rbMale.Click += new System.EventHandler(this.GenderButton_Click);
+            this.pbLoading.Location = new System.Drawing.Point(81, 249);
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.Size = new System.Drawing.Size(140, 128);
+            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLoading.TabIndex = 8;
+            this.pbLoading.TabStop = false;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(106, 459);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(102, 9);
+            this.lblName.TabIndex = 7;
+            this.lblName.Text = "OOP.NET Leon Kruslin 2022";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(72, 31);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(159, 29);
+            this.lblTitle.TabIndex = 6;
+            this.lblTitle.Text = "Soccer Score";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(114, 337);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 5;
             // 
             // rbFemale
             // 
@@ -109,13 +140,18 @@
             this.rbFemale.UseVisualStyleBackColor = true;
             this.rbFemale.Click += new System.EventHandler(this.GenderButton_Click);
             // 
-            // label2
+            // rbMale
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(114, 337);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
-            this.label2.TabIndex = 5;
+            this.rbMale.AutoSize = true;
+            this.rbMale.Location = new System.Drawing.Point(86, 128);
+            this.rbMale.Name = "rbMale";
+            this.rbMale.Size = new System.Drawing.Size(106, 17);
+            this.rbMale.TabIndex = 3;
+            this.rbMale.TabStop = true;
+            this.rbMale.Tag = "Male";
+            this.rbMale.Text = "Men\'s World-Cup";
+            this.rbMale.UseVisualStyleBackColor = true;
+            this.rbMale.Click += new System.EventHandler(this.GenderButton_Click);
             // 
             // InitializeForm
             // 
@@ -128,6 +164,7 @@
             this.Load += new System.EventHandler(this.InitializeForm_Load);
             this.gbInitialize.ResumeLayout(false);
             this.gbInitialize.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -141,5 +178,8 @@
         private System.Windows.Forms.RadioButton rbFemale;
         private System.Windows.Forms.RadioButton rbMale;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.PictureBox pbLoading;
     }
 }

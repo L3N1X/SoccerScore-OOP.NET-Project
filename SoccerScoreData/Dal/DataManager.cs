@@ -62,10 +62,10 @@ namespace SoccerScoreData.Dal
             SaveSettings();
         }
 
-        public Task<NationalTeam> GetFavouriteTeam()
-        {
-            return repoData.GetNationalTeamAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
-        }
+        //public Task<NationalTeam> GetFavouriteTeam()
+        //{
+        //    return repoData.GetNationalTeamAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
+        //}
 
         public async Task LoadFavouriteTeam()
         {

@@ -52,6 +52,11 @@
     <Compile Include="DefaultForm.Designer.cs">
       <DependentUpon>DefaultForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
     <Compile Include="InitializeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +67,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DefaultForm.resx">
       <DependentUpon>DefaultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="InitializeForm.resx">
       <DependentUpon>InitializeForm.cs</DependentUpon>
@@ -93,6 +102,9 @@
       <Project>{76888f94-7d27-42e0-b8d1-d419c691dd40}</Project>
       <Name>SoccerScoreData</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\loading.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

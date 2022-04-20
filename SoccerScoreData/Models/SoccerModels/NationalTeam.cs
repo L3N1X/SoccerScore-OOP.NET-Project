@@ -94,6 +94,7 @@ namespace SoccerScoreData.Models
                 FifaCode = data[1],
             };
         }
-        public string Details() => $"Points: {this.Points} | Games played: {this.GamesPlayed}";
+        public string Details() => $"{this.Country} {(this.TeamGender == Gender.Female ? "women's" : "men's")} national team";
+        public string Statistics() => $"Points: {this.Points}{Environment.NewLine}Wins: {this.Wins}";
     }
 }
