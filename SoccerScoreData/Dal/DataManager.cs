@@ -73,7 +73,6 @@ namespace SoccerScoreData.Dal
 
         public async Task LoadFavouriteTeam()
         {
-            if (FavouriteTeam is null) return;
             NationalTeam fullTeam = await repoData.GetNationalTeamAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
             this.FavouriteTeam = fullTeam;
             //Binds favourite players from settings

@@ -92,9 +92,9 @@
             // 
             // pbLoading
             // 
-            this.pbLoading.Location = new System.Drawing.Point(81, 249);
+            this.pbLoading.Location = new System.Drawing.Point(96, 249);
             this.pbLoading.Name = "pbLoading";
-            this.pbLoading.Size = new System.Drawing.Size(140, 128);
+            this.pbLoading.Size = new System.Drawing.Size(111, 101);
             this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLoading.TabIndex = 8;
             this.pbLoading.TabStop = false;
@@ -163,7 +163,7 @@
             this.MinimumSize = new System.Drawing.Size(343, 534);
             this.Name = "InitializeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "InitializeForm";
+            this.Text = "Soccer Score Setup";
             this.Load += new System.EventHandler(this.InitializeForm_Load);
             this.gbInitialize.ResumeLayout(false);
             this.gbInitialize.PerformLayout();

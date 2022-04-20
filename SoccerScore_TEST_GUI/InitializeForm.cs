@@ -82,7 +82,7 @@ namespace SoccerScore_TEST_GUI
             this.pbLoading.Image = Images.loading;
             await this.dataManager.LoadFavouriteTeam();
             this.pbLoading.Image = null;
-            Close();
+            this.Close();
         }
     }
 }
