@@ -25,14 +25,18 @@ namespace SoccerScoreData.Dal
         {
             repoData = RepoFactory.GetRepoData();
             repoConfig = RepoFactory.GetRepoConfig();
+            Initialize();
+        }
+
+        public bool HasDefaultSettings()
+        {
+            return settings.IsDefault();
         }
 
         public void Initialize()
         {
             settings = repoConfig.GetSettings();
-            if (settings.IsDefault()) 
-                DefaultSettingsFound?.Invoke(this, new EventArgs());
-            else
+            if(!HasDefaultSettings())
             {
                 this.SelectedGender = settings.FavouriteTeam.TeamGender;
                 this.FavouriteTeam = settings.FavouriteTeam;
@@ -69,6 +73,7 @@ namespace SoccerScoreData.Dal
 
         public async Task LoadFavouriteTeam()
         {
+            if (FavouriteTeam is null) return;
             NationalTeam fullTeam = await repoData.GetNationalTeamAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
             this.FavouriteTeam = fullTeam;
             //Binds favourite players from settings

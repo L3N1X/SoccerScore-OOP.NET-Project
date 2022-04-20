@@ -159,7 +159,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(327, 495);
             this.Controls.Add(this.gbInitialize);
+            this.MaximumSize = new System.Drawing.Size(343, 534);
+            this.MinimumSize = new System.Drawing.Size(343, 534);
             this.Name = "InitializeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "InitializeForm";
             this.Load += new System.EventHandler(this.InitializeForm_Load);
             this.gbInitialize.ResumeLayout(false);

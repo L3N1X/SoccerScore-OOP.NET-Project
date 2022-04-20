@@ -15,10 +15,11 @@ namespace SoccerScore_TEST_GUI
 {
     public partial class InitializeForm : Form
     {
-        private DataManager dm = new DataManager();
-        public InitializeForm()
+        private DataManager dataManager;
+        public InitializeForm(DataManager dataManager)
         {
             InitializeComponent();
+            this.dataManager = dataManager;
         }
 
         private async void FillSelectionTeams()
@@ -26,7 +27,7 @@ namespace SoccerScore_TEST_GUI
             this.btnConfirm.Enabled = false;
             this.cbNationalTeams.Items.Clear();
             this.cbNationalTeams.Enabled = false;
-            var selectionTeams = await dm.GetSelectionTeams();
+            var selectionTeams = await dataManager.GetSelectionTeams();
             foreach (var team in selectionTeams)
             {
                 this.cbNationalTeams.Items.Add(team);
@@ -45,7 +46,6 @@ namespace SoccerScore_TEST_GUI
         private void InitializeForm_Load(object sender, EventArgs e)
         {
             this.rbFemale.Checked = true;
-            dm.Initialize();
             try
             {
                 this.FillSelectionTeams();
@@ -58,7 +58,7 @@ namespace SoccerScore_TEST_GUI
 
         private void GenderButton_Click(object sender, EventArgs e)
         {
-            this.dm.SetGender((Gender)Enum.Parse(typeof(Gender), (sender as RadioButton).Tag.ToString()));
+            this.dataManager.SetGender((Gender)Enum.Parse(typeof(Gender), (sender as RadioButton).Tag.ToString()));
             this.FillSelectionTeams();
         }
 
@@ -69,7 +69,7 @@ namespace SoccerScore_TEST_GUI
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            this.dm.SetFavouriteTeam(this.cbNationalTeams.SelectedItem as NationalTeam);
+            this.dataManager.SetFavouriteTeam(this.cbNationalTeams.SelectedItem as NationalTeam);
             this.LoadFavouriteTeam();
         }
 
@@ -80,11 +80,9 @@ namespace SoccerScore_TEST_GUI
             this.rbFemale.Enabled = false;
             this.rbMale.Enabled = false;
             this.pbLoading.Image = Images.loading;
-            await this.dm.LoadFavouriteTeam();
+            await this.dataManager.LoadFavouriteTeam();
             this.pbLoading.Image = null;
-            MessageBox.Show($"You have loaded: {this.dm.FavouriteTeam.Details()}{Environment.NewLine}{this.dm.FavouriteTeam.Statistics()}");
-            Application.Exit();
-            
+            Close();
         }
     }
 }

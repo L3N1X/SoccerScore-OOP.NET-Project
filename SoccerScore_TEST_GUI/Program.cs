@@ -16,7 +16,7 @@ namespace SoccerScore_TEST_GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InitializeForm());
+            Application.Run(new DefaultForm());
         }
     }
 }
