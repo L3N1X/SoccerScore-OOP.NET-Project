@@ -13,6 +13,8 @@ namespace SoccerScore_TEST_GUI
 {
     public partial class PlayerView : UserControl
     {
+        public delegate void FavoutitePlayerAddedDelegate(object sender, EventArgs args);
+        public event FavoutitePlayerAddedDelegate FavoutitePlayerAdded;
         public Player Player { get; set; }
         public PlayerView(Player player)
         {
@@ -29,6 +31,7 @@ namespace SoccerScore_TEST_GUI
         {
             Player.IsFavourite = true;
             InitializeControls();
+            FavoutitePlayerAdded?.Invoke(this, new EventArgs());
         }
 
         private void InitializeControls()

@@ -10,9 +10,6 @@ namespace SoccerScoreData.Dal
 {
     public class DataManager
     {
-        public delegate void DefaultSettingsFoundDelegate(object sender, EventArgs args);
-        public event DefaultSettingsFoundDelegate DefaultSettingsFound;
-
         private readonly IRepoData repoData;
         private readonly IRepoConfig repoConfig; 
 

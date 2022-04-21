@@ -37,18 +37,18 @@ namespace SoccerScore_TEST_GUI
             await dataManager.LoadFavouriteTeam();
             foreach (var player in dataManager.FavouriteTeam.AllPlayers)
             {
-                this.playersContainer.Controls.Add(new PlayerView(player));
+                PlayerView playerViewControl = new PlayerView(player);
+                playerViewControl.FavoutitePlayerAdded += PlayerViewControl_FavoutitePlayerAdded;
+                this.playersContainer.Controls.Add(playerViewControl);
             }
-
-            this.lblNationalTeam.Text = $"[{dataManager.FavouriteTeam.FifaCode}]{Environment.NewLine}{dataManager.FavouriteTeam.Details()}";
-            this.lblStatistics.Text = $"Wins: {dataManager.FavouriteTeam.Wins}{Environment.NewLine}" +
-                $"Losses: {dataManager.FavouriteTeam.Losses}{Environment.NewLine}" + 
-                $"Points: {dataManager.FavouriteTeam.Points}";
-
             this.pbLoading.Visible = false;
             this.playersContainer.Visible = true;
-
+            this.favoruitePLayersContainer.Visible = true;
         }
-        
+
+        private void PlayerViewControl_FavoutitePlayerAdded(object sender, EventArgs args)
+        {
+            MessageBox.Show($"Added to favoruites: {((PlayerView)sender).Player.Name}");
+        }
     }
 }
