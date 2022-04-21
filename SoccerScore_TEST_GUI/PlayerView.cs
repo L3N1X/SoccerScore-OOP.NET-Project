@@ -34,14 +34,14 @@ namespace SoccerScore_TEST_GUI
         private void ToggleFavoruiteOption_Click(object sender, EventArgs e)
         {
             Player.IsFavourite = !Player.IsFavourite;
-            InitializeControls();
             if(Player.IsFavourite)
                 FavoutitePlayerAdded?.Invoke(this, new EventArgs());
             else if (!Player.IsFavourite)
                 FavouritePlayerRemoved?.Invoke(this, new EventArgs());
+            InitializeControls();
         }
 
-        private void InitializeControls()
+        public void InitializeControls()
         {
             this.lblName.Text = Player.Name;
             this.lblShirtNumber.Text = Player.ShirtNumber.ToString();

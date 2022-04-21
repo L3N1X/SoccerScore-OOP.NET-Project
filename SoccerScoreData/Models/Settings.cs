@@ -13,6 +13,10 @@ namespace SoccerScoreData.Models
         public NationalTeam FavouriteTeam { get; set; }
         public Language Language { get; set; }
         public IList<Player> FavouritePlayers { get; private set; }
+        public Settings()
+        {
+            ClearFavouritePlayers();
+        }
         public void AddFavouritePlayer(Player newFavouirtePlayer)
         {
             newFavouirtePlayer.IsFavourite = true;

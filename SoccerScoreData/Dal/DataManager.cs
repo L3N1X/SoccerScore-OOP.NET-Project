@@ -68,6 +68,11 @@ namespace SoccerScoreData.Dal
             return settings.FavouritePlayers.Count(player => player != null);
         }
 
+        public void ResetSettings()
+        {
+            this.settings = new Settings();
+            SaveSettings();
+        }
 
         //For when default settings are detected
         public void SetGender(Gender gender)
