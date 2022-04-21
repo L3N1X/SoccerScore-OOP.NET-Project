@@ -17,7 +17,7 @@ namespace SoccerScore_TEST_GUI
         public DefaultForm()
         {
             InitializeComponent();
-            CenterControlInParent(this.pbLoading);
+            Tools.CenterControlInParent(this.pbLoading);
         }
 
         private void DefaultForm_Load(object sender, EventArgs e)
@@ -27,10 +27,10 @@ namespace SoccerScore_TEST_GUI
                 Form dialog = new InitializeForm(dataManager);
                 dialog.ShowDialog();
             }
-            FillPlayers();
+            InitializeControls();
         }
 
-        private async void FillPlayers()
+        private async void InitializeControls()
         {
             this.playersContainer.Visible = false;
             this.pbLoading.Visible = true;
@@ -39,16 +39,16 @@ namespace SoccerScore_TEST_GUI
             {
                 this.playersContainer.Controls.Add(new PlayerView(player));
             }
+
+            this.lblNationalTeam.Text = $"[{dataManager.FavouriteTeam.FifaCode}]{Environment.NewLine}{dataManager.FavouriteTeam.Details()}";
+            this.lblStatistics.Text = $"Wins: {dataManager.FavouriteTeam.Wins}{Environment.NewLine}" +
+                $"Losses: {dataManager.FavouriteTeam.Losses}{Environment.NewLine}" + 
+                $"Points: {dataManager.FavouriteTeam.Points}";
+
             this.pbLoading.Visible = false;
             this.playersContainer.Visible = true;
-            
-        }
 
-        //Extract to utils
-        private void CenterControlInParent(Control control)
-        {
-            control.Left = (control.Parent.Width - control.Width) / 2;
-            control.Top = (control.Parent.Height - control.Height) / 2;
         }
+        
     }
 }
