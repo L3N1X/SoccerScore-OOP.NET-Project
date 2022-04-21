@@ -11,7 +11,9 @@ namespace SoccerScoreData.Dal
     public class DataManager
     {
         private readonly IRepoData repoData;
-        private readonly IRepoConfig repoConfig; 
+        private readonly IRepoConfig repoConfig;
+
+        public int MAX_FAVORUITE_PLAYERS { get; } = 3;
 
         private Settings settings;
         public Gender SelectedGender { get; private set; }
@@ -30,6 +32,27 @@ namespace SoccerScoreData.Dal
             return settings.IsDefault();
         }
 
+        public IList<Player> GetFavouritePlayers()
+        {
+            var playerList = new List<Player>();
+            settings.FavouritePlayers.ToList().ForEach(playerFromSettings => 
+            {
+                if(playerFromSettings != null)
+                {
+                    Player fullPlayer = FavouriteTeam.AllPlayers.Find(p => p.Equals(playerFromSettings));
+                    fullPlayer.IconPath = playerFromSettings.IconPath;
+                    playerList.Add(fullPlayer);
+                }
+            });   
+            return playerList;
+        }
+
+        public void RemovePlayerFromFavoruites(Player player)
+        {
+            settings.RemoveFavoruitePlayer(player);
+            SaveSettings();
+        }
+
         public void Initialize()
         {
             settings = repoConfig.GetSettings();
@@ -39,6 +62,12 @@ namespace SoccerScoreData.Dal
                 this.FavouriteTeam = settings.FavouriteTeam;
             }
         }
+
+        public int GetFavoruitePLayerCount()
+        {
+            return settings.FavouritePlayers.Count(player => player != null);
+        }
+
 
         //For when default settings are detected
         public void SetGender(Gender gender)

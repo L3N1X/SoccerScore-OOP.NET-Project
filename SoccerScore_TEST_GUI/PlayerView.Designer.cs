@@ -35,7 +35,7 @@
             this.pbFavourite = new System.Windows.Forms.PictureBox();
             this.pbPLayer = new System.Windows.Forms.PictureBox();
             this.cmsOptions = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.MakeFavouriteOption = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToggleFavouriteOption = new System.Windows.Forms.ToolStripMenuItem();
             this.chooseImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblPositon = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbCaptain)).BeginInit();
@@ -99,17 +99,17 @@
             // cmsOptions
             // 
             this.cmsOptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MakeFavouriteOption,
+            this.ToggleFavouriteOption,
             this.chooseImageToolStripMenuItem});
             this.cmsOptions.Name = "cmsOptions";
-            this.cmsOptions.Size = new System.Drawing.Size(166, 48);
+            this.cmsOptions.Size = new System.Drawing.Size(181, 70);
             // 
-            // MakeFavouriteOption
+            // ToggleFavouriteOption
             // 
-            this.MakeFavouriteOption.Name = "MakeFavouriteOption";
-            this.MakeFavouriteOption.Size = new System.Drawing.Size(165, 22);
-            this.MakeFavouriteOption.Text = "Add to favourites";
-            this.MakeFavouriteOption.Click += new System.EventHandler(this.MakeFavouriteOption_Click);
+            this.ToggleFavouriteOption.Name = "ToggleFavouriteOption";
+            this.ToggleFavouriteOption.Size = new System.Drawing.Size(180, 22);
+            this.ToggleFavouriteOption.Text = "Toggle favourite";
+            this.ToggleFavouriteOption.Click += new System.EventHandler(this.ToggleFavoruiteOption_Click);
             // 
             // chooseImageToolStripMenuItem
             // 
@@ -141,6 +141,7 @@
             this.Name = "PlayerView";
             this.Size = new System.Drawing.Size(190, 207);
             this.Load += new System.EventHandler(this.PlayerView_Load);
+            this.Click += new System.EventHandler(this.PlayerView_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pbCaptain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFavourite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPLayer)).EndInit();
@@ -158,7 +159,7 @@
         private System.Windows.Forms.PictureBox pbCaptain;
         private System.Windows.Forms.Label lblShirtNumber;
         private System.Windows.Forms.ContextMenuStrip cmsOptions;
-        private System.Windows.Forms.ToolStripMenuItem MakeFavouriteOption;
+        private System.Windows.Forms.ToolStripMenuItem ToggleFavouriteOption;
         private System.Windows.Forms.ToolStripMenuItem chooseImageToolStripMenuItem;
         private System.Windows.Forms.Label lblPositon;
     }

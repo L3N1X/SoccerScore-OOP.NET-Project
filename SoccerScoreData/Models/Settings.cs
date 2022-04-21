@@ -21,6 +21,13 @@ namespace SoccerScoreData.Models
             if (FavouritePlayers.Remove(null))
                 FavouritePlayers.Add(newFavouirtePlayer);
         }
+        public void RemoveFavoruitePlayer(Player playerToRemove)
+        {
+            if (FavouritePlayers.Remove(playerToRemove))
+            {
+                FavouritePlayers.Add(null);
+            }
+        }
         public void ClearFavouritePlayers()
             => FavouritePlayers = new List<Player>() { null, null, null };
         public bool IsDefault()

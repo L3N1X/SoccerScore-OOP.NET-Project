@@ -85,7 +85,7 @@
             this.favoruitePLayersContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.favoruitePLayersContainer.Location = new System.Drawing.Point(16, 425);
             this.favoruitePLayersContainer.Name = "favoruitePLayersContainer";
-            this.favoruitePLayersContainer.Size = new System.Drawing.Size(1160, 240);
+            this.favoruitePLayersContainer.Size = new System.Drawing.Size(599, 240);
             this.favoruitePLayersContainer.TabIndex = 1;
             this.favoruitePLayersContainer.Visible = false;
             this.favoruitePLayersContainer.WrapContents = false;

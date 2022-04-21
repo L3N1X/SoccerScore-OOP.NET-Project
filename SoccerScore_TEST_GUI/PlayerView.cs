@@ -15,6 +15,10 @@ namespace SoccerScore_TEST_GUI
     {
         public delegate void FavoutitePlayerAddedDelegate(object sender, EventArgs args);
         public event FavoutitePlayerAddedDelegate FavoutitePlayerAdded;
+
+        public delegate void FavoruitePlayerRemovedDelegate(object sender, EventArgs args);
+        public event FavoruitePlayerRemovedDelegate FavouritePlayerRemoved;
+
         public Player Player { get; set; }
         public PlayerView(Player player)
         {
@@ -27,11 +31,14 @@ namespace SoccerScore_TEST_GUI
             InitializeControls();
         }
 
-        private void MakeFavouriteOption_Click(object sender, EventArgs e)
+        private void ToggleFavoruiteOption_Click(object sender, EventArgs e)
         {
-            Player.IsFavourite = true;
+            Player.IsFavourite = !Player.IsFavourite;
             InitializeControls();
-            FavoutitePlayerAdded?.Invoke(this, new EventArgs());
+            if(Player.IsFavourite)
+                FavoutitePlayerAdded?.Invoke(this, new EventArgs());
+            else if (!Player.IsFavourite)
+                FavouritePlayerRemoved?.Invoke(this, new EventArgs());
         }
 
         private void InitializeControls()
@@ -47,6 +54,22 @@ namespace SoccerScore_TEST_GUI
             Tools.CenterControlInParent(this.lblShirtNumber);
             Tools.CenterControlInParentHorizontally(this.lblName);
             Tools.CenterControlInParentHorizontally(this.lblPositon);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is PlayerView view &&
+                   EqualityComparer<Player>.Default.Equals(Player, view.Player);
+        }
+
+        public override int GetHashCode()
+        {
+            return 1752105248 + EqualityComparer<Player>.Default.GetHashCode(Player);
+        }
+
+        private void PlayerView_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
