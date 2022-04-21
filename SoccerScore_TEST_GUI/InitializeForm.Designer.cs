@@ -93,12 +93,14 @@
             // 
             // pbLoading
             // 
+            this.pbLoading.Image = global::SoccerScore_TEST_GUI.Images.loading;
             this.pbLoading.Location = new System.Drawing.Point(96, 249);
             this.pbLoading.Name = "pbLoading";
             this.pbLoading.Size = new System.Drawing.Size(111, 101);
             this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLoading.TabIndex = 8;
             this.pbLoading.TabStop = false;
+            this.pbLoading.Visible = false;
             // 
             // lblName
             // 

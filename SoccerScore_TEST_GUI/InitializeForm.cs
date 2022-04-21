@@ -24,6 +24,7 @@ namespace SoccerScore_TEST_GUI
 
         private async void FillSelectionTeams()
         {
+            this.pbLoading.Visible = true;
             this.btnConfirm.Enabled = false;
             this.cbNationalTeams.Items.Clear();
             this.cbNationalTeams.Enabled = false;
@@ -35,6 +36,7 @@ namespace SoccerScore_TEST_GUI
             this.cbNationalTeams.SelectedIndex = 0;
             this.cbNationalTeams.Enabled = true;
             this.UpdateConfirmButtonText();
+            this.pbLoading.Visible = false;
             this.btnConfirm.Enabled = true;
         }
 
@@ -70,19 +72,7 @@ namespace SoccerScore_TEST_GUI
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             this.dataManager.SetFavouriteTeam(this.cbNationalTeams.SelectedItem as NationalTeam);
-            this.LoadFavouriteTeam();
-        }
-
-        private async void LoadFavouriteTeam()
-        {
-            this.btnConfirm.Enabled = false;
-            this.cbNationalTeams.Enabled = false;
-            this.rbFemale.Enabled = false;
-            this.rbMale.Enabled = false;
-            this.pbLoading.Image = Images.loading;
-            await this.dataManager.LoadFavouriteTeam();
-            this.pbLoading.Image = null;
-            this.Close();
+            Close();
         }
     }
 }
