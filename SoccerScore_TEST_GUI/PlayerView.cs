@@ -54,6 +54,8 @@ namespace SoccerScore_TEST_GUI
             Tools.CenterControlInParent(this.lblShirtNumber);
             Tools.CenterControlInParentHorizontally(this.lblName);
             Tools.CenterControlInParentHorizontally(this.lblPositon);
+
+            this.ToggleFavouriteOption.Text = this.Player.IsFavourite ? "Remove from favoruites" : "Add to favoruites";
         }
 
         public override bool Equals(object obj)
@@ -69,7 +71,7 @@ namespace SoccerScore_TEST_GUI
 
         private void PlayerView_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

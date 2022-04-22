@@ -18,7 +18,7 @@ namespace SoccerScoreData.Dal.Repos
             {
                 Directory.CreateDirectory(DIR);
                 File.Create(SETTINGS_PATH);
-                //return new Settings();
+                return new Settings();
             }
             string[] lines = File.ReadAllLines(SETTINGS_PATH);
             return Settings.ParseFromFileLine(lines[0]);
