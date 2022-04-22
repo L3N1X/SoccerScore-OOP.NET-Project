@@ -155,6 +155,10 @@
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 12pt</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>544, 57</value>
   </data>
@@ -187,6 +191,9 @@
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 12pt</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>524, 336</value>
@@ -251,6 +258,9 @@
   <data name="lblTitle.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 20.25pt</value>
   </data>
+  <data name="lblTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>534, 8</value>
   </data>
@@ -278,132 +288,14 @@
   <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;playersTab.Name" xml:space="preserve">
-    <value>playersTab</value>
-  </data>
-  <data name="&gt;&gt;playersTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;playersTab.Parent" xml:space="preserve">
-    <value>programTab</value>
-  </data>
-  <data name="&gt;&gt;playersTab.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;statisticsTab.Name" xml:space="preserve">
-    <value>statisticsTab</value>
-  </data>
-  <data name="&gt;&gt;statisticsTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statisticsTab.Parent" xml:space="preserve">
-    <value>programTab</value>
-  </data>
-  <data name="&gt;&gt;statisticsTab.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.Name" xml:space="preserve">
-    <value>matchesTab</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.Parent" xml:space="preserve">
-    <value>programTab</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="programTab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 51</value>
-  </data>
-  <data name="programTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 685</value>
-  </data>
-  <data name="programTab.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;programTab.Name" xml:space="preserve">
-    <value>programTab</value>
-  </data>
-  <data name="&gt;&gt;programTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;programTab.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;programTab.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblCredits.Name" xml:space="preserve">
-    <value>lblCredits</value>
-  </data>
-  <data name="&gt;&gt;lblCredits.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCredits.Parent" xml:space="preserve">
-    <value>playersTab</value>
-  </data>
-  <data name="&gt;&gt;lblCredits.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pbBorderLeft.Name" xml:space="preserve">
-    <value>pbBorderLeft</value>
-  </data>
-  <data name="&gt;&gt;pbBorderLeft.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbBorderLeft.Parent" xml:space="preserve">
-    <value>playersTab</value>
-  </data>
-  <data name="&gt;&gt;pbBorderLeft.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pbBorderRight.Name" xml:space="preserve">
-    <value>pbBorderRight</value>
-  </data>
-  <data name="&gt;&gt;pbBorderRight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbBorderRight.Parent" xml:space="preserve">
-    <value>playersTab</value>
-  </data>
-  <data name="&gt;&gt;pbBorderRight.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="playersTab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="playersTab.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="playersTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1176, 659</value>
-  </data>
-  <data name="playersTab.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="playersTab.Text" xml:space="preserve">
-    <value>Players</value>
-  </data>
-  <data name="&gt;&gt;playersTab.Name" xml:space="preserve">
-    <value>playersTab</value>
-  </data>
-  <data name="&gt;&gt;playersTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;playersTab.Parent" xml:space="preserve">
-    <value>programTab</value>
-  </data>
-  <data name="&gt;&gt;playersTab.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="lblCredits.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblCredits.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 6pt</value>
+  </data>
+  <data name="lblCredits.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblCredits.Location" type="System.Drawing.Point, System.Drawing">
     <value>537, 646</value>
@@ -428,6 +320,9 @@
   </data>
   <data name="&gt;&gt;lblCredits.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="pbBorderLeft.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="pbBorderLeft.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 360</value>
@@ -456,6 +351,9 @@
   <data name="&gt;&gt;pbBorderLeft.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="pbBorderRight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="pbBorderRight.Location" type="System.Drawing.Point, System.Drawing">
     <value>892, 360</value>
   </data>
@@ -482,6 +380,33 @@
   </data>
   <data name="&gt;&gt;pbBorderRight.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="playersTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="playersTab.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="playersTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1176, 682</value>
+  </data>
+  <data name="playersTab.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="playersTab.Text" xml:space="preserve">
+    <value>Players</value>
+  </data>
+  <data name="&gt;&gt;playersTab.Name" xml:space="preserve">
+    <value>playersTab</value>
+  </data>
+  <data name="&gt;&gt;playersTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;playersTab.Parent" xml:space="preserve">
+    <value>programTab</value>
+  </data>
+  <data name="&gt;&gt;playersTab.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;label8.Name" xml:space="preserve">
     <value>label8</value>
@@ -546,11 +471,62 @@
   <data name="&gt;&gt;statisticsTab.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="matchesTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="matchesTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1176, 659</value>
+  </data>
+  <data name="matchesTab.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="matchesTab.Text" xml:space="preserve">
+    <value>Matches</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.Name" xml:space="preserve">
+    <value>matchesTab</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.Parent" xml:space="preserve">
+    <value>programTab</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="programTab.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="programTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 28</value>
+  </data>
+  <data name="programTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 708</value>
+  </data>
+  <data name="programTab.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;programTab.Name" xml:space="preserve">
+    <value>programTab</value>
+  </data>
+  <data name="&gt;&gt;programTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;programTab.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;programTab.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 6pt</value>
+  </data>
+  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
     <value>537, 646</value>
@@ -855,6 +831,9 @@
   <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt</value>
   </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>58, 40</value>
   </data>
@@ -885,6 +864,9 @@
   <data name="lblPoints.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt</value>
   </data>
+  <data name="lblPoints.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPoints.Location" type="System.Drawing.Point, System.Drawing">
     <value>57, 142</value>
   </data>
@@ -909,35 +891,14 @@
   <data name="&gt;&gt;lblPoints.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>251, 19</value>
-  </data>
-  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>401, 485</value>
-  </data>
-  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>57, 244</value>
@@ -969,6 +930,9 @@
   <data name="lblGoalDifferential.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt, style=Bold</value>
   </data>
+  <data name="lblGoalDifferential.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblGoalDifferential.Location" type="System.Drawing.Point, System.Drawing">
     <value>194, 499</value>
   </data>
@@ -998,6 +962,9 @@
   </data>
   <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>57, 193</value>
@@ -1029,6 +996,9 @@
   <data name="lblGoalsAgainst.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt, style=Bold</value>
   </data>
+  <data name="lblGoalsAgainst.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblGoalsAgainst.Location" type="System.Drawing.Point, System.Drawing">
     <value>191, 448</value>
   </data>
@@ -1058,6 +1028,9 @@
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
     <value>59, 91</value>
@@ -1089,6 +1062,9 @@
   <data name="lblGoalsFor.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt, style=Bold</value>
   </data>
+  <data name="lblGoalsFor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblGoalsFor.Location" type="System.Drawing.Point, System.Drawing">
     <value>191, 397</value>
   </data>
@@ -1118,6 +1094,9 @@
   </data>
   <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>57, 295</value>
@@ -1149,6 +1128,9 @@
   <data name="lblGamesPlayed.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt, style=Bold</value>
   </data>
+  <data name="lblGamesPlayed.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblGamesPlayed.Location" type="System.Drawing.Point, System.Drawing">
     <value>191, 346</value>
   </data>
@@ -1178,6 +1160,9 @@
   </data>
   <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt</value>
+  </data>
+  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
     <value>58, 346</value>
@@ -1209,6 +1194,9 @@
   <data name="lblDraws.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt, style=Bold</value>
   </data>
+  <data name="lblDraws.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblDraws.Location" type="System.Drawing.Point, System.Drawing">
     <value>190, 295</value>
   </data>
@@ -1238,6 +1226,9 @@
   </data>
   <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
     <value>58, 448</value>
@@ -1269,6 +1260,9 @@
   <data name="lblLosses.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt, style=Bold</value>
   </data>
+  <data name="lblLosses.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblLosses.Location" type="System.Drawing.Point, System.Drawing">
     <value>190, 244</value>
   </data>
@@ -1298,6 +1292,9 @@
   </data>
   <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt</value>
+  </data>
+  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
     <value>58, 397</value>
@@ -1329,6 +1326,9 @@
   <data name="lblWins.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt, style=Bold</value>
   </data>
+  <data name="lblWins.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblWins.Location" type="System.Drawing.Point, System.Drawing">
     <value>190, 193</value>
   </data>
@@ -1358,6 +1358,9 @@
   </data>
   <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt</value>
+  </data>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
     <value>57, 499</value>
@@ -1389,6 +1392,9 @@
   <data name="lblTotalPoints.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt, style=Bold</value>
   </data>
+  <data name="lblTotalPoints.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblTotalPoints.Location" type="System.Drawing.Point, System.Drawing">
     <value>190, 142</value>
   </data>
@@ -1419,6 +1425,9 @@
   <data name="lblCountry.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt, style=Bold</value>
   </data>
+  <data name="lblCountry.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCountry.Location" type="System.Drawing.Point, System.Drawing">
     <value>190, 40</value>
   </data>
@@ -1448,6 +1457,9 @@
   </data>
   <data name="lblFifaCode.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt, style=Bold</value>
+  </data>
+  <data name="lblFifaCode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblFifaCode.Location" type="System.Drawing.Point, System.Drawing">
     <value>191, 91</value>
@@ -1539,78 +1551,6 @@
   <data name="&gt;&gt;lbPlayers.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="matchesTab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="matchesTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1176, 659</value>
-  </data>
-  <data name="matchesTab.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="matchesTab.Text" xml:space="preserve">
-    <value>Matches</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.Name" xml:space="preserve">
-    <value>matchesTab</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.Parent" xml:space="preserve">
-    <value>programTab</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="optionsStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="optionsStrip.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="optionsStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="optionsStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 23</value>
-  </data>
-  <data name="optionsStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="optionsStrip.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;optionsStrip.Name" xml:space="preserve">
-    <value>optionsStrip</value>
-  </data>
-  <data name="&gt;&gt;optionsStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optionsStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;optionsStrip.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 19</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="printOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
-  </data>
-  <data name="printOption.Text" xml:space="preserve">
-    <value>Print</value>
-  </data>
-  <data name="clearAndExitOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
-  </data>
-  <data name="clearAndExitOption.Text" xml:space="preserve">
-    <value>Clear data and exit</value>
-  </data>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>135, 17</value>
   </metadata>
@@ -1650,26 +1590,8 @@
   <data name="toolStrip.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="btnEnglish.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="btnEnglish.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="btnEnglish.Text" xml:space="preserve">
-    <value>Switch to English</value>
-  </data>
-  <data name="btnCroatian.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="btnCroatian.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="btnCroatian.Text" xml:space="preserve">
-    <value>Switch to Croatian</value>
-  </data>
   <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 23</value>
+    <value>0, 0</value>
   </data>
   <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>1184, 25</value>
@@ -1691,6 +1613,9 @@
   </data>
   <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="pbLoading.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="pbLoading.Location" type="System.Drawing.Point, System.Drawing">
     <value>1072, 0</value>
@@ -1718,6 +1643,51 @@
   </data>
   <data name="&gt;&gt;pbLoading.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnEnglish.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="btnEnglish.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="btnEnglish.Text" xml:space="preserve">
+    <value>Switch to English</value>
+  </data>
+  <data name="btnCroatian.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="btnCroatian.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="btnCroatian.Text" xml:space="preserve">
+    <value>Switch to Croatian</value>
+  </data>
+  <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>251, 19</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>401, 485</value>
+  </data>
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -5538,6 +5508,9 @@
         AQAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAMADAADgBwAA8A8AAP//AAA=
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1200, 800</value>
   </data>
@@ -5549,24 +5522,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Soccer Score BETA</value>
-  </data>
-  <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
-    <value>fileToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;fileToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;printOption.Name" xml:space="preserve">
-    <value>printOption</value>
-  </data>
-  <data name="&gt;&gt;printOption.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clearAndExitOption.Name" xml:space="preserve">
-    <value>clearAndExitOption</value>
-  </data>
-  <data name="&gt;&gt;clearAndExitOption.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblStatus.Name" xml:space="preserve">
     <value>lblStatus</value>

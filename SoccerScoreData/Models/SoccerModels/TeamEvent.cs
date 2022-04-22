@@ -10,4 +10,4 @@ namespace SoccerScoreData.Models
         [JsonProperty("player")]
         public string PlayerName { get; set; }
     }
-}
+} 

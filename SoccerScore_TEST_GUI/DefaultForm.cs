@@ -78,7 +78,6 @@ namespace SoccerScore_TEST_GUI
             Tools.CenterControlInParentHorizontally(this.lblTitle);
 
             this.pbLoading.Visible = false;
-            this.optionsStrip.Enabled = true;
             this.toolStrip.Enabled = true;
 
             this.lblStatus.Text = dataManager.FavouriteTeam.Details();
