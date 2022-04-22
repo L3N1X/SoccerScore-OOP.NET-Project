@@ -102,19 +102,19 @@
             this.ToggleFavouriteOption,
             this.chooseImageToolStripMenuItem});
             this.cmsOptions.Name = "cmsOptions";
-            this.cmsOptions.Size = new System.Drawing.Size(181, 70);
+            this.cmsOptions.Size = new System.Drawing.Size(160, 48);
             // 
             // ToggleFavouriteOption
             // 
             this.ToggleFavouriteOption.Name = "ToggleFavouriteOption";
-            this.ToggleFavouriteOption.Size = new System.Drawing.Size(180, 22);
+            this.ToggleFavouriteOption.Size = new System.Drawing.Size(159, 22);
             this.ToggleFavouriteOption.Text = "Toggle favourite";
             this.ToggleFavouriteOption.Click += new System.EventHandler(this.ToggleFavoruiteOption_Click);
             // 
             // chooseImageToolStripMenuItem
             // 
             this.chooseImageToolStripMenuItem.Name = "chooseImageToolStripMenuItem";
-            this.chooseImageToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.chooseImageToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.chooseImageToolStripMenuItem.Text = "Choose image";
             // 
             // lblPositon
@@ -129,6 +129,7 @@
             // 
             // PlayerView
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ContextMenuStrip = this.cmsOptions;

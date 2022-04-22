@@ -32,19 +32,9 @@ namespace SoccerScoreData.Dal
             return settings.IsDefault();
         }
 
-        public IList<Player> GetFavouritePlayers()
+        public bool HasMaxAmountOfFavoruitePlayers()
         {
-            var playerList = new List<Player>();
-            settings.FavouritePlayers.ToList().ForEach(playerFromSettings => 
-            {
-                if(playerFromSettings != null)
-                {
-                    Player fullPlayer = FavouriteTeam.AllPlayers.Find(p => p.Equals(playerFromSettings));
-                    fullPlayer.IconPath = playerFromSettings.IconPath;
-                    playerList.Add(fullPlayer);
-                }
-            });   
-            return playerList;
+            return GetFavoruitePLayerCount() == this.MAX_FAVORUITE_PLAYERS;
         }
 
         public void RemovePlayerFromFavoruites(Player player)
@@ -68,7 +58,7 @@ namespace SoccerScoreData.Dal
             return settings.FavouritePlayers.Count(player => player != null);
         }
 
-        public void ResetSettings()
+        public void ResetSettingsAndSave()
         {
             this.settings = new Settings();
             SaveSettings();
@@ -97,11 +87,6 @@ namespace SoccerScoreData.Dal
             SaveSettings();
         }
 
-        //public Task<NationalTeam> GetFavouriteTeam()
-        //{
-        //    return repoData.GetNationalTeamAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
-        //}
-
         public async Task LoadFavouriteTeam()
         {
             NationalTeam fullTeam = await repoData.GetNationalTeamAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
@@ -112,6 +97,7 @@ namespace SoccerScoreData.Dal
                 if (player != null)
                 {
                     Player realPlayer = this.FavouriteTeam.AllPlayers.Find(p => p.Equals(player));
+                    realPlayer.IconPath = player.IconPath;
                     realPlayer.IsFavourite = true;
                 }
             });

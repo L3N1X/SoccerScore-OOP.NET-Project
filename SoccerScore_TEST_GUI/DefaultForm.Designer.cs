@@ -47,6 +47,7 @@
             this.playersContainer.Name = "playersContainer";
             this.playersContainer.Size = new System.Drawing.Size(1160, 240);
             this.playersContainer.TabIndex = 0;
+            this.playersContainer.Visible = false;
             this.playersContainer.WrapContents = false;
             // 
             // pbLoading
@@ -131,7 +132,7 @@
             this.MinimumSize = new System.Drawing.Size(1200, 800);
             this.Name = "DefaultForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Soccer Score - Leon Krušlin";
+            this.Text = "Soccer Score BETA";
             this.Load += new System.EventHandler(this.DefaultForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
             this.ResumeLayout(false);
