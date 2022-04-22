@@ -121,6 +121,9 @@
   <data name="captain" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\captain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\cro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="default_player_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\default_player_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -129,5 +132,8 @@
   </data>
   <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="uk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\uk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

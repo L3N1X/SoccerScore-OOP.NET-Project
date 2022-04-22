@@ -32,6 +32,7 @@ namespace SoccerScore_TEST_GUI
 
         private async void InitializeControls()
         {
+            this.pbLoading.BringToFront();
             this.btnClearAllAndExit.Enabled = false;
             this.pbLoading.Visible = true;
 
@@ -58,6 +59,8 @@ namespace SoccerScore_TEST_GUI
 
             this.pbLoading.Visible = false;
             this.btnClearAllAndExit.Enabled = true;
+            this.optionsStrip.Enabled = true;
+            this.toolStrip.Enabled = true;
 
             SetAllControlsVisible();
         }

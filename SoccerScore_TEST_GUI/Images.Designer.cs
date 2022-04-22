@@ -73,6 +73,16 @@ namespace SoccerScore_TEST_GUI {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cro {
+            get {
+                object obj = ResourceManager.GetObject("cro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap default_player_image {
             get {
                 object obj = ResourceManager.GetObject("default_player_image", resourceCulture);
@@ -96,6 +106,16 @@ namespace SoccerScore_TEST_GUI {
         internal static System.Drawing.Bitmap loading {
             get {
                 object obj = ResourceManager.GetObject("loading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uk {
+            get {
+                object obj = ResourceManager.GetObject("uk", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
