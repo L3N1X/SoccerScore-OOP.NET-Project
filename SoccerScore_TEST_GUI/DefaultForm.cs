@@ -13,7 +13,7 @@ namespace SoccerScore_TEST_GUI
 {
     public partial class DefaultForm : Form
     {
-        internal DataManager dataManager = new DataManager();
+        internal DataManager dataManager;
         public DefaultForm()
         {
             InitializeComponent();
@@ -22,6 +22,14 @@ namespace SoccerScore_TEST_GUI
 
         private void DefaultForm_Load(object sender, EventArgs e)
         {
+            try
+            {
+                dataManager = new DataManager();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
             if (dataManager.HasDefaultSettings())
             {
                 Form dialog = new InitializeForm(dataManager);
@@ -33,13 +41,14 @@ namespace SoccerScore_TEST_GUI
         private async void InitializeControls()
         {
             this.pbLoading.BringToFront();
-            this.btnClearAllAndExit.Enabled = false;
             this.pbLoading.Visible = true;
 
             await dataManager.LoadFavouriteTeam();
 
             foreach (var player in dataManager.FavouriteTeam.AllPlayers)
             {
+                this.lbPlayers.Items.Add(player.ListBoxDetails());
+
                 PlayerView playerViewControl = new PlayerView(player);
 
                 playerViewControl.FavoutitePlayerAdded += PlayerViewControl_FavoutitePlayerAdded;
@@ -55,12 +64,24 @@ namespace SoccerScore_TEST_GUI
 
             this.lblTitle.Text = $"{dataManager.FavouriteTeam.Details()}";
 
+            this.lblCountry.Text = dataManager.FavouriteTeam.Country;
+            this.lblFifaCode.Text = dataManager.FavouriteTeam.FifaCode;
+            this.lblGamesPlayed.Text = dataManager.FavouriteTeam?.GamesPlayed.ToString();
+            this.lblGoalsFor.Text = dataManager.FavouriteTeam?.GoalsFor.ToString();
+            this.lblLosses.Text = dataManager.FavouriteTeam?.Losses.ToString();
+            this.lblTotalPoints.Text = dataManager.FavouriteTeam.Points.ToString();
+            this.lblWins.Text = dataManager.FavouriteTeam?.Wins.ToString();
+            this.lblDraws.Text = dataManager?.FavouriteTeam?.Draws.ToString();
+            this.lblGoalsAgainst.Text = dataManager?.FavouriteTeam?.GoalsAgainst.ToString();
+            this.lblGoalDifferential.Text = dataManager?.FavouriteTeam.GoalDifferential.ToString();
+
             Tools.CenterControlInParentHorizontally(this.lblTitle);
 
             this.pbLoading.Visible = false;
-            this.btnClearAllAndExit.Enabled = true;
             this.optionsStrip.Enabled = true;
             this.toolStrip.Enabled = true;
+
+            this.lblStatus.Text = dataManager.FavouriteTeam.Details();
 
             SetAllControlsVisible();
         }
@@ -72,6 +93,8 @@ namespace SoccerScore_TEST_GUI
             this.favoruitePLayersContainer.Visible = true;
             this.label1.Visible = true;
             this.label2.Visible = true;
+            this.pbBorderLeft.Visible = true;
+            this.pbBorderRight.Visible = true;
         }
 
         private void PlayerViewControl_FavouritePlayerRemoved(object sender, EventArgs args)
@@ -89,7 +112,7 @@ namespace SoccerScore_TEST_GUI
             if (dataManager.HasMaxAmountOfFavoruitePlayers()) //Make into one bool func
             {
                 newFavoruitePlayerView.Player.IsFavourite = false;
-                MessageBox.Show("You can only have 3 Favoruite players", "" ,MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("You can only have 3 Favoruite players", "Info" ,MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             this.favoruitePLayersContainer.Controls.Add(newFavoruitePlayerView);
@@ -100,10 +123,33 @@ namespace SoccerScore_TEST_GUI
 
         private void btnClearAllAndExit_Click(object sender, EventArgs e)
         {
-            dataManager.ResetSettingsAndSave();
-            Application.Exit();
+            
         }
 
-        //Save all at exit!
+        private void DefaultForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = (new ExitForm()).ShowDialog();
+            switch (result)
+            {
+                case DialogResult.Yes:
+                    break;
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void clearAndExitOption_Click(object sender, EventArgs e)
+        {
+            dataManager.ResetSettingsAndSave();
+            Close();
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

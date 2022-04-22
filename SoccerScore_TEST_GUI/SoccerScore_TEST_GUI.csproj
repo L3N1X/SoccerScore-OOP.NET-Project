@@ -52,6 +52,12 @@
     <Compile Include="DefaultForm.Designer.cs">
       <DependentUpon>DefaultForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExitForm.Designer.cs">
+      <DependentUpon>ExitForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Images.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -74,6 +80,9 @@
     <Compile Include="Tools.cs" />
     <EmbeddedResource Include="DefaultForm.resx">
       <DependentUpon>DefaultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExitForm.resx">
+      <DependentUpon>ExitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Images.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,12 +123,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\ball.gif" />
+    <Content Include="Images\ball_loading.gif" />
+    <Content Include="Images\border-left.png" />
+    <Content Include="Images\border-right.png" />
     <Content Include="Images\captain.png" />
     <Content Include="Images\cro.png" />
     <Content Include="Images\default_player_image.png" />
     <Content Include="Images\favourite.png" />
     <Content Include="Images\loading.gif" />
     <Content Include="Images\soccer_score_icon.ico" />
+    <Content Include="Images\tactics.png" />
     <Content Include="Images\uk.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

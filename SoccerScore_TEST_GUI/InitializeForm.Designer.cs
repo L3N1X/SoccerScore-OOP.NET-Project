@@ -33,12 +33,12 @@
             this.cbNationalTeams = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbInitialize = new System.Windows.Forms.GroupBox();
-            this.pbLoading = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.rbFemale = new System.Windows.Forms.RadioButton();
             this.rbMale = new System.Windows.Forms.RadioButton();
+            this.pbLoading = new System.Windows.Forms.PictureBox();
             this.gbInitialize.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             this.SuspendLayout();
@@ -90,17 +90,6 @@
             this.gbInitialize.Size = new System.Drawing.Size(303, 471);
             this.gbInitialize.TabIndex = 3;
             this.gbInitialize.TabStop = false;
-            // 
-            // pbLoading
-            // 
-            this.pbLoading.Image = global::SoccerScore_TEST_GUI.Images.loading;
-            this.pbLoading.Location = new System.Drawing.Point(96, 249);
-            this.pbLoading.Name = "pbLoading";
-            this.pbLoading.Size = new System.Drawing.Size(111, 101);
-            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLoading.TabIndex = 8;
-            this.pbLoading.TabStop = false;
-            this.pbLoading.Visible = false;
             // 
             // lblName
             // 
@@ -155,6 +144,17 @@
             this.rbMale.Text = "Men\'s World-Cup";
             this.rbMale.UseVisualStyleBackColor = true;
             this.rbMale.Click += new System.EventHandler(this.GenderButton_Click);
+            // 
+            // pbLoading
+            // 
+            this.pbLoading.Image = global::SoccerScore_TEST_GUI.Images.ball_loading;
+            this.pbLoading.Location = new System.Drawing.Point(96, 249);
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.Size = new System.Drawing.Size(111, 101);
+            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLoading.TabIndex = 8;
+            this.pbLoading.TabStop = false;
+            this.pbLoading.Visible = false;
             // 
             // InitializeForm
             // 

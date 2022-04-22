@@ -22,7 +22,15 @@ namespace SoccerScoreData.Dal
 
         public DataManager()
         {
-            repoData = RepoFactory.GetRepoData();
+            if (Utils.NetworkTools.CheckForInternetConnection())
+            {
+                repoData = RepoFactory.GetRepoData(); 
+            }
+            else
+            {
+                //Initialize file repo, add proper exceptions;
+                throw new Exception("No internet connection");
+            }
             repoConfig = RepoFactory.GetRepoConfig();
             Initialize();
         }

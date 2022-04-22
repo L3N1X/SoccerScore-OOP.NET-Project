@@ -52,8 +52,8 @@ namespace SoccerScoreData.Models
         }
         public override string ToString()
             => $"{this.Name} {(this.IsFavourite ? "*" : "")}";
-        public string GetDetails()
-            => $"Goals: {this.Goals}\tYellow cards: {this.YellowCards}\t|\tPosition: {this.Position}\t({this.ShirtNumber})";
+        public string ListBoxDetails()
+            => $"[{ShirtNumber}]\t{Position}\t\t{Name} {(Captain ? "*" : String.Empty)}";
         public string FormatForFileLine()
             => $"{this.Name}{DEL}{this.Captain}{DEL}{this.ShirtNumber}";
         public static Player ParseFromFileLine(string line)
