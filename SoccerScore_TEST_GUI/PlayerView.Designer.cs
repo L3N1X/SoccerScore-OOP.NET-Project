@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.lblName = new System.Windows.Forms.Label();
             this.lblShirtNumber = new System.Windows.Forms.Label();
-            this.pbCaptain = new System.Windows.Forms.PictureBox();
-            this.pbFavourite = new System.Windows.Forms.PictureBox();
-            this.pbPLayer = new System.Windows.Forms.PictureBox();
             this.cmsOptions = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToggleFavouriteOption = new System.Windows.Forms.ToolStripMenuItem();
             this.chooseImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblPositon = new System.Windows.Forms.Label();
+            this.pbCaptain = new System.Windows.Forms.PictureBox();
+            this.pbFavourite = new System.Windows.Forms.PictureBox();
+            this.pbPLayer = new System.Windows.Forms.PictureBox();
+            this.cmsOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCaptain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFavourite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPLayer)).BeginInit();
-            this.cmsOptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblName
@@ -57,44 +57,14 @@
             // lblShirtNumber
             // 
             this.lblShirtNumber.AutoSize = true;
-            this.lblShirtNumber.BackColor = System.Drawing.Color.Black;
-            this.lblShirtNumber.Font = new System.Drawing.Font("Microsoft Tai Le", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShirtNumber.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblShirtNumber.BackColor = System.Drawing.Color.White;
+            this.lblShirtNumber.Font = new System.Drawing.Font("Yu Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShirtNumber.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblShirtNumber.Location = new System.Drawing.Point(54, 71);
             this.lblShirtNumber.Name = "lblShirtNumber";
-            this.lblShirtNumber.Size = new System.Drawing.Size(83, 61);
+            this.lblShirtNumber.Size = new System.Drawing.Size(68, 52);
             this.lblShirtNumber.TabIndex = 5;
             this.lblShirtNumber.Text = "12";
-            // 
-            // pbCaptain
-            // 
-            this.pbCaptain.Image = global::SoccerScore_TEST_GUI.Images.captain;
-            this.pbCaptain.Location = new System.Drawing.Point(78, 10);
-            this.pbCaptain.Name = "pbCaptain";
-            this.pbCaptain.Size = new System.Drawing.Size(35, 29);
-            this.pbCaptain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCaptain.TabIndex = 4;
-            this.pbCaptain.TabStop = false;
-            // 
-            // pbFavourite
-            // 
-            this.pbFavourite.Image = global::SoccerScore_TEST_GUI.Images.favourite;
-            this.pbFavourite.Location = new System.Drawing.Point(4, 18);
-            this.pbFavourite.Name = "pbFavourite";
-            this.pbFavourite.Size = new System.Drawing.Size(34, 29);
-            this.pbFavourite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbFavourite.TabIndex = 3;
-            this.pbFavourite.TabStop = false;
-            // 
-            // pbPLayer
-            // 
-            this.pbPLayer.Image = global::SoccerScore_TEST_GUI.Images.default_player_image;
-            this.pbPLayer.Location = new System.Drawing.Point(4, 38);
-            this.pbPLayer.Name = "pbPLayer";
-            this.pbPLayer.Size = new System.Drawing.Size(181, 127);
-            this.pbPLayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbPLayer.TabIndex = 2;
-            this.pbPLayer.TabStop = false;
             // 
             // cmsOptions
             // 
@@ -127,6 +97,36 @@
             this.lblPositon.TabIndex = 7;
             this.lblPositon.Text = "POSITION";
             // 
+            // pbCaptain
+            // 
+            this.pbCaptain.Image = global::SoccerScore_TEST_GUI.Images.captain;
+            this.pbCaptain.Location = new System.Drawing.Point(78, 10);
+            this.pbCaptain.Name = "pbCaptain";
+            this.pbCaptain.Size = new System.Drawing.Size(35, 29);
+            this.pbCaptain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCaptain.TabIndex = 4;
+            this.pbCaptain.TabStop = false;
+            // 
+            // pbFavourite
+            // 
+            this.pbFavourite.Image = global::SoccerScore_TEST_GUI.Images.favourite;
+            this.pbFavourite.Location = new System.Drawing.Point(4, 18);
+            this.pbFavourite.Name = "pbFavourite";
+            this.pbFavourite.Size = new System.Drawing.Size(34, 29);
+            this.pbFavourite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFavourite.TabIndex = 3;
+            this.pbFavourite.TabStop = false;
+            // 
+            // pbPLayer
+            // 
+            this.pbPLayer.Image = global::SoccerScore_TEST_GUI.Images.default_player_image;
+            this.pbPLayer.Location = new System.Drawing.Point(4, 38);
+            this.pbPLayer.Name = "pbPLayer";
+            this.pbPLayer.Size = new System.Drawing.Size(181, 127);
+            this.pbPLayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPLayer.TabIndex = 2;
+            this.pbPLayer.TabStop = false;
+            // 
             // PlayerView
             // 
             this.AllowDrop = true;
@@ -143,10 +143,10 @@
             this.Size = new System.Drawing.Size(190, 207);
             this.Load += new System.EventHandler(this.PlayerView_Load);
             this.Click += new System.EventHandler(this.PlayerView_Click);
+            this.cmsOptions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCaptain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFavourite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPLayer)).EndInit();
-            this.cmsOptions.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

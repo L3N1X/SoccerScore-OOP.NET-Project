@@ -151,5 +151,15 @@ namespace SoccerScore_TEST_GUI
         {
 
         }
+
+        private void btnEnglish_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCroatian_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
