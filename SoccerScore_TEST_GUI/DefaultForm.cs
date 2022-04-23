@@ -64,8 +64,8 @@ namespace SoccerScore_TEST_GUI
 
             this.lblTitle.Text = $"{dataManager.FavouriteTeam.Details()}";
 
-            this.lblCountry.Text = dataManager.FavouriteTeam.Country;
-            this.lblFifaCode.Text = dataManager.FavouriteTeam.FifaCode;
+            this.lblCountry.Text = dataManager.FavouriteTeam.Country.ToString();   
+            this.lblFifaCode.Text = dataManager.FavouriteTeam.FifaCode.ToString();
             this.lblGamesPlayed.Text = dataManager.FavouriteTeam?.GamesPlayed.ToString();
             this.lblGoalsFor.Text = dataManager.FavouriteTeam?.GoalsFor.ToString();
             this.lblLosses.Text = dataManager.FavouriteTeam?.Losses.ToString();
@@ -111,18 +111,13 @@ namespace SoccerScore_TEST_GUI
             if (dataManager.HasMaxAmountOfFavoruitePlayers()) //Make into one bool func
             {
                 newFavoruitePlayerView.Player.IsFavourite = false;
-                MessageBox.Show("You can only have 3 Favoruite players", "Info" ,MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("You can only have 3 favorurite players", "Info" ,MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             this.favoruitePLayersContainer.Controls.Add(newFavoruitePlayerView);
 
             //Make it deprecated
             dataManager.AddFavouritePlayer(newFavoruitePlayerView.Player);
-        }
-
-        private void btnClearAllAndExit_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void DefaultForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -138,17 +133,6 @@ namespace SoccerScore_TEST_GUI
                 default:
                     break;
             }
-        }
-
-        private void clearAndExitOption_Click(object sender, EventArgs e)
-        {
-            dataManager.ResetSettingsAndSave();
-            Close();
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnEnglish_Click(object sender, EventArgs e)

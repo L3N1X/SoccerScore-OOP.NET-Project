@@ -238,7 +238,6 @@
             // 
             resources.ApplyResources(this.lblDraws, "lblDraws");
             this.lblDraws.Name = "lblDraws";
-            this.lblDraws.Click += new System.EventHandler(this.label19_Click);
             // 
             // label11
             // 

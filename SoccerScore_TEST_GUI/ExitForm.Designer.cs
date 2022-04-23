@@ -41,7 +41,7 @@
             // btnYes
             // 
             this.btnYes.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btnYes.Location = new System.Drawing.Point(62, 127);
+            this.btnYes.Location = new System.Drawing.Point(62, 114);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(69, 23);
             this.btnYes.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             this.btnNo.BackColor = System.Drawing.SystemColors.Window;
             this.btnNo.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btnNo.Location = new System.Drawing.Point(137, 127);
+            this.btnNo.Location = new System.Drawing.Point(137, 114);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(69, 23);
             this.btnNo.TabIndex = 1;
@@ -61,13 +61,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pbExitIcon);
-            this.groupBox1.Controls.Add(this.lblExit);
             this.groupBox1.Controls.Add(this.btnNo);
             this.groupBox1.Controls.Add(this.btnYes);
+            this.groupBox1.Controls.Add(this.pbExitIcon);
+            this.groupBox1.Controls.Add(this.lblExit);
             this.groupBox1.Location = new System.Drawing.Point(12, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(268, 168);
+            this.groupBox1.Size = new System.Drawing.Size(268, 150);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -96,7 +96,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(292, 177);
+            this.ClientSize = new System.Drawing.Size(292, 157);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
