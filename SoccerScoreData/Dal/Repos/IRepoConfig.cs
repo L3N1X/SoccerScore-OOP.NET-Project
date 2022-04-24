@@ -10,6 +10,8 @@ namespace SoccerScoreData.Dal.Repos
     public interface IRepoConfig
     {
         void SaveSettings(Settings settings);
-        Settings GetSettings(); 
+        Settings GetSettings();
+        IList<Player> GetPlayersWithSavedImage();
+        void SavePlayersWithImage(IList<Player> player);
     }
 }

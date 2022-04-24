@@ -288,6 +288,27 @@
   <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="lblCredits.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCredits.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Tai Le, 6pt</value>
+  </data>
+  <data name="lblCredits.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCredits.Location" type="System.Drawing.Point, System.Drawing">
+    <value>537, 646</value>
+  </data>
+  <data name="lblCredits.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 10</value>
+  </data>
+  <data name="lblCredits.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblCredits.Text" xml:space="preserve">
+    <value>Leon Kruslin OOP.NET 2022</value>
+  </data>
   <data name="&gt;&gt;lblCredits.Name" xml:space="preserve">
     <value>lblCredits</value>
   </data>
@@ -300,6 +321,24 @@
   <data name="&gt;&gt;lblCredits.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="pbBorderLeft.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbBorderLeft.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 360</value>
+  </data>
+  <data name="pbBorderLeft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 293</value>
+  </data>
+  <data name="pbBorderLeft.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pbBorderLeft.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="pbBorderLeft.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;pbBorderLeft.Name" xml:space="preserve">
     <value>pbBorderLeft</value>
   </data>
@@ -311,6 +350,24 @@
   </data>
   <data name="&gt;&gt;pbBorderLeft.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="pbBorderRight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbBorderRight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>892, 360</value>
+  </data>
+  <data name="pbBorderRight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 293</value>
+  </data>
+  <data name="pbBorderRight.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pbBorderRight.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="pbBorderRight.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;pbBorderRight.Name" xml:space="preserve">
     <value>pbBorderRight</value>
@@ -353,6 +410,117 @@
   </data>
   <data name="&gt;&gt;playersTab.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>statisticsTab</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>statisticsTab</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>statisticsTab</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="statisticsTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="statisticsTab.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="statisticsTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1176, 682</value>
+  </data>
+  <data name="statisticsTab.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="statisticsTab.Text" xml:space="preserve">
+    <value>Team statistics</value>
+  </data>
+  <data name="&gt;&gt;statisticsTab.Name" xml:space="preserve">
+    <value>statisticsTab</value>
+  </data>
+  <data name="&gt;&gt;statisticsTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statisticsTab.Parent" xml:space="preserve">
+    <value>programTab</value>
+  </data>
+  <data name="&gt;&gt;statisticsTab.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="matchesTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="matchesTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1176, 682</value>
+  </data>
+  <data name="matchesTab.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="matchesTab.Text" xml:space="preserve">
+    <value>Matches</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.Name" xml:space="preserve">
+    <value>matchesTab</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.Parent" xml:space="preserve">
+    <value>programTab</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="programTab.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="programTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 28</value>
+  </data>
+  <data name="programTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 708</value>
+  </data>
+  <data name="programTab.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;programTab.Name" xml:space="preserve">
+    <value>programTab</value>
+  </data>
+  <data name="&gt;&gt;programTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;programTab.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;programTab.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -659,228 +827,6 @@
   </data>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="lbPlayers.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Tai Le, 12pt</value>
-  </data>
-  <data name="lbPlayers.ItemHeight" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="lbPlayers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 40</value>
-  </data>
-  <data name="lbPlayers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 483</value>
-  </data>
-  <data name="lbPlayers.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;lbPlayers.Name" xml:space="preserve">
-    <value>lbPlayers</value>
-  </data>
-  <data name="&gt;&gt;lbPlayers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbPlayers.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;lbPlayers.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="groupBox1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Tai Le, 12pt, style=Bold</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 37</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 560</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Players</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>statisticsTab</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="statisticsTab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="statisticsTab.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="statisticsTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1176, 682</value>
-  </data>
-  <data name="statisticsTab.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="statisticsTab.Text" xml:space="preserve">
-    <value>Team statistics</value>
-  </data>
-  <data name="&gt;&gt;statisticsTab.Name" xml:space="preserve">
-    <value>statisticsTab</value>
-  </data>
-  <data name="&gt;&gt;statisticsTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statisticsTab.Parent" xml:space="preserve">
-    <value>programTab</value>
-  </data>
-  <data name="&gt;&gt;statisticsTab.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="matchesTab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="matchesTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1176, 682</value>
-  </data>
-  <data name="matchesTab.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="matchesTab.Text" xml:space="preserve">
-    <value>Matches</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.Name" xml:space="preserve">
-    <value>matchesTab</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.Parent" xml:space="preserve">
-    <value>programTab</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="programTab.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="programTab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 28</value>
-  </data>
-  <data name="programTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 708</value>
-  </data>
-  <data name="programTab.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;programTab.Name" xml:space="preserve">
-    <value>programTab</value>
-  </data>
-  <data name="&gt;&gt;programTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;programTab.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;programTab.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblCredits.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCredits.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Tai Le, 6pt</value>
-  </data>
-  <data name="lblCredits.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCredits.Location" type="System.Drawing.Point, System.Drawing">
-    <value>537, 646</value>
-  </data>
-  <data name="lblCredits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 10</value>
-  </data>
-  <data name="lblCredits.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="lblCredits.Text" xml:space="preserve">
-    <value>Leon Kruslin OOP.NET 2022</value>
-  </data>
-  <data name="&gt;&gt;lblCredits.Name" xml:space="preserve">
-    <value>lblCredits</value>
-  </data>
-  <data name="&gt;&gt;lblCredits.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCredits.Parent" xml:space="preserve">
-    <value>playersTab</value>
-  </data>
-  <data name="&gt;&gt;lblCredits.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pbBorderLeft.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbBorderLeft.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 360</value>
-  </data>
-  <data name="pbBorderLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 293</value>
-  </data>
-  <data name="pbBorderLeft.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pbBorderLeft.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="pbBorderLeft.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;pbBorderLeft.Name" xml:space="preserve">
-    <value>pbBorderLeft</value>
-  </data>
-  <data name="&gt;&gt;pbBorderLeft.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbBorderLeft.Parent" xml:space="preserve">
-    <value>playersTab</value>
-  </data>
-  <data name="&gt;&gt;pbBorderLeft.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pbBorderRight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbBorderRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>892, 360</value>
-  </data>
-  <data name="pbBorderRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 293</value>
-  </data>
-  <data name="pbBorderRight.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pbBorderRight.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="pbBorderRight.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;pbBorderRight.Name" xml:space="preserve">
-    <value>pbBorderRight</value>
-  </data>
-  <data name="&gt;&gt;pbBorderRight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbBorderRight.Parent" xml:space="preserve">
-    <value>playersTab</value>
-  </data>
-  <data name="&gt;&gt;pbBorderRight.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1568,6 +1514,72 @@
   </data>
   <data name="&gt;&gt;lblFifaCode.ZOrder" xml:space="preserve">
     <value>20</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.Name" xml:space="preserve">
+    <value>lbPlayers</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Tai Le, 12pt, style=Bold</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 37</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>450, 560</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Players</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>statisticsTab</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbPlayers.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Tai Le, 12pt</value>
+  </data>
+  <data name="lbPlayers.ItemHeight" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="lbPlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 40</value>
+  </data>
+  <data name="lbPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>412, 483</value>
+  </data>
+  <data name="lbPlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.Name" xml:space="preserve">
+    <value>lbPlayers</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>135, 17</value>

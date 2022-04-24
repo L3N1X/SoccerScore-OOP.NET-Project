@@ -33,7 +33,8 @@
             this.lblShirtNumber = new System.Windows.Forms.Label();
             this.cmsOptions = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToggleFavouriteOption = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewDetailsOption = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewPlayerOption = new System.Windows.Forms.ToolStripMenuItem();
+            this.chooseImageOption = new System.Windows.Forms.ToolStripMenuItem();
             this.lblPositon = new System.Windows.Forms.Label();
             this.pbCaptain = new System.Windows.Forms.PictureBox();
             this.pbFavourite = new System.Windows.Forms.PictureBox();
@@ -70,23 +71,31 @@
             // 
             this.cmsOptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToggleFavouriteOption,
-            this.viewDetailsOption});
+            this.viewPlayerOption,
+            this.chooseImageOption});
             this.cmsOptions.Name = "cmsOptions";
-            this.cmsOptions.Size = new System.Drawing.Size(160, 48);
+            this.cmsOptions.Size = new System.Drawing.Size(160, 70);
             // 
             // ToggleFavouriteOption
             // 
             this.ToggleFavouriteOption.Name = "ToggleFavouriteOption";
-            this.ToggleFavouriteOption.Size = new System.Drawing.Size(159, 22);
+            this.ToggleFavouriteOption.Size = new System.Drawing.Size(180, 22);
             this.ToggleFavouriteOption.Text = "Toggle favourite";
             this.ToggleFavouriteOption.Click += new System.EventHandler(this.ToggleFavoruiteOption_Click);
             // 
-            // viewDetailsOption
+            // viewPlayerOption
             // 
-            this.viewDetailsOption.Name = "viewDetailsOption";
-            this.viewDetailsOption.Size = new System.Drawing.Size(159, 22);
-            this.viewDetailsOption.Text = "View details";
-            this.viewDetailsOption.Click += new System.EventHandler(this.ViewDetailsOption_Click);
+            this.viewPlayerOption.Name = "viewPlayerOption";
+            this.viewPlayerOption.Size = new System.Drawing.Size(180, 22);
+            this.viewPlayerOption.Text = "View player";
+            this.viewPlayerOption.Click += new System.EventHandler(this.ViewDetailsOption_Click);
+            // 
+            // chooseImageOption
+            // 
+            this.chooseImageOption.Name = "chooseImageOption";
+            this.chooseImageOption.Size = new System.Drawing.Size(180, 22);
+            this.chooseImageOption.Text = "Choose image";
+            this.chooseImageOption.Click += new System.EventHandler(this.ChangeImageOption_Click);
             // 
             // lblPositon
             // 
@@ -101,7 +110,7 @@
             // pbCaptain
             // 
             this.pbCaptain.Image = global::SoccerScore_TEST_GUI.Images.captain;
-            this.pbCaptain.Location = new System.Drawing.Point(78, 10);
+            this.pbCaptain.Location = new System.Drawing.Point(78, 0);
             this.pbCaptain.Name = "pbCaptain";
             this.pbCaptain.Size = new System.Drawing.Size(35, 29);
             this.pbCaptain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -111,9 +120,9 @@
             // pbFavourite
             // 
             this.pbFavourite.Image = global::SoccerScore_TEST_GUI.Images.favourite;
-            this.pbFavourite.Location = new System.Drawing.Point(4, 18);
+            this.pbFavourite.Location = new System.Drawing.Point(4, 3);
             this.pbFavourite.Name = "pbFavourite";
-            this.pbFavourite.Size = new System.Drawing.Size(34, 29);
+            this.pbFavourite.Size = new System.Drawing.Size(27, 26);
             this.pbFavourite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbFavourite.TabIndex = 3;
             this.pbFavourite.TabStop = false;
@@ -164,6 +173,7 @@
         private System.Windows.Forms.ContextMenuStrip cmsOptions;
         private System.Windows.Forms.ToolStripMenuItem ToggleFavouriteOption;
         private System.Windows.Forms.Label lblPositon;
-        private System.Windows.Forms.ToolStripMenuItem viewDetailsOption;
+        private System.Windows.Forms.ToolStripMenuItem viewPlayerOption;
+        private System.Windows.Forms.ToolStripMenuItem chooseImageOption;
     }
 }

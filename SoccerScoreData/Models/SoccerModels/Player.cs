@@ -55,7 +55,7 @@ namespace SoccerScoreData.Models
         public string ListBoxDetails()
             => $"[{ShirtNumber}]\t{Position}\t\t{Name} {(Captain ? "*" : String.Empty)}";
         public string FormatForFileLine()
-            => $"{this.Name}{DEL}{this.Captain}{DEL}{this.ShirtNumber}";
+            => $"{this.Name}{DEL}{this.Captain}{DEL}{this.ShirtNumber}{DEL}{(IconPath != null ? IconPath : string.Empty)}";
         public static Player ParseFromFileLine(string line)
         {
             string[] data = line.Split(DEL);
@@ -64,6 +64,7 @@ namespace SoccerScoreData.Models
                 Name = data[0],
                 Captain = bool.Parse(data[1]),
                 ShirtNumber = int.Parse(data[2]),
+                IconPath = data[3] != string.Empty ? data[3] : null,
             };
         }
     }

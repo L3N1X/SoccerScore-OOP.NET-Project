@@ -1,4 +1,5 @@
 ﻿using SoccerScoreData.Dal;
+using SoccerScoreData.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,13 +44,13 @@ namespace SoccerScore_TEST_GUI
             this.pbLoading.BringToFront();
             this.pbLoading.Visible = true;
 
-            await dataManager.LoadFavouriteTeam();
+            await dataManager.InitializeFavoruriteTeam();
 
             foreach (var player in dataManager.FavouriteTeam.AllPlayers)
             {
                 this.lbPlayers.Items.Add(player.ListBoxDetails());
 
-                PlayerView playerViewControl = new PlayerView(player);
+                PlayerView playerViewControl = new PlayerView(player, dataManager.FavouriteTeam);
 
                 playerViewControl.FavoutitePlayerAdded += PlayerViewControl_FavoutitePlayerAdded;
                 playerViewControl.FavouritePlayerRemoved += PlayerViewControl_FavouritePlayerRemoved;
@@ -132,6 +133,7 @@ namespace SoccerScore_TEST_GUI
             switch (result)
             {
                 case DialogResult.Yes:
+                    SavePlayerImages();
                     break;
                 case DialogResult.No:
                     e.Cancel = true;
@@ -141,12 +143,37 @@ namespace SoccerScore_TEST_GUI
             }
         }
 
+        private void SavePlayerImages()
+        {
+            IList<Player> players = new List<Player>();
+            foreach (var control in this.playersContainer.Controls)
+            {
+                if(control is PlayerView playerView)
+                {
+                    players.Add(playerView.Player);
+                }
+            }
+            foreach (var control in this.favoruitePLayersContainer.Controls)
+            {
+                if (control is PlayerView playerView)
+                {
+                    players.Add(playerView.Player);
+                }
+            }
+            dataManager.SaveSettingsOnClose(players);
+        }
+
         private void btnEnglish_Click(object sender, EventArgs e)
         {
 
         }
 
         private void btnCroatian_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playersTab_Click(object sender, EventArgs e)
         {
 
         }

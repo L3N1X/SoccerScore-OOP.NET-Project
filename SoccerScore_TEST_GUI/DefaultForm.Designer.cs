@@ -132,6 +132,7 @@
             this.playersTab.Controls.Add(this.label2);
             resources.ApplyResources(this.playersTab, "playersTab");
             this.playersTab.Name = "playersTab";
+            this.playersTab.Click += new System.EventHandler(this.playersTab_Click);
             // 
             // lblCredits
             // 

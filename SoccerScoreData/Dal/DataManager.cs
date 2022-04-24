@@ -2,6 +2,7 @@
 using SoccerScoreData.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -95,9 +96,10 @@ namespace SoccerScoreData.Dal
             SaveSettings();
         }
 
-        public async Task LoadFavouriteTeam()
+        public async Task InitializeFavoruriteTeam()
         {
             NationalTeam fullTeam = await repoData.GetNationalTeamAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
+            IList<Player> playersWithSavedImages = repoConfig.GetPlayersWithSavedImage();
             this.FavouriteTeam = fullTeam;
             //Binds favourite players from settings
             settings.FavouritePlayers.ToList().ForEach(player =>
@@ -105,14 +107,28 @@ namespace SoccerScoreData.Dal
                 if (player != null)
                 {
                     Player realPlayer = this.FavouriteTeam.AllPlayers.Find(p => p.Equals(player));
-                    realPlayer.IconPath = player.IconPath;
+                    //
+                    //realPlayer.IconPath = player.IconPath;
+                    //if (realPlayer.IconPath == null || !File.Exists(realPlayer.IconPath))
+                    //    realPlayer.IconPath = null;
                     realPlayer.IsFavourite = true;
+                    //Za ovo se brine file repo, makni poslije ili promijeni ako ne radi dobro
                 }
             });
+            playersWithSavedImages.ToList().ForEach(player =>
+            {
+                Player realPlayer = this.FavouriteTeam.AllPlayers.Find(p => p.Equals(player));
+                realPlayer.IconPath = player.IconPath;
+            });
         }
-        private void SaveSettings()
+        public void SaveSettings()
         {
             repoConfig.SaveSettings(settings);
+        }
+        public void SaveSettingsOnClose(IList<Player> newPlayers)
+        {
+            SaveSettings();
+            repoConfig.SavePlayersWithImage(newPlayers);
         }
     }
 }

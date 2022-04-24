@@ -13,31 +13,32 @@ namespace SoccerScore_TEST_GUI
 {
     public partial class PlayerForm : Form
     {
-        public Player Player { get; private set; }
-        private string country;
-        public PlayerForm(Player player, string country)
+        public readonly Player player;
+        public readonly NationalTeam nationalTeam;
+        public PlayerForm(Player player, NationalTeam nationalTeam)
         {
-            this.Player = player;
-            this.country = country;
+            this.player = player;
+            this.nationalTeam = nationalTeam;
             InitializeComponent();
             InitializeControls();
         }
 
         private void InitializeControls()
         {
-            this.Text = Player.Name;
-            this.lblName.Text = Player.Name;
+            this.Text = player.Name;
+            this.lblName.Text = player.Name;
             Tools.CenterControlInParentHorizontally(this.lblName);
-            this.lblCaptain.Text = Player.Captain ? "Team captain" : String.Empty;
+            this.lblCaptain.Text = player.Captain ? "Team captain" : string.Empty;
             Tools.CenterControlInParentHorizontally(this.lblCaptain);
-            this.lblCountry.Text = country;
-            this.lblGoals.Text = Player.Goals.ToString();
-            this.lblYellowCards.Text = Player.YellowCards.ToString();
-            this.lblPosition.Text = Player.Position.ToString();
-            this.lblShirtNumber.Text = Player.ShirtNumber.ToString();
+            this.lblCountry.Text = nationalTeam.Country;
+            this.lblGender.Text = nationalTeam.TeamGender.ToString();
+            this.lblGoals.Text = player.Goals.ToString();
+            this.lblYellowCards.Text = player.YellowCards.ToString();
+            this.lblPosition.Text = player.Position.ToString();
+            this.lblShirtNumber.Text = player.ShirtNumber.ToString();
 
-            //this.pbPlayerIcon.Image = Player.IconPath != null  //Ako ima sliku
-            this.pbFavoruite.Image = Player.IsFavourite ? Images.favourite : null;
+            this.pbPlayerIcon.Image = player.IconPath != null ? Image.FromFile(player.IconPath) : Images.default_player_image;
+            this.pbFavoruite.Image = player.IsFavourite ? Images.favourite : null;
         }
     }
 }

@@ -19,11 +19,14 @@ namespace SoccerScore_TEST_GUI
         public delegate void FavoruitePlayerRemovedDelegate(object sender, EventArgs args);
         public event FavoruitePlayerRemovedDelegate FavouritePlayerRemoved;
 
+        public readonly NationalTeam nationalTeam;
+
         public Player Player { get; set; }
-        public PlayerView(Player player)
+        public PlayerView(Player player, NationalTeam nationalTeam)
         {
             InitializeComponent();
             this.Player = player;
+            this.nationalTeam = nationalTeam;
         }
 
         private void PlayerView_Load(object sender, EventArgs e)
@@ -49,24 +52,19 @@ namespace SoccerScore_TEST_GUI
 
             this.pbFavourite.Image = this.Player.IsFavourite ? Images.favourite : null;
             this.pbCaptain.Image = this.Player.Captain ? Images.captain : null;
-            this.pbPLayer.Image = Images.default_player_image;
+
+            if(this.Player.IconPath != null)
+            {
+                this.pbPLayer.Image = Image.FromFile(this.Player.IconPath);
+                this.lblShirtNumber.Visible = false;
+            }
+            
 
             Tools.CenterControlInParent(this.lblShirtNumber);
             Tools.CenterControlInParentHorizontally(this.lblName);
             Tools.CenterControlInParentHorizontally(this.lblPositon);
 
             this.ToggleFavouriteOption.Text = this.Player.IsFavourite ? $"Remove {Player.Name} from favoruites" : $"Add {Player.Name} to favoruites";
-        }
-
-        public override bool Equals(object obj)
-        {
-            return obj is PlayerView view &&
-                   EqualityComparer<Player>.Default.Equals(Player, view.Player);
-        }
-
-        public override int GetHashCode()
-        {
-            return 1752105248 + EqualityComparer<Player>.Default.GetHashCode(Player);
         }
 
         private void PlayerView_Click(object sender, EventArgs e)
@@ -76,8 +74,19 @@ namespace SoccerScore_TEST_GUI
 
         private void ViewDetailsOption_Click(object sender, EventArgs e)
         {
-            Form playerForm = new PlayerForm(Player, "Some Country");
+            Form playerForm = new PlayerForm(Player, nationalTeam);
             playerForm.Show();
+        }
+
+        private void ChangeImageOption_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            if(dialog.ShowDialog() == DialogResult.OK)
+            {
+                Image playerImage = Image.FromFile(dialog.FileName);
+                this.Player.IconPath = dialog.FileName;
+                InitializeControls();
+            }
         }
     }
 }
