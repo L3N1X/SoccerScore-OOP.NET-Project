@@ -107,18 +107,14 @@ namespace SoccerScoreData.Dal
                 if (player != null)
                 {
                     Player realPlayer = this.FavouriteTeam.AllPlayers.Find(p => p.Equals(player));
-                    //
-                    //realPlayer.IconPath = player.IconPath;
-                    //if (realPlayer.IconPath == null || !File.Exists(realPlayer.IconPath))
-                    //    realPlayer.IconPath = null;
                     realPlayer.IsFavourite = true;
-                    //Za ovo se brine file repo, makni poslije ili promijeni ako ne radi dobro
                 }
             });
             playersWithSavedImages.ToList().ForEach(player =>
             {
                 Player realPlayer = this.FavouriteTeam.AllPlayers.Find(p => p.Equals(player));
-                realPlayer.IconPath = player.IconPath;
+                if (realPlayer != null)
+                    realPlayer.IconPath = player.IconPath;
             });
         }
         public void SaveSettings()

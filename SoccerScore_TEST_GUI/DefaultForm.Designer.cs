@@ -72,6 +72,7 @@
             this.btnEnglish = new System.Windows.Forms.ToolStripButton();
             this.btnCroatian = new System.Windows.Forms.ToolStripButton();
             this.pbLoading = new System.Windows.Forms.PictureBox();
+            this.btnResetAndExit = new System.Windows.Forms.Button();
             this.programTab.SuspendLayout();
             this.playersTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBorderLeft)).BeginInit();
@@ -80,6 +81,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.matchesTab.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
@@ -320,6 +322,7 @@
             // 
             // matchesTab
             // 
+            this.matchesTab.Controls.Add(this.btnResetAndExit);
             resources.ApplyResources(this.matchesTab, "matchesTab");
             this.matchesTab.Name = "matchesTab";
             this.matchesTab.UseVisualStyleBackColor = true;
@@ -367,6 +370,12 @@
             this.pbLoading.Name = "pbLoading";
             this.pbLoading.TabStop = false;
             // 
+            // btnResetAndExit
+            // 
+            resources.ApplyResources(this.btnResetAndExit, "btnResetAndExit");
+            this.btnResetAndExit.Name = "btnResetAndExit";
+            this.btnResetAndExit.UseVisualStyleBackColor = true;
+            // 
             // DefaultForm
             // 
             resources.ApplyResources(this, "$this");
@@ -389,6 +398,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.matchesTab.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
@@ -444,6 +454,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnResetAndExit;
     }
 }
 
