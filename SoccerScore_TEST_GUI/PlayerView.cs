@@ -73,5 +73,11 @@ namespace SoccerScore_TEST_GUI
         {
             
         }
+
+        private void ViewDetailsOption_Click(object sender, EventArgs e)
+        {
+            Form playerForm = new PlayerForm(Player, "Some Country");
+            playerForm.Show();
+        }
     }
 }

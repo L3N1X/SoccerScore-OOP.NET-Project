@@ -64,7 +64,22 @@ namespace SoccerScore_TEST_GUI
 
             this.lblTitle.Text = $"{dataManager.FavouriteTeam.Details()}";
 
-            this.lblCountry.Text = dataManager.FavouriteTeam.Country.ToString();   
+            InitializeLabelText();
+
+            Tools.CenterControlInParentHorizontally(this.lblTitle);
+
+            this.pbLoading.Visible = false;
+            this.toolStrip.Enabled = true;
+
+            this.lblStatus.Text = dataManager.FavouriteTeam.Details();
+
+            
+            SetAllControlsVisible();
+        }
+
+        private void InitializeLabelText()
+        {
+            this.lblCountry.Text = dataManager.FavouriteTeam.Country.ToString();
             this.lblFifaCode.Text = dataManager.FavouriteTeam.FifaCode.ToString();
             this.lblGamesPlayed.Text = dataManager.FavouriteTeam?.GamesPlayed.ToString();
             this.lblGoalsFor.Text = dataManager.FavouriteTeam?.GoalsFor.ToString();
@@ -74,15 +89,6 @@ namespace SoccerScore_TEST_GUI
             this.lblDraws.Text = dataManager?.FavouriteTeam?.Draws.ToString();
             this.lblGoalsAgainst.Text = dataManager?.FavouriteTeam?.GoalsAgainst.ToString();
             this.lblGoalDifferential.Text = dataManager?.FavouriteTeam.GoalDifferential.ToString();
-
-            Tools.CenterControlInParentHorizontally(this.lblTitle);
-
-            this.pbLoading.Visible = false;
-            this.toolStrip.Enabled = true;
-
-            this.lblStatus.Text = dataManager.FavouriteTeam.Details();
-
-            SetAllControlsVisible();
         }
 
         private void SetAllControlsVisible()

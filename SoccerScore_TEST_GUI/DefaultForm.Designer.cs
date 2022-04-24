@@ -37,11 +37,14 @@
             this.programTab = new System.Windows.Forms.TabControl();
             this.playersTab = new System.Windows.Forms.TabPage();
             this.lblCredits = new System.Windows.Forms.Label();
+            this.pbBorderLeft = new System.Windows.Forms.PictureBox();
+            this.pbBorderRight = new System.Windows.Forms.PictureBox();
             this.statisticsTab = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lblPoints = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblGoalDifferential = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -66,23 +69,20 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.pbLoading = new System.Windows.Forms.PictureBox();
             this.btnEnglish = new System.Windows.Forms.ToolStripButton();
             this.btnCroatian = new System.Windows.Forms.ToolStripButton();
-            this.pbBorderLeft = new System.Windows.Forms.PictureBox();
-            this.pbBorderRight = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbLoading = new System.Windows.Forms.PictureBox();
             this.programTab.SuspendLayout();
             this.playersTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBorderLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBorderRight)).BeginInit();
             this.statisticsTab.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBorderLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBorderRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // playersContainer
@@ -138,6 +138,20 @@
             resources.ApplyResources(this.lblCredits, "lblCredits");
             this.lblCredits.Name = "lblCredits";
             // 
+            // pbBorderLeft
+            // 
+            this.pbBorderLeft.Image = global::SoccerScore_TEST_GUI.Images.border_left;
+            resources.ApplyResources(this.pbBorderLeft, "pbBorderLeft");
+            this.pbBorderLeft.Name = "pbBorderLeft";
+            this.pbBorderLeft.TabStop = false;
+            // 
+            // pbBorderRight
+            // 
+            this.pbBorderRight.Image = global::SoccerScore_TEST_GUI.Images.border_right;
+            resources.ApplyResources(this.pbBorderRight, "pbBorderRight");
+            this.pbBorderRight.Name = "pbBorderRight";
+            this.pbBorderRight.TabStop = false;
+            // 
             // statisticsTab
             // 
             this.statisticsTab.BackColor = System.Drawing.SystemColors.Control;
@@ -188,6 +202,14 @@
             // 
             resources.ApplyResources(this.lblPoints, "lblPoints");
             this.lblPoints.Name = "lblPoints";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.Image = global::SoccerScore_TEST_GUI.Images.tactics;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
@@ -290,8 +312,9 @@
             // 
             this.lbPlayers.BackColor = System.Drawing.SystemColors.Control;
             this.lbPlayers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbPlayers.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.lbPlayers, "lbPlayers");
-            this.lbPlayers.FormattingEnabled = true;
+            this.lbPlayers.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbPlayers.Name = "lbPlayers";
             // 
             // matchesTab
@@ -320,13 +343,6 @@
             this.btnCroatian});
             this.toolStrip.Name = "toolStrip";
             // 
-            // pbLoading
-            // 
-            this.pbLoading.Image = global::SoccerScore_TEST_GUI.Images.ball_loading;
-            resources.ApplyResources(this.pbLoading, "pbLoading");
-            this.pbLoading.Name = "pbLoading";
-            this.pbLoading.TabStop = false;
-            // 
             // btnEnglish
             // 
             this.btnEnglish.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -343,27 +359,12 @@
             this.btnCroatian.Name = "btnCroatian";
             this.btnCroatian.Click += new System.EventHandler(this.btnCroatian_Click);
             // 
-            // pbBorderLeft
+            // pbLoading
             // 
-            this.pbBorderLeft.Image = global::SoccerScore_TEST_GUI.Images.border_left;
-            resources.ApplyResources(this.pbBorderLeft, "pbBorderLeft");
-            this.pbBorderLeft.Name = "pbBorderLeft";
-            this.pbBorderLeft.TabStop = false;
-            // 
-            // pbBorderRight
-            // 
-            this.pbBorderRight.Image = global::SoccerScore_TEST_GUI.Images.border_right;
-            resources.ApplyResources(this.pbBorderRight, "pbBorderRight");
-            this.pbBorderRight.Name = "pbBorderRight";
-            this.pbBorderRight.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.Image = global::SoccerScore_TEST_GUI.Images.tactics;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            this.pbLoading.Image = global::SoccerScore_TEST_GUI.Images.ball_loading;
+            resources.ApplyResources(this.pbLoading, "pbLoading");
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.TabStop = false;
             // 
             // DefaultForm
             // 
@@ -379,19 +380,19 @@
             this.programTab.ResumeLayout(false);
             this.playersTab.ResumeLayout(false);
             this.playersTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBorderLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBorderRight)).EndInit();
             this.statisticsTab.ResumeLayout(false);
             this.statisticsTab.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBorderLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBorderRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

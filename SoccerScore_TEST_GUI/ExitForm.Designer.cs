@@ -32,21 +32,23 @@
             this.btnYes = new System.Windows.Forms.Button();
             this.btnNo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblExit = new System.Windows.Forms.Label();
             this.pbExitIcon = new System.Windows.Forms.PictureBox();
+            this.lblExit = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbExitIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // btnYes
             // 
+            this.btnYes.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnYes.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            this.btnYes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnYes.Location = new System.Drawing.Point(62, 114);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(69, 23);
             this.btnYes.TabIndex = 0;
             this.btnYes.Text = "Yes";
-            this.btnYes.UseVisualStyleBackColor = true;
+            this.btnYes.UseVisualStyleBackColor = false;
             // 
             // btnNo
             // 
@@ -71,16 +73,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
-            // lblExit
-            // 
-            this.lblExit.AutoSize = true;
-            this.lblExit.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExit.Location = new System.Drawing.Point(30, 25);
-            this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(208, 19);
-            this.lblExit.TabIndex = 2;
-            this.lblExit.Text = "Are you sure you want to exit?";
-            // 
             // pbExitIcon
             // 
             this.pbExitIcon.Image = global::SoccerScore_TEST_GUI.Images.ball;
@@ -90,6 +82,16 @@
             this.pbExitIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbExitIcon.TabIndex = 3;
             this.pbExitIcon.TabStop = false;
+            // 
+            // lblExit
+            // 
+            this.lblExit.AutoSize = true;
+            this.lblExit.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExit.Location = new System.Drawing.Point(30, 25);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(208, 19);
+            this.lblExit.TabIndex = 2;
+            this.lblExit.Text = "Are you sure you want to exit?";
             // 
             // ExitForm
             // 

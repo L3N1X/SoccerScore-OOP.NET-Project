@@ -33,7 +33,7 @@
             this.lblShirtNumber = new System.Windows.Forms.Label();
             this.cmsOptions = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToggleFavouriteOption = new System.Windows.Forms.ToolStripMenuItem();
-            this.chooseImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewDetailsOption = new System.Windows.Forms.ToolStripMenuItem();
             this.lblPositon = new System.Windows.Forms.Label();
             this.pbCaptain = new System.Windows.Forms.PictureBox();
             this.pbFavourite = new System.Windows.Forms.PictureBox();
@@ -70,7 +70,7 @@
             // 
             this.cmsOptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToggleFavouriteOption,
-            this.chooseImageToolStripMenuItem});
+            this.viewDetailsOption});
             this.cmsOptions.Name = "cmsOptions";
             this.cmsOptions.Size = new System.Drawing.Size(160, 48);
             // 
@@ -81,11 +81,12 @@
             this.ToggleFavouriteOption.Text = "Toggle favourite";
             this.ToggleFavouriteOption.Click += new System.EventHandler(this.ToggleFavoruiteOption_Click);
             // 
-            // chooseImageToolStripMenuItem
+            // viewDetailsOption
             // 
-            this.chooseImageToolStripMenuItem.Name = "chooseImageToolStripMenuItem";
-            this.chooseImageToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.chooseImageToolStripMenuItem.Text = "Choose image";
+            this.viewDetailsOption.Name = "viewDetailsOption";
+            this.viewDetailsOption.Size = new System.Drawing.Size(159, 22);
+            this.viewDetailsOption.Text = "View details";
+            this.viewDetailsOption.Click += new System.EventHandler(this.ViewDetailsOption_Click);
             // 
             // lblPositon
             // 
@@ -139,6 +140,7 @@
             this.Controls.Add(this.pbFavourite);
             this.Controls.Add(this.pbPLayer);
             this.Controls.Add(this.lblName);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "PlayerView";
             this.Size = new System.Drawing.Size(190, 207);
             this.Load += new System.EventHandler(this.PlayerView_Load);
@@ -161,7 +163,7 @@
         private System.Windows.Forms.Label lblShirtNumber;
         private System.Windows.Forms.ContextMenuStrip cmsOptions;
         private System.Windows.Forms.ToolStripMenuItem ToggleFavouriteOption;
-        private System.Windows.Forms.ToolStripMenuItem chooseImageToolStripMenuItem;
         private System.Windows.Forms.Label lblPositon;
+        private System.Windows.Forms.ToolStripMenuItem viewDetailsOption;
     }
 }
