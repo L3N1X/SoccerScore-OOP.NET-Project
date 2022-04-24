@@ -62,5 +62,9 @@ namespace SoccerScoreData.Models
 
         [JsonProperty("away_team_events")]
         public List<TeamEvent> AwayTeamEvents { get; set; }
+        public string Details()
+        {
+            return $"Home: {HomeTeam.Country} | Away: {AwayTeam.Country}";
+        }
     }
 }

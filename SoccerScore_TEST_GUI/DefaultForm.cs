@@ -34,7 +34,8 @@ namespace SoccerScore_TEST_GUI
             if (dataManager.HasDefaultSettings())
             {
                 Form dialog = new InitializeForm(dataManager);
-                dialog.ShowDialog();
+                if(dialog.ShowDialog() != DialogResult.OK)
+                    Close();
             }
             InitializeControls();
         }
@@ -61,6 +62,11 @@ namespace SoccerScore_TEST_GUI
                     this.favoruitePLayersContainer.Controls.Add(playerViewControl);
                 else
                     this.playersContainer.Controls.Add(playerViewControl);
+            }
+
+            foreach (var match in dataManager.FavouriteTeamMatches)
+            {
+                this.lbMatches.Items.Add(match.Details());
             }
 
             this.lblTitle.Text = $"{dataManager.FavouriteTeam.Details()}";
@@ -176,6 +182,25 @@ namespace SoccerScore_TEST_GUI
         private void playersTab_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            dataManager.ResetSettingsAndSave();
+            Form dialog = new InitializeForm(dataManager);
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Controls.Clear();
+                //Avoid double subscribing
+                this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.DefaultForm_FormClosing);
+                InitializeComponent();
+                Tools.CenterControlInParent(this.pbLoading);
+                InitializeControls();
+            }
+            else
+            {
+                Close();
+            };
         }
     }
 }

@@ -69,6 +69,12 @@
     <Compile Include="InitializeForm.Designer.cs">
       <DependentUpon>InitializeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MatchView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MatchView.Designer.cs">
+      <DependentUpon>MatchView.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlayerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InitializeForm.resx">
       <DependentUpon>InitializeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MatchView.resx">
+      <DependentUpon>MatchView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerForm.resx">
       <DependentUpon>PlayerForm.cs</DependentUpon>

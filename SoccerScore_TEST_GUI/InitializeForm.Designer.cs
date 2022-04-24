@@ -45,6 +45,7 @@
             // 
             // btnConfirm
             // 
+            this.btnConfirm.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnConfirm.Enabled = false;
             this.btnConfirm.Location = new System.Drawing.Point(52, 423);
             this.btnConfirm.Name = "btnConfirm";

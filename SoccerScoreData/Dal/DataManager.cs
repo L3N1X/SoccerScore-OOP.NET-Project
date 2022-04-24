@@ -99,8 +99,12 @@ namespace SoccerScoreData.Dal
         public async Task InitializeFavoruriteTeam()
         {
             NationalTeam fullTeam = await repoData.GetNationalTeamAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
+            this.FavouriteTeamMatches = await repoData.GetMatchesAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
+
             IList<Player> playersWithSavedImages = repoConfig.GetPlayersWithSavedImage();
+
             this.FavouriteTeam = fullTeam;
+
             //Binds favourite players from settings
             settings.FavouritePlayers.ToList().ForEach(player =>
             {
