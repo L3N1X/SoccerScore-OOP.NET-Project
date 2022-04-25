@@ -288,6 +288,66 @@
   <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="&gt;&gt;playersTab.Name" xml:space="preserve">
+    <value>playersTab</value>
+  </data>
+  <data name="&gt;&gt;playersTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;playersTab.Parent" xml:space="preserve">
+    <value>programTab</value>
+  </data>
+  <data name="&gt;&gt;playersTab.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.Name" xml:space="preserve">
+    <value>matchesTab</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.Parent" xml:space="preserve">
+    <value>programTab</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;statisticsTab.Name" xml:space="preserve">
+    <value>statisticsTab</value>
+  </data>
+  <data name="&gt;&gt;statisticsTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statisticsTab.Parent" xml:space="preserve">
+    <value>programTab</value>
+  </data>
+  <data name="&gt;&gt;statisticsTab.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="programTab.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="programTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 28</value>
+  </data>
+  <data name="programTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 708</value>
+  </data>
+  <data name="programTab.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;programTab.Name" xml:space="preserve">
+    <value>programTab</value>
+  </data>
+  <data name="&gt;&gt;programTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;programTab.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;programTab.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;lblCredits.Name" xml:space="preserve">
     <value>lblCredits</value>
   </data>
@@ -354,86 +414,38 @@
   <data name="&gt;&gt;playersTab.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="flpMatches.AutoScroll" type="System.Boolean, mscorlib">
+  <data name="lblCredits.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="flpMatches.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
-    <value>BottomUp</value>
+  <data name="lblCredits.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Tai Le, 6pt</value>
   </data>
-  <data name="flpMatches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 13</value>
-  </data>
-  <data name="flpMatches.Size" type="System.Drawing.Size, System.Drawing">
-    <value>807, 652</value>
-  </data>
-  <data name="flpMatches.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="flpMatches.WrapContents" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;flpMatches.Name" xml:space="preserve">
-    <value>flpMatches</value>
-  </data>
-  <data name="&gt;&gt;flpMatches.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flpMatches.Parent" xml:space="preserve">
-    <value>matchesTab</value>
-  </data>
-  <data name="&gt;&gt;flpMatches.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblCredits.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1093, 656</value>
+  <data name="lblCredits.Location" type="System.Drawing.Point, System.Drawing">
+    <value>537, 646</value>
   </data>
-  <data name="btnSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="lblCredits.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 10</value>
   </data>
-  <data name="btnSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="lblCredits.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="btnSettings.Text" xml:space="preserve">
-    <value>settings</value>
+  <data name="lblCredits.Text" xml:space="preserve">
+    <value>Leon Kruslin OOP.NET 2022</value>
   </data>
-  <data name="&gt;&gt;btnSettings.Name" xml:space="preserve">
-    <value>btnSettings</value>
+  <data name="&gt;&gt;lblCredits.Name" xml:space="preserve">
+    <value>lblCredits</value>
   </data>
-  <data name="&gt;&gt;btnSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblCredits.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnSettings.Parent" xml:space="preserve">
-    <value>matchesTab</value>
+  <data name="&gt;&gt;lblCredits.Parent" xml:space="preserve">
+    <value>playersTab</value>
   </data>
-  <data name="&gt;&gt;btnSettings.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="matchesTab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="matchesTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1176, 682</value>
-  </data>
-  <data name="matchesTab.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="matchesTab.Text" xml:space="preserve">
-    <value>Matches</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.Name" xml:space="preserve">
-    <value>matchesTab</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.Parent" xml:space="preserve">
-    <value>programTab</value>
-  </data>
-  <data name="&gt;&gt;matchesTab.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;lblCredits.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;label8.Name" xml:space="preserve">
     <value>label8</value>
@@ -497,63 +509,6 @@
   </data>
   <data name="&gt;&gt;statisticsTab.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="programTab.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="programTab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 28</value>
-  </data>
-  <data name="programTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 708</value>
-  </data>
-  <data name="programTab.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;programTab.Name" xml:space="preserve">
-    <value>programTab</value>
-  </data>
-  <data name="&gt;&gt;programTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;programTab.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;programTab.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblCredits.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCredits.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Tai Le, 6pt</value>
-  </data>
-  <data name="lblCredits.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCredits.Location" type="System.Drawing.Point, System.Drawing">
-    <value>537, 646</value>
-  </data>
-  <data name="lblCredits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 10</value>
-  </data>
-  <data name="lblCredits.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="lblCredits.Text" xml:space="preserve">
-    <value>Leon Kruslin OOP.NET 2022</value>
-  </data>
-  <data name="&gt;&gt;lblCredits.Name" xml:space="preserve">
-    <value>lblCredits</value>
-  </data>
-  <data name="&gt;&gt;lblCredits.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCredits.Parent" xml:space="preserve">
-    <value>playersTab</value>
-  </data>
-  <data name="&gt;&gt;lblCredits.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1587,6 +1542,81 @@
   <data name="&gt;&gt;lbPlayers.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;flpMatches.Name" xml:space="preserve">
+    <value>flpMatches</value>
+  </data>
+  <data name="&gt;&gt;flpMatches.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpMatches.Parent" xml:space="preserve">
+    <value>matchesTab</value>
+  </data>
+  <data name="&gt;&gt;flpMatches.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnSettings.Name" xml:space="preserve">
+    <value>btnSettings</value>
+  </data>
+  <data name="&gt;&gt;btnSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSettings.Parent" xml:space="preserve">
+    <value>matchesTab</value>
+  </data>
+  <data name="&gt;&gt;btnSettings.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="matchesTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="matchesTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1176, 682</value>
+  </data>
+  <data name="matchesTab.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="matchesTab.Text" xml:space="preserve">
+    <value>Matches</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.Name" xml:space="preserve">
+    <value>matchesTab</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.Parent" xml:space="preserve">
+    <value>programTab</value>
+  </data>
+  <data name="&gt;&gt;matchesTab.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1093, 656</value>
+  </data>
+  <data name="btnSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnSettings.Text" xml:space="preserve">
+    <value>settings</value>
+  </data>
+  <data name="&gt;&gt;btnSettings.Name" xml:space="preserve">
+    <value>btnSettings</value>
+  </data>
+  <data name="&gt;&gt;btnSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSettings.Parent" xml:space="preserve">
+    <value>matchesTab</value>
+  </data>
+  <data name="&gt;&gt;btnSettings.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>135, 17</value>
   </metadata>
@@ -1649,6 +1679,36 @@
   </data>
   <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="flpMatches.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flpMatches.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>BottomUp</value>
+  </data>
+  <data name="flpMatches.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 13</value>
+  </data>
+  <data name="flpMatches.Size" type="System.Drawing.Size, System.Drawing">
+    <value>807, 652</value>
+  </data>
+  <data name="flpMatches.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="flpMatches.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;flpMatches.Name" xml:space="preserve">
+    <value>flpMatches</value>
+  </data>
+  <data name="&gt;&gt;flpMatches.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpMatches.Parent" xml:space="preserve">
+    <value>matchesTab</value>
+  </data>
+  <data name="&gt;&gt;flpMatches.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="pbLoading.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5614,7 +5674,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Soccer Score BETA</value>
+    <value>Soccer Score BETA 0.3.2</value>
   </data>
   <data name="&gt;&gt;lblStatus.Name" xml:space="preserve">
     <value>lblStatus</value>
