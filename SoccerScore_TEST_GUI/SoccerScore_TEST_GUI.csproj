@@ -155,6 +155,7 @@
     <Content Include="Images\loading.gif" />
     <Content Include="Images\soccer_score_icon.ico" />
     <Content Include="Images\tactics.png" />
+    <Content Include="Images\trophy.png" />
     <Content Include="Images\uk.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

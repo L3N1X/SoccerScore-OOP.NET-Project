@@ -66,7 +66,7 @@ namespace SoccerScore_TEST_GUI
 
             foreach (var match in dataManager.FavouriteTeamMatches)
             {
-                this.lbMatches.Items.Add(match.Details());
+                this.flpMatches.Controls.Add(new MatchView(match, dataManager.FavouriteTeam));
             }
 
             this.lblTitle.Text = $"{dataManager.FavouriteTeam.Details()}";

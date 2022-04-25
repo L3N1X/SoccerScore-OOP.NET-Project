@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SoccerScoreData.Models
 {
     public class Match
     {
+        public int HomeTeamGoals { get; set; }
+        public int AwayTeamGoals { get; set; }
+
         [JsonProperty("venue")]
         public string Venue { get; set; }
 
@@ -62,9 +62,5 @@ namespace SoccerScoreData.Models
 
         [JsonProperty("away_team_events")]
         public List<TeamEvent> AwayTeamEvents { get; set; }
-        public string Details()
-        {
-            return $"Home: {HomeTeam.Country} | Away: {AwayTeam.Country}";
-        }
     }
 }

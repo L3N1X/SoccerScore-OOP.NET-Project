@@ -63,11 +63,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbPlayers = new System.Windows.Forms.ListBox();
             this.matchesTab = new System.Windows.Forms.TabPage();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.lbMatches = new System.Windows.Forms.ListBox();
-            this.btnSettings = new System.Windows.Forms.Button();
+            this.flpMatches = new System.Windows.Forms.FlowLayoutPanel();
             this.pbLoading = new System.Windows.Forms.PictureBox();
             this.btnEnglish = new System.Windows.Forms.ToolStripButton();
             this.btnCroatian = new System.Windows.Forms.ToolStripButton();
@@ -116,8 +116,8 @@
             // programTab
             // 
             this.programTab.Controls.Add(this.playersTab);
-            this.programTab.Controls.Add(this.statisticsTab);
             this.programTab.Controls.Add(this.matchesTab);
+            this.programTab.Controls.Add(this.statisticsTab);
             resources.ApplyResources(this.programTab, "programTab");
             this.programTab.Name = "programTab";
             this.programTab.SelectedIndex = 0;
@@ -301,11 +301,18 @@
             // 
             // matchesTab
             // 
+            this.matchesTab.BackColor = System.Drawing.SystemColors.Control;
+            this.matchesTab.Controls.Add(this.flpMatches);
             this.matchesTab.Controls.Add(this.btnSettings);
-            this.matchesTab.Controls.Add(this.lbMatches);
             resources.ApplyResources(this.matchesTab, "matchesTab");
             this.matchesTab.Name = "matchesTab";
-            this.matchesTab.UseVisualStyleBackColor = true;
+            // 
+            // btnSettings
+            // 
+            resources.ApplyResources(this.btnSettings, "btnSettings");
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // statusStrip
             // 
@@ -327,18 +334,10 @@
             this.btnCroatian});
             this.toolStrip.Name = "toolStrip";
             // 
-            // lbMatches
+            // flpMatches
             // 
-            this.lbMatches.FormattingEnabled = true;
-            resources.ApplyResources(this.lbMatches, "lbMatches");
-            this.lbMatches.Name = "lbMatches";
-            // 
-            // btnSettings
-            // 
-            resources.ApplyResources(this.btnSettings, "btnSettings");
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            resources.ApplyResources(this.flpMatches, "flpMatches");
+            this.flpMatches.Name = "flpMatches";
             // 
             // pbLoading
             // 
@@ -463,8 +462,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ListBox lbMatches;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.FlowLayoutPanel flpMatches;
     }
 }
 

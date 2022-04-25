@@ -12,6 +12,11 @@ namespace SoccerScoreData.Dal
 {
     internal class OnlineRepoData : IRepoData
     {
+        private bool CheckIfOwnGoal(string eventType)
+        {
+            return "goal-own".Equals(eventType);
+        }
+
         private bool CheckIfGoal(string eventType)
         {
             IList<string> options = new List<string>(new string[] { "goal", "goal-penalty" });
@@ -136,7 +141,6 @@ namespace SoccerScoreData.Dal
 
         public async Task<IList<Match>> GetMatchesAsync(Gender gender, string fifaCode)
         {
-            //string endpoint = gender == Gender.Male ? Endpoints.MensMatches : Endpoints.WomensMatches;
             string endpoint = gender == Gender.Male ? $"{Endpoints.MensSpecificMatch}{fifaCode.ToUpper()}" : $"{Endpoints.WomensSpecificMatch}{fifaCode.ToUpper()}";
             var matchesData = await GetMatchesData(endpoint);
             return matchesData;

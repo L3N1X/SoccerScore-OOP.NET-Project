@@ -63,6 +63,10 @@ namespace SoccerScoreData.Models
         [JsonProperty("goal_differential")]
         public long GoalDifferential { get; set; }
 
+        [JsonProperty("goals")]
+        public int MatchGoals { get; set; }
+        //Only used for matches (BEWARE WHEN TO USE)
+
         public override bool Equals(object obj)
         {
             return obj is NationalTeam team &&
