@@ -96,7 +96,7 @@ namespace SoccerScoreData.Dal
             SaveSettings();
         }
 
-        public async Task InitializeFavoruriteTeam()
+        public async Task InitializeData()
         {
             NationalTeam fullTeam = await repoData.GetNationalTeamAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
             this.FavouriteTeamMatches = await repoData.GetMatchesAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);

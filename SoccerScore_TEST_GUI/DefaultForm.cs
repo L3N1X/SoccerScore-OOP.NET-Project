@@ -45,7 +45,7 @@ namespace SoccerScore_TEST_GUI
             this.pbLoading.BringToFront();
             this.pbLoading.Visible = true;
 
-            await dataManager.InitializeFavoruriteTeam();
+            await dataManager.InitializeData();
 
             foreach (var player in dataManager.FavouriteTeam.AllPlayers)
             {
@@ -154,14 +154,14 @@ namespace SoccerScore_TEST_GUI
             IList<Player> players = new List<Player>();
             foreach (var control in this.playersContainer.Controls)
             {
-                if(control is PlayerView playerView)
+                if(control is PlayerView playerView && playerView.Player.IconPath != null)
                 {
                     players.Add(playerView.Player);
                 }
             }
             foreach (var control in this.favoruitePLayersContainer.Controls)
             {
-                if (control is PlayerView playerView)
+                if (control is PlayerView playerView && playerView.Player.IconPath != null)
                 {
                     players.Add(playerView.Player);
                 }
@@ -190,6 +190,7 @@ namespace SoccerScore_TEST_GUI
             Form dialog = new InitializeForm(dataManager);
             if (dialog.ShowDialog() == DialogResult.OK)
             {
+                SavePlayerImages();
                 Controls.Clear();
                 //Avoid double subscribing
                 this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.DefaultForm_FormClosing);
