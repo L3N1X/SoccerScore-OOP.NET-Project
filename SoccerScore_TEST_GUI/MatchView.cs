@@ -54,6 +54,7 @@ namespace SoccerScore_TEST_GUI
                 this.pbAwayWinner.Image = null;
             }
 
+            Tools.CenterControlInParentHorizontally(this.lblVisitorsLabel);
             Tools.CenterControlInParentHorizontally(this.lblLocation);
             Tools.CenterControlInParentHorizontally(this.lblAttendance);
             Tools.CenterControlInParentHorizontally(this.lblDate);

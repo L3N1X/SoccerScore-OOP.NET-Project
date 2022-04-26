@@ -32,81 +32,61 @@
             this.btnYes = new System.Windows.Forms.Button();
             this.btnNo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pbExitIcon = new System.Windows.Forms.PictureBox();
             this.lblExit = new System.Windows.Forms.Label();
+            this.pbExitIcon = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbExitIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // btnYes
             // 
+            resources.ApplyResources(this.btnYes, "btnYes");
             this.btnYes.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnYes.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.btnYes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnYes.Location = new System.Drawing.Point(62, 114);
             this.btnYes.Name = "btnYes";
-            this.btnYes.Size = new System.Drawing.Size(69, 23);
-            this.btnYes.TabIndex = 0;
-            this.btnYes.Text = "Yes";
             this.btnYes.UseVisualStyleBackColor = false;
             // 
             // btnNo
             // 
+            resources.ApplyResources(this.btnNo, "btnNo");
             this.btnNo.BackColor = System.Drawing.SystemColors.Window;
             this.btnNo.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btnNo.Location = new System.Drawing.Point(137, 114);
             this.btnNo.Name = "btnNo";
-            this.btnNo.Size = new System.Drawing.Size(69, 23);
-            this.btnNo.TabIndex = 1;
-            this.btnNo.Text = "No";
             this.btnNo.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.btnNo);
             this.groupBox1.Controls.Add(this.btnYes);
             this.groupBox1.Controls.Add(this.pbExitIcon);
             this.groupBox1.Controls.Add(this.lblExit);
-            this.groupBox1.Location = new System.Drawing.Point(12, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(268, 150);
-            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            // 
-            // pbExitIcon
-            // 
-            this.pbExitIcon.Image = global::SoccerScore_TEST_GUI.Images.ball;
-            this.pbExitIcon.Location = new System.Drawing.Point(62, 47);
-            this.pbExitIcon.Name = "pbExitIcon";
-            this.pbExitIcon.Size = new System.Drawing.Size(144, 74);
-            this.pbExitIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbExitIcon.TabIndex = 3;
-            this.pbExitIcon.TabStop = false;
             // 
             // lblExit
             // 
-            this.lblExit.AutoSize = true;
-            this.lblExit.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExit.Location = new System.Drawing.Point(30, 25);
+            resources.ApplyResources(this.lblExit, "lblExit");
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(208, 19);
-            this.lblExit.TabIndex = 2;
-            this.lblExit.Text = "Are you sure you want to exit?";
+            // 
+            // pbExitIcon
+            // 
+            resources.ApplyResources(this.pbExitIcon, "pbExitIcon");
+            this.pbExitIcon.Image = global::SoccerScore_TEST_GUI.Images.ball;
+            this.pbExitIcon.Name = "pbExitIcon";
+            this.pbExitIcon.TabStop = false;
             // 
             // ExitForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(292, 157);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ExitForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Soccer Score";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbExitIcon)).EndInit();

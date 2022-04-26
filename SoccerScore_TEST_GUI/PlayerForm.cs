@@ -28,7 +28,8 @@ namespace SoccerScore_TEST_GUI
             this.Text = player.Name;
             this.lblName.Text = player.Name;
             Tools.CenterControlInParentHorizontally(this.lblName);
-            this.lblCaptain.Text = player.Captain ? "Team captain" : string.Empty;
+            if (player.Captain)
+                this.lblCaptain.Visible = true;
             Tools.CenterControlInParentHorizontally(this.lblCaptain);
             this.lblCountry.Text = nationalTeam.Country;
             this.lblGender.Text = nationalTeam.TeamGender.ToString();

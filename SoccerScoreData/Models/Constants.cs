@@ -20,7 +20,7 @@ namespace SoccerScoreData.Models
     }
     public enum Language
     {
-        ENG,
-        CRO
+        eng,
+        hr
     }
 }

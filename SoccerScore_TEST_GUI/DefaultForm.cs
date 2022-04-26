@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,12 +17,6 @@ namespace SoccerScore_TEST_GUI
     {
         internal DataManager dataManager;
         public DefaultForm()
-        {
-            InitializeComponent();
-            Tools.CenterControlInParent(this.pbLoading);
-        }
-
-        private void DefaultForm_Load(object sender, EventArgs e)
         {
             try
             {
@@ -34,18 +29,28 @@ namespace SoccerScore_TEST_GUI
             if (dataManager.HasDefaultSettings())
             {
                 Form dialog = new InitializeForm(dataManager);
-                if(dialog.ShowDialog() != DialogResult.OK)
+                if (dialog.ShowDialog() != DialogResult.OK)
                     Close();
             }
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(dataManager.GetLanguage().ToString());
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(dataManager.GetLanguage().ToString());
+            InitializeComponent();
+        }
+
+        private void DefaultForm_Load(object sender, EventArgs e)
+        {
             InitializeControls();
         }
 
+        //Blend to one function
         private async void InitializeControls()
         {
+            Tools.CenterControlInParent(this.pbLoading);
             this.pbLoading.BringToFront();
             this.pbLoading.Visible = true;
 
             await dataManager.InitializeData();
+            //SetCulture(dataManager.GetLanguage().ToString());
 
             foreach (var player in dataManager.FavouriteTeam.AllPlayers)
             {
@@ -83,6 +88,49 @@ namespace SoccerScore_TEST_GUI
             
             SetAllControlsVisible();
         }
+        private void InitializeControlsNoDataLoad()
+        {
+            Tools.CenterControlInParent(this.pbLoading);
+            this.pbLoading.BringToFront();
+            this.pbLoading.Visible = true;
+
+            foreach (var player in dataManager.FavouriteTeam.AllPlayers)
+            {
+                this.lbPlayers.Items.Add(player.ListBoxDetails());
+
+                PlayerView playerViewControl = new PlayerView(player, dataManager.FavouriteTeam);
+
+                playerViewControl.FavoutitePlayerAdded += PlayerViewControl_FavoutitePlayerAdded;
+                playerViewControl.FavouritePlayerRemoved += PlayerViewControl_FavouritePlayerRemoved;
+
+                //Add drag and drop functionality
+
+                if (player.IsFavourite)
+                    this.favoruitePLayersContainer.Controls.Add(playerViewControl);
+                else
+                    this.playersContainer.Controls.Add(playerViewControl);
+            }
+
+            foreach (var match in dataManager.FavouriteTeamMatches)
+            {
+                this.flpMatches.Controls.Add(new MatchView(match, dataManager.FavouriteTeam));
+            }
+
+            this.lblTitle.Text = $"{dataManager.FavouriteTeam.Details()}";
+
+            InitializeLabelText();
+
+            Tools.CenterControlInParentHorizontally(this.lblTitle);
+
+            this.pbLoading.Visible = false;
+            this.toolStrip.Enabled = true;
+
+            this.lblStatus.Text = dataManager.FavouriteTeam.Details();
+
+
+            SetAllControlsVisible();
+        }
+        //
 
         private void InitializeLabelText()
         {
@@ -171,22 +219,19 @@ namespace SoccerScore_TEST_GUI
 
         private void btnEnglish_Click(object sender, EventArgs e)
         {
-
+            dataManager.SetLanguage(Language.eng);
+            this.SetCulture(dataManager.GetLanguage());
         }
 
         private void btnCroatian_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void playersTab_Click(object sender, EventArgs e)
-        {
-
+            dataManager.SetLanguage(Language.hr);
+            this.SetCulture(dataManager.GetLanguage());
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            dataManager.ResetSettingsAndSave();
+            dataManager.ResetFavourtiteTeamSettings();
             Form dialog = new InitializeForm(dataManager);
             if (dialog.ShowDialog() == DialogResult.OK)
             {
@@ -202,6 +247,22 @@ namespace SoccerScore_TEST_GUI
             {
                 Close();
             };
+        }
+
+        private void SetCulture(Language language)
+        {
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language.ToString());
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(language.ToString());
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+            Controls.Clear();
+            //Avoid double subscribing
+            this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.DefaultForm_FormClosing);
+            InitializeComponent();
+            InitializeControlsNoDataLoad();
         }
     }
 }

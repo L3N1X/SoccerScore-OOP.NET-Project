@@ -2,9 +2,7 @@
 using SoccerScoreData.Models;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace SoccerScoreData.Dal
@@ -67,9 +65,15 @@ namespace SoccerScoreData.Dal
             return settings.FavouritePlayers.Count(player => player != null);
         }
 
-        public void ResetSettingsAndSave()
+        public Language GetLanguage()
         {
-            this.settings = new Settings();
+            return settings.Language;
+        }
+
+        public void ResetFavourtiteTeamSettings()
+        {
+            this.settings.ClearFavouritePlayers();
+            this.settings.FavouriteTeam = null;
             SaveSettings();
         }
 
@@ -85,10 +89,17 @@ namespace SoccerScoreData.Dal
             SaveSettings();
         }
 
+        public void SetLanguage(Language language)
+        {
+            this.settings.Language = language;
+            SaveSettings();
+        }
+
         public Task<IList<NationalTeam>> GetSelectionTeams()
         {
             return repoData.GetNationalTeamsSelection(this.SelectedGender);
         }
+
 
         public void AddFavouritePlayer(Player player)
         {

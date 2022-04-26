@@ -96,6 +96,9 @@
     <EmbeddedResource Include="DefaultForm.resx">
       <DependentUpon>DefaultForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ExitForm.hr.resx">
+      <DependentUpon>ExitForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExitForm.resx">
       <DependentUpon>ExitForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,11 +109,20 @@
     <EmbeddedResource Include="InitializeForm.resx">
       <DependentUpon>InitializeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MatchView.hr.resx">
+      <DependentUpon>MatchView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MatchView.resx">
       <DependentUpon>MatchView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PlayerForm.hr.resx">
+      <DependentUpon>PlayerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlayerForm.resx">
       <DependentUpon>PlayerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerView.hr.resx">
+      <DependentUpon>PlayerView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerView.resx">
       <DependentUpon>PlayerView.cs</DependentUpon>

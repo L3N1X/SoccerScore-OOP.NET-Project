@@ -117,28 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 21</value>
+    <value>81, 21</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Svi igrači</value>
   </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 21</value>
+    <value>124, 21</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Omiljeni igrači</value>
-  </data>
-  <data name="lblTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 34</value>
@@ -149,17 +139,8 @@
   <data name="playersTab.Text" xml:space="preserve">
     <value>Igrači</value>
   </data>
-  <data name="lblCredits.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="statisticsTab.Text" xml:space="preserve">
-    <value>Statistika reprezentacije</value>
-  </data>
-  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="matchesTab.Text" xml:space="preserve">
+    <value>Utakmice</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 19</value>
@@ -167,17 +148,11 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Država</value>
   </data>
-  <data name="lblPoints.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="lblPoints.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 19</value>
   </data>
   <data name="lblPoints.Text" xml:space="preserve">
     <value>Ukupni bodovi</value>
-  </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 19</value>
@@ -185,23 +160,11 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Porazi</value>
   </data>
-  <data name="lblGoalDifferential.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 19</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Pobjede</value>
-  </data>
-  <data name="lblGoalsAgainst.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 19</value>
@@ -209,35 +172,17 @@
   <data name="label5.Text" xml:space="preserve">
     <value>FIFA kod</value>
   </data>
-  <data name="lblGoalsFor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 19</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Izjednačeno</value>
   </data>
-  <data name="lblGamesPlayed.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 19</value>
+    <value>116, 19</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
-    <value>Ogigrano utakmica</value>
-  </data>
-  <data name="lblDraws.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Igrano utakmica</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 19</value>
@@ -245,23 +190,11 @@
   <data name="label11.Text" xml:space="preserve">
     <value>Golova protiv</value>
   </data>
-  <data name="lblLosses.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 19</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Golova za</value>
-  </data>
-  <data name="lblWins.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 19</value>
@@ -269,56 +202,17 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Razlika golova</value>
   </data>
-  <data name="lblTotalPoints.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCountry.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblFifaCode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Igrači</value>
   </data>
-  <data name="matchesTab.Text" xml:space="preserve">
-    <value>Utakmice</value>
-  </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 19</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Datoteka</value>
-  </data>
-  <data name="printOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
-  <data name="printOption.Text" xml:space="preserve">
-    <value>Printaj</value>
-  </data>
-  <data name="clearAndExitOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
-  <data name="clearAndExitOption.Text" xml:space="preserve">
-    <value>Očisti podatke i zatvori</value>
-  </data>
-  <data name="pbLoading.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="statisticsTab.Text" xml:space="preserve">
+    <value>Statistika reprezentacije</value>
   </data>
   <data name="btnEnglish.Text" xml:space="preserve">
     <value>Promijeni na engleski</value>
   </data>
   <data name="btnCroatian.Text" xml:space="preserve">
     <value>Promijeni na hrvatski</value>
-  </data>
-  <data name="pbBorderLeft.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbBorderRight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4130,7 +4024,8 @@
         AQAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAMADAADgBwAA8A8AAP//AAA=
 </value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>Inherit</value>
   </data>
 </root>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,7 +65,10 @@ namespace SoccerScore_TEST_GUI
             Tools.CenterControlInParentHorizontally(this.lblName);
             Tools.CenterControlInParentHorizontally(this.lblPositon);
 
-            this.ToggleFavouriteOption.Text = this.Player.IsFavourite ? $"Remove {Player.Name} from favoruites" : $"Add {Player.Name} to favoruites";
+            if (CultureInfo.CurrentCulture.Name == Language.eng.ToString() && Player.IsFavourite)
+                this.ToggleFavouriteOption.Text = "Remove player from favorutites";
+            if (CultureInfo.CurrentCulture.Name == Language.hr.ToString() && Player.IsFavourite)
+                this.ToggleFavouriteOption.Text ="Makni igrača iz omiljenih";
         }
 
         private void PlayerView_Click(object sender, EventArgs e)

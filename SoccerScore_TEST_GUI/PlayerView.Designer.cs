@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerView));
             this.lblName = new System.Windows.Forms.Label();
             this.lblShirtNumber = new System.Windows.Forms.Label();
             this.cmsOptions = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -47,100 +48,73 @@
             // 
             // lblName
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(39, 168);
+            resources.ApplyResources(this.lblName, "lblName");
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(113, 19);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "PLAYER NAME";
             // 
             // lblShirtNumber
             // 
-            this.lblShirtNumber.AutoSize = true;
+            resources.ApplyResources(this.lblShirtNumber, "lblShirtNumber");
             this.lblShirtNumber.BackColor = System.Drawing.Color.White;
-            this.lblShirtNumber.Font = new System.Drawing.Font("Yu Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShirtNumber.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblShirtNumber.Location = new System.Drawing.Point(54, 71);
             this.lblShirtNumber.Name = "lblShirtNumber";
-            this.lblShirtNumber.Size = new System.Drawing.Size(68, 52);
-            this.lblShirtNumber.TabIndex = 5;
-            this.lblShirtNumber.Text = "12";
             // 
             // cmsOptions
             // 
+            resources.ApplyResources(this.cmsOptions, "cmsOptions");
             this.cmsOptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToggleFavouriteOption,
             this.viewPlayerOption,
             this.chooseImageOption});
             this.cmsOptions.Name = "cmsOptions";
-            this.cmsOptions.Size = new System.Drawing.Size(160, 70);
             // 
             // ToggleFavouriteOption
             // 
+            resources.ApplyResources(this.ToggleFavouriteOption, "ToggleFavouriteOption");
             this.ToggleFavouriteOption.Name = "ToggleFavouriteOption";
-            this.ToggleFavouriteOption.Size = new System.Drawing.Size(180, 22);
-            this.ToggleFavouriteOption.Text = "Toggle favourite";
             this.ToggleFavouriteOption.Click += new System.EventHandler(this.ToggleFavoruiteOption_Click);
             // 
             // viewPlayerOption
             // 
+            resources.ApplyResources(this.viewPlayerOption, "viewPlayerOption");
             this.viewPlayerOption.Name = "viewPlayerOption";
-            this.viewPlayerOption.Size = new System.Drawing.Size(180, 22);
-            this.viewPlayerOption.Text = "View player";
             this.viewPlayerOption.Click += new System.EventHandler(this.ViewDetailsOption_Click);
             // 
             // chooseImageOption
             // 
+            resources.ApplyResources(this.chooseImageOption, "chooseImageOption");
             this.chooseImageOption.Name = "chooseImageOption";
-            this.chooseImageOption.Size = new System.Drawing.Size(180, 22);
-            this.chooseImageOption.Text = "Choose image";
             this.chooseImageOption.Click += new System.EventHandler(this.ChangeImageOption_Click);
             // 
             // lblPositon
             // 
-            this.lblPositon.AutoSize = true;
-            this.lblPositon.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPositon.Location = new System.Drawing.Point(58, 187);
+            resources.ApplyResources(this.lblPositon, "lblPositon");
             this.lblPositon.Name = "lblPositon";
-            this.lblPositon.Size = new System.Drawing.Size(74, 19);
-            this.lblPositon.TabIndex = 7;
-            this.lblPositon.Text = "POSITION";
             // 
             // pbCaptain
             // 
+            resources.ApplyResources(this.pbCaptain, "pbCaptain");
             this.pbCaptain.Image = global::SoccerScore_TEST_GUI.Images.captain;
-            this.pbCaptain.Location = new System.Drawing.Point(78, 0);
             this.pbCaptain.Name = "pbCaptain";
-            this.pbCaptain.Size = new System.Drawing.Size(35, 29);
-            this.pbCaptain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCaptain.TabIndex = 4;
             this.pbCaptain.TabStop = false;
             // 
             // pbFavourite
             // 
+            resources.ApplyResources(this.pbFavourite, "pbFavourite");
             this.pbFavourite.Image = global::SoccerScore_TEST_GUI.Images.favourite;
-            this.pbFavourite.Location = new System.Drawing.Point(4, 3);
             this.pbFavourite.Name = "pbFavourite";
-            this.pbFavourite.Size = new System.Drawing.Size(27, 26);
-            this.pbFavourite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbFavourite.TabIndex = 3;
             this.pbFavourite.TabStop = false;
             // 
             // pbPLayer
             // 
+            resources.ApplyResources(this.pbPLayer, "pbPLayer");
             this.pbPLayer.Image = global::SoccerScore_TEST_GUI.Images.default_player_image;
-            this.pbPLayer.Location = new System.Drawing.Point(4, 38);
             this.pbPLayer.Name = "pbPLayer";
-            this.pbPLayer.Size = new System.Drawing.Size(181, 127);
-            this.pbPLayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbPLayer.TabIndex = 2;
             this.pbPLayer.TabStop = false;
             // 
             // PlayerView
             // 
+            resources.ApplyResources(this, "$this");
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ContextMenuStrip = this.cmsOptions;
             this.Controls.Add(this.lblPositon);
@@ -151,7 +125,6 @@
             this.Controls.Add(this.lblName);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "PlayerView";
-            this.Size = new System.Drawing.Size(190, 207);
             this.Load += new System.EventHandler(this.PlayerView_Load);
             this.Click += new System.EventHandler(this.PlayerView_Click);
             this.cmsOptions.ResumeLayout(false);
