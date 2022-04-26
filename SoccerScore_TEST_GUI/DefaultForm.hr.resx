@@ -142,6 +142,9 @@
   <data name="matchesTab.Text" xml:space="preserve">
     <value>Utakmice</value>
   </data>
+  <data name="statisticsTab.Text" xml:space="preserve">
+    <value>Statistika reprezentacije</value>
+  </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 19</value>
   </data>
@@ -204,9 +207,6 @@
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Igrači</value>
-  </data>
-  <data name="statisticsTab.Text" xml:space="preserve">
-    <value>Statistika reprezentacije</value>
   </data>
   <data name="btnEnglish.Text" xml:space="preserve">
     <value>Promijeni na engleski</value>

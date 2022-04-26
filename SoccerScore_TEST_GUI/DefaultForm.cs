@@ -53,6 +53,8 @@ namespace SoccerScore_TEST_GUI
             await dataManager.InitializeData();
             //SetCulture(dataManager.GetLanguage().ToString());
 
+            this.gwPlayers.DataSource = dataManager.FavouriteTeam.AllPlayers;
+
             foreach (var player in dataManager.FavouriteTeam.AllPlayers)
             {
                 this.lbPlayers.Items.Add(player.ListBoxDetails());
@@ -97,6 +99,8 @@ namespace SoccerScore_TEST_GUI
             Tools.CenterControlInParent(this.pbLoading);
             this.pbLoading.BringToFront();
             this.pbLoading.Visible = true;
+
+            this.gwPlayers.DataSource = dataManager.FavouriteTeam.AllPlayers;
 
             foreach (var player in dataManager.FavouriteTeam.AllPlayers)
             {
