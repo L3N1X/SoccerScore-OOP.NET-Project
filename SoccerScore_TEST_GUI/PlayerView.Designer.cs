@@ -60,29 +60,29 @@
             // 
             // cmsOptions
             // 
-            resources.ApplyResources(this.cmsOptions, "cmsOptions");
             this.cmsOptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToggleFavouriteOption,
             this.viewPlayerOption,
             this.chooseImageOption});
             this.cmsOptions.Name = "cmsOptions";
+            resources.ApplyResources(this.cmsOptions, "cmsOptions");
             // 
             // ToggleFavouriteOption
             // 
-            resources.ApplyResources(this.ToggleFavouriteOption, "ToggleFavouriteOption");
             this.ToggleFavouriteOption.Name = "ToggleFavouriteOption";
+            resources.ApplyResources(this.ToggleFavouriteOption, "ToggleFavouriteOption");
             this.ToggleFavouriteOption.Click += new System.EventHandler(this.ToggleFavoruiteOption_Click);
             // 
             // viewPlayerOption
             // 
-            resources.ApplyResources(this.viewPlayerOption, "viewPlayerOption");
             this.viewPlayerOption.Name = "viewPlayerOption";
+            resources.ApplyResources(this.viewPlayerOption, "viewPlayerOption");
             this.viewPlayerOption.Click += new System.EventHandler(this.ViewDetailsOption_Click);
             // 
             // chooseImageOption
             // 
-            resources.ApplyResources(this.chooseImageOption, "chooseImageOption");
             this.chooseImageOption.Name = "chooseImageOption";
+            resources.ApplyResources(this.chooseImageOption, "chooseImageOption");
             this.chooseImageOption.Click += new System.EventHandler(this.ChangeImageOption_Click);
             // 
             // lblPositon
@@ -92,29 +92,29 @@
             // 
             // pbCaptain
             // 
-            resources.ApplyResources(this.pbCaptain, "pbCaptain");
             this.pbCaptain.Image = global::SoccerScore_TEST_GUI.Images.captain;
+            resources.ApplyResources(this.pbCaptain, "pbCaptain");
             this.pbCaptain.Name = "pbCaptain";
             this.pbCaptain.TabStop = false;
             // 
             // pbFavourite
             // 
-            resources.ApplyResources(this.pbFavourite, "pbFavourite");
             this.pbFavourite.Image = global::SoccerScore_TEST_GUI.Images.favourite;
+            resources.ApplyResources(this.pbFavourite, "pbFavourite");
             this.pbFavourite.Name = "pbFavourite";
             this.pbFavourite.TabStop = false;
             // 
             // pbPLayer
             // 
-            resources.ApplyResources(this.pbPLayer, "pbPLayer");
             this.pbPLayer.Image = global::SoccerScore_TEST_GUI.Images.default_player_image;
+            resources.ApplyResources(this.pbPLayer, "pbPLayer");
             this.pbPLayer.Name = "pbPLayer";
             this.pbPLayer.TabStop = false;
             // 
             // PlayerView
             // 
-            resources.ApplyResources(this, "$this");
             this.AllowDrop = true;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ContextMenuStrip = this.cmsOptions;
             this.Controls.Add(this.lblPositon);

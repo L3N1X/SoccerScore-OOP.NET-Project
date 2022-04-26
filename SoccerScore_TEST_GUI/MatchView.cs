@@ -15,33 +15,34 @@ namespace SoccerScore_TEST_GUI
     public partial class MatchView : UserControl
     {
         public Match Match { get; private set; }
+        //
         private readonly NationalTeam favouriteTeam;
+        //
         public MatchView(Match match, NationalTeam favouriteTeam)
         {
             this.Match = match;
+            //MAKNI 
             this.favouriteTeam = favouriteTeam;
+            //
             InitializeComponent();
             InitializeControls();
         }
 
         private void InitializeControls()
         {
-            this.lblHomeFifaCode.Text = Match.HomeTeam.FifaCode;
-            this.lblAwayFifaCode.Text = Match.AwayTeam.FifaCode;
+            this.lblHomeCountry.Text = Match.HomeTeam.Country;
+            this.lblAwayCountry.Text = Match.AwayTeam.Country;
 
-            if (this.Match.HomeTeam.FifaCode.Equals(this.favouriteTeam.FifaCode))
-            {
-                this.lblHomeFifaCode.ForeColor = Color.PaleVioletRed;
-            }
-            else
-            {
-                this.lblAwayFifaCode.ForeColor = Color.PaleVioletRed;
-            }
+            Tools.CenterControlInParentHorizontally(this.lblHomeCountry);
+            Tools.CenterControlInParentHorizontally(this.lblAwayCountry);
 
-            this.lblHomeAwayScore.Text = $"{Match.HomeTeam.MatchGoals} - {Match.AwayTeam.MatchGoals}";
+            this.lblHomeAwayScore.Text = $"{Match.HomeTeam.MatchGoals} : {Match.AwayTeam.MatchGoals}";
             this.lblDate.Text = Match.Datetime.ToShortDateString();
             this.lblAttendance.Text = Match.Attendance.ToString();
             this.lblLocation.Text = Match.Location.ToString();
+
+            this.pbHome.Image = CountryImages.ResourceManager.GetObject(Match.HomeTeam.FifaCode) as Image;
+            this.pbAway.Image = CountryImages.ResourceManager.GetObject(Match.AwayTeam.FifaCode) as Image;
             
             if (Match.WinnerCode == Match.HomeTeam.FifaCode)
                 this.pbHomeWinner.Image = Images.trophy;

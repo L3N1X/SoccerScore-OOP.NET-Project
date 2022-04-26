@@ -142,8 +142,17 @@
   <data name="favourite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\favourite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="female_shoot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\female_shoot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="field" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\field.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="male_shoot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\male_shoot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tactics" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\tactics.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -153,5 +162,8 @@
   </data>
   <data name="uk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\uk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="world_cup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\world-cup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CountryImages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountryImages.resx</DependentUpon>
+    </Compile>
     <Compile Include="DefaultForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +62,12 @@
     </Compile>
     <Compile Include="ExitForm.Designer.cs">
       <DependentUpon>ExitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FavouritePlayersExceededForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FavouritePlayersExceededForm.Designer.cs">
+      <DependentUpon>FavouritePlayersExceededForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Images.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -90,6 +101,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools.cs" />
+    <EmbeddedResource Include="CountryImages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CountryImages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DefaultForm.hr.resx">
       <DependentUpon>DefaultForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,9 +117,18 @@
     <EmbeddedResource Include="ExitForm.resx">
       <DependentUpon>ExitForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FavouritePlayersExceededForm.hr.resx">
+      <DependentUpon>FavouritePlayersExceededForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FavouritePlayersExceededForm.resx">
+      <DependentUpon>FavouritePlayersExceededForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Images.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitializeForm.hr.resx">
+      <DependentUpon>InitializeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InitializeForm.resx">
       <DependentUpon>InitializeForm.cs</DependentUpon>
@@ -156,6 +180,51 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CountryImages\ARG.jpg" />
+    <Content Include="CountryImages\AUS.jpg" />
+    <Content Include="CountryImages\BEL.jpg" />
+    <Content Include="CountryImages\BRA.jpg" />
+    <Content Include="CountryImages\CAN.jpg" />
+    <Content Include="CountryImages\CHI.jpg" />
+    <Content Include="CountryImages\CHN.jpg" />
+    <Content Include="CountryImages\CMR.jpg" />
+    <Content Include="CountryImages\COL.jpg" />
+    <Content Include="CountryImages\CRC.jpg" />
+    <Content Include="CountryImages\CRO.jpg" />
+    <Content Include="CountryImages\DEN.jpg" />
+    <Content Include="CountryImages\EGY.jpg" />
+    <Content Include="CountryImages\ENG.jpg" />
+    <Content Include="CountryImages\ESP.jpg" />
+    <Content Include="CountryImages\FRA.jpg" />
+    <Content Include="CountryImages\GER.jpg" />
+    <Content Include="CountryImages\IRN.jpg" />
+    <Content Include="CountryImages\ISL.jpg" />
+    <Content Include="CountryImages\ITA.jpg" />
+    <Content Include="CountryImages\JAM.jpg" />
+    <Content Include="CountryImages\JPN.jpg" />
+    <Content Include="CountryImages\KOR.jpg" />
+    <Content Include="CountryImages\KSA.jpg" />
+    <Content Include="CountryImages\MAR.jpg" />
+    <Content Include="CountryImages\MEX.jpg" />
+    <Content Include="CountryImages\NED.jpg" />
+    <Content Include="CountryImages\NGA.jpg" />
+    <Content Include="CountryImages\NOR.jpg" />
+    <Content Include="CountryImages\NZL.jpg" />
+    <Content Include="CountryImages\PAN.jpg" />
+    <Content Include="CountryImages\PER.jpg" />
+    <Content Include="CountryImages\POL.jpg" />
+    <Content Include="CountryImages\POR.jpg" />
+    <Content Include="CountryImages\RSA.jpg" />
+    <Content Include="CountryImages\RUS.jpg" />
+    <Content Include="CountryImages\SCO.jpg" />
+    <Content Include="CountryImages\SEN.jpg" />
+    <Content Include="CountryImages\SRB.jpg" />
+    <Content Include="CountryImages\SUI.jpg" />
+    <Content Include="CountryImages\SWE.jpg" />
+    <Content Include="CountryImages\THA.jpg" />
+    <Content Include="CountryImages\TUN.jpg" />
+    <Content Include="CountryImages\URU.jpg" />
+    <Content Include="CountryImages\USA.jpg" />
     <Content Include="Images\ball.gif" />
     <Content Include="Images\ball_loading.gif" />
     <Content Include="Images\border-left.png" />
@@ -164,11 +233,15 @@
     <Content Include="Images\cro.png" />
     <Content Include="Images\default_player_image.png" />
     <Content Include="Images\favourite.png" />
+    <Content Include="Images\female_shoot.png" />
+    <Content Include="Images\field.png" />
     <Content Include="Images\loading.gif" />
+    <Content Include="Images\male_shoot.png" />
     <Content Include="Images\soccer_score_icon.ico" />
     <Content Include="Images\tactics.png" />
     <Content Include="Images\trophy.png" />
     <Content Include="Images\uk.png" />
+    <Content Include="Images\world-cup.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

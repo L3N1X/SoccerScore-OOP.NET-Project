@@ -139,11 +139,11 @@
   <data name="playersTab.Text" xml:space="preserve">
     <value>Igrači</value>
   </data>
+  <data name="btnSettings.Text" xml:space="preserve">
+    <value>postavke</value>
+  </data>
   <data name="matchesTab.Text" xml:space="preserve">
     <value>Utakmice</value>
-  </data>
-  <data name="statisticsTab.Text" xml:space="preserve">
-    <value>Statistika reprezentacije</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 19</value>
@@ -207,6 +207,9 @@
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Igrači</value>
+  </data>
+  <data name="statisticsTab.Text" xml:space="preserve">
+    <value>Statistika reprezentacije</value>
   </data>
   <data name="btnEnglish.Text" xml:space="preserve">
     <value>Promijeni na engleski</value>
@@ -4024,7 +4027,8 @@
         AQAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAMADAADgBwAA8A8AAP//AAA=
 </value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Soccer Score BETA 0.4.1</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
 </root>

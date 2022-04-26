@@ -19,6 +19,9 @@ namespace SoccerScore_TEST_GUI
         public InitializeForm(DataManager dataManager)
         {
             InitializeComponent();
+            Tools.CenterControlInParentHorizontally(this.rbFemale);
+            Tools.CenterControlInParentHorizontally(this.rbMale);
+            Tools.CenterControlInParentHorizontally(this.label1);
             this.dataManager = dataManager;
         }
 
@@ -35,14 +38,8 @@ namespace SoccerScore_TEST_GUI
             }
             this.cbNationalTeams.SelectedIndex = 0;
             this.cbNationalTeams.Enabled = true;
-            this.UpdateConfirmButtonText();
             this.pbLoading.Visible = false;
             this.btnConfirm.Enabled = true;
-        }
-
-        private void UpdateConfirmButtonText()
-        {
-            this.btnConfirm.Text = $"Select{Environment.NewLine}{((NationalTeam)this.cbNationalTeams.SelectedItem).Details()}";
         }
 
         private void InitializeForm_Load(object sender, EventArgs e)
@@ -64,15 +61,15 @@ namespace SoccerScore_TEST_GUI
             this.FillSelectionTeams();
         }
 
-        private void cbNationalTeams_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.UpdateConfirmButtonText();
-        }
-
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             this.dataManager.SetFavouriteTeam(this.cbNationalTeams.SelectedItem as NationalTeam);
             Close();
+        }
+
+        private void gbInitialize_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

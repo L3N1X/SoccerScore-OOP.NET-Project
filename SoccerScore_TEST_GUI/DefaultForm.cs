@@ -33,8 +33,8 @@ namespace SoccerScore_TEST_GUI
                 if (dialog.ShowDialog() != DialogResult.OK)
                     Close();
             }
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(dataManager.GetLanguage().ToString());
-            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(dataManager.GetLanguage().ToString());
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(dataManager.GetLanguage().ToString());
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(dataManager.GetLanguage().ToString());
             InitializeComponent();
         }
 
@@ -51,9 +51,6 @@ namespace SoccerScore_TEST_GUI
             this.pbLoading.Visible = true;
 
             await dataManager.InitializeData();
-            //SetCulture(dataManager.GetLanguage().ToString());
-
-            this.gwPlayers.DataSource = dataManager.FavouriteTeam.AllPlayers;
 
             foreach (var player in dataManager.FavouriteTeam.AllPlayers)
             {
@@ -86,6 +83,10 @@ namespace SoccerScore_TEST_GUI
 
             Tools.CenterControlInParentHorizontally(this.lblTitle);
 
+            this.pbCountryLeft.Image = CountryImages.ResourceManager.GetObject(dataManager.FavouriteTeam.FifaCode) as Image;
+            this.pbCountryRight.Image = CountryImages.ResourceManager.GetObject(dataManager.FavouriteTeam.FifaCode) as Image;
+            this.pbCountryStatistics.Image = CountryImages.ResourceManager.GetObject(dataManager.FavouriteTeam.FifaCode) as Image;
+
             this.pbLoading.Visible = false;
             this.toolStrip.Enabled = true;
 
@@ -99,8 +100,6 @@ namespace SoccerScore_TEST_GUI
             Tools.CenterControlInParent(this.pbLoading);
             this.pbLoading.BringToFront();
             this.pbLoading.Visible = true;
-
-            this.gwPlayers.DataSource = dataManager.FavouriteTeam.AllPlayers;
 
             foreach (var player in dataManager.FavouriteTeam.AllPlayers)
             {
@@ -133,6 +132,10 @@ namespace SoccerScore_TEST_GUI
 
             Tools.CenterControlInParentHorizontally(this.lblTitle);
 
+            this.pbCountryLeft.Image = CountryImages.ResourceManager.GetObject(dataManager.FavouriteTeam.FifaCode) as Image;
+            this.pbCountryRight.Image = CountryImages.ResourceManager.GetObject(dataManager.FavouriteTeam.FifaCode) as Image;
+            this.pbCountryStatistics.Image = CountryImages.ResourceManager.GetObject(dataManager.FavouriteTeam.FifaCode) as Image;
+
             this.pbLoading.Visible = false;
             this.toolStrip.Enabled = true;
 
@@ -159,6 +162,8 @@ namespace SoccerScore_TEST_GUI
 
         private void SetAllControlsVisible()
         {
+            this.pbCountryLeft.Visible = true;
+            this.pbCountryRight.Visible = true;
             this.lblTitle.Visible = true;
             this.playersContainer.Visible = true;
             this.favoruitePLayersContainer.Visible = true;
@@ -166,6 +171,8 @@ namespace SoccerScore_TEST_GUI
             this.label2.Visible = true;
             this.pbBorderLeft.Visible = true;
             this.pbBorderRight.Visible = true;
+            this.pbField1.Visible = true;
+            this.pbField2.Visible = true;
         }
 
         private void PlayerViewControl_FavouritePlayerRemoved(object sender, EventArgs args)
@@ -183,7 +190,8 @@ namespace SoccerScore_TEST_GUI
             if (dataManager.HasMaxAmountOfFavoruitePlayers()) //Make into one bool func
             {
                 newFavoruitePlayerView.Player.IsFavourite = false;
-                MessageBox.Show("You can only have 3 favorurite players", "Info" ,MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Form dialog = new FavouritePlayersExceededForm();
+                dialog.ShowDialog();
                 return;
             }
             this.favoruitePLayersContainer.Controls.Add(newFavoruitePlayerView);

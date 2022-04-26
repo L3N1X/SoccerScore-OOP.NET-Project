@@ -144,7 +144,7 @@
     <value>Odaberi sliku</value>
   </data>
   <data name="cmsOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 92</value>
+    <value>200, 70</value>
   </data>
   <data name="lblPositon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

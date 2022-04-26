@@ -30,19 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatchView));
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblHomeCountry = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblAwayCountry = new System.Windows.Forms.Label();
+            this.pbHome = new System.Windows.Forms.PictureBox();
+            this.pbAway = new System.Windows.Forms.PictureBox();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblLocation = new System.Windows.Forms.Label();
             this.pbHomeWinner = new System.Windows.Forms.PictureBox();
             this.pbAwayWinner = new System.Windows.Forms.PictureBox();
             this.lblHomeAwayScore = new System.Windows.Forms.Label();
-            this.lblAwayFifaCode = new System.Windows.Forms.Label();
-            this.lblHomeFifaCode = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblVisitorsLabel = new System.Windows.Forms.Label();
             this.lblAttendance = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlContainer.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAway)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHomeWinner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAwayWinner)).BeginInit();
             this.panel1.SuspendLayout();
@@ -51,17 +59,53 @@
             // pnlContainer
             // 
             this.pnlContainer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlContainer.Controls.Add(this.panel3);
+            this.pnlContainer.Controls.Add(this.panel2);
+            this.pnlContainer.Controls.Add(this.pbHome);
+            this.pnlContainer.Controls.Add(this.pbAway);
             this.pnlContainer.Controls.Add(this.lblDate);
             this.pnlContainer.Controls.Add(this.lblLocation);
             this.pnlContainer.Controls.Add(this.pbHomeWinner);
             this.pnlContainer.Controls.Add(this.pbAwayWinner);
             this.pnlContainer.Controls.Add(this.lblHomeAwayScore);
-            this.pnlContainer.Controls.Add(this.lblAwayFifaCode);
-            this.pnlContainer.Controls.Add(this.lblHomeFifaCode);
             this.pnlContainer.Controls.Add(this.label2);
             this.pnlContainer.Controls.Add(this.label1);
             resources.ApplyResources(this.pnlContainer, "pnlContainer");
             this.pnlContainer.Name = "pnlContainer";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lblHomeCountry);
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.Name = "panel3";
+            // 
+            // lblHomeCountry
+            // 
+            resources.ApplyResources(this.lblHomeCountry, "lblHomeCountry");
+            this.lblHomeCountry.Name = "lblHomeCountry";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lblAwayCountry);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
+            // lblAwayCountry
+            // 
+            resources.ApplyResources(this.lblAwayCountry, "lblAwayCountry");
+            this.lblAwayCountry.Name = "lblAwayCountry";
+            // 
+            // pbHome
+            // 
+            resources.ApplyResources(this.pbHome, "pbHome");
+            this.pbHome.Name = "pbHome";
+            this.pbHome.TabStop = false;
+            // 
+            // pbAway
+            // 
+            resources.ApplyResources(this.pbAway, "pbAway");
+            this.pbAway.Name = "pbAway";
+            this.pbAway.TabStop = false;
             // 
             // lblDate
             // 
@@ -89,16 +133,6 @@
             // 
             resources.ApplyResources(this.lblHomeAwayScore, "lblHomeAwayScore");
             this.lblHomeAwayScore.Name = "lblHomeAwayScore";
-            // 
-            // lblAwayFifaCode
-            // 
-            resources.ApplyResources(this.lblAwayFifaCode, "lblAwayFifaCode");
-            this.lblAwayFifaCode.Name = "lblAwayFifaCode";
-            // 
-            // lblHomeFifaCode
-            // 
-            resources.ApplyResources(this.lblHomeFifaCode, "lblHomeFifaCode");
-            this.lblHomeFifaCode.Name = "lblHomeFifaCode";
             // 
             // label2
             // 
@@ -137,6 +171,12 @@
             this.Name = "MatchView";
             this.pnlContainer.ResumeLayout(false);
             this.pnlContainer.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAway)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHomeWinner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAwayWinner)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -148,8 +188,8 @@
         #endregion
         private System.Windows.Forms.Panel pnlContainer;
         private System.Windows.Forms.Label lblHomeAwayScore;
-        private System.Windows.Forms.Label lblAwayFifaCode;
-        private System.Windows.Forms.Label lblHomeFifaCode;
+        private System.Windows.Forms.Label lblAwayCountry;
+        private System.Windows.Forms.Label lblHomeCountry;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblVisitorsLabel;
@@ -159,5 +199,9 @@
         private System.Windows.Forms.PictureBox pbHomeWinner;
         private System.Windows.Forms.PictureBox pbAwayWinner;
         private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.PictureBox pbHome;
+        private System.Windows.Forms.PictureBox pbAway;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
     }
 }
