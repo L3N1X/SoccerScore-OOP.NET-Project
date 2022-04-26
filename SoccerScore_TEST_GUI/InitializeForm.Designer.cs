@@ -33,28 +33,33 @@
             this.cbNationalTeams = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbInitialize = new System.Windows.Forms.GroupBox();
+            this.lblLanguage = new System.Windows.Forms.Label();
+            this.pbCroatian = new System.Windows.Forms.PictureBox();
+            this.pbEnglish = new System.Windows.Forms.PictureBox();
+            this.pbLoading = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.rbFemale = new System.Windows.Forms.RadioButton();
             this.rbMale = new System.Windows.Forms.RadioButton();
-            this.pbLoading = new System.Windows.Forms.PictureBox();
             this.gbInitialize.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCroatian)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEnglish)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConfirm
             // 
-            resources.ApplyResources(this.btnConfirm, "btnConfirm");
             this.btnConfirm.DialogResult = System.Windows.Forms.DialogResult.OK;
+            resources.ApplyResources(this.btnConfirm, "btnConfirm");
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // cbNationalTeams
             // 
-            resources.ApplyResources(this.cbNationalTeams, "cbNationalTeams");
             this.cbNationalTeams.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbNationalTeams, "cbNationalTeams");
             this.cbNationalTeams.FormattingEnabled = true;
             this.cbNationalTeams.Name = "cbNationalTeams";
             // 
@@ -65,7 +70,9 @@
             // 
             // gbInitialize
             // 
-            resources.ApplyResources(this.gbInitialize, "gbInitialize");
+            this.gbInitialize.Controls.Add(this.lblLanguage);
+            this.gbInitialize.Controls.Add(this.pbCroatian);
+            this.gbInitialize.Controls.Add(this.pbEnglish);
             this.gbInitialize.Controls.Add(this.pbLoading);
             this.gbInitialize.Controls.Add(this.lblName);
             this.gbInitialize.Controls.Add(this.lblTitle);
@@ -75,9 +82,37 @@
             this.gbInitialize.Controls.Add(this.cbNationalTeams);
             this.gbInitialize.Controls.Add(this.btnConfirm);
             this.gbInitialize.Controls.Add(this.label1);
+            resources.ApplyResources(this.gbInitialize, "gbInitialize");
             this.gbInitialize.Name = "gbInitialize";
             this.gbInitialize.TabStop = false;
-            this.gbInitialize.Enter += new System.EventHandler(this.gbInitialize_Enter);
+            // 
+            // lblLanguage
+            // 
+            resources.ApplyResources(this.lblLanguage, "lblLanguage");
+            this.lblLanguage.Name = "lblLanguage";
+            // 
+            // pbCroatian
+            // 
+            this.pbCroatian.Image = global::SoccerScore_TEST_GUI.Images.cro;
+            resources.ApplyResources(this.pbCroatian, "pbCroatian");
+            this.pbCroatian.Name = "pbCroatian";
+            this.pbCroatian.TabStop = false;
+            this.pbCroatian.Click += new System.EventHandler(this.pbCroatian_Click);
+            // 
+            // pbEnglish
+            // 
+            this.pbEnglish.Image = global::SoccerScore_TEST_GUI.Images.uk;
+            resources.ApplyResources(this.pbEnglish, "pbEnglish");
+            this.pbEnglish.Name = "pbEnglish";
+            this.pbEnglish.TabStop = false;
+            this.pbEnglish.Click += new System.EventHandler(this.pbEnglish_Click);
+            // 
+            // pbLoading
+            // 
+            this.pbLoading.Image = global::SoccerScore_TEST_GUI.Images.ball_loading;
+            resources.ApplyResources(this.pbLoading, "pbLoading");
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.TabStop = false;
             // 
             // lblName
             // 
@@ -112,13 +147,6 @@
             this.rbMale.UseVisualStyleBackColor = true;
             this.rbMale.Click += new System.EventHandler(this.GenderButton_Click);
             // 
-            // pbLoading
-            // 
-            resources.ApplyResources(this.pbLoading, "pbLoading");
-            this.pbLoading.Image = global::SoccerScore_TEST_GUI.Images.ball_loading;
-            this.pbLoading.Name = "pbLoading";
-            this.pbLoading.TabStop = false;
-            // 
             // InitializeForm
             // 
             resources.ApplyResources(this, "$this");
@@ -130,6 +158,8 @@
             this.Load += new System.EventHandler(this.InitializeForm_Load);
             this.gbInitialize.ResumeLayout(false);
             this.gbInitialize.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCroatian)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEnglish)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
             this.ResumeLayout(false);
 
@@ -147,5 +177,8 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pbLoading;
+        private System.Windows.Forms.Label lblLanguage;
+        private System.Windows.Forms.PictureBox pbCroatian;
+        private System.Windows.Forms.PictureBox pbEnglish;
     }
 }

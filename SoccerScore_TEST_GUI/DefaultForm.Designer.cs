@@ -36,10 +36,11 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.programTab = new System.Windows.Forms.TabControl();
             this.playersTab = new System.Windows.Forms.TabPage();
-            this.pbField2 = new System.Windows.Forms.PictureBox();
-            this.pbField1 = new System.Windows.Forms.PictureBox();
+            this.pnlTitle = new System.Windows.Forms.Panel();
             this.pbCountryLeft = new System.Windows.Forms.PictureBox();
             this.pbCountryRight = new System.Windows.Forms.PictureBox();
+            this.pbField2 = new System.Windows.Forms.PictureBox();
+            this.pbField1 = new System.Windows.Forms.PictureBox();
             this.lblCredits = new System.Windows.Forms.Label();
             this.pbBorderLeft = new System.Windows.Forms.PictureBox();
             this.pbBorderRight = new System.Windows.Forms.PictureBox();
@@ -83,10 +84,11 @@
             this.pbLoading = new System.Windows.Forms.PictureBox();
             this.programTab.SuspendLayout();
             this.playersTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbField2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbField1)).BeginInit();
+            this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCountryLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCountryRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbField2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbField1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBorderLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBorderRight)).BeginInit();
             this.matchesTab.SuspendLayout();
@@ -128,45 +130,38 @@
             // 
             // programTab
             // 
-            resources.ApplyResources(this.programTab, "programTab");
             this.programTab.Controls.Add(this.playersTab);
             this.programTab.Controls.Add(this.matchesTab);
             this.programTab.Controls.Add(this.statisticsTab);
             this.programTab.Controls.Add(this.tabPage1);
+            resources.ApplyResources(this.programTab, "programTab");
             this.programTab.Name = "programTab";
             this.programTab.SelectedIndex = 0;
             // 
             // playersTab
             // 
-            resources.ApplyResources(this.playersTab, "playersTab");
             this.playersTab.BackColor = System.Drawing.SystemColors.Control;
+            this.playersTab.Controls.Add(this.pnlTitle);
             this.playersTab.Controls.Add(this.pbField2);
             this.playersTab.Controls.Add(this.pbField1);
-            this.playersTab.Controls.Add(this.pbCountryLeft);
-            this.playersTab.Controls.Add(this.pbCountryRight);
             this.playersTab.Controls.Add(this.lblCredits);
             this.playersTab.Controls.Add(this.pbBorderLeft);
             this.playersTab.Controls.Add(this.pbBorderRight);
             this.playersTab.Controls.Add(this.label1);
             this.playersTab.Controls.Add(this.playersContainer);
-            this.playersTab.Controls.Add(this.lblTitle);
             this.playersTab.Controls.Add(this.favoruitePLayersContainer);
             this.playersTab.Controls.Add(this.label2);
+            resources.ApplyResources(this.playersTab, "playersTab");
             this.playersTab.Name = "playersTab";
             // 
-            // pbField2
+            // pnlTitle
             // 
-            resources.ApplyResources(this.pbField2, "pbField2");
-            this.pbField2.Image = global::SoccerScore_TEST_GUI.Images.female_shoot;
-            this.pbField2.Name = "pbField2";
-            this.pbField2.TabStop = false;
-            // 
-            // pbField1
-            // 
-            resources.ApplyResources(this.pbField1, "pbField1");
-            this.pbField1.Image = global::SoccerScore_TEST_GUI.Images.male_shoot;
-            this.pbField1.Name = "pbField1";
-            this.pbField1.TabStop = false;
+            this.pnlTitle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlTitle.Controls.Add(this.lblTitle);
+            this.pnlTitle.Controls.Add(this.pbCountryLeft);
+            this.pnlTitle.Controls.Add(this.pbCountryRight);
+            resources.ApplyResources(this.pnlTitle, "pnlTitle");
+            this.pnlTitle.Name = "pnlTitle";
             // 
             // pbCountryLeft
             // 
@@ -180,6 +175,20 @@
             this.pbCountryRight.Name = "pbCountryRight";
             this.pbCountryRight.TabStop = false;
             // 
+            // pbField2
+            // 
+            this.pbField2.Image = global::SoccerScore_TEST_GUI.Images.female_shoot;
+            resources.ApplyResources(this.pbField2, "pbField2");
+            this.pbField2.Name = "pbField2";
+            this.pbField2.TabStop = false;
+            // 
+            // pbField1
+            // 
+            this.pbField1.Image = global::SoccerScore_TEST_GUI.Images.male_shoot;
+            resources.ApplyResources(this.pbField1, "pbField1");
+            this.pbField1.Name = "pbField1";
+            this.pbField1.TabStop = false;
+            // 
             // lblCredits
             // 
             resources.ApplyResources(this.lblCredits, "lblCredits");
@@ -187,39 +196,39 @@
             // 
             // pbBorderLeft
             // 
-            resources.ApplyResources(this.pbBorderLeft, "pbBorderLeft");
             this.pbBorderLeft.Image = global::SoccerScore_TEST_GUI.Images.border_left;
+            resources.ApplyResources(this.pbBorderLeft, "pbBorderLeft");
             this.pbBorderLeft.Name = "pbBorderLeft";
             this.pbBorderLeft.TabStop = false;
             // 
             // pbBorderRight
             // 
-            resources.ApplyResources(this.pbBorderRight, "pbBorderRight");
             this.pbBorderRight.Image = global::SoccerScore_TEST_GUI.Images.border_right;
+            resources.ApplyResources(this.pbBorderRight, "pbBorderRight");
             this.pbBorderRight.Name = "pbBorderRight";
             this.pbBorderRight.TabStop = false;
             // 
             // matchesTab
             // 
-            resources.ApplyResources(this.matchesTab, "matchesTab");
             this.matchesTab.BackColor = System.Drawing.SystemColors.Control;
             this.matchesTab.Controls.Add(this.pictureBox2);
             this.matchesTab.Controls.Add(this.pictureBox1);
             this.matchesTab.Controls.Add(this.flpMatches);
             this.matchesTab.Controls.Add(this.btnSettings);
+            resources.ApplyResources(this.matchesTab, "matchesTab");
             this.matchesTab.Name = "matchesTab";
             // 
             // pictureBox2
             // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Image = global::SoccerScore_TEST_GUI.Images.world_cup;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Image = global::SoccerScore_TEST_GUI.Images.world_cup;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
@@ -237,11 +246,11 @@
             // 
             // statisticsTab
             // 
-            resources.ApplyResources(this.statisticsTab, "statisticsTab");
             this.statisticsTab.BackColor = System.Drawing.SystemColors.Control;
             this.statisticsTab.Controls.Add(this.label8);
             this.statisticsTab.Controls.Add(this.groupBox2);
             this.statisticsTab.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.statisticsTab, "statisticsTab");
             this.statisticsTab.Name = "statisticsTab";
             // 
             // label8
@@ -251,7 +260,6 @@
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox2.Controls.Add(this.pbCountryStatistics);
             this.groupBox2.Controls.Add(this.label6);
@@ -274,6 +282,7 @@
             this.groupBox2.Controls.Add(this.lblTotalPoints);
             this.groupBox2.Controls.Add(this.lblCountry);
             this.groupBox2.Controls.Add(this.lblFifaCode);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
@@ -385,18 +394,18 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.lbPlayers);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
             // lbPlayers
             // 
-            resources.ApplyResources(this.lbPlayers, "lbPlayers");
             this.lbPlayers.BackColor = System.Drawing.SystemColors.Control;
             this.lbPlayers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbPlayers.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.lbPlayers, "lbPlayers");
             this.lbPlayers.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbPlayers.Name = "lbPlayers";
             // 
@@ -408,15 +417,15 @@
             // 
             // statusStrip
             // 
-            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus});
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
             // 
             // lblStatus
             // 
-            resources.ApplyResources(this.lblStatus, "lblStatus");
             this.lblStatus.Name = "lblStatus";
+            resources.ApplyResources(this.lblStatus, "lblStatus");
             // 
             // toolStrip
             // 
@@ -428,24 +437,24 @@
             // 
             // btnEnglish
             // 
-            resources.ApplyResources(this.btnEnglish, "btnEnglish");
             this.btnEnglish.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnEnglish.Image = global::SoccerScore_TEST_GUI.Images.uk;
+            resources.ApplyResources(this.btnEnglish, "btnEnglish");
             this.btnEnglish.Name = "btnEnglish";
             this.btnEnglish.Click += new System.EventHandler(this.btnEnglish_Click);
             // 
             // btnCroatian
             // 
-            resources.ApplyResources(this.btnCroatian, "btnCroatian");
             this.btnCroatian.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnCroatian.Image = global::SoccerScore_TEST_GUI.Images.cro;
+            resources.ApplyResources(this.btnCroatian, "btnCroatian");
             this.btnCroatian.Name = "btnCroatian";
             this.btnCroatian.Click += new System.EventHandler(this.btnCroatian_Click);
             // 
             // pbLoading
             // 
-            resources.ApplyResources(this.pbLoading, "pbLoading");
             this.pbLoading.Image = global::SoccerScore_TEST_GUI.Images.ball_loading;
+            resources.ApplyResources(this.pbLoading, "pbLoading");
             this.pbLoading.Name = "pbLoading";
             this.pbLoading.TabStop = false;
             // 
@@ -463,10 +472,12 @@
             this.programTab.ResumeLayout(false);
             this.playersTab.ResumeLayout(false);
             this.playersTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbField2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbField1)).EndInit();
+            this.pnlTitle.ResumeLayout(false);
+            this.pnlTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCountryLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCountryRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbField2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbField1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBorderLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBorderRight)).EndInit();
             this.matchesTab.ResumeLayout(false);
@@ -542,6 +553,7 @@
         private System.Windows.Forms.PictureBox pbField1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel pnlTitle;
     }
 }
 

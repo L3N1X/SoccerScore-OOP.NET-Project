@@ -18,15 +18,19 @@ namespace SoccerScore_TEST_GUI
         private DataManager dataManager;
         public InitializeForm(DataManager dataManager)
         {
-            InitializeComponent();
-            Tools.CenterControlInParentHorizontally(this.rbFemale);
-            Tools.CenterControlInParentHorizontally(this.rbMale);
-            Tools.CenterControlInParentHorizontally(this.label1);
             this.dataManager = dataManager;
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(dataManager.GetLanguage().ToString());
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(dataManager.GetLanguage().ToString());
+            InitializeComponent();
         }
 
         private async void FillSelectionTeams()
         {
+            Tools.CenterControlInParentHorizontally(this.rbFemale);
+            Tools.CenterControlInParentHorizontally(this.rbMale);
+            Tools.CenterControlInParentHorizontally(this.label1);
+            Tools.CenterControlInParentHorizontally(this.lblLanguage);
+
             this.pbLoading.Visible = true;
             this.btnConfirm.Enabled = false;
             this.cbNationalTeams.Items.Clear();
@@ -44,7 +48,11 @@ namespace SoccerScore_TEST_GUI
 
         private void InitializeForm_Load(object sender, EventArgs e)
         {
-            this.rbFemale.Checked = true;
+            this.cbNationalTeams.Items.Clear();
+            if(dataManager?.FavouriteTeam.TeamGender == Gender.Male)
+                this.rbMale.Checked = true;
+            else
+                this.rbFemale.Checked = true;
             try
             {
                 this.FillSelectionTeams();
@@ -67,9 +75,30 @@ namespace SoccerScore_TEST_GUI
             Close();
         }
 
-        private void gbInitialize_Enter(object sender, EventArgs e)
+        private void pbEnglish_Click(object sender, EventArgs e)
         {
+            this.dataManager.SetLanguage(Language.eng);
+            SetLanguage();
+        }
 
+        private void pbCroatian_Click(object sender, EventArgs e)
+        {
+            this.dataManager.SetLanguage(Language.hr);
+            SetLanguage();
+        }
+
+        private void SetLanguage()
+        {
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(dataManager.GetLanguage().ToString());
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(dataManager.GetLanguage().ToString());
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+            this.Controls.Clear();
+            InitializeComponent();
+            FillSelectionTeams();
         }
     }
 }

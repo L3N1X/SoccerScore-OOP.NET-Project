@@ -173,6 +173,7 @@ namespace SoccerScore_TEST_GUI
             this.pbBorderRight.Visible = true;
             this.pbField1.Visible = true;
             this.pbField2.Visible = true;
+            this.pnlTitle.Visible = true;
         }
 
         private void PlayerViewControl_FavouritePlayerRemoved(object sender, EventArgs args)

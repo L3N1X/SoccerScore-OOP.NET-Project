@@ -139,11 +139,26 @@
   <data name="playersTab.Text" xml:space="preserve">
     <value>Igrači</value>
   </data>
-  <data name="btnSettings.Text" xml:space="preserve">
-    <value>postavke</value>
+  <data name="pbField2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>959, 450</value>
+  </data>
+  <data name="pbField2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 157</value>
+  </data>
+  <data name="pbField1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 450</value>
+  </data>
+  <data name="pbField1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 144</value>
   </data>
   <data name="matchesTab.Text" xml:space="preserve">
     <value>Utakmice</value>
+  </data>
+  <data name="btnSettings.Text" xml:space="preserve">
+    <value>postavke</value>
+  </data>
+  <data name="statisticsTab.Text" xml:space="preserve">
+    <value>Statistika reprezentacije</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 19</value>
@@ -207,9 +222,6 @@
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Igrači</value>
-  </data>
-  <data name="statisticsTab.Text" xml:space="preserve">
-    <value>Statistika reprezentacije</value>
   </data>
   <data name="btnEnglish.Text" xml:space="preserve">
     <value>Promijeni na engleski</value>
