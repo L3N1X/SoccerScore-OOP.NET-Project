@@ -32,6 +32,8 @@
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblLocation = new System.Windows.Forms.Label();
+            this.pbHomeWinner = new System.Windows.Forms.PictureBox();
+            this.pbAwayWinner = new System.Windows.Forms.PictureBox();
             this.lblHomeAwayScore = new System.Windows.Forms.Label();
             this.lblAwayFifaCode = new System.Windows.Forms.Label();
             this.lblHomeFifaCode = new System.Windows.Forms.Label();
@@ -40,17 +42,14 @@
             this.lblVisitorsLabel = new System.Windows.Forms.Label();
             this.lblAttendance = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pbHomeWinner = new System.Windows.Forms.PictureBox();
-            this.pbAwayWinner = new System.Windows.Forms.PictureBox();
             this.pnlContainer.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHomeWinner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAwayWinner)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlContainer
             // 
-            resources.ApplyResources(this.pnlContainer, "pnlContainer");
             this.pnlContainer.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlContainer.Controls.Add(this.lblDate);
             this.pnlContainer.Controls.Add(this.lblLocation);
@@ -61,6 +60,7 @@
             this.pnlContainer.Controls.Add(this.lblHomeFifaCode);
             this.pnlContainer.Controls.Add(this.label2);
             this.pnlContainer.Controls.Add(this.label1);
+            resources.ApplyResources(this.pnlContainer, "pnlContainer");
             this.pnlContainer.Name = "pnlContainer";
             // 
             // lblDate
@@ -72,6 +72,18 @@
             // 
             resources.ApplyResources(this.lblLocation, "lblLocation");
             this.lblLocation.Name = "lblLocation";
+            // 
+            // pbHomeWinner
+            // 
+            resources.ApplyResources(this.pbHomeWinner, "pbHomeWinner");
+            this.pbHomeWinner.Name = "pbHomeWinner";
+            this.pbHomeWinner.TabStop = false;
+            // 
+            // pbAwayWinner
+            // 
+            resources.ApplyResources(this.pbAwayWinner, "pbAwayWinner");
+            this.pbAwayWinner.Name = "pbAwayWinner";
+            this.pbAwayWinner.TabStop = false;
             // 
             // lblHomeAwayScore
             // 
@@ -110,22 +122,10 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.lblAttendance);
             this.panel1.Controls.Add(this.lblVisitorsLabel);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            // 
-            // pbHomeWinner
-            // 
-            resources.ApplyResources(this.pbHomeWinner, "pbHomeWinner");
-            this.pbHomeWinner.Name = "pbHomeWinner";
-            this.pbHomeWinner.TabStop = false;
-            // 
-            // pbAwayWinner
-            // 
-            resources.ApplyResources(this.pbAwayWinner, "pbAwayWinner");
-            this.pbAwayWinner.Name = "pbAwayWinner";
-            this.pbAwayWinner.TabStop = false;
             // 
             // MatchView
             // 
@@ -137,10 +137,10 @@
             this.Name = "MatchView";
             this.pnlContainer.ResumeLayout(false);
             this.pnlContainer.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHomeWinner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAwayWinner)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

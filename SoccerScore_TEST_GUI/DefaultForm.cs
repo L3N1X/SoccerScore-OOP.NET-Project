@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -74,7 +75,10 @@ namespace SoccerScore_TEST_GUI
                 this.flpMatches.Controls.Add(new MatchView(match, dataManager.FavouriteTeam));
             }
 
-            this.lblTitle.Text = $"{dataManager.FavouriteTeam.Details()}";
+            if (CultureInfo.CurrentCulture.Name == Language.eng.ToString())
+                this.lblTitle.Text = $"{dataManager.FavouriteTeam.Country} - {(dataManager.FavouriteTeam.TeamGender == Gender.Male ? "men's" : "women's")} national team";
+            else if (CultureInfo.CurrentCulture.Name == Language.hr.ToString())
+                this.lblTitle.Text = $"{dataManager.FavouriteTeam.Country} - {(dataManager.FavouriteTeam.TeamGender == Gender.Male ? "muška" : "ženska")} nogometna reprezentacija";
 
             InitializeLabelText();
 
@@ -83,7 +87,7 @@ namespace SoccerScore_TEST_GUI
             this.pbLoading.Visible = false;
             this.toolStrip.Enabled = true;
 
-            this.lblStatus.Text = dataManager.FavouriteTeam.Details();
+            this.lblStatus.Text = lblTitle.Text;
 
             
             SetAllControlsVisible();
@@ -116,7 +120,10 @@ namespace SoccerScore_TEST_GUI
                 this.flpMatches.Controls.Add(new MatchView(match, dataManager.FavouriteTeam));
             }
 
-            this.lblTitle.Text = $"{dataManager.FavouriteTeam.Details()}";
+            if (CultureInfo.CurrentCulture.Name == Language.eng.ToString())
+                this.lblTitle.Text = $"{dataManager.FavouriteTeam.Country} - {(dataManager.FavouriteTeam.TeamGender == Gender.Male ? "men's" : "women's")} national team";
+            if (CultureInfo.CurrentCulture.Name == Language.hr.ToString())
+                this.lblTitle.Text = $"{dataManager.FavouriteTeam.Country} - {(dataManager.FavouriteTeam.TeamGender == Gender.Male ? "muška" : "ženska")} nogometna reprezentacija";
 
             InitializeLabelText();
 
@@ -125,7 +132,7 @@ namespace SoccerScore_TEST_GUI
             this.pbLoading.Visible = false;
             this.toolStrip.Enabled = true;
 
-            this.lblStatus.Text = dataManager.FavouriteTeam.Details();
+            this.lblStatus.Text = this.lblTitle.Text;
 
 
             SetAllControlsVisible();
