@@ -49,7 +49,7 @@ namespace SoccerScore_TEST_GUI
         private void InitializeForm_Load(object sender, EventArgs e)
         {
             this.cbNationalTeams.Items.Clear();
-            if(dataManager?.FavouriteTeam.TeamGender == Gender.Male)
+            if(dataManager?.FavouriteTeam?.TeamGender == Gender.Male)
                 this.rbMale.Checked = true;
             else
                 this.rbFemale.Checked = true;
