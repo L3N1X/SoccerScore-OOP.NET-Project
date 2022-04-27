@@ -40,11 +40,11 @@ namespace SoccerScore_TEST_GUI
 
         private void DefaultForm_Load(object sender, EventArgs e)
         {
-            InitializeControls();
+            InitializeControlsWithData();
         }
 
         //Blend to one function
-        private async void InitializeControls()
+        private async void InitializeControlsWithData()
         {
             Tools.CenterControlInParent(this.pbLoading);
             this.pbLoading.BringToFront();
@@ -52,6 +52,24 @@ namespace SoccerScore_TEST_GUI
 
             await dataManager.InitializeData();
 
+            this.FillControls();
+
+            this.SetAllControlsVisible();
+        }
+
+        private void InitializeControlsWithoutData()
+        {
+            Tools.CenterControlInParent(this.pbLoading);
+            this.pbLoading.BringToFront();
+            this.pbLoading.Visible = true;
+
+            this.FillControls();
+
+            SetAllControlsVisible();
+        }
+
+        private void FillControls()
+        {
             foreach (var player in dataManager.FavouriteTeam.AllPlayers)
             {
                 this.lbPlayers.Items.Add(player.ListBoxDetails());
@@ -92,59 +110,9 @@ namespace SoccerScore_TEST_GUI
 
             this.lblStatus.Text = lblTitle.Text;
 
+
             
-            SetAllControlsVisible();
         }
-        private void InitializeControlsNoDataLoad()
-        {
-            Tools.CenterControlInParent(this.pbLoading);
-            this.pbLoading.BringToFront();
-            this.pbLoading.Visible = true;
-
-            foreach (var player in dataManager.FavouriteTeam.AllPlayers)
-            {
-                this.lbPlayers.Items.Add(player.ListBoxDetails());
-
-                PlayerView playerViewControl = new PlayerView(player, dataManager.FavouriteTeam);
-
-                playerViewControl.FavoutitePlayerAdded += PlayerViewControl_FavoutitePlayerAdded;
-                playerViewControl.FavouritePlayerRemoved += PlayerViewControl_FavouritePlayerRemoved;
-
-                //Add drag and drop functionality
-
-                if (player.IsFavourite)
-                    this.favoruitePLayersContainer.Controls.Add(playerViewControl);
-                else
-                    this.playersContainer.Controls.Add(playerViewControl);
-            }
-
-            foreach (var match in dataManager.FavouriteTeamMatches)
-            {
-                this.flpMatches.Controls.Add(new MatchView(match, dataManager.FavouriteTeam));
-            }
-
-            if (CultureInfo.CurrentCulture.Name == Language.eng.ToString())
-                this.lblTitle.Text = $"{dataManager.FavouriteTeam.Country} - {(dataManager.FavouriteTeam.TeamGender == Gender.Male ? "men's" : "women's")} national team";
-            if (CultureInfo.CurrentCulture.Name == Language.hr.ToString())
-                this.lblTitle.Text = $"{dataManager.FavouriteTeam.Country} - {(dataManager.FavouriteTeam.TeamGender == Gender.Male ? "muška" : "ženska")} nogometna reprezentacija";
-
-            InitializeLabelText();
-
-            Tools.CenterControlInParentHorizontally(this.lblTitle);
-
-            this.pbCountryLeft.Image = CountryImages.ResourceManager.GetObject(dataManager.FavouriteTeam.FifaCode) as Image;
-            this.pbCountryRight.Image = CountryImages.ResourceManager.GetObject(dataManager.FavouriteTeam.FifaCode) as Image;
-            this.pbCountryStatistics.Image = CountryImages.ResourceManager.GetObject(dataManager.FavouriteTeam.FifaCode) as Image;
-
-            this.pbLoading.Visible = false;
-            this.toolStrip.Enabled = true;
-
-            this.lblStatus.Text = this.lblTitle.Text;
-
-
-            SetAllControlsVisible();
-        }
-        //
 
         private void InitializeLabelText()
         {
@@ -261,7 +229,7 @@ namespace SoccerScore_TEST_GUI
                 this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.DefaultForm_FormClosing);
                 InitializeComponent();
                 Tools.CenterControlInParent(this.pbLoading);
-                InitializeControls();
+                InitializeControlsWithData();
             }
             else
             {
@@ -282,7 +250,7 @@ namespace SoccerScore_TEST_GUI
             //Avoid double subscribing
             this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.DefaultForm_FormClosing);
             InitializeComponent();
-            InitializeControlsNoDataLoad();
+            InitializeControlsWithoutData();
         }
     }
 }
