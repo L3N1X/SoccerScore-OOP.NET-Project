@@ -1353,18 +1353,6 @@
   <data name="pnlTitle.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;pnlTitle.Name" xml:space="preserve">
-    <value>pnlTitle</value>
-  </data>
-  <data name="&gt;&gt;pnlTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlTitle.Parent" xml:space="preserve">
-    <value>playersTab</value>
-  </data>
-  <data name="&gt;&gt;pnlTitle.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="pbCountryLeft.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1382,18 +1370,6 @@
   </data>
   <data name="pbCountryLeft.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;pbCountryLeft.Name" xml:space="preserve">
-    <value>pbCountryLeft</value>
-  </data>
-  <data name="&gt;&gt;pbCountryLeft.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbCountryLeft.Parent" xml:space="preserve">
-    <value>pnlTitle</value>
-  </data>
-  <data name="&gt;&gt;pbCountryLeft.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="pbCountryRight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1413,18 +1389,6 @@
   <data name="pbCountryRight.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;pbCountryRight.Name" xml:space="preserve">
-    <value>pbCountryRight</value>
-  </data>
-  <data name="&gt;&gt;pbCountryRight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbCountryRight.Parent" xml:space="preserve">
-    <value>pnlTitle</value>
-  </data>
-  <data name="&gt;&gt;pbCountryRight.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="pbField2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1443,18 +1407,6 @@
   <data name="pbField2.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;pbField2.Name" xml:space="preserve">
-    <value>pbField2</value>
-  </data>
-  <data name="&gt;&gt;pbField2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbField2.Parent" xml:space="preserve">
-    <value>playersTab</value>
-  </data>
-  <data name="&gt;&gt;pbField2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="pbField1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1472,18 +1424,6 @@
   </data>
   <data name="pbField1.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;pbField1.Name" xml:space="preserve">
-    <value>pbField1</value>
-  </data>
-  <data name="&gt;&gt;pbField1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbField1.Parent" xml:space="preserve">
-    <value>playersTab</value>
-  </data>
-  <data name="&gt;&gt;pbField1.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="lblCredits.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1506,18 +1446,6 @@
   <data name="lblCredits.Text" xml:space="preserve">
     <value>Leon Kruslin OOP.NET 2022</value>
   </data>
-  <data name="&gt;&gt;lblCredits.Name" xml:space="preserve">
-    <value>lblCredits</value>
-  </data>
-  <data name="&gt;&gt;lblCredits.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCredits.Parent" xml:space="preserve">
-    <value>playersTab</value>
-  </data>
-  <data name="&gt;&gt;lblCredits.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="pbBorderLeft.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1535,18 +1463,6 @@
   </data>
   <data name="pbBorderLeft.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;pbBorderLeft.Name" xml:space="preserve">
-    <value>pbBorderLeft</value>
-  </data>
-  <data name="&gt;&gt;pbBorderLeft.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbBorderLeft.Parent" xml:space="preserve">
-    <value>playersTab</value>
-  </data>
-  <data name="&gt;&gt;pbBorderLeft.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="pbBorderRight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1566,18 +1482,6 @@
   <data name="pbBorderRight.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;pbBorderRight.Name" xml:space="preserve">
-    <value>pbBorderRight</value>
-  </data>
-  <data name="&gt;&gt;pbBorderRight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbBorderRight.Parent" xml:space="preserve">
-    <value>playersTab</value>
-  </data>
-  <data name="&gt;&gt;pbBorderRight.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="pictureBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1593,18 +1497,6 @@
   <data name="pictureBox2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
-    <value>pictureBox2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
-    <value>matchesTab</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1619,18 +1511,6 @@
   </data>
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>matchesTab</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="flpMatches.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1650,18 +1530,6 @@
   <data name="flpMatches.WrapContents" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;flpMatches.Name" xml:space="preserve">
-    <value>flpMatches</value>
-  </data>
-  <data name="&gt;&gt;flpMatches.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flpMatches.Parent" xml:space="preserve">
-    <value>matchesTab</value>
-  </data>
-  <data name="&gt;&gt;flpMatches.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="btnSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1676,18 +1544,6 @@
   </data>
   <data name="btnSettings.Text" xml:space="preserve">
     <value>settings</value>
-  </data>
-  <data name="&gt;&gt;btnSettings.Name" xml:space="preserve">
-    <value>btnSettings</value>
-  </data>
-  <data name="&gt;&gt;btnSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSettings.Parent" xml:space="preserve">
-    <value>matchesTab</value>
-  </data>
-  <data name="&gt;&gt;btnSettings.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="lbPlayers.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Tai Le, 11.25pt</value>
@@ -1704,21 +1560,9 @@
   <data name="lbPlayers.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
-  <data name="&gt;&gt;lbPlayers.Name" xml:space="preserve">
-    <value>lbPlayers</value>
-  </data>
-  <data name="&gt;&gt;lbPlayers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbPlayers.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;lbPlayers.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>135, 17</value>
-  </metadata>
+  </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 739</value>
   </data>
@@ -1749,9 +1593,9 @@
   <data name="lblStatus.Text" xml:space="preserve">
     <value>National team [FFC]</value>
   </data>
-  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>244, 17</value>
-  </metadata>
+  </data>
   <data name="toolStrip.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1827,9 +1671,9 @@
   <data name="&gt;&gt;pbLoading.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>

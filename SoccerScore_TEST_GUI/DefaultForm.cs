@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -62,9 +63,7 @@ namespace SoccerScore_TEST_GUI
             Tools.CenterControlInParent(this.pbLoading);
             this.pbLoading.BringToFront();
             this.pbLoading.Visible = true;
-
             this.FillControls();
-
             SetAllControlsVisible();
         }
 
@@ -109,9 +108,6 @@ namespace SoccerScore_TEST_GUI
             this.toolStrip.Enabled = true;
 
             this.lblStatus.Text = lblTitle.Text;
-
-
-            
         }
 
         private void InitializeLabelText()
