@@ -244,13 +244,16 @@ namespace SoccerScore_TEST_GUI
             InitializeControlsWithoutData();
         }
 
+        private int lastPrintIndex = 0;
         private void PrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             int matchWidth = this.flpMatches.Controls[0].Size.Width;
             int matchHeight = this.flpMatches.Controls[0].Size.Height;
-            foreach (var control in this.flpMatches.Controls)
+            int totalPrintHeight = 0;
+            int offset = 0;
+            for (int i = lastPrintIndex; i < this.flpMatches.Controls.Count; i++)
             {
-                var matchView = control as MatchView;
+                var matchView = this.flpMatches.Controls[i] as MatchView;
                 Bitmap bmp = new Bitmap(matchWidth, matchHeight);
                 matchView.DrawToBitmap(bmp,
                     new Rectangle
@@ -260,13 +263,26 @@ namespace SoccerScore_TEST_GUI
                         Width = bmp.Width,
                         Height = bmp.Height
                     });
-                e.Graphics.DrawImage(bmp, 0, this.flpMatches.Controls.IndexOf(matchView) * matchHeight);
+                totalPrintHeight += matchHeight;
+                if (totalPrintHeight > e.PageSettings.PaperSize.Height)
+                {
+                    this.lastPrintIndex = i;
+                    e.HasMorePages = true;
+                    return;
+                }
+                else
+                {
+                    e.HasMorePages = false;
+                    e.Graphics.DrawImage(bmp, 0, offset * matchHeight);
+                }
+                offset++;
             }
         }
 
         private void PrintDocument_EndPrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-
+            MessageBox.Show(Properties.Resources.printingFinished);
+            this.lastPrintIndex = 0;
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
