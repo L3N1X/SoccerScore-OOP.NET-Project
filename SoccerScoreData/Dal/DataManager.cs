@@ -23,32 +23,38 @@ namespace SoccerScoreData.Dal
         {
             if (Utils.NetworkTools.CheckForInternetConnection())
             {
-                repoData = RepoFactory.GetRepoData(); 
+                try
+                {
+                    repoData = RepoFactory.GetRepoData();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
             else
             {
-                //Initialize file repo, add proper exceptions;
                 throw new Exception("No internet connection");
             }
-            repoConfig = RepoFactory.GetRepoConfig();
+            try
+            {
+                repoConfig = RepoFactory.GetRepoConfig();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
             Initialize();
         }
 
         public bool HasDefaultSettings()
-        {
-            return settings.IsDefault();
-        }
+            => settings.IsDefault();
 
         public bool HasMaxAmountOfFavoruitePlayers()
-        {
-            return GetFavoruitePLayerCount() == this.MAX_FAVORUITE_PLAYERS;
-        }
+            => GetFavoruitePLayerCount() == this.MAX_FAVORUITE_PLAYERS;
 
         public void RemovePlayerFromFavoruites(Player player)
-        {
-            settings.RemoveFavoruitePlayer(player);
-            SaveSettings();
-        }
+            => settings.RemoveFavoruitePlayer(player);
 
         public void Initialize()
         {
@@ -61,20 +67,16 @@ namespace SoccerScoreData.Dal
         }
 
         public int GetFavoruitePLayerCount()
-        {
-            return settings.FavouritePlayers.Count(player => player != null);
-        }
+            => settings.FavouritePlayers.Count(player => player != null);
 
         public Language GetLanguage()
-        {
-            return settings.Language;
-        }
+            => settings.Language;
 
         public void ResetFavourtiteTeamSettings()
         {
             this.settings.ClearFavouritePlayers();
             this.settings.FavouriteTeam = null;
-            SaveSettings();
+            //SaveSettings();
         }
 
         //For when default settings are detected
@@ -86,19 +88,17 @@ namespace SoccerScoreData.Dal
         public void SetFavouriteTeam(NationalTeam favouriteTeam)
         {
             this.settings.FavouriteTeam = favouriteTeam;
-            SaveSettings();
+            //SaveSettings();
         }
 
         public void SetLanguage(Language language)
         {
             this.settings.Language = language;
-            SaveSettings();
+            //SaveSettings();
         }
 
         public Task<IList<NationalTeam>> GetSelectionTeams()
-        {
-            return repoData.GetNationalTeamsSelection(this.SelectedGender);
-        }
+            => repoData.GetNationalTeamsSelection(this.SelectedGender);
 
 
         public void AddFavouritePlayer(Player player)
@@ -133,13 +133,11 @@ namespace SoccerScoreData.Dal
             });
         }
         public void SaveSettings()
+            => repoConfig.SaveSettings(settings);
+        public void SavePlayersWithImage(IList<Player> playersWithImage)
         {
-            repoConfig.SaveSettings(settings);
-        }
-        public void SaveSettingsOnClose(IList<Player> newPlayers)
-        {
-            SaveSettings();
-            repoConfig.SavePlayersWithImage(newPlayers);
+            //SaveSettings();
+            repoConfig.SavePlayersWithImage(playersWithImage);
         }
     }
 }

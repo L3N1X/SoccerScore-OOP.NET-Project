@@ -32,7 +32,11 @@ namespace SoccerScore_TEST_GUI
             {
                 Form dialog = new InitializeForm(dataManager);
                 if (dialog.ShowDialog() != DialogResult.OK)
+                {
+                    this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.DefaultForm_FormClosing);
                     Close();
+                }
+                    
             }
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(dataManager.GetLanguage().ToString());
             Thread.CurrentThread.CurrentCulture = new CultureInfo(dataManager.GetLanguage().ToString());
@@ -54,7 +58,6 @@ namespace SoccerScore_TEST_GUI
             await dataManager.InitializeData();
 
             this.FillControls();
-
             this.SetAllControlsVisible();
         }
 
@@ -144,24 +147,19 @@ namespace SoccerScore_TEST_GUI
         {
             PlayerView playerViewToRemove = ((PlayerView)sender);
             this.playersContainer.Controls.Add(playerViewToRemove);
-
-            //Make it deprecated
             dataManager.RemovePlayerFromFavoruites(playerViewToRemove.Player);
         }
 
         private void PlayerViewControl_FavoutitePlayerAdded(object sender, EventArgs args)
         {
-            PlayerView newFavoruitePlayerView = ((PlayerView)sender);
-            if (dataManager.HasMaxAmountOfFavoruitePlayers()) //Make into one bool func
+            PlayerView newFavoruitePlayerView = sender as PlayerView;
+            if (dataManager.HasMaxAmountOfFavoruitePlayers())
             {
                 newFavoruitePlayerView.Player.IsFavourite = false;
-                Form dialog = new FavouritePlayersExceededForm();
-                dialog.ShowDialog();
+                new FavouritePlayersExceededForm().ShowDialog();
                 return;
             }
             this.favoruitePLayersContainer.Controls.Add(newFavoruitePlayerView);
-
-            //Make it deprecated
             dataManager.AddFavouritePlayer(newFavoruitePlayerView.Player);
         }
 
@@ -172,6 +170,7 @@ namespace SoccerScore_TEST_GUI
             {
                 case DialogResult.Yes:
                     SavePlayerImages();
+                    dataManager.SaveSettings();
                     break;
                 case DialogResult.No:
                     e.Cancel = true;
@@ -183,22 +182,18 @@ namespace SoccerScore_TEST_GUI
 
         private void SavePlayerImages()
         {
-            IList<Player> players = new List<Player>();
+            IList<Player> playersWithImages = new List<Player>();
             foreach (var control in this.playersContainer.Controls)
             {
                 if(control is PlayerView playerView && playerView.Player.IconPath != null)
-                {
-                    players.Add(playerView.Player);
-                }
+                    playersWithImages.Add(playerView.Player);
             }
             foreach (var control in this.favoruitePLayersContainer.Controls)
             {
                 if (control is PlayerView playerView && playerView.Player.IconPath != null)
-                {
-                    players.Add(playerView.Player);
-                }
+                    playersWithImages.Add(playerView.Player);
             }
-            dataManager.SaveSettingsOnClose(players);
+            dataManager.SavePlayersWithImage(playersWithImages);
         }
 
         private void btnEnglish_Click(object sender, EventArgs e)
@@ -247,6 +242,36 @@ namespace SoccerScore_TEST_GUI
             this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.DefaultForm_FormClosing);
             InitializeComponent();
             InitializeControlsWithoutData();
+        }
+
+        private void PrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            int matchWidth = this.flpMatches.Controls[0].Size.Width;
+            int matchHeight = this.flpMatches.Controls[0].Size.Height;
+            foreach (var control in this.flpMatches.Controls)
+            {
+                var matchView = control as MatchView;
+                Bitmap bmp = new Bitmap(matchWidth, matchHeight);
+                matchView.DrawToBitmap(bmp,
+                    new Rectangle
+                    {
+                        X = 0,
+                        Y = 0,
+                        Width = bmp.Width,
+                        Height = bmp.Height
+                    });
+                e.Graphics.DrawImage(bmp, 0, this.flpMatches.Controls.IndexOf(matchView) * matchHeight);
+            }
+        }
+
+        private void PrintDocument_EndPrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        { 
+            this.printPreviewDialog.ShowDialog();
         }
     }
 }

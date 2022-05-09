@@ -45,7 +45,7 @@
             this.pbBorderLeft = new System.Windows.Forms.PictureBox();
             this.pbBorderRight = new System.Windows.Forms.PictureBox();
             this.matchesTab = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flpMatches = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSettings = new System.Windows.Forms.Button();
@@ -82,6 +82,9 @@
             this.btnEnglish = new System.Windows.Forms.ToolStripButton();
             this.btnCroatian = new System.Windows.Forms.ToolStripButton();
             this.pbLoading = new System.Windows.Forms.PictureBox();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.programTab.SuspendLayout();
             this.playersTab.SuspendLayout();
             this.pnlTitle.SuspendLayout();
@@ -92,7 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBorderLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBorderRight)).BeginInit();
             this.matchesTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statisticsTab.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -101,6 +103,7 @@
             this.statusStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // playersContainer
@@ -212,18 +215,19 @@
             // 
             this.matchesTab.BackColor = System.Drawing.SystemColors.Control;
             this.matchesTab.Controls.Add(this.pictureBox2);
+            this.matchesTab.Controls.Add(this.btnPrint);
             this.matchesTab.Controls.Add(this.pictureBox1);
             this.matchesTab.Controls.Add(this.flpMatches);
             this.matchesTab.Controls.Add(this.btnSettings);
             resources.ApplyResources(this.matchesTab, "matchesTab");
             this.matchesTab.Name = "matchesTab";
             // 
-            // pictureBox2
+            // btnPrint
             // 
-            this.pictureBox2.Image = global::SoccerScore_TEST_GUI.Images.world_cup;
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
+            resources.ApplyResources(this.btnPrint, "btnPrint");
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // pictureBox1
             // 
@@ -458,6 +462,24 @@
             this.pbLoading.Name = "pbLoading";
             this.pbLoading.TabStop = false;
             // 
+            // printDocument
+            // 
+            this.printDocument.EndPrint += new System.Drawing.Printing.PrintEventHandler(this.PrintDocument_EndPrint);
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocument_PrintPage);
+            // 
+            // printPreviewDialog
+            // 
+            resources.ApplyResources(this.printPreviewDialog, "printPreviewDialog");
+            this.printPreviewDialog.Document = this.printDocument;
+            this.printPreviewDialog.Name = "printPreviewDialog";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SoccerScore_TEST_GUI.Images.world_cup;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            // 
             // DefaultForm
             // 
             resources.ApplyResources(this, "$this");
@@ -481,7 +503,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBorderLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBorderRight)).EndInit();
             this.matchesTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.statisticsTab.ResumeLayout(false);
             this.statisticsTab.PerformLayout();
@@ -494,6 +515,7 @@
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -552,8 +574,11 @@
         private System.Windows.Forms.PictureBox pbField2;
         private System.Windows.Forms.PictureBox pbField1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel pnlTitle;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Drawing.Printing.PrintDocument printDocument;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
