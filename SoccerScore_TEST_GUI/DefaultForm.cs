@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Globalization;
 using System.Linq;
 using System.Resources;
@@ -244,18 +245,32 @@ namespace SoccerScore_TEST_GUI
             InitializeControlsWithoutData();
         }
 
+        private int printPageCalled = 0;
         private int lastPrintIndex = 0;
         private void PrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Control source = cmsOptions.SourceControl;
+            if(printPageCalled == 0)
+            {
+                //lastPrintIndex = this.flpMatches.Controls.Count - 1;
+                lastPrintIndex = source.Controls.Count - 1;
+            }
+            this.printPageCalled++;
+            if (this.PrintContent(this.flpMatches, e))
+                return;
+        }
+        
+        private bool PrintContent(Control container, PrintPageEventArgs e)
         {
             int matchWidth = this.flpMatches.Controls[0].Size.Width;
             int matchHeight = this.flpMatches.Controls[0].Size.Height;
             int totalPrintHeight = 0;
             int offset = 0;
-            for (int i = lastPrintIndex; i < this.flpMatches.Controls.Count; i++)
+            for (int i = this.lastPrintIndex; i >= 0; i--)
             {
-                var matchView = this.flpMatches.Controls[i] as MatchView;
+                var control = container.Controls[i] as MatchView;
                 Bitmap bmp = new Bitmap(matchWidth, matchHeight);
-                matchView.DrawToBitmap(bmp,
+                control.DrawToBitmap(bmp,
                     new Rectangle
                     {
                         X = 0,
@@ -266,9 +281,9 @@ namespace SoccerScore_TEST_GUI
                 totalPrintHeight += matchHeight;
                 if (totalPrintHeight > e.PageSettings.PaperSize.Height)
                 {
-                    this.lastPrintIndex = i;
+                    this.lastPrintIndex = i++;
                     e.HasMorePages = true;
-                    return;
+                    return e.HasMorePages;
                 }
                 else
                 {
@@ -277,17 +292,28 @@ namespace SoccerScore_TEST_GUI
                 }
                 offset++;
             }
+            return false;
         }
 
         private void PrintDocument_EndPrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-            MessageBox.Show(Properties.Resources.printingFinished);
-            this.lastPrintIndex = 0;
+            printPageCalled = 0;
+            lastPrintIndex = 0;
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
-        { 
+        {
             this.printPreviewDialog.ShowDialog();
+        }
+
+        private void PrintOption_Click(object sender, EventArgs e)
+        {
+            this.printPreviewDialog.ShowDialog();
+        }
+
+        private void ConfigurePrinterOption_Click(object sender, EventArgs e)
+        {
+            this.printDialog.ShowDialog();
         }
     }
 }
