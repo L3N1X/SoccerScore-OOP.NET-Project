@@ -56,10 +56,15 @@
     <Compile Include="Dal\Repos\IRepoData.cs" />
     <Compile Include="Dal\Repos\OnlineRepoData.cs" />
     <Compile Include="Dal\Repos\RepoFactory.cs" />
-    <Compile Include="Endpoints.Designer.cs">
+    <Compile Include="EndpointsCloud.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Endpoints.resx</DependentUpon>
+      <DependentUpon>EndpointsCloud.resx</DependentUpon>
+    </Compile>
+    <Compile Include="EndpointsLocal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EndpointsLocal.resx</DependentUpon>
     </Compile>
     <Compile Include="Models\Constants.cs" />
     <Compile Include="Models\SoccerModels\Match.cs" />
@@ -73,9 +78,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Endpoints.resx">
+    <EmbeddedResource Include="EndpointsCloud.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Endpoints.Designer.cs</LastGenOutput>
+      <LastGenOutput>EndpointsCloud.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EndpointsLocal.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EndpointsLocal.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

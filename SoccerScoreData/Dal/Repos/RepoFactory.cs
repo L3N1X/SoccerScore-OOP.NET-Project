@@ -9,7 +9,8 @@ namespace SoccerScoreData.Dal
 {
     public static class RepoFactory
     {
-        public static IRepoData GetRepoData() => new OnlineRepoData();
+        public static IRepoData GetRepoDataCloud() => new OnlineRepoData();
+        public static IRepoData GetRepoDataLocal() => new FileRepoData();
         public static IRepoConfig GetRepoConfig() => new FileRepoConfig();
     }
 }

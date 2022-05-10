@@ -301,11 +301,6 @@ namespace SoccerScore_TEST_GUI
             lastPrintIndex = 0;
         }
 
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            this.printPreviewDialog.ShowDialog();
-        }
-
         private void PrintOption_Click(object sender, EventArgs e)
         {
             this.printPreviewDialog.ShowDialog();

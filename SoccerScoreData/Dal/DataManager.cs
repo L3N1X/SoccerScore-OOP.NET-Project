@@ -25,7 +25,8 @@ namespace SoccerScoreData.Dal
             {
                 try
                 {
-                    repoData = RepoFactory.GetRepoData();
+                    repoData = RepoFactory.GetRepoDataLocal();
+                    //repoData = RepoFactory.GetRepoDataCloud();
                 }
                 catch (Exception ex)
                 {
@@ -34,7 +35,14 @@ namespace SoccerScoreData.Dal
             }
             else
             {
-                throw new Exception("No internet connection");
+                try
+                {
+                    repoData = RepoFactory.GetRepoDataLocal();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
             try
             {

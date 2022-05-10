@@ -89,6 +89,7 @@
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog = new System.Windows.Forms.PrintDialog();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.programTab.SuspendLayout();
             this.playersTab.SuspendLayout();
             this.pnlTitle.SuspendLayout();
@@ -106,6 +107,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCountryStatistics)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
@@ -138,17 +140,16 @@
             // 
             // programTab
             // 
-            resources.ApplyResources(this.programTab, "programTab");
             this.programTab.Controls.Add(this.playersTab);
             this.programTab.Controls.Add(this.matchesTab);
             this.programTab.Controls.Add(this.statisticsTab);
             this.programTab.Controls.Add(this.tabPage1);
+            resources.ApplyResources(this.programTab, "programTab");
             this.programTab.Name = "programTab";
             this.programTab.SelectedIndex = 0;
             // 
             // playersTab
             // 
-            resources.ApplyResources(this.playersTab, "playersTab");
             this.playersTab.BackColor = System.Drawing.SystemColors.Control;
             this.playersTab.Controls.Add(this.pnlTitle);
             this.playersTab.Controls.Add(this.pbField2);
@@ -160,15 +161,16 @@
             this.playersTab.Controls.Add(this.playersContainer);
             this.playersTab.Controls.Add(this.favoruitePLayersContainer);
             this.playersTab.Controls.Add(this.label2);
+            resources.ApplyResources(this.playersTab, "playersTab");
             this.playersTab.Name = "playersTab";
             // 
             // pnlTitle
             // 
-            resources.ApplyResources(this.pnlTitle, "pnlTitle");
             this.pnlTitle.BackColor = System.Drawing.SystemColors.Control;
             this.pnlTitle.Controls.Add(this.lblTitle);
             this.pnlTitle.Controls.Add(this.pbCountryLeft);
             this.pnlTitle.Controls.Add(this.pbCountryRight);
+            resources.ApplyResources(this.pnlTitle, "pnlTitle");
             this.pnlTitle.Name = "pnlTitle";
             // 
             // pbCountryLeft
@@ -185,15 +187,15 @@
             // 
             // pbField2
             // 
-            resources.ApplyResources(this.pbField2, "pbField2");
             this.pbField2.Image = global::SoccerScore_TEST_GUI.Images.female_shoot;
+            resources.ApplyResources(this.pbField2, "pbField2");
             this.pbField2.Name = "pbField2";
             this.pbField2.TabStop = false;
             // 
             // pbField1
             // 
-            resources.ApplyResources(this.pbField1, "pbField1");
             this.pbField1.Image = global::SoccerScore_TEST_GUI.Images.male_shoot;
+            resources.ApplyResources(this.pbField1, "pbField1");
             this.pbField1.Name = "pbField1";
             this.pbField1.TabStop = false;
             // 
@@ -204,39 +206,39 @@
             // 
             // pbBorderLeft
             // 
-            resources.ApplyResources(this.pbBorderLeft, "pbBorderLeft");
             this.pbBorderLeft.Image = global::SoccerScore_TEST_GUI.Images.border_left;
+            resources.ApplyResources(this.pbBorderLeft, "pbBorderLeft");
             this.pbBorderLeft.Name = "pbBorderLeft";
             this.pbBorderLeft.TabStop = false;
             // 
             // pbBorderRight
             // 
-            resources.ApplyResources(this.pbBorderRight, "pbBorderRight");
             this.pbBorderRight.Image = global::SoccerScore_TEST_GUI.Images.border_right;
+            resources.ApplyResources(this.pbBorderRight, "pbBorderRight");
             this.pbBorderRight.Name = "pbBorderRight";
             this.pbBorderRight.TabStop = false;
             // 
             // matchesTab
             // 
-            resources.ApplyResources(this.matchesTab, "matchesTab");
             this.matchesTab.BackColor = System.Drawing.SystemColors.Control;
             this.matchesTab.Controls.Add(this.pictureBox2);
             this.matchesTab.Controls.Add(this.pictureBox1);
             this.matchesTab.Controls.Add(this.flpMatches);
             this.matchesTab.Controls.Add(this.btnSettings);
+            resources.ApplyResources(this.matchesTab, "matchesTab");
             this.matchesTab.Name = "matchesTab";
             // 
             // pictureBox2
             // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Image = global::SoccerScore_TEST_GUI.Images.world_cup;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Image = global::SoccerScore_TEST_GUI.Images.world_cup;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
@@ -248,22 +250,22 @@
             // 
             // cmsOptions
             // 
-            resources.ApplyResources(this.cmsOptions, "cmsOptions");
             this.cmsOptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.PrintOption,
             this.ConfigurePrinterOption});
             this.cmsOptions.Name = "cmsOptions";
+            resources.ApplyResources(this.cmsOptions, "cmsOptions");
             // 
             // PrintOption
             // 
-            resources.ApplyResources(this.PrintOption, "PrintOption");
             this.PrintOption.Name = "PrintOption";
+            resources.ApplyResources(this.PrintOption, "PrintOption");
             this.PrintOption.Click += new System.EventHandler(this.PrintOption_Click);
             // 
             // ConfigurePrinterOption
             // 
-            resources.ApplyResources(this.ConfigurePrinterOption, "ConfigurePrinterOption");
             this.ConfigurePrinterOption.Name = "ConfigurePrinterOption";
+            resources.ApplyResources(this.ConfigurePrinterOption, "ConfigurePrinterOption");
             this.ConfigurePrinterOption.Click += new System.EventHandler(this.ConfigurePrinterOption_Click);
             // 
             // btnSettings
@@ -275,11 +277,11 @@
             // 
             // statisticsTab
             // 
-            resources.ApplyResources(this.statisticsTab, "statisticsTab");
             this.statisticsTab.BackColor = System.Drawing.SystemColors.Control;
             this.statisticsTab.Controls.Add(this.label8);
             this.statisticsTab.Controls.Add(this.groupBox2);
             this.statisticsTab.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.statisticsTab, "statisticsTab");
             this.statisticsTab.Name = "statisticsTab";
             // 
             // label8
@@ -289,7 +291,6 @@
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox2.Controls.Add(this.pbCountryStatistics);
             this.groupBox2.Controls.Add(this.label6);
@@ -312,6 +313,7 @@
             this.groupBox2.Controls.Add(this.lblTotalPoints);
             this.groupBox2.Controls.Add(this.lblCountry);
             this.groupBox2.Controls.Add(this.lblFifaCode);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
@@ -423,38 +425,39 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.lbPlayers);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
             // lbPlayers
             // 
-            resources.ApplyResources(this.lbPlayers, "lbPlayers");
             this.lbPlayers.BackColor = System.Drawing.SystemColors.Control;
             this.lbPlayers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbPlayers.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.lbPlayers, "lbPlayers");
             this.lbPlayers.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbPlayers.Name = "lbPlayers";
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.flowLayoutPanel1);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // statusStrip
             // 
-            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus});
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
             // 
             // lblStatus
             // 
-            resources.ApplyResources(this.lblStatus, "lblStatus");
             this.lblStatus.Name = "lblStatus";
+            resources.ApplyResources(this.lblStatus, "lblStatus");
             // 
             // toolStrip
             // 
@@ -466,24 +469,24 @@
             // 
             // btnEnglish
             // 
-            resources.ApplyResources(this.btnEnglish, "btnEnglish");
             this.btnEnglish.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnEnglish.Image = global::SoccerScore_TEST_GUI.Images.uk;
+            resources.ApplyResources(this.btnEnglish, "btnEnglish");
             this.btnEnglish.Name = "btnEnglish";
             this.btnEnglish.Click += new System.EventHandler(this.btnEnglish_Click);
             // 
             // btnCroatian
             // 
-            resources.ApplyResources(this.btnCroatian, "btnCroatian");
             this.btnCroatian.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnCroatian.Image = global::SoccerScore_TEST_GUI.Images.cro;
+            resources.ApplyResources(this.btnCroatian, "btnCroatian");
             this.btnCroatian.Name = "btnCroatian";
             this.btnCroatian.Click += new System.EventHandler(this.btnCroatian_Click);
             // 
             // pbLoading
             // 
-            resources.ApplyResources(this.pbLoading, "pbLoading");
             this.pbLoading.Image = global::SoccerScore_TEST_GUI.Images.ball_loading;
+            resources.ApplyResources(this.pbLoading, "pbLoading");
             this.pbLoading.Name = "pbLoading";
             this.pbLoading.TabStop = false;
             // 
@@ -502,6 +505,12 @@
             // 
             this.printDialog.Document = this.printDocument;
             this.printDialog.UseEXDialog = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.ContextMenuStrip = this.cmsOptions;
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // DefaultForm
             // 
@@ -535,6 +544,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCountryStatistics)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
@@ -606,6 +616,7 @@
         private System.Windows.Forms.ContextMenuStrip cmsOptions;
         private System.Windows.Forms.ToolStripMenuItem PrintOption;
         private System.Windows.Forms.ToolStripMenuItem ConfigurePrinterOption;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 

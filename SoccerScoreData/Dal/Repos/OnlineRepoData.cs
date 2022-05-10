@@ -86,7 +86,7 @@ namespace SoccerScoreData.Dal
         //Interface implementation
         public async Task<NationalTeam> GetNationalTeamAsync(Gender gender, string fifacode)
         {
-            string endpoint = gender == Gender.Male ? Endpoints.MensSpecificMatch : Endpoints.WomensSpecificMatch;
+            string endpoint = gender == Gender.Male ? EndpointsCloud.MensSpecificMatch : EndpointsCloud.WomensSpecificMatch;
             endpoint = $"{endpoint}{fifacode.ToUpper()}";
 
             var matchesData = await GetMatchesDataByFifaCode(endpoint);
@@ -97,7 +97,7 @@ namespace SoccerScoreData.Dal
             var cardDict = GameEventDict(matchesData, CheckIfYellowCard);
 
             //
-            endpoint = gender == Gender.Male ? Endpoints.MensNationalTeams : Endpoints.WomensNationalTeams;
+            endpoint = gender == Gender.Male ? EndpointsCloud.MensNationalTeams : EndpointsCloud.WomensNationalTeams;
             var detailedTeams = await GetTeamsData(endpoint);
 
             IDictionary<string, NationalTeam> detailTeamDict = new Dictionary<string, NationalTeam>();
@@ -130,7 +130,7 @@ namespace SoccerScoreData.Dal
 
         async public Task<IList<NationalTeam>> GetNationalTeamsSelection(Gender gender)
         {
-            string endpoint = gender == Gender.Male ? Endpoints.MensNationalTeams : Endpoints.WomensNationalTeams;
+            string endpoint = gender == Gender.Male ? EndpointsCloud.MensNationalTeams : EndpointsCloud.WomensNationalTeams;
             var teamsData = await GetTeamsData(endpoint);
             foreach (var team in teamsData)
             {
@@ -141,7 +141,7 @@ namespace SoccerScoreData.Dal
 
         public async Task<IList<Match>> GetMatchesAsync(Gender gender, string fifaCode)
         {
-            string endpoint = gender == Gender.Male ? $"{Endpoints.MensSpecificMatch}{fifaCode.ToUpper()}" : $"{Endpoints.WomensSpecificMatch}{fifaCode.ToUpper()}";
+            string endpoint = gender == Gender.Male ? $"{EndpointsCloud.MensSpecificMatch}{fifaCode.ToUpper()}" : $"{EndpointsCloud.WomensSpecificMatch}{fifaCode.ToUpper()}";
             var matchesData = await GetMatchesData(endpoint);
             return matchesData;
         }

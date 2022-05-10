@@ -92,6 +92,12 @@
     <Compile Include="PlayerForm.Designer.cs">
       <DependentUpon>PlayerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayerRankView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayerRankView.Designer.cs">
+      <DependentUpon>PlayerRankView.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlayerView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerForm.resx">
       <DependentUpon>PlayerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerRankView.resx">
+      <DependentUpon>PlayerRankView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerView.hr.resx">
       <DependentUpon>PlayerView.cs</DependentUpon>
