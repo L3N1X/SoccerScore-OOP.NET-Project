@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace SoccerScoreData.Dal
 {
+    //Add abstract superclass
     public class FileRepoData : IRepoData
     {
         private string JsonToStringFromFile(string path)

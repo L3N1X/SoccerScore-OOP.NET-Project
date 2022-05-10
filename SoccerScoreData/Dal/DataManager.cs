@@ -25,8 +25,7 @@ namespace SoccerScoreData.Dal
             {
                 try
                 {
-                    repoData = RepoFactory.GetRepoDataLocal();
-                    //repoData = RepoFactory.GetRepoDataCloud();
+                    repoData = RepoFactory.GetRepoDataCloud();
                 }
                 catch (Exception ex)
                 {
