@@ -80,6 +80,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbPlayers = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
@@ -89,7 +90,6 @@
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog = new System.Windows.Forms.PrintDialog();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.programTab.SuspendLayout();
             this.playersTab.SuspendLayout();
             this.pnlTitle.SuspendLayout();
@@ -447,6 +447,12 @@
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             // 
+            // flowLayoutPanel1
+            // 
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.ContextMenuStrip = this.cmsOptions;
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -505,12 +511,6 @@
             // 
             this.printDialog.Document = this.printDocument;
             this.printDialog.UseEXDialog = true;
-            // 
-            // flowLayoutPanel1
-            // 
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
-            this.flowLayoutPanel1.ContextMenuStrip = this.cmsOptions;
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // DefaultForm
             // 

@@ -59,6 +59,7 @@
             // pnlContainer
             // 
             this.pnlContainer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlContainer.Controls.Add(this.panel1);
             this.pnlContainer.Controls.Add(this.panel3);
             this.pnlContainer.Controls.Add(this.panel2);
             this.pnlContainer.Controls.Add(this.pbHome);
@@ -166,7 +167,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlContainer);
             this.Name = "MatchView";
             this.pnlContainer.ResumeLayout(false);
