@@ -150,9 +150,15 @@ namespace SoccerScoreData.Dal
         {
             string endpoint = gender == Gender.Male ? $"{EndpointsLocal.MensMatches}" : $"{EndpointsLocal.WomensMatches}";
             var matchesData = await GetMatchesData(endpoint);
-            return matchesData;
+            IList<Match> matchesFiltered = new List<Match>();
+            foreach (Match match in matchesData)
+            {
+                if(match.AwayTeam.FifaCode.Equals(fifaCode) || match.HomeTeam.FifaCode.Equals(fifaCode))
+                    matchesFiltered.Add(match);
+            }
+            return matchesFiltered;
         }
-
+        //Make abstract
         //RAW DATA
         private Task<IList<NationalTeam>> GetTeamsData(string path)
         {
