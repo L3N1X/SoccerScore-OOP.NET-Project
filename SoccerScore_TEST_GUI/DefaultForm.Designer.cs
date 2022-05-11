@@ -52,7 +52,6 @@
             this.cmsOptions = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.PrintOption = new System.Windows.Forms.ToolStripMenuItem();
             this.ConfigurePrinterOption = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSettings = new System.Windows.Forms.Button();
             this.statisticsTab = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -90,6 +89,7 @@
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog = new System.Windows.Forms.PrintDialog();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.programTab.SuspendLayout();
             this.playersTab.SuspendLayout();
             this.pnlTitle.SuspendLayout();
@@ -224,7 +224,6 @@
             this.matchesTab.Controls.Add(this.pictureBox2);
             this.matchesTab.Controls.Add(this.pictureBox1);
             this.matchesTab.Controls.Add(this.flpMatches);
-            this.matchesTab.Controls.Add(this.btnSettings);
             resources.ApplyResources(this.matchesTab, "matchesTab");
             this.matchesTab.Name = "matchesTab";
             // 
@@ -267,13 +266,6 @@
             this.ConfigurePrinterOption.Name = "ConfigurePrinterOption";
             resources.ApplyResources(this.ConfigurePrinterOption, "ConfigurePrinterOption");
             this.ConfigurePrinterOption.Click += new System.EventHandler(this.ConfigurePrinterOption_Click);
-            // 
-            // btnSettings
-            // 
-            resources.ApplyResources(this.btnSettings, "btnSettings");
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // statisticsTab
             // 
@@ -469,6 +461,7 @@
             // 
             resources.ApplyResources(this.toolStrip, "toolStrip");
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
             this.btnEnglish,
             this.btnCroatian});
             this.toolStrip.Name = "toolStrip";
@@ -479,7 +472,7 @@
             this.btnEnglish.Image = global::SoccerScore_TEST_GUI.Images.uk;
             resources.ApplyResources(this.btnEnglish, "btnEnglish");
             this.btnEnglish.Name = "btnEnglish";
-            this.btnEnglish.Click += new System.EventHandler(this.btnEnglish_Click);
+            this.btnEnglish.Click += new System.EventHandler(this.English_Click);
             // 
             // btnCroatian
             // 
@@ -487,7 +480,7 @@
             this.btnCroatian.Image = global::SoccerScore_TEST_GUI.Images.cro;
             resources.ApplyResources(this.btnCroatian, "btnCroatian");
             this.btnCroatian.Name = "btnCroatian";
-            this.btnCroatian.Click += new System.EventHandler(this.btnCroatian_Click);
+            this.btnCroatian.Click += new System.EventHandler(this.Croatian_Click);
             // 
             // pbLoading
             // 
@@ -511,6 +504,14 @@
             // 
             this.printDialog.Document = this.printDocument;
             this.printDialog.UseEXDialog = true;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::SoccerScore_TEST_GUI.Images.settings;
+            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.SettingsClick);
             // 
             // DefaultForm
             // 
@@ -599,7 +600,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.FlowLayoutPanel flpMatches;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.PictureBox pbCountryLeft;
@@ -617,6 +617,7 @@
         private System.Windows.Forms.ToolStripMenuItem PrintOption;
         private System.Windows.Forms.ToolStripMenuItem ConfigurePrinterOption;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

@@ -247,6 +247,7 @@
     <Content Include="Images\field.png" />
     <Content Include="Images\loading.gif" />
     <Content Include="Images\male_shoot.png" />
+    <Content Include="Images\settings.png" />
     <Content Include="Images\soccer_score_icon.ico" />
     <Content Include="Images\tactics.png" />
     <Content Include="Images\trophy.png" />

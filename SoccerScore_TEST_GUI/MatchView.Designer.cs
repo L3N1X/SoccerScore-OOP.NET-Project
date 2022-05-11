@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatchView));
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblAttendance = new System.Windows.Forms.Label();
+            this.lblVisitorsLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblHomeCountry = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -43,17 +46,14 @@
             this.lblHomeAwayScore = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblVisitorsLabel = new System.Windows.Forms.Label();
-            this.lblAttendance = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlContainer.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAway)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHomeWinner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAwayWinner)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlContainer
@@ -73,6 +73,23 @@
             this.pnlContainer.Controls.Add(this.label1);
             resources.ApplyResources(this.pnlContainer, "pnlContainer");
             this.pnlContainer.Name = "pnlContainer";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblAttendance);
+            this.panel1.Controls.Add(this.lblVisitorsLabel);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // lblAttendance
+            // 
+            resources.ApplyResources(this.lblAttendance, "lblAttendance");
+            this.lblAttendance.Name = "lblAttendance";
+            // 
+            // lblVisitorsLabel
+            // 
+            resources.ApplyResources(this.lblVisitorsLabel, "lblVisitorsLabel");
+            this.lblVisitorsLabel.Name = "lblVisitorsLabel";
             // 
             // panel3
             // 
@@ -145,23 +162,6 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // lblVisitorsLabel
-            // 
-            resources.ApplyResources(this.lblVisitorsLabel, "lblVisitorsLabel");
-            this.lblVisitorsLabel.Name = "lblVisitorsLabel";
-            // 
-            // lblAttendance
-            // 
-            resources.ApplyResources(this.lblAttendance, "lblAttendance");
-            this.lblAttendance.Name = "lblAttendance";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblAttendance);
-            this.panel1.Controls.Add(this.lblVisitorsLabel);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
-            // 
             // MatchView
             // 
             resources.ApplyResources(this, "$this");
@@ -171,6 +171,8 @@
             this.Name = "MatchView";
             this.pnlContainer.ResumeLayout(false);
             this.pnlContainer.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -179,8 +181,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAway)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHomeWinner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAwayWinner)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

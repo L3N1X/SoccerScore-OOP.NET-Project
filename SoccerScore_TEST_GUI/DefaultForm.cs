@@ -197,19 +197,35 @@ namespace SoccerScore_TEST_GUI
             dataManager.SavePlayersWithImage(playersWithImages);
         }
 
-        private void btnEnglish_Click(object sender, EventArgs e)
+        private void English_Click(object sender, EventArgs e)
         {
             dataManager.SetLanguage(Language.eng);
             this.SetCulture(dataManager.GetLanguage());
         }
 
-        private void btnCroatian_Click(object sender, EventArgs e)
+        private void Croatian_Click(object sender, EventArgs e)
         {
             dataManager.SetLanguage(Language.hr);
             this.SetCulture(dataManager.GetLanguage());
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
+        private void SetCulture(Language language)
+        {
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language.ToString());
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(language.ToString());
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+            Controls.Clear();
+            //Avoid double subscribing
+            this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.DefaultForm_FormClosing);
+            InitializeComponent();
+            InitializeControlsWithoutData();
+        }
+
+        private void SettingsClick(object sender, EventArgs e)
         {
             dataManager.ResetFavourtiteTeamSettings();
             Form dialog = new InitializeForm(dataManager);
@@ -229,37 +245,22 @@ namespace SoccerScore_TEST_GUI
             };
         }
 
-        private void SetCulture(Language language)
-        {
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language.ToString());
-            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(language.ToString());
-            UpdateUI();
-        }
-
-        private void UpdateUI()
-        {
-            Controls.Clear();
-            //Avoid double subscribing
-            this.FormClosing -= new System.Windows.Forms.FormClosingEventHandler(this.DefaultForm_FormClosing);
-            InitializeComponent();
-            InitializeControlsWithoutData();
-        }
+        /*GENERIC PRINTING START*/
 
         private int printPageCalled = 0;
         private int lastPrintIndex = 0;
         private void PrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             Control source = cmsOptions.SourceControl;
-            if(printPageCalled == 0)
+            if (printPageCalled == 0)
             {
-                //lastPrintIndex = this.flpMatches.Controls.Count - 1;
                 lastPrintIndex = source.Controls.Count - 1;
             }
             this.printPageCalled++;
             if (this.PrintContent(this.flpMatches, e))
                 return;
         }
-        
+
         private bool PrintContent(Control container, PrintPageEventArgs e)
         {
             int matchWidth = this.flpMatches.Controls[0].Size.Width;
@@ -310,5 +311,7 @@ namespace SoccerScore_TEST_GUI
         {
             this.printDialog.ShowDialog();
         }
+
+        /*GENERIC PRINTING END*/
     }
 }
