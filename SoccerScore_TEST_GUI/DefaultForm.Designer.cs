@@ -38,8 +38,15 @@
             this.programTab = new System.Windows.Forms.TabControl();
             this.playersTab = new System.Windows.Forms.TabPage();
             this.pnlTitle = new System.Windows.Forms.Panel();
+            this.pbCountryLeft = new System.Windows.Forms.PictureBox();
+            this.pbCountryRight = new System.Windows.Forms.PictureBox();
+            this.pbField2 = new System.Windows.Forms.PictureBox();
+            this.pbField1 = new System.Windows.Forms.PictureBox();
             this.lblCredits = new System.Windows.Forms.Label();
+            this.pbBorderLeft = new System.Windows.Forms.PictureBox();
+            this.pbBorderRight = new System.Windows.Forms.PictureBox();
             this.matchesTab = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.flpMatches = new System.Windows.Forms.FlowLayoutPanel();
             this.cmsOptions = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.PrintOption = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +54,7 @@
             this.statisticsTab = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pbCountryStatistics = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lblPoints = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -74,43 +82,35 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.btnSettings = new System.Windows.Forms.ToolStripButton();
+            this.btnEnglish = new System.Windows.Forms.ToolStripButton();
+            this.btnCroatian = new System.Windows.Forms.ToolStripButton();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.pbLoading = new System.Windows.Forms.PictureBox();
-            this.btnSettings = new System.Windows.Forms.ToolStripButton();
-            this.btnEnglish = new System.Windows.Forms.ToolStripButton();
-            this.btnCroatian = new System.Windows.Forms.ToolStripButton();
-            this.pbCountryLeft = new System.Windows.Forms.PictureBox();
-            this.pbCountryRight = new System.Windows.Forms.PictureBox();
-            this.pbField2 = new System.Windows.Forms.PictureBox();
-            this.pbField1 = new System.Windows.Forms.PictureBox();
-            this.pbBorderLeft = new System.Windows.Forms.PictureBox();
-            this.pbBorderRight = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbCountryStatistics = new System.Windows.Forms.PictureBox();
             this.programTab.SuspendLayout();
             this.playersTab.SuspendLayout();
             this.pnlTitle.SuspendLayout();
-            this.matchesTab.SuspendLayout();
-            this.cmsOptions.SuspendLayout();
-            this.statisticsTab.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.statusStrip.SuspendLayout();
-            this.toolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCountryLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCountryRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbField2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbField1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBorderLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBorderRight)).BeginInit();
+            this.matchesTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.cmsOptions.SuspendLayout();
+            this.statisticsTab.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCountryStatistics)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.statusStrip.SuspendLayout();
+            this.toolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // playersContainer
@@ -173,19 +173,66 @@
             resources.ApplyResources(this.pnlTitle, "pnlTitle");
             this.pnlTitle.Name = "pnlTitle";
             // 
+            // pbCountryLeft
+            // 
+            resources.ApplyResources(this.pbCountryLeft, "pbCountryLeft");
+            this.pbCountryLeft.Name = "pbCountryLeft";
+            this.pbCountryLeft.TabStop = false;
+            // 
+            // pbCountryRight
+            // 
+            resources.ApplyResources(this.pbCountryRight, "pbCountryRight");
+            this.pbCountryRight.Name = "pbCountryRight";
+            this.pbCountryRight.TabStop = false;
+            // 
+            // pbField2
+            // 
+            this.pbField2.Image = global::SoccerScore_TEST_GUI.Images.fifa;
+            resources.ApplyResources(this.pbField2, "pbField2");
+            this.pbField2.Name = "pbField2";
+            this.pbField2.TabStop = false;
+            // 
+            // pbField1
+            // 
+            this.pbField1.Image = global::SoccerScore_TEST_GUI.Images.world_cup1;
+            resources.ApplyResources(this.pbField1, "pbField1");
+            this.pbField1.Name = "pbField1";
+            this.pbField1.TabStop = false;
+            // 
             // lblCredits
             // 
             resources.ApplyResources(this.lblCredits, "lblCredits");
             this.lblCredits.Name = "lblCredits";
             // 
+            // pbBorderLeft
+            // 
+            this.pbBorderLeft.Image = global::SoccerScore_TEST_GUI.Images.border_left;
+            resources.ApplyResources(this.pbBorderLeft, "pbBorderLeft");
+            this.pbBorderLeft.Name = "pbBorderLeft";
+            this.pbBorderLeft.TabStop = false;
+            // 
+            // pbBorderRight
+            // 
+            this.pbBorderRight.Image = global::SoccerScore_TEST_GUI.Images.border_right;
+            resources.ApplyResources(this.pbBorderRight, "pbBorderRight");
+            this.pbBorderRight.Name = "pbBorderRight";
+            this.pbBorderRight.TabStop = false;
+            // 
             // matchesTab
             // 
             this.matchesTab.BackColor = System.Drawing.SystemColors.Control;
-            this.matchesTab.Controls.Add(this.pictureBox2);
             this.matchesTab.Controls.Add(this.pictureBox1);
+            this.matchesTab.Controls.Add(this.pictureBox2);
             this.matchesTab.Controls.Add(this.flpMatches);
             resources.ApplyResources(this.matchesTab, "matchesTab");
             this.matchesTab.Name = "matchesTab";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SoccerScore_TEST_GUI.Images.world_cup1;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
             // 
             // flpMatches
             // 
@@ -254,6 +301,12 @@
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
+            // 
+            // pbCountryStatistics
+            // 
+            resources.ApplyResources(this.pbCountryStatistics, "pbCountryStatistics");
+            this.pbCountryStatistics.Name = "pbCountryStatistics";
+            this.pbCountryStatistics.TabStop = false;
             // 
             // label6
             // 
@@ -406,29 +459,6 @@
             this.btnCroatian});
             this.toolStrip.Name = "toolStrip";
             // 
-            // printDocument
-            // 
-            this.printDocument.EndPrint += new System.Drawing.Printing.PrintEventHandler(this.PrintDocument_EndPrint);
-            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocument_PrintPage);
-            // 
-            // printPreviewDialog
-            // 
-            resources.ApplyResources(this.printPreviewDialog, "printPreviewDialog");
-            this.printPreviewDialog.Document = this.printDocument;
-            this.printPreviewDialog.Name = "printPreviewDialog";
-            // 
-            // printDialog
-            // 
-            this.printDialog.Document = this.printDocument;
-            this.printDialog.UseEXDialog = true;
-            // 
-            // pbLoading
-            // 
-            this.pbLoading.Image = global::SoccerScore_TEST_GUI.Images.ball_loading;
-            resources.ApplyResources(this.pbLoading, "pbLoading");
-            this.pbLoading.Name = "pbLoading";
-            this.pbLoading.TabStop = false;
-            // 
             // btnSettings
             // 
             this.btnSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -453,65 +483,35 @@
             this.btnCroatian.Name = "btnCroatian";
             this.btnCroatian.Click += new System.EventHandler(this.Croatian_Click);
             // 
-            // pbCountryLeft
+            // printDocument
             // 
-            resources.ApplyResources(this.pbCountryLeft, "pbCountryLeft");
-            this.pbCountryLeft.Name = "pbCountryLeft";
-            this.pbCountryLeft.TabStop = false;
+            this.printDocument.EndPrint += new System.Drawing.Printing.PrintEventHandler(this.PrintDocument_EndPrint);
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocument_PrintPage);
             // 
-            // pbCountryRight
+            // printPreviewDialog
             // 
-            resources.ApplyResources(this.pbCountryRight, "pbCountryRight");
-            this.pbCountryRight.Name = "pbCountryRight";
-            this.pbCountryRight.TabStop = false;
+            resources.ApplyResources(this.printPreviewDialog, "printPreviewDialog");
+            this.printPreviewDialog.Document = this.printDocument;
+            this.printPreviewDialog.Name = "printPreviewDialog";
             // 
-            // pbField2
+            // printDialog
             // 
-            this.pbField2.Image = global::SoccerScore_TEST_GUI.Images.fifa;
-            resources.ApplyResources(this.pbField2, "pbField2");
-            this.pbField2.Name = "pbField2";
-            this.pbField2.TabStop = false;
+            this.printDialog.Document = this.printDocument;
+            this.printDialog.UseEXDialog = true;
             // 
-            // pbField1
+            // pbLoading
             // 
-            this.pbField1.Image = global::SoccerScore_TEST_GUI.Images.world_cup1;
-            resources.ApplyResources(this.pbField1, "pbField1");
-            this.pbField1.Name = "pbField1";
-            this.pbField1.TabStop = false;
-            // 
-            // pbBorderLeft
-            // 
-            this.pbBorderLeft.Image = global::SoccerScore_TEST_GUI.Images.border_left;
-            resources.ApplyResources(this.pbBorderLeft, "pbBorderLeft");
-            this.pbBorderLeft.Name = "pbBorderLeft";
-            this.pbBorderLeft.TabStop = false;
-            // 
-            // pbBorderRight
-            // 
-            this.pbBorderRight.Image = global::SoccerScore_TEST_GUI.Images.border_right;
-            resources.ApplyResources(this.pbBorderRight, "pbBorderRight");
-            this.pbBorderRight.Name = "pbBorderRight";
-            this.pbBorderRight.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SoccerScore_TEST_GUI.Images.world_cup;
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
+            this.pbLoading.Image = global::SoccerScore_TEST_GUI.Images.ball_loading;
+            resources.ApplyResources(this.pbLoading, "pbLoading");
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SoccerScore_TEST_GUI.Images.world_cup;
+            this.pictureBox1.Image = global::SoccerScore_TEST_GUI.Images.world_cup1;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
-            // 
-            // pbCountryStatistics
-            // 
-            resources.ApplyResources(this.pbCountryStatistics, "pbCountryStatistics");
-            this.pbCountryStatistics.Name = "pbCountryStatistics";
-            this.pbCountryStatistics.TabStop = false;
             // 
             // DefaultForm
             // 
@@ -529,12 +529,20 @@
             this.playersTab.PerformLayout();
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCountryLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCountryRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbField2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbField1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBorderLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBorderRight)).EndInit();
             this.matchesTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.cmsOptions.ResumeLayout(false);
             this.statisticsTab.ResumeLayout(false);
             this.statisticsTab.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCountryStatistics)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
@@ -542,15 +550,7 @@
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCountryLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCountryRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbField2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbField1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBorderLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBorderRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCountryStatistics)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -607,7 +607,6 @@
         private System.Windows.Forms.PictureBox pbCountryStatistics;
         private System.Windows.Forms.PictureBox pbField2;
         private System.Windows.Forms.PictureBox pbField1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlTitle;
         private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
@@ -618,6 +617,7 @@
         private System.Windows.Forms.ToolStripMenuItem ConfigurePrinterOption;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ToolStripButton btnSettings;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
