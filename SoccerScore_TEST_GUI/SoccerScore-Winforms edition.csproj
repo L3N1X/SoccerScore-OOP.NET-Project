@@ -245,6 +245,7 @@
     <Content Include="Images\favourite.png" />
     <Content Include="Images\female_shoot.png" />
     <Content Include="Images\field.png" />
+    <Content Include="Images\fifa.png" />
     <Content Include="Images\loading.gif" />
     <Content Include="Images\male_shoot.png" />
     <Content Include="Images\settings.png" />
@@ -253,6 +254,7 @@
     <Content Include="Images\trophy.png" />
     <Content Include="Images\uk.png" />
     <Content Include="Images\world-cup.png" />
+    <Content Include="Images\world_cup.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

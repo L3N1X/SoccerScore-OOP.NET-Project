@@ -148,6 +148,9 @@
   <data name="field" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\field.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fifa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\fifa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -168,5 +171,8 @@
   </data>
   <data name="world_cup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\world-cup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="world_cup1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\world_cup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

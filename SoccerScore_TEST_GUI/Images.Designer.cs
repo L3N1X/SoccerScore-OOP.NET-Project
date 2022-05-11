@@ -163,6 +163,16 @@ namespace SoccerScore_TEST_GUI {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fifa {
+            get {
+                object obj = ResourceManager.GetObject("fifa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loading {
             get {
                 object obj = ResourceManager.GetObject("loading", resourceCulture);
@@ -226,6 +236,16 @@ namespace SoccerScore_TEST_GUI {
         internal static System.Drawing.Bitmap world_cup {
             get {
                 object obj = ResourceManager.GetObject("world_cup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap world_cup1 {
+            get {
+                object obj = ResourceManager.GetObject("world_cup1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
