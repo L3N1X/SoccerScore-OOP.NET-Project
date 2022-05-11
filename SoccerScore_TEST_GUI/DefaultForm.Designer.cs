@@ -83,13 +83,13 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.btnSettings = new System.Windows.Forms.ToolStripButton();
             this.btnEnglish = new System.Windows.Forms.ToolStripButton();
             this.btnCroatian = new System.Windows.Forms.ToolStripButton();
             this.pbLoading = new System.Windows.Forms.PictureBox();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog = new System.Windows.Forms.PrintDialog();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.programTab.SuspendLayout();
             this.playersTab.SuspendLayout();
             this.pnlTitle.SuspendLayout();
@@ -461,10 +461,18 @@
             // 
             resources.ApplyResources(this.toolStrip, "toolStrip");
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
+            this.btnSettings,
             this.btnEnglish,
             this.btnCroatian});
             this.toolStrip.Name = "toolStrip";
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSettings.Image = global::SoccerScore_TEST_GUI.Images.settings;
+            resources.ApplyResources(this.btnSettings, "btnSettings");
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Click += new System.EventHandler(this.SettingsClick);
             // 
             // btnEnglish
             // 
@@ -504,14 +512,6 @@
             // 
             this.printDialog.Document = this.printDocument;
             this.printDialog.UseEXDialog = true;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::SoccerScore_TEST_GUI.Images.settings;
-            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.SettingsClick);
             // 
             // DefaultForm
             // 
@@ -617,7 +617,7 @@
         private System.Windows.Forms.ToolStripMenuItem PrintOption;
         private System.Windows.Forms.ToolStripMenuItem ConfigurePrinterOption;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton btnSettings;
     }
 }
 

@@ -16,6 +16,7 @@ namespace SoccerScoreData.Dal
     {
         private string JsonToStringFromFile(string path)
         {
+            
             if (!File.Exists(path))
                 throw new FileNotFoundException();
             return File.ReadAllText(path);

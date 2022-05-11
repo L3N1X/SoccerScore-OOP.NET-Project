@@ -71,6 +71,7 @@ namespace SoccerScore_TEST_GUI
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            this.dataManager.ResetFavourtiteTeamSettings();
             this.dataManager.SetFavouriteTeam(this.cbNationalTeams.SelectedItem as NationalTeam);
             Close();
         }

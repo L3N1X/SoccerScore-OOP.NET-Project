@@ -166,9 +166,6 @@
   <data name="cmsOptions.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 48</value>
   </data>
-  <data name="btnSettings.Text" xml:space="preserve">
-    <value>postavke</value>
-  </data>
   <data name="matchesTab.Text" xml:space="preserve">
     <value>Utakmice</value>
   </data>
@@ -237,6 +234,9 @@
   </data>
   <data name="statisticsTab.Text" xml:space="preserve">
     <value>Statistika reprezentacije</value>
+  </data>
+  <data name="toolStripButton1.Text" xml:space="preserve">
+    <value>Postavke</value>
   </data>
   <data name="btnEnglish.Text" xml:space="preserve">
     <value>Promijeni na engleski</value>
@@ -4226,9 +4226,5 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPw/AADwDwAA4AcAAMADAACA
         AQAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAMADAADgBwAA8A8AAP//AAA=
 </value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
 </root>
