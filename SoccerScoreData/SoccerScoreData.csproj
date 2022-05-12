@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Dal\DataManager.cs" />
     <Compile Include="Dal\NoInternetException.cs" />
+    <Compile Include="Dal\Repos\AbstractRepoData.cs" />
     <Compile Include="Dal\Repos\FileRepoConfig.cs" />
     <Compile Include="Dal\Repos\FileRepoData.cs" />
     <Compile Include="Dal\Repos\IRepoConfig.cs" />

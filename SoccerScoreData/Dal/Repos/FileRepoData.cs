@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using RestSharp;
+using SoccerScoreData.Dal.Repos;
 using SoccerScoreData.Models;
 using System;
 using System.Collections.Generic;
@@ -11,92 +12,42 @@ using System.Threading.Tasks;
 
 namespace SoccerScoreData.Dal
 {
-    //Add abstract superclass
-    public class FileRepoData : IRepoData
+    public class FileRepoData : AbstractRepoData, IRepoData
     {
         private string JsonToStringFromFile(string path)
         {
-            
+
             if (!File.Exists(path))
                 throw new FileNotFoundException();
             return File.ReadAllText(path);
         }
-        private bool CheckIfOwnGoal(string eventType)
+        public override Task<IList<NationalTeam>> GetTeamsData(string path)
         {
-            return "goal-own".Equals(eventType);
-        }
-
-        private bool CheckIfGoal(string eventType)
-        {
-            IList<string> options = new List<string>(new string[] { "goal", "goal-penalty" });
-            return options.Contains(eventType);
-        }
-
-        private bool CheckIfYellowCard(string eventType)
-            => "yellow-card".Equals(eventType);
-
-        private IDictionary<string, int> GameEventDict(IList<Match> matchesData, Predicate<string> eventCondition)
-        {
-            IDictionary<string, int> events = new Dictionary<string, int>();
-            ISet<string> keys = new HashSet<string>();
-            matchesData.ToList().ForEach(m => { m.AwayTeam.AllPlayers.ForEach(p => keys.Add(p.Name.ToUpper())); });
-            matchesData.ToList().ForEach(m => { m.HomeTeam.AllPlayers.ForEach(p => keys.Add(p.Name.ToUpper())); });
-            foreach (var key in keys)
+            return Task.Run(() =>
             {
-                events.Add(key, 0);
+                return JsonConvert.DeserializeObject<IList<NationalTeam>>(JsonToStringFromFile(path));
             }
-            foreach (var match in matchesData)
-            {
-                foreach (var gameEvent in match.AwayTeamEvents)
-                {
-                    if (eventCondition(gameEvent.EventType))
-                    {
-                        //Contains key is used because of errors in JSON like player name typos eg. HATAN BAHBIR/BAHBRI
-                        if (events.ContainsKey(gameEvent.PlayerName.ToUpper()))
-                            events[gameEvent.PlayerName.ToUpper()]++;
-                    }
-                }
-                foreach (var gameEvent in match.HomeTeamEvents)
-                {
-                    if (eventCondition(gameEvent.EventType))
-                    {
-                        if (events.ContainsKey(gameEvent.PlayerName.ToUpper()))
-                            events[gameEvent.PlayerName.ToUpper()]++;
-                    }
-                }
-            }
-            return events;
+            );
         }
-
-        private ISet<NationalTeam> GetFilledTeamsSetWithPlayers(IList<Match> matchesData, Gender gender)
+        public override Task<IList<Match>> GetMatchesData(string path)
         {
-            //TO DO: Remove traversing trough all matches, not necesarry, first one is enough
-            ISet<NationalTeam> teamsSet = new HashSet<NationalTeam>();
-            foreach (var match in matchesData)
+            return Task.Run(() =>
             {
-                match.AwayTeam.TeamGender = gender;
-                match.HomeTeam.TeamGender = gender;
-
-                TeamStatisticsData awayTeamStatistics = match.AwayTeamStatistics;
-                TeamStatisticsData homeTeamStatistics = match.HomeTeamStatistics;
-
-                match.AwayTeam.Substitutes = awayTeamStatistics.Substitutes;
-                match.AwayTeam.StartingEleven = awayTeamStatistics.StartingEleven;
-
-                match.HomeTeam.Substitutes = homeTeamStatistics.Substitutes;
-                match.HomeTeam.StartingEleven = homeTeamStatistics.StartingEleven;
-
-                teamsSet.Add(match.AwayTeam);
-                teamsSet.Add(match.HomeTeam);
-            }
-            return teamsSet;
+                return JsonConvert.DeserializeObject<IList<Match>>(JsonToStringFromFile(path));
+            });
+        }
+        public override Task<IList<Match>> GetMatchesDataByFifaCode(string path)
+        {
+            return Task.Run(() =>
+            {
+                return JsonConvert.DeserializeObject<IList<Match>>(JsonToStringFromFile(path));
+            });
         }
 
-        //Interface implementation
+        /*Interface implementation*/
         public async Task<NationalTeam> GetNationalTeamAsync(Gender gender, string fifacode)
         {
             string endpoint = gender == Gender.Male ? EndpointsLocal.MensMatches : EndpointsLocal.WomensMatches;
-            //endpoint = $"{endpoint}{fifacode.ToUpper()}";
 
             var matchesData = await GetMatchesDataByFifaCode(endpoint);
 
@@ -105,7 +56,6 @@ namespace SoccerScoreData.Dal
             var goalDict = GameEventDict(matchesData, CheckIfGoal);
             var cardDict = GameEventDict(matchesData, CheckIfYellowCard);
 
-            //
             endpoint = gender == Gender.Male ? EndpointsLocal.MensNationalTeams : EndpointsLocal.WomensNationalTeams;
             var detailedTeams = await GetTeamsData(endpoint);
 
@@ -114,7 +64,6 @@ namespace SoccerScoreData.Dal
             {
                 detailTeamDict.Add(team.FifaCode, team);
             }
-            //
 
             foreach (var team in teamsSet)
             {
@@ -123,8 +72,9 @@ namespace SoccerScoreData.Dal
                     p.YellowCards = cardDict[p.Name.ToUpper()];
                 });
             }
+
             NationalTeam searchedTeam = teamsSet.FirstOrDefault(team => team.FifaCode.Equals(fifacode.ToUpper()));
-            // Extract to method
+            
             searchedTeam.Draws = detailTeamDict[searchedTeam.FifaCode].Draws;
             searchedTeam.GamesPlayed = detailTeamDict[(searchedTeam.FifaCode)].GamesPlayed;
             searchedTeam.GoalDifferential = detailTeamDict[searchedTeam.FifaCode].GoalDifferential;
@@ -133,7 +83,7 @@ namespace SoccerScoreData.Dal
             searchedTeam.Losses = detailTeamDict[(searchedTeam.FifaCode)].Losses;
             searchedTeam.Points = detailTeamDict[(searchedTeam.FifaCode)].Points;
             searchedTeam.Wins = detailTeamDict[(searchedTeam.FifaCode)].Wins;
-            //
+            
             return searchedTeam;
         }
 
@@ -159,32 +109,6 @@ namespace SoccerScoreData.Dal
                     matchesFiltered.Add(match);
             }
             return matchesFiltered;
-        }
-        //Make abstract
-        //RAW DATA
-        private Task<IList<NationalTeam>> GetTeamsData(string path)
-        {
-            return Task.Run(() =>
-            {
-                return JsonConvert.DeserializeObject<IList<NationalTeam>>(JsonToStringFromFile(path));
-            }
-            );
-        }
-
-        private Task<IList<Match>> GetMatchesData(string path)
-        {
-            return Task.Run(() =>
-            {
-                return JsonConvert.DeserializeObject<IList<Match>>(JsonToStringFromFile(path));
-            });
-        }
-
-        private Task<IList<Match>> GetMatchesDataByFifaCode(string path)
-        {
-            return Task.Run(() =>
-            {
-                return JsonConvert.DeserializeObject<IList<Match>>(JsonToStringFromFile(path));
-            });
         }
     }
 }
