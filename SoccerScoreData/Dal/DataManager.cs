@@ -21,39 +21,46 @@ namespace SoccerScoreData.Dal
 
         public DataManager()
         {
-            if (Utils.NetworkTools.CheckForInternetConnection())
-            {
-                try
-                {
-                    repoData = RepoFactory.GetRepoDataCloud();
-                    this.DataSource = DataSource.Cloud;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-            }
-            else
-            {
-                try
-                {
-                    repoData = RepoFactory.GetRepoDataLocal();
-                    this.DataSource = DataSource.Local;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-            }
             try
             {
-                repoConfig = RepoFactory.GetRepoConfig();
+                if (Utils.NetworkTools.CheckForInternetConnection())
+                {
+                    try
+                    {
+                        repoData = RepoFactory.GetRepoDataCloud();
+                        this.DataSource = DataSource.Cloud;
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        repoData = RepoFactory.GetRepoDataLocal();
+                        this.DataSource = DataSource.Local;
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                }
+                try
+                {
+                    repoConfig = RepoFactory.GetRepoConfig();
+                    Initialize();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw new Exception("Fatal application error");
             }
-            Initialize();
         }
 
         public bool HasDefaultSettings()
@@ -85,26 +92,16 @@ namespace SoccerScoreData.Dal
         {
             this.settings.ClearFavouritePlayers();
             this.settings.FavouriteTeam = null;
-            //SaveSettings();
         }
 
-        //For when default settings are detected
         public void SetGender(Gender gender)
-        {
-            this.SelectedGender = gender;
-        }
+            => this.SelectedGender = gender;
 
         public void SetFavouriteTeam(NationalTeam favouriteTeam)
-        {
-            this.settings.FavouriteTeam = favouriteTeam;
-            //SaveSettings();
-        }
+            => this.settings.FavouriteTeam = favouriteTeam;
 
         public void SetLanguage(Language language)
-        {
-            this.settings.Language = language;
-            //SaveSettings();
-        }
+            => this.settings.Language = language;  
 
         public Task<IList<NationalTeam>> GetSelectionTeams()
             => repoData.GetNationalTeamsSelectionAsync(this.SelectedGender);
@@ -144,9 +141,6 @@ namespace SoccerScoreData.Dal
         public void SaveSettings()
             => repoConfig.SaveSettings(settings);
         public void SavePlayersWithImage(IList<Player> playersWithImage)
-        {
-            //SaveSettings();
-            repoConfig.SavePlayersWithImage(playersWithImage);
-        }
+            => repoConfig.SavePlayersWithImage(playersWithImage);
     }
 }
