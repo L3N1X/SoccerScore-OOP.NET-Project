@@ -11,7 +11,7 @@ namespace SoccerScoreData.Dal
     {
         private readonly IRepoData repoData;
         private readonly IRepoConfig repoConfig;
-
+        public DataSource DataSource { get; private set; }
         public int MAX_FAVORUITE_PLAYERS { get; } = 3;
 
         private Settings settings;
@@ -26,6 +26,7 @@ namespace SoccerScoreData.Dal
                 try
                 {
                     repoData = RepoFactory.GetRepoDataCloud();
+                    this.DataSource = DataSource.Cloud;
                 }
                 catch (Exception ex)
                 {
@@ -37,6 +38,7 @@ namespace SoccerScoreData.Dal
                 try
                 {
                     repoData = RepoFactory.GetRepoDataLocal();
+                    this.DataSource = DataSource.Local;
                 }
                 catch (Exception ex)
                 {

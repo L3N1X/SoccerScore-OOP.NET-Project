@@ -61,6 +61,7 @@ namespace SoccerScore_TEST_GUI
             {
                 MessageBox.Show(ex.Message);
             }
+            this.lblDataType.Text = dataManager.DataSource.ToString();
         }
 
         private void GenderButton_Click(object sender, EventArgs e)

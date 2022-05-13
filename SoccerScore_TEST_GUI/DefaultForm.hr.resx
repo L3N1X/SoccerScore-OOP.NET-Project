@@ -235,7 +235,7 @@
   <data name="statisticsTab.Text" xml:space="preserve">
     <value>Statistika reprezentacije</value>
   </data>
-  <data name="toolStripButton1.Text" xml:space="preserve">
+  <data name="btnSettings.Text" xml:space="preserve">
     <value>Postavke</value>
   </data>
   <data name="btnEnglish.Text" xml:space="preserve">

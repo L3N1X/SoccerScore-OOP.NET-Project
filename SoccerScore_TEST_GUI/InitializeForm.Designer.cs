@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.rbFemale = new System.Windows.Forms.RadioButton();
             this.rbMale = new System.Windows.Forms.RadioButton();
+            this.lblDataType = new System.Windows.Forms.Label();
             this.gbInitialize.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCroatian)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEnglish)).BeginInit();
@@ -70,6 +71,7 @@
             // 
             // gbInitialize
             // 
+            this.gbInitialize.Controls.Add(this.lblDataType);
             this.gbInitialize.Controls.Add(this.lblLanguage);
             this.gbInitialize.Controls.Add(this.pbCroatian);
             this.gbInitialize.Controls.Add(this.pbEnglish);
@@ -147,6 +149,11 @@
             this.rbMale.UseVisualStyleBackColor = true;
             this.rbMale.Click += new System.EventHandler(this.GenderButton_Click);
             // 
+            // lblDataType
+            // 
+            resources.ApplyResources(this.lblDataType, "lblDataType");
+            this.lblDataType.Name = "lblDataType";
+            // 
             // InitializeForm
             // 
             resources.ApplyResources(this, "$this");
@@ -180,5 +187,6 @@
         private System.Windows.Forms.Label lblLanguage;
         private System.Windows.Forms.PictureBox pbCroatian;
         private System.Windows.Forms.PictureBox pbEnglish;
+        private System.Windows.Forms.Label lblDataType;
     }
 }

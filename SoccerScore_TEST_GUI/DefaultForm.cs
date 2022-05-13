@@ -227,7 +227,6 @@ namespace SoccerScore_TEST_GUI
 
         private void SettingsClick(object sender, EventArgs e)
         {
-            //dataManager.ResetFavourtiteTeamSettings();
             Form dialog = new InitializeForm(dataManager);
             if (dialog.ShowDialog() == DialogResult.OK)
             {

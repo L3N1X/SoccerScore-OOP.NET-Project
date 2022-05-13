@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace SoccerScoreData.Models
 {
+    public enum DataSource
+    {
+        Cloud,
+        Local
+    }
     public enum Gender
     {
         Female,
