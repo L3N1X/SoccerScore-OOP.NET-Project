@@ -22,6 +22,45 @@ namespace SoccerScoreData.Dal.Repos
         public bool CheckIfYellowCard(string eventType)
             => "yellow-card".Equals(eventType);
 
+        public async Task<NationalTeam> GetSelectedNationalTeam(string matchesEndpoint, string nationalTeamsEndpoint, Gender gender, string fifacode)
+        {
+            var matchesData = await GetMatchesDataByFifaCodeFromJson(matchesEndpoint);
+
+            ISet<NationalTeam> teamsSet = GetFilledTeamsSetWithPlayers(matchesData, gender);
+
+            var goalDict = GameEventDict(matchesData, CheckIfGoal);
+            var cardDict = GameEventDict(matchesData, CheckIfYellowCard);
+
+            var detailedTeams = await GetTeamsDataFromJson(nationalTeamsEndpoint);
+
+            IDictionary<string, NationalTeam> detailTeamDict = new Dictionary<string, NationalTeam>();
+            foreach (var team in detailedTeams)
+            {
+                detailTeamDict.Add(team.FifaCode, team);
+            }
+
+            foreach (var team in teamsSet)
+            {
+                team.AllPlayers.ForEach(p => {
+                    p.Goals = goalDict[p.Name.ToUpper()];
+                    p.YellowCards = cardDict[p.Name.ToUpper()];
+                });
+            }
+
+            NationalTeam searchedTeam = teamsSet.FirstOrDefault(team => team.FifaCode.Equals(fifacode.ToUpper()));
+
+            searchedTeam.Draws = detailTeamDict[searchedTeam.FifaCode].Draws;
+            searchedTeam.GamesPlayed = detailTeamDict[(searchedTeam.FifaCode)].GamesPlayed;
+            searchedTeam.GoalDifferential = detailTeamDict[searchedTeam.FifaCode].GoalDifferential;
+            searchedTeam.GoalsAgainst = detailTeamDict[(searchedTeam.FifaCode)].GoalsAgainst;
+            searchedTeam.GoalsFor = detailTeamDict[(searchedTeam.FifaCode)].GoalsFor;
+            searchedTeam.Losses = detailTeamDict[(searchedTeam.FifaCode)].Losses;
+            searchedTeam.Points = detailTeamDict[(searchedTeam.FifaCode)].Points;
+            searchedTeam.Wins = detailTeamDict[(searchedTeam.FifaCode)].Wins;
+
+            return searchedTeam;
+        }
+
         public IDictionary<string, int> GameEventDict(IList<Match> matchesData, Predicate<string> eventCondition)
         {
             IDictionary<string, int> events = new Dictionary<string, int>();
@@ -76,10 +115,10 @@ namespace SoccerScoreData.Dal.Repos
             }
             return teamsSet;
         }
-        public abstract Task<IList<NationalTeam>> GetTeamsData(string endpoint);
+        public abstract Task<IList<NationalTeam>> GetTeamsDataFromJson(string endpoint);
 
-        public abstract Task<IList<Match>> GetMatchesData(string endpoint);
+        public abstract Task<IList<Match>> GetMatchesDataFromJson(string endpoint);
 
-        public abstract Task<IList<Match>> GetMatchesDataByFifaCode(string endpoint);
+        public abstract Task<IList<Match>> GetMatchesDataByFifaCodeFromJson(string endpoint);
     }
 }

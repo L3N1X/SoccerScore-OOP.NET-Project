@@ -105,7 +105,7 @@ namespace SoccerScoreData.Dal
         }
 
         public Task<IList<NationalTeam>> GetSelectionTeams()
-            => repoData.GetNationalTeamsSelection(this.SelectedGender);
+            => repoData.GetNationalTeamsSelectionAsync(this.SelectedGender);
 
 
         public void AddFavouritePlayer(Player player)

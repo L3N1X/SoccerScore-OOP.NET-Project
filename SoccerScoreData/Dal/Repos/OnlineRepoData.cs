@@ -13,7 +13,7 @@ namespace SoccerScoreData.Dal
 {
     internal class OnlineRepoData : AbstractRepoData, IRepoData
     {
-        public override Task<IList<NationalTeam>> GetTeamsData(string enpoint)
+        public override Task<IList<NationalTeam>> GetTeamsDataFromJson(string enpoint)
         {
             return Task.Run(() =>
             {
@@ -24,7 +24,7 @@ namespace SoccerScoreData.Dal
             );
         }
 
-        public override Task<IList<Match>> GetMatchesData(string endpoint)
+        public override Task<IList<Match>> GetMatchesDataFromJson(string endpoint)
         {
             return Task.Run(() =>
             {
@@ -34,7 +34,7 @@ namespace SoccerScoreData.Dal
             });
         }
 
-        public override Task<IList<Match>> GetMatchesDataByFifaCode(string endpoint)
+        public override Task<IList<Match>> GetMatchesDataByFifaCodeFromJson(string endpoint)
         {
             return Task.Run(() =>
             {
@@ -47,51 +47,16 @@ namespace SoccerScoreData.Dal
         /*Interface implementation*/
         public async Task<NationalTeam> GetNationalTeamAsync(Gender gender, string fifacode)
         {
-            //THIS PART ONLY DIFFERES IN ENDPOINT
-            string endpoint = gender == Gender.Male ? EndpointsCloud.MensSpecificMatch : EndpointsCloud.WomensSpecificMatch;
-            endpoint = $"{endpoint}{fifacode.ToUpper()}";
-
-            var matchesData = await GetMatchesDataByFifaCode(endpoint);
-
-            ISet<NationalTeam> teamsSet = GetFilledTeamsSetWithPlayers(matchesData, gender);
-
-            var goalDict = GameEventDict(matchesData, CheckIfGoal);
-            var cardDict = GameEventDict(matchesData, CheckIfYellowCard);
-
-            endpoint = gender == Gender.Male ? EndpointsCloud.MensNationalTeams : EndpointsCloud.WomensNationalTeams;
-            var detailedTeams = await GetTeamsData(endpoint);
-
-            IDictionary<string, NationalTeam> detailTeamDict = new Dictionary<string, NationalTeam>();
-            foreach (var team in detailedTeams)
-            {
-                detailTeamDict.Add(team.FifaCode, team);
-            }
-
-            foreach (var team in teamsSet)
-            {
-                team.AllPlayers.ForEach(p => {
-                    p.Goals = goalDict[p.Name.ToUpper()];
-                    p.YellowCards = cardDict[p.Name.ToUpper()];
-                });
-            }
-            NationalTeam searchedTeam = teamsSet.FirstOrDefault(team => team.FifaCode.Equals(fifacode.ToUpper()));
-            
-            searchedTeam.Draws = detailTeamDict[searchedTeam.FifaCode].Draws;
-            searchedTeam.GamesPlayed = detailTeamDict[(searchedTeam.FifaCode)].GamesPlayed;
-            searchedTeam.GoalDifferential = detailTeamDict[searchedTeam.FifaCode].GoalDifferential;
-            searchedTeam.GoalsAgainst = detailTeamDict[(searchedTeam.FifaCode)].GoalsAgainst;
-            searchedTeam.GoalsFor = detailTeamDict[(searchedTeam.FifaCode)].GoalsFor;
-            searchedTeam.Losses = detailTeamDict[(searchedTeam.FifaCode)].Losses;
-            searchedTeam.Points = detailTeamDict[(searchedTeam.FifaCode)].Points;
-            searchedTeam.Wins = detailTeamDict[(searchedTeam.FifaCode)].Wins;
-
-            return searchedTeam;
+            string matchesEndpoint = gender == Gender.Male ? EndpointsCloud.MensSpecificMatch : EndpointsCloud.WomensSpecificMatch;
+            matchesEndpoint = $"{matchesEndpoint}{fifacode.ToUpper()}";
+            string nationalTeamsEndpoint = gender == Gender.Male ? EndpointsCloud.MensNationalTeams : EndpointsCloud.WomensNationalTeams;
+            return await GetSelectedNationalTeam(matchesEndpoint, nationalTeamsEndpoint, gender, fifacode);
         }
 
-        async public Task<IList<NationalTeam>> GetNationalTeamsSelection(Gender gender)
+        async public Task<IList<NationalTeam>> GetNationalTeamsSelectionAsync(Gender gender)
         {
             string endpoint = gender == Gender.Male ? EndpointsCloud.MensNationalTeams : EndpointsCloud.WomensNationalTeams;
-            var teamsData = await GetTeamsData(endpoint);
+            var teamsData = await GetTeamsDataFromJson(endpoint);
             foreach (var team in teamsData)
             {
                 team.TeamGender = gender;
@@ -102,7 +67,7 @@ namespace SoccerScoreData.Dal
         public async Task<IList<Match>> GetMatchesAsync(Gender gender, string fifaCode)
         {
             string endpoint = gender == Gender.Male ? $"{EndpointsCloud.MensSpecificMatch}{fifaCode.ToUpper()}" : $"{EndpointsCloud.WomensSpecificMatch}{fifaCode.ToUpper()}";
-            var matchesData = await GetMatchesData(endpoint);
+            var matchesData = await GetMatchesDataFromJson(endpoint);
             return matchesData;
         }
     }
