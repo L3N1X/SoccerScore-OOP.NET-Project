@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SoccerScoreData.Dal.Repos
 {
-    public abstract class AbstractRepoData
+    public abstract class AbstractRepoData : IRepoData
     {
         public bool CheckIfOwnGoal(string eventType)
 
@@ -120,5 +120,13 @@ namespace SoccerScoreData.Dal.Repos
         public abstract Task<IList<Match>> GetMatchesDataFromJson(string endpoint);
 
         public abstract Task<IList<Match>> GetMatchesDataByFifaCodeFromJson(string endpoint);
+
+        //Interface
+        public abstract Task<IList<NationalTeam>> GetNationalTeamsSelectionAsync(Gender gender);
+
+        public abstract Task<NationalTeam> GetNationalTeamAsync(Gender gender, string fifacode);
+
+        public abstract Task<IList<Match>> GetMatchesAsync(Gender gender, string fifaCode);
+        //Interface
     }
 }

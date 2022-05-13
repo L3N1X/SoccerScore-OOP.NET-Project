@@ -106,7 +106,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils\Tools.cs" />
+    <Compile Include="UtilitiesGUI\Tools.cs" />
     <EmbeddedResource Include="CountryImages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CountryImages.Designer.cs</LastGenOutput>
@@ -235,26 +235,26 @@
     <Content Include="CountryImages\TUN.jpg" />
     <Content Include="CountryImages\URU.jpg" />
     <Content Include="CountryImages\USA.jpg" />
-    <Content Include="Images\ball.gif" />
-    <Content Include="Images\ball_loading.gif" />
-    <Content Include="Images\border-left.png" />
-    <Content Include="Images\border-right.png" />
-    <Content Include="Images\captain.png" />
-    <Content Include="Images\cro.png" />
-    <Content Include="Images\default_player_image.png" />
-    <Content Include="Images\favourite.png" />
-    <Content Include="Images\female_shoot.png" />
-    <Content Include="Images\field.png" />
-    <Content Include="Images\fifa.png" />
-    <Content Include="Images\loading.gif" />
-    <Content Include="Images\male_shoot.png" />
-    <Content Include="Images\settings.png" />
-    <Content Include="Images\soccer_score_icon.ico" />
-    <Content Include="Images\tactics.png" />
-    <Content Include="Images\trophy.png" />
-    <Content Include="Images\uk.png" />
-    <Content Include="Images\world-cup.png" />
-    <Content Include="Images\world_cup.png" />
+    <Content Include="ImagesGUI\ball.gif" />
+    <Content Include="ImagesGUI\ball_loading.gif" />
+    <Content Include="ImagesGUI\border-left.png" />
+    <Content Include="ImagesGUI\border-right.png" />
+    <Content Include="ImagesGUI\captain.png" />
+    <Content Include="ImagesGUI\cro.png" />
+    <Content Include="ImagesGUI\default_player_image.png" />
+    <Content Include="ImagesGUI\favourite.png" />
+    <Content Include="ImagesGUI\female_shoot.png" />
+    <Content Include="ImagesGUI\field.png" />
+    <Content Include="ImagesGUI\fifa.png" />
+    <Content Include="ImagesGUI\loading.gif" />
+    <Content Include="ImagesGUI\male_shoot.png" />
+    <Content Include="ImagesGUI\settings.png" />
+    <Content Include="ImagesGUI\soccer_score_icon.ico" />
+    <Content Include="ImagesGUI\tactics.png" />
+    <Content Include="ImagesGUI\trophy.png" />
+    <Content Include="ImagesGUI\uk.png" />
+    <Content Include="ImagesGUI\world-cup.png" />
+    <Content Include="ImagesGUI\world_cup.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

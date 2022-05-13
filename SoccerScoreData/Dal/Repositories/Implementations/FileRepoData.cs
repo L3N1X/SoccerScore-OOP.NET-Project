@@ -12,15 +12,18 @@ using System.Threading.Tasks;
 
 namespace SoccerScoreData.Dal
 {
-    public class FileRepoData : AbstractRepoData, IRepoData
+    public class FileRepoData : AbstractRepoData
     {
+        /*File repo specific methods*/
         private string JsonToStringFromFile(string path)
         {
-
             if (!File.Exists(path))
                 throw new FileNotFoundException();
             return File.ReadAllText(path);
         }
+        /*File repo specific methods*/
+
+        /*Abstract repo override*/
         public override Task<IList<NationalTeam>> GetTeamsDataFromJson(string path)
         {
             return Task.Run(() =>
@@ -43,9 +46,10 @@ namespace SoccerScoreData.Dal
                 return JsonConvert.DeserializeObject<IList<Match>>(JsonToStringFromFile(path));
             });
         }
+        /*Abstract repo override*/
 
         /*Interface implementation*/
-        public async Task<NationalTeam> GetNationalTeamAsync(Gender gender, string fifacode)
+        public override async Task<NationalTeam> GetNationalTeamAsync(Gender gender, string fifacode)
         {
             string matchesEndpoint = gender == Gender.Male ? EndpointsLocal.MensMatches : EndpointsLocal.WomensMatches;
             string nationalTeamsEndpoint = gender == Gender.Male ? EndpointsLocal.MensNationalTeams : EndpointsLocal.WomensNationalTeams;
@@ -53,7 +57,7 @@ namespace SoccerScoreData.Dal
             return await GetSelectedNationalTeam(matchesEndpoint, nationalTeamsEndpoint, gender, fifacode);
         }
 
-        async public Task<IList<NationalTeam>> GetNationalTeamsSelectionAsync(Gender gender)
+        public override async Task<IList<NationalTeam>> GetNationalTeamsSelectionAsync(Gender gender)
         {
             string endpoint = gender == Gender.Male ? EndpointsLocal.MensNationalTeams : EndpointsLocal.WomensNationalTeams;
             var teamsData = await GetTeamsDataFromJson(endpoint);
@@ -64,7 +68,7 @@ namespace SoccerScoreData.Dal
             return teamsData;
         }
 
-        public async Task<IList<Match>> GetMatchesAsync(Gender gender, string fifaCode)
+        public override async Task<IList<Match>> GetMatchesAsync(Gender gender, string fifaCode)
         {
             string endpoint = gender == Gender.Male ? $"{EndpointsLocal.MensMatches}" : $"{EndpointsLocal.WomensMatches}";
             var matchesData = await GetMatchesDataFromJson(endpoint);
@@ -76,6 +80,7 @@ namespace SoccerScoreData.Dal
             }
             return matchesFiltered;
         }
+        /*Interface implementation*/
     }
 }
 
