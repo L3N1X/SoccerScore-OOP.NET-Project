@@ -135,9 +135,24 @@ namespace SoccerScoreData.Dal
             {
                 Player realPlayer = this.FavouriteTeam.AllPlayers.Find(p => p.Equals(player));
                 if (realPlayer != null)
-                    realPlayer.IconPath = player.IconPath;
+                    realPlayer.IconPath = player.IconPath;  
             });
         }
+
+        public IList<string> GetOpponentsFifaCodes()
+        {
+            IEnumerable<string> fifaCodes = this.FavouriteTeamMatches
+                .Select(match => match.HomeTeam.FifaCode.Equals(FavouriteTeam.FifaCode) ? match.AwayTeam.FifaCode : match.HomeTeam.FifaCode);
+            return fifaCodes.ToList();
+        }
+
+        Match GetMatchByOpponentFifaCode(string fifacode)
+        {
+            return FavouriteTeamMatches.Where(match => 
+            match.AwayTeam.FifaCode.Equals(fifacode) || 
+            match.HomeTeam.FifaCode.Equals(fifacode)).ToList()[0];
+        }
+
         public void SaveSettings()
             => repoConfig.SaveSettings(settings);
         public void SavePlayersWithImage(IList<Player> playersWithImage)

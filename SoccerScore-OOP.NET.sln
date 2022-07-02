@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoccerScoreData", "SoccerSc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoccerScore-Winforms edition", "SoccerScore_TEST_GUI\SoccerScore-Winforms edition.csproj", "{9418D460-71BB-4D9C-9E2C-DBC7F1B67817}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugApp", "DebugApp\DebugApp.csproj", "{B4362A15-B7EC-4781-BAA1-40EB9BA2675D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoccerScore-WPF edition", "SoccerScore-WPF edition\SoccerScore-WPF edition.csproj", "{75268B24-D215-4A8C-8EF1-6553AB0EBFFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{9418D460-71BB-4D9C-9E2C-DBC7F1B67817}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9418D460-71BB-4D9C-9E2C-DBC7F1B67817}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9418D460-71BB-4D9C-9E2C-DBC7F1B67817}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4362A15-B7EC-4781-BAA1-40EB9BA2675D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4362A15-B7EC-4781-BAA1-40EB9BA2675D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4362A15-B7EC-4781-BAA1-40EB9BA2675D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4362A15-B7EC-4781-BAA1-40EB9BA2675D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75268B24-D215-4A8C-8EF1-6553AB0EBFFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75268B24-D215-4A8C-8EF1-6553AB0EBFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75268B24-D215-4A8C-8EF1-6553AB0EBFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75268B24-D215-4A8C-8EF1-6553AB0EBFFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
