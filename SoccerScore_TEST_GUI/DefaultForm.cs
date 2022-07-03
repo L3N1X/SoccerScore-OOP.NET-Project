@@ -56,7 +56,7 @@ namespace SoccerScore_TEST_GUI
             this.pbLoading.BringToFront();
             this.pbLoading.Visible = true;
 
-            await dataManager.InitializeData();
+            await dataManager.InitializeDataAsync();
 
             this.FillControls();
             this.SetAllControlsVisible();

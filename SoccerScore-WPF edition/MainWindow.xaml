@@ -7,6 +7,45 @@
         Loaded="Window_Loaded"
         mc:Ignorable="d"
         Title="MainWindow" Height="520" Width="820">
+    <Window.Resources>
+        <Style x:Key="PlayerButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="0,15,0,15" />
+        </Style>
+        <Style x:Key="PlayerColumn" TargetType="{x:Type StackPanel}">
+            <Setter Property="Margin" Value="15,0,15,0"></Setter>
+        </Style>
+        <Style TargetType="{x:Type ListBox}">
+            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+        </Style>
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Margin" Value="0,5,0,5"></Setter>
+            <Setter Property="Height" Value="25"></Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="FontSize" To="15" Duration="0:0:.07"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="FontSize" Duration="0:0:.07"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <!--<EventTrigger RoutedEvent="Selected">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Color"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>-->
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition>
@@ -34,8 +73,7 @@
             <Label Content="SoccerScore" FontSize="18" FontWeight="Bold"/>
         </StackPanel>
         <Image Source="Content/Images/soccer-field.jpg" Grid.Row="1" Grid.Column="1" Stretch="Fill"/>
-        <Button Grid.Column="1">Test</Button>
-        <Grid Grid.Row="1" Grid.Column="1">
+        <Grid Grid.Row="1" Grid.Column="1" x:Name="gwPlayerPositions">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition>
                     <ColumnDefinition.Width>*</ColumnDefinition.Width>
@@ -62,34 +100,37 @@
                     <ColumnDefinition.Width>*</ColumnDefinition.Width>
                 </ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <StackPanel x:Name="pnlHomeGoalie" Grid.Column="0" VerticalAlignment="Center" >
+            <StackPanel x:Name="pnlHomeGoalie" Grid.Column="0" VerticalAlignment="Center" Style="{StaticResource PlayerColumn}">
 
             </StackPanel>
-            <StackPanel x:Name="pnlHomeDefence" Grid.Column="1" VerticalAlignment="Center">
+            <StackPanel x:Name="pnlHomeDefence" Grid.Column="1" VerticalAlignment="Center"  Style="{StaticResource PlayerColumn}">
 
             </StackPanel>
-            <StackPanel x:Name="pnlHomeMidfield" Grid.Column="2" VerticalAlignment="Center">
+            <StackPanel x:Name="pnlHomeMidfield" Grid.Column="2" VerticalAlignment="Center"  Style="{StaticResource PlayerColumn}">
 
             </StackPanel>
-            <StackPanel x:Name="pnlHomeForward" Grid.Column="3" VerticalAlignment="Center">
+            <StackPanel x:Name="pnlHomeForward" Grid.Column="3" VerticalAlignment="Center"  Style="{StaticResource PlayerColumn}">
 
             </StackPanel>
-            <StackPanel x:Name="pnlAwayForward" Grid.Column="4" VerticalAlignment="Center">
+            <StackPanel x:Name="pnlAwayForward" Grid.Column="4" VerticalAlignment="Center"  Style="{StaticResource PlayerColumn}">
 
             </StackPanel>
-            <StackPanel x:Name="pnlAwayMidfield" Grid.Column="5" VerticalAlignment="Center">
-                
-            </StackPanel>
-            <StackPanel x:Name="pnlAwayDefence" Grid.Column="6" VerticalAlignment="Center">
+            <StackPanel x:Name="pnlAwayMidfield" Grid.Column="5" VerticalAlignment="Center"  Style="{StaticResource PlayerColumn}">
 
             </StackPanel>
-            <StackPanel x:Name="pnlAwayGoalie" Grid.Column="7" VerticalAlignment="Center">
+            <StackPanel x:Name="pnlAwayDefence" Grid.Column="6" VerticalAlignment="Center"  Style="{StaticResource PlayerColumn}">
+
+            </StackPanel>
+            <StackPanel x:Name="pnlAwayGoalie" Grid.Column="7" VerticalAlignment="Center"  Style="{StaticResource PlayerColumn}">
 
             </StackPanel>
         </Grid>
+        <Label x:Name="lblMatchInfo" Grid.Column="1" Content="HOME X:X AWAY" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <StackPanel Grid.Row="1">
+            <ComboBox x:Name="cbSelectionTeams"></ComboBox>
+            <Button Content="Search" Click="Button_Click"></Button>
             <Label x:Name="lblFavouriteTeamCountryName" Content="" Opacity="0"/>
-            <ListBox x:Name="lbOpponentFifaCodes" SelectionChanged="MatchChanged"/>
+            <ListBox x:Name="lbOpponentFifaCodes"/>
         </StackPanel>
     </Grid>
 </Window>

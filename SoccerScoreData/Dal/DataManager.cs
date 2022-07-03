@@ -3,6 +3,7 @@ using SoccerScoreData.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SoccerScoreData.Dal
@@ -23,20 +24,20 @@ namespace SoccerScoreData.Dal
         {
             try
             {
-                if (Utils.NetworkTools.CheckForInternetConnection())
-                {
-                    try
-                    {
-                        repoData = RepoFactory.GetRepoDataCloud();
-                        this.DataSource = DataSource.Cloud;
-                    }
-                    catch (Exception ex)
-                    {
-                        throw ex;
-                    }
-                }
-                else
-                {
+                //if (Utils.NetworkTools.CheckForInternetConnection())
+                //{
+                //    try
+                //    {
+                //        repoData = RepoFactory.GetRepoDataCloud();
+                //        this.DataSource = DataSource.Cloud;
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        throw ex;
+                //    }
+                //}
+                //else
+                //{
                     try
                     {
                         repoData = RepoFactory.GetRepoDataLocal();
@@ -46,7 +47,7 @@ namespace SoccerScoreData.Dal
                     {
                         throw ex;
                     }
-                }
+                //}
                 try
                 {
                     repoConfig = RepoFactory.GetRepoConfig();
@@ -75,7 +76,7 @@ namespace SoccerScoreData.Dal
         public void Initialize()
         {
             settings = repoConfig.GetSettings();
-            if(!HasDefaultSettings())
+            if (!HasDefaultSettings())
             {
                 this.SelectedGender = settings.FavouriteTeam.TeamGender;
                 this.FavouriteTeam = settings.FavouriteTeam;
@@ -101,7 +102,7 @@ namespace SoccerScoreData.Dal
             => this.settings.FavouriteTeam = favouriteTeam;
 
         public void SetLanguage(Language language)
-            => this.settings.Language = language;  
+            => this.settings.Language = language;
 
         public Task<IList<NationalTeam>> GetSelectionTeams()
             => repoData.GetNationalTeamsSelectionAsync(this.SelectedGender);
@@ -113,7 +114,7 @@ namespace SoccerScoreData.Dal
             SaveSettings();
         }
 
-        public async Task InitializeData()
+        public async Task InitializeDataAsync()
         {
             NationalTeam fullTeam = await repoData.GetNationalTeamAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
             this.FavouriteTeamMatches = await repoData.GetMatchesAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
@@ -135,9 +136,35 @@ namespace SoccerScoreData.Dal
             {
                 Player realPlayer = this.FavouriteTeam.AllPlayers.Find(p => p.Equals(player));
                 if (realPlayer != null)
-                    realPlayer.IconPath = player.IconPath;  
+                    realPlayer.IconPath = player.IconPath;
             });
         }
+
+        //public async void InitializeData()
+        //{
+        //    NationalTeam fullTeam = await repoData.GetNationalTeamAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
+        //    this.FavouriteTeamMatches = await repoData.GetMatchesAsync(settings.FavouriteTeam.TeamGender, settings.FavouriteTeam.FifaCode);
+
+        //    IList<Player> playersWithSavedImages = repoConfig.GetPlayersWithSavedImage();
+
+        //    this.FavouriteTeam = fullTeam;
+
+        //    //Binds favourite players from settings
+        //    settings.FavouritePlayers.ToList().ForEach(player =>
+        //    {
+        //        if (player != null)
+        //        {
+        //            Player realPlayer = this.FavouriteTeam.AllPlayers.Find(p => p.Equals(player));
+        //            realPlayer.IsFavourite = true;
+        //        }
+        //    });
+        //    playersWithSavedImages.ToList().ForEach(player =>
+        //    {
+        //        Player realPlayer = this.FavouriteTeam.AllPlayers.Find(p => p.Equals(player));
+        //        if (realPlayer != null)
+        //            realPlayer.IconPath = player.IconPath;
+        //    });
+        //}
 
         public IList<string> GetOpponentsFifaCodes()
         {
@@ -146,10 +173,10 @@ namespace SoccerScoreData.Dal
             return fifaCodes.ToList();
         }
 
-        Match GetMatchByOpponentFifaCode(string fifacode)
+        public Match GetMatchByOpponentFifaCode(string fifacode)
         {
-            return FavouriteTeamMatches.Where(match => 
-            match.AwayTeam.FifaCode.Equals(fifacode) || 
+            return FavouriteTeamMatches.Where(match =>
+            match.AwayTeam.FifaCode.Equals(fifacode) ||
             match.HomeTeam.FifaCode.Equals(fifacode)).ToList()[0];
         }
 
