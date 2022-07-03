@@ -67,8 +67,16 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MatchResultControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MatchResultControl.xaml.cs">
+      <DependentUpon>MatchResultControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModels\MatchListItemViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -102,6 +110,53 @@
       <Project>{76888f94-7d27-42e0-b8d1-d419c691dd40}</Project>
       <Name>SoccerScoreData</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\CountryImages\ARG.jpg" />
+    <Resource Include="Content\CountryImages\AUS.jpg" />
+    <Resource Include="Content\CountryImages\BEL.jpg" />
+    <Resource Include="Content\CountryImages\BRA.jpg" />
+    <Resource Include="Content\CountryImages\CAN.jpg" />
+    <Resource Include="Content\CountryImages\CHI.jpg" />
+    <Resource Include="Content\CountryImages\CHN.jpg" />
+    <Resource Include="Content\CountryImages\CMR.jpg" />
+    <Resource Include="Content\CountryImages\COL.jpg" />
+    <Resource Include="Content\CountryImages\CRC.jpg" />
+    <Resource Include="Content\CountryImages\CRO.jpg" />
+    <Resource Include="Content\CountryImages\DEN.jpg" />
+    <Resource Include="Content\CountryImages\EGY.jpg" />
+    <Resource Include="Content\CountryImages\ENG.jpg" />
+    <Resource Include="Content\CountryImages\ESP.jpg" />
+    <Resource Include="Content\CountryImages\FRA.jpg" />
+    <Resource Include="Content\CountryImages\GER.jpg" />
+    <Resource Include="Content\CountryImages\IRN.jpg" />
+    <Resource Include="Content\CountryImages\ISL.jpg" />
+    <Resource Include="Content\CountryImages\ITA.jpg" />
+    <Resource Include="Content\CountryImages\JAM.jpg" />
+    <Resource Include="Content\CountryImages\JPN.jpg" />
+    <Resource Include="Content\CountryImages\KOR.jpg" />
+    <Resource Include="Content\CountryImages\KSA.jpg" />
+    <Resource Include="Content\CountryImages\MAR.jpg" />
+    <Resource Include="Content\CountryImages\MEX.jpg" />
+    <Resource Include="Content\CountryImages\NED.jpg" />
+    <Resource Include="Content\CountryImages\NGA.jpg" />
+    <Resource Include="Content\CountryImages\NOR.jpg" />
+    <Resource Include="Content\CountryImages\NZL.jpg" />
+    <Resource Include="Content\CountryImages\PAN.jpg" />
+    <Resource Include="Content\CountryImages\PER.jpg" />
+    <Resource Include="Content\CountryImages\POL.jpg" />
+    <Resource Include="Content\CountryImages\POR.jpg" />
+    <Resource Include="Content\CountryImages\RSA.jpg" />
+    <Resource Include="Content\CountryImages\RUS.jpg" />
+    <Resource Include="Content\CountryImages\SCO.jpg" />
+    <Resource Include="Content\CountryImages\SEN.jpg" />
+    <Resource Include="Content\CountryImages\SRB.jpg" />
+    <Resource Include="Content\CountryImages\SUI.jpg" />
+    <Resource Include="Content\CountryImages\SWE.jpg" />
+    <Resource Include="Content\CountryImages\THA.jpg" />
+    <Resource Include="Content\CountryImages\TUN.jpg" />
+    <Resource Include="Content\CountryImages\URU.jpg" />
+    <Resource Include="Content\CountryImages\USA.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

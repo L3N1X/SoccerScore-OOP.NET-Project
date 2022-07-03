@@ -8,8 +8,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="520" Width="820">
     <Window.Resources>
+        <ControlTemplate x:Key="listBoxItem" TargetType="ListBoxItem">
+            <Grid>
+                <Border Grid.ColumnSpan="1" BorderBrush="DarkCyan" BorderThickness="2"></Border>
+             </Grid>
+        </ControlTemplate>
         <Style x:Key="PlayerButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="Margin" Value="0,15,0,15" />
+            <Setter Property="Margin" Value="0,20,0,20" />
         </Style>
         <Style x:Key="PlayerColumn" TargetType="{x:Type StackPanel}">
             <Setter Property="Margin" Value="15,0,15,0"></Setter>
@@ -49,7 +54,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition>
-                <ColumnDefinition.Width>*</ColumnDefinition.Width>
+                <ColumnDefinition.Width>180px</ColumnDefinition.Width>
             </ColumnDefinition>
             <ColumnDefinition>
                 <ColumnDefinition.Width>5*</ColumnDefinition.Width>
@@ -60,7 +65,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition>
-                <RowDefinition.Height>*</RowDefinition.Height>
+                <RowDefinition.Height>40px</RowDefinition.Height>
             </RowDefinition>
             <RowDefinition>
                 <RowDefinition.Height>9*</RowDefinition.Height>
@@ -128,9 +133,30 @@
         <Label x:Name="lblMatchInfo" Grid.Column="1" Content="HOME X:X AWAY" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <StackPanel Grid.Row="1">
             <ComboBox x:Name="cbSelectionTeams"></ComboBox>
-            <Button Content="Search" Click="Button_Click"></Button>
             <Label x:Name="lblFavouriteTeamCountryName" Content="" Opacity="0"/>
-            <ListBox x:Name="lbOpponentFifaCodes"/>
+            <ListBox x:Name="lbOpponentFifaCodes">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>*</ColumnDefinition.Width>
+                                </ColumnDefinition>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>*</ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition>
+                                    <RowDefinition.Height>*</RowDefinition.Height>
+                                </RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Column="0" Source="{Binding CountryImagePath}" Stretch="UniformToFill"></Image>
+                            <TextBlock Grid.Column="1" Text="{Binding FifaCode}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0,0,0"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using SoccerScoreData.Dal;
+﻿using SoccerScore_WPF_edition.Models.ViewModels;
+using SoccerScoreData.Dal;
 using SoccerScoreData.Models;
 using System;
 using System.Collections.Generic;
@@ -44,13 +45,13 @@ namespace SoccerScore_WPF_edition
             DataManager.GetOpponentsFifaCodes()
                 .ToList().
                 ForEach(fifaCode => 
-                this.lbOpponentFifaCodes.Items.Add(fifaCode));
+                this.lbOpponentFifaCodes.Items.Add(new MatchListItemViewModel { FifaCode = fifaCode }));
 
             this.lblFavouriteTeamCountryName.Content = this.DataManager.FavouriteTeam.Country;
             this.lblFavouriteTeamCountryName.Opacity = 1;
             this.lbOpponentFifaCodes.SelectedIndex = 0;
 
-            var selectedMatch = DataManager.GetMatchByOpponentFifaCode(this.lbOpponentFifaCodes.SelectedItem as string);
+            var selectedMatch = DataManager.GetMatchByOpponentFifaCode((this.lbOpponentFifaCodes.SelectedItem as MatchListItemViewModel).FifaCode);
 
             var selectionTeams = await DataManager.GetSelectionTeams();
 
@@ -60,13 +61,15 @@ namespace SoccerScore_WPF_edition
             this.cbSelectionTeams.SelectedIndex = this.cbSelectionTeams.Items.IndexOf(DataManager.FavouriteTeam);
 
             FillControlsWithMatchData(selectedMatch);
+
             this.lbOpponentFifaCodes.SelectionChanged += MatchChanged;
+            this.cbSelectionTeams.SelectionChanged += FavoruiteTeamChanged;
         }
 
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void FavoruiteTeamChanged(object sender, SelectionChangedEventArgs e)
         {
             this.lbOpponentFifaCodes.SelectionChanged -= MatchChanged;
+            this.cbSelectionTeams.SelectionChanged -= FavoruiteTeamChanged;
 
             NationalTeam selectedTeam = this.cbSelectionTeams.SelectedItem as NationalTeam;
             this.DataManager.ResetFavourtiteTeamSettings();
@@ -80,7 +83,7 @@ namespace SoccerScore_WPF_edition
 
         private void MatchChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selectedMatch = DataManager.GetMatchByOpponentFifaCode(this.lbOpponentFifaCodes.SelectedItem as string);
+            var selectedMatch = DataManager.GetMatchByOpponentFifaCode((this.lbOpponentFifaCodes.SelectedItem as MatchListItemViewModel).FifaCode);
             FillControlsWithMatchData(selectedMatch);
         }
 
