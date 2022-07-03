@@ -89,7 +89,6 @@ namespace SoccerScore_WPF_edition
 
         private void FillControlsWithMatchData(Match match)
         {
-            this.lblMatchInfo.Content = $"{match.HomeTeam.Country} {match.HomeTeam.MatchGoals}:{match.AwayTeam.MatchGoals} {match.AwayTeam.Country}";
             ClearPlayersGrid();
             foreach (var player in match.HomeTeamStatistics.StartingEleven)
             {
