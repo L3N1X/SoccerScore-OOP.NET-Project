@@ -20,6 +20,10 @@ namespace SoccerScoreData.Dal
         public NationalTeam FavouriteTeam { get; private set; }
         public IList<Match> FavouriteTeamMatches { get; private set; }
 
+        public int WindowWidth { get => settings.WindowWidth; }
+        public int WindowHeight { get => settings.WindowHeight; }
+        public bool IsFullScreen { get => settings.IsFullScreen; }
+
         public DataManager()
         {
             try
@@ -103,6 +107,13 @@ namespace SoccerScoreData.Dal
 
         public void SetLanguage(Language language)
             => this.settings.Language = language;
+
+        public void SetWindowPropertiesWPF(int width, int height, bool isFullScreen)
+        {
+            this.settings.WindowWidth = width;
+            this.settings.WindowHeight = height;
+            this.settings.IsFullScreen = isFullScreen;
+        }
 
         public Task<IList<NationalTeam>> GetSelectionTeams()
             => repoData.GetNationalTeamsSelectionAsync(this.SelectedGender);

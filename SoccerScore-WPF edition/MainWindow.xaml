@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SoccerScore_WPF_edition"
         Loaded="Window_Loaded"
+        Closed="Window_Closed"
         mc:Ignorable="d"
-        Title="SoccerScore WPF Edition" Height="620" Width="998" WindowStartupLocation="CenterScreen" Icon="Content/Images/ball_loading.gif">
+        Title="SoccerScore WPF Edition" Height="620" Width="998" WindowStartupLocation="CenterScreen" Icon="Content/Images/ball_loading.gif"
+        MinHeight="570" MinWidth="948">
     <Window.Resources>
         <ControlTemplate x:Key="listBoxItem" TargetType="ListBoxItem">
             <Grid>
@@ -161,7 +163,8 @@
 
             </StackPanel>
         </Grid>
-        <Grid x:Name="gwMatch" Grid.Row="0" Grid.Column="1" Background="{StaticResource GreenGradient}">
+        <StackPanel Grid.Row="0" Grid.Column="1" Background="{StaticResource GreenGradient}"></StackPanel>
+        <Grid x:Name="gwMatch" Grid.Row="0" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition>
                     <ColumnDefinition.Width>*</ColumnDefinition.Width>

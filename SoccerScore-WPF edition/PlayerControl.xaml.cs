@@ -35,5 +35,10 @@ namespace SoccerScore_WPF_edition
             if (isHome)
                 this.playerCircle.Fill = new SolidColorBrush(Colors.DarkBlue);
         }
+
+        private void PlayerSelected(object sender, MouseButtonEventArgs e)
+        {
+            new PlayerWindow(_player).ShowDialog();
+        }
     }
 }

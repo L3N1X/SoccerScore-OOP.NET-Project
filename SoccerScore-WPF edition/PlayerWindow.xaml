@@ -1,0 +1,27 @@
+﻿<Window x:Class="SoccerScore_WPF_edition.PlayerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SoccerScore_WPF_edition"
+        mc:Ignorable="d"
+        Title="PlayerWindow" Height="450" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition>
+                <RowDefinition.Height>*</RowDefinition.Height>
+            </RowDefinition>
+            <RowDefinition>
+                <RowDefinition.Height>auto</RowDefinition.Height>
+            </RowDefinition>
+            <RowDefinition>
+                <RowDefinition.Height>*</RowDefinition.Height>
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Source="Content/Images/default_player_image.png" Margin="15"></Image>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label x:Name="lblShirtNumber" FontSize="45" FontWeight="Bold">10</Label>
+        </StackPanel>
+        <TextBlock x:Name="lblPlayerName" Grid.Row="1" Text="PLAYER NAME" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Padding="10"></TextBlock>
+    </Grid>
+</Window>

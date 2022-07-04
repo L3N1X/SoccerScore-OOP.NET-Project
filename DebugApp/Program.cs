@@ -17,22 +17,22 @@ namespace DebugApp
             //    Console.WriteLine($"HOME: {match.HomeTeam.FifaCode} AWAY: {match.AwayTeam.FifaCode}");
             //}
             DataManager dm = new DataManager();
+
+            //var teams = await dm.GetSelectionTeams();
+            //var newTeam = teams.ToList()[0];
+            //dm.ResetFavourtiteTeamSettings();
+            //dm.SetFavouriteTeam(newTeam);
+
             await dm.InitializeDataAsync();
-            foreach (var match in dm.FavouriteTeamMatches)
-            {
-                Console.WriteLine($"{match.HomeTeam.FifaCode} - {match.AwayTeam.FifaCode}");
-            }
-            var teams = await dm.GetSelectionTeams();
-            var newTeam = teams.ToList()[0];
-            dm.ResetFavourtiteTeamSettings();
-            dm.SetFavouriteTeam(newTeam);
-            await dm.InitializeDataAsync();
-            Console.WriteLine("NEW");
+
+            Console.WriteLine("Favourite team:");
             Console.WriteLine(dm.FavouriteTeam.FifaCode);
+            Console.WriteLine("----------------------");
             foreach (var code in dm.GetOpponentsFifaCodes())
             {
                 Console.WriteLine(code);
             }
+            dm.SaveSettings();
             //await AppTestAsync();
         }
 

@@ -34,6 +34,14 @@ namespace SoccerScore_WPF_edition
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             InitializeControls();
+            SetWindowPropertiesFromSettings();
+        }
+
+        private void SetWindowPropertiesFromSettings()
+        {
+            this.Height = DataManager.WindowHeight;
+            this.Width = DataManager.WindowWidth;
+            this.WindowState = DataManager.IsFullScreen ? WindowState.Maximized : WindowState.Normal;
         }
 
         private async void InitializeControls()
@@ -163,6 +171,12 @@ namespace SoccerScore_WPF_edition
             this.pnlAwayDefence.Children.Clear();
             this.pnlAwayMidfield.Children.Clear();
             this.pnlAwayForward.Children.Clear();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            DataManager.SetWindowPropertiesWPF((int)this.Width, (int)this.Height, this.WindowState.Equals(WindowState.Maximized) ? true : false);
+            DataManager.SaveSettings();
         }
     }
 }
