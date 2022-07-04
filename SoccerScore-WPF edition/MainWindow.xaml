@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SoccerScore_WPF_edition"
         Loaded="Window_Loaded"
         mc:Ignorable="d"
-        Title="MainWindow" Height="520" Width="820">
+        Title="MainWindow" Height="600" Width="1000">
     <Window.Resources>
         <ControlTemplate x:Key="listBoxItem" TargetType="ListBoxItem">
             <Grid>
@@ -17,7 +17,7 @@
             <Setter Property="Margin" Value="0,20,0,20" />
         </Style>
         <Style x:Key="PlayerColumn" TargetType="{x:Type StackPanel}">
-            <Setter Property="Margin" Value="15,0,15,0"></Setter>
+            <Setter Property="Margin" Value="0"></Setter>
         </Style>
         <Style TargetType="{x:Type ListBox}">
             <Setter Property="BorderBrush" Value="Transparent"></Setter>
@@ -65,16 +65,16 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition>
-                <RowDefinition.Height>*</RowDefinition.Height>
+                <RowDefinition.Height>60px</RowDefinition.Height>
             </RowDefinition>
             <RowDefinition>
-                <RowDefinition.Height>10*</RowDefinition.Height>
+                <RowDefinition.Height>9*</RowDefinition.Height>
             </RowDefinition>
             <RowDefinition>
                 <RowDefinition.Height>20px</RowDefinition.Height>
             </RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel VerticalAlignment="Center">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <Label Content="SoccerScore" FontSize="18" FontWeight="Bold"/>
         </StackPanel>
         <Image Source="Content/Images/soccer-field.jpg" Grid.Row="1" Grid.Column="1" Stretch="Fill"/>
@@ -130,7 +130,13 @@
 
             </StackPanel>
         </Grid>
-        <Grid Grid.Row="0" Grid.Column="1" Margin="0,5,0,5">
+        <Grid x:Name="gwMatch" Grid.Row="0" Grid.Column="1">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0, 1" EndPoint="0, 0">
+                    <GradientStop x:Name="gs1" Color="DarkGreen" Offset="0.0"/>
+                    <GradientStop x:Name="gs2" Color="YellowGreen" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition>
                     <ColumnDefinition.Width>*</ColumnDefinition.Width>
@@ -143,21 +149,25 @@
                 </ColumnDefinition>
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="0">
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Country" Margin="10"></TextBlock>
-                <Image Source="/Content/CountryImages/CRO.jpg"></Image>
+                <TextBlock x:Name="lblHomeCountry" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Country" Margin="0,0,20,0" FontSize="20" Foreground="White"></TextBlock>
+                <Image x:Name="imgHomeCountry" Source="/Content/CountryImages/CRO.jpg"></Image>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center" Grid.Column="1" >
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="X : X" FontSize="15"></TextBlock>
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Stadium" FontSize="10"></TextBlock>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" >
+                <TextBlock x:Name="lblResult" HorizontalAlignment="Center" VerticalAlignment="Center" Text="X : X" FontSize="24" FontWeight="Bold" Foreground="White"></TextBlock>
+                <TextBlock x:Name="lblStadium" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Stadium" FontSize="10" Foreground="White"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="2">
-                <Image Source="/Content/CountryImages/CRO.jpg"></Image>
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Country" Margin="10"></TextBlock>
+                <Image x:Name="imgAwayCountry" Source="/Content/CountryImages/CRO.jpg"></Image>
+                <TextBlock x:Name="lblAwayCountry" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Country" Margin="20,0,0,0" FontSize="20" Foreground="White"></TextBlock>
             </StackPanel>
         </Grid>
         <StackPanel Grid.Row="1">
             <ComboBox x:Name="cbSelectionTeams"></ComboBox>
-            <Label x:Name="lblFavouriteTeamCountryName" Content="" Opacity="0"/>
+            <StackPanel x:Name="pnlTeamInfo">
+                <Image x:Name="imgFavouriteTeamCountry" Source="Content/CountryImages/CRO.jpg" Margin="20"></Image>
+                <Label x:Name="lblFavouriteTeamCountryName" Content="Country" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                <Label Content="Opponents:"></Label>
+            </StackPanel>
             <ListBox x:Name="lbOpponentFifaCodes">
                 <ListBox.ItemTemplate>
                     <DataTemplate>

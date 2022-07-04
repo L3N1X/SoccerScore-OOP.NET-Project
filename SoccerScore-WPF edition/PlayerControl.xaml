@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="SoccerScore_WPF_edition.PlayerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SoccerScore_WPF_edition"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Padding="0 8 0 8" Cursor="Hand">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid>
+            <Ellipse x:Name="playerCircle" Width="40" Height="40" Stroke="White" StrokeThickness="2">
+                <Ellipse.Fill>
+                    <SolidColorBrush Color="DarkRed"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Label x:Name="lblShirtNumber" Content="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="White"/>
+        </Grid>
+        <Label x:Name="lblPlayerName" Content="PLAYER NAME" Foreground="White" FontWeight="Bold" FontSize="10"></Label>
+    </StackPanel>
+</UserControl>

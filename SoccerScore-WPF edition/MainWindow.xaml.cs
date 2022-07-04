@@ -33,11 +33,17 @@ namespace SoccerScore_WPF_edition
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            InitializeControlsForDataManagerFromSettings();
+            InitializeControls();
         }
 
-        private async void InitializeControlsForDataManagerFromSettings()
+        private async void InitializeControls()
         {
+            this.gwMatch.Opacity = 0;
+            //this.imgFavouriteTeamCountry.Opacity = 0;
+            //this.lblFavouriteTeamCountryName.Opacity = 0;
+            this.pnlTeamInfo.Opacity = 0;
+            this.gwPlayerPositions.Opacity = 0;
+
             this.lbOpponentFifaCodes.SelectionChanged -= MatchChanged;
 
             await DataManager.InitializeDataAsync();
@@ -64,6 +70,13 @@ namespace SoccerScore_WPF_edition
 
             this.lbOpponentFifaCodes.SelectionChanged += MatchChanged;
             this.cbSelectionTeams.SelectionChanged += FavoruiteTeamChanged;
+
+            this.imgFavouriteTeamCountry.Source = new BitmapImage(new Uri($"Content/CountryImages/{DataManager.FavouriteTeam.FifaCode}.jpg", UriKind.Relative));
+            this.lblFavouriteTeamCountryName.Content = DataManager.FavouriteTeam.Country;
+
+            this.gwPlayerPositions.Opacity = 1;
+            this.gwMatch.Opacity = 1;
+            this.pnlTeamInfo.Opacity = 1;
         }
 
         private void FavoruiteTeamChanged(object sender, SelectionChangedEventArgs e)
@@ -78,7 +91,7 @@ namespace SoccerScore_WPF_edition
             this.cbSelectionTeams.Items.Clear();
             this.lbOpponentFifaCodes.Items.Clear();
 
-            InitializeControlsForDataManagerFromSettings();
+            InitializeControls();
         }
 
         private void MatchChanged(object sender, SelectionChangedEventArgs e)
@@ -90,21 +103,28 @@ namespace SoccerScore_WPF_edition
         private void FillControlsWithMatchData(Match match)
         {
             ClearPlayersGrid();
+            this.lblHomeCountry.Text = match.HomeTeam.Country;
+            this.lblAwayCountry.Text = match.AwayTeam.Country;
+            this.lblResult.Text = $"{match.HomeTeam.MatchGoals} : {match.AwayTeam.MatchGoals}";
+            this.lblStadium.Text = match.Location;
+            this.imgHomeCountry.Source = new BitmapImage(new Uri($"Content/CountryImages/{match.HomeTeam.FifaCode}.jpg", UriKind.Relative));
+            this.imgAwayCountry.Source = new BitmapImage(new Uri($"Content/CountryImages/{match.AwayTeam.FifaCode}.jpg", UriKind.Relative));
+
             foreach (var player in match.HomeTeamStatistics.StartingEleven)
             {
                 switch (player.Position)
                 {
                     case Position.Goalie:
-                        this.pnlHomeGoalie.Children.Add(new Button() { Content = $"{player.Name}{Environment.NewLine}{player.ShirtNumber}", Style = this.FindResource("PlayerButtonStyle") as Style });
+                        this.pnlHomeGoalie.Children.Add(new PlayerControl(player: player, isHome: true));
                         break;
                     case Position.Defender:
-                        this.pnlHomeDefence.Children.Add(new Button() { Content = $"{player.Name}{Environment.NewLine}{player.ShirtNumber}", Style = this.FindResource("PlayerButtonStyle") as Style});
+                        this.pnlHomeDefence.Children.Add(new PlayerControl(player: player, isHome: true));
                         break;
                     case Position.Forward:
-                        this.pnlHomeForward.Children.Add(new Button() { Content = $"{player.Name}{Environment.NewLine}{player.ShirtNumber}", Style = this.FindResource("PlayerButtonStyle") as Style });
+                        this.pnlHomeForward.Children.Add(new PlayerControl(player: player, isHome: true));
                         break;
                     case Position.Midfield:
-                        this.pnlHomeMidfield.Children.Add(new Button() { Content = $"{player.Name}{Environment.NewLine}{player.ShirtNumber}", Style = this.FindResource("PlayerButtonStyle") as Style });
+                        this.pnlHomeMidfield.Children.Add(new PlayerControl(player: player, isHome: true));
                         break;
                 }
             }
@@ -113,16 +133,16 @@ namespace SoccerScore_WPF_edition
                 switch (player.Position)
                 {
                     case Position.Goalie:
-                        this.pnlAwayGoalie.Children.Add(new Button() { Content = $"{player.Name}{Environment.NewLine}{player.ShirtNumber}", Style = this.FindResource("PlayerButtonStyle") as Style });
+                        this.pnlAwayGoalie.Children.Add(new PlayerControl(player: player, isHome: false));
                         break;
                     case Position.Defender:
-                        this.pnlAwayDefence.Children.Add(new Button() { Content = $"{player.Name}{Environment.NewLine}{player.ShirtNumber}", Style = this.FindResource("PlayerButtonStyle") as Style });
+                        this.pnlAwayDefence.Children.Add(new PlayerControl(player: player, isHome: false));
                         break;
                     case Position.Forward:
-                        this.pnlAwayForward.Children.Add(new Button() { Content = $"{player.Name}{Environment.NewLine}{player.ShirtNumber}", Style = this.FindResource("PlayerButtonStyle") as Style });
+                        this.pnlAwayForward.Children.Add(new PlayerControl(player: player, isHome: false));
                         break;
                     case Position.Midfield:
-                        this.pnlAwayMidfield.Children.Add(new Button() { Content = $"{player.Name}{Environment.NewLine}{player.ShirtNumber}", Style = this.FindResource("PlayerButtonStyle") as Style });
+                        this.pnlAwayMidfield.Children.Add(new PlayerControl(player: player, isHome: false));
                         break;
                 }
             }

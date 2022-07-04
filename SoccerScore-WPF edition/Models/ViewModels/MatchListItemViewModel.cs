@@ -12,6 +12,7 @@ namespace SoccerScore_WPF_edition.Models.ViewModels
         private const string EXTENTION = ".jpg";
 
         public string FifaCode { get; set; }
+        public string DateString { get; set; }
         public string CountryImagePath { get => IMG_DIR + FifaCode + EXTENTION; }
     }
 }
