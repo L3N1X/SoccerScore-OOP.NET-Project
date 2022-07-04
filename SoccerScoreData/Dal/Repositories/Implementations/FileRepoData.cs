@@ -28,6 +28,7 @@ namespace SoccerScoreData.Dal
         {
             return Task.Run(() =>
             {
+                Thread.Sleep(500);
                 return JsonConvert.DeserializeObject<IList<NationalTeam>>(JsonToStringFromFile(path));
             }
             );
@@ -36,6 +37,7 @@ namespace SoccerScoreData.Dal
         {
             return Task.Run(() =>
             {
+                Thread.Sleep(500);
                 return JsonConvert.DeserializeObject<IList<Match>>(JsonToStringFromFile(path));
             });
         }
@@ -43,6 +45,7 @@ namespace SoccerScoreData.Dal
         {
             return Task.Run(() =>
             {
+                Thread.Sleep(500);
                 return JsonConvert.DeserializeObject<IList<Match>>(JsonToStringFromFile(path));
             });
         }

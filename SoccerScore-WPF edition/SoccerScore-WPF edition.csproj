@@ -158,5 +158,8 @@
     <Resource Include="Content\CountryImages\URU.jpg" />
     <Resource Include="Content\CountryImages\USA.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\ball_loading.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

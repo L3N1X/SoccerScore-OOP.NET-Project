@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SoccerScore_WPF_edition"
         Loaded="Window_Loaded"
         mc:Ignorable="d"
-        Title="SoccerScore WPF Edition" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
+        Title="SoccerScore WPF Edition" Height="620" Width="998" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ControlTemplate x:Key="listBoxItem" TargetType="ListBoxItem">
             <Grid>
@@ -14,8 +14,8 @@
             </Grid>
         </ControlTemplate>
         <LinearGradientBrush StartPoint="0, 1" EndPoint="0, 0" x:Key="GreenGradient">
-            <GradientStop x:Name="gs111" Color="DarkGreen" Offset="0.0"/>
-            <GradientStop x:Name="gs112" Color="YellowGreen" Offset="1"/>
+            <GradientStop x:Name="g1" Color="DarkGreen" Offset="0.0"/>
+            <GradientStop x:Name="g2" Color="YellowGreen" Offset="1"/>
         </LinearGradientBrush>
         <Style x:Key="PlayerColumn" TargetType="{x:Type StackPanel}">
             <Setter Property="Margin" Value="0"></Setter>
@@ -23,6 +23,10 @@
         <Style TargetType="{x:Type ListBox}">
             <Setter Property="BorderBrush" Value="Transparent"></Setter>
             <Setter Property="BorderThickness" Value="0"></Setter>
+        </Style>
+        <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="Background" Value="{StaticResource GreenGradient}"></Setter>
         </Style>
         <Style TargetType="{x:Type ListBoxItem}">
             <Setter Property="Margin" Value="0,5,0,5"></Setter>
@@ -111,6 +115,27 @@
                     <ColumnDefinition.Width>*</ColumnDefinition.Width>
                 </ColumnDefinition>
             </Grid.ColumnDefinitions>
+            <Canvas Width="200px" Height="200px" Panel.ZIndex="100" Grid.Column="3" Grid.ColumnSpan="2" x:Name="loadingCanvas">
+                <Image Source="/Content/Images/ball_loading.gif" Stretch="UniformToFill" Height="200px" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform x:Name="loadingRotation" Angle="0"></RotateTransform>
+                    </Image.RenderTransform>
+                    <Image.Triggers>
+                        <EventTrigger RoutedEvent="Image.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="loadingRotation"
+                                        Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                        From="0.0" To="360" Duration="0:0:.7" RepeatBehavior="Forever">
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Image.Triggers>
+                </Image>
+            </Canvas>
             <StackPanel x:Name="pnlHomeGoalie" Grid.Column="0" VerticalAlignment="Center" Style="{StaticResource PlayerColumn}">
 
             </StackPanel>
@@ -162,7 +187,18 @@
             </StackPanel>
         </Grid>
         <StackPanel Grid.Row="1">
-            <ComboBox x:Name="cbSelectionTeams"></ComboBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition>
+                        <ColumnDefinition.Width>*</ColumnDefinition.Width>
+                    </ColumnDefinition>
+                    <ColumnDefinition>
+                        <ColumnDefinition.Width>2*</ColumnDefinition.Width>
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="lblGender" Grid.Column="0" Text="Gender" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Padding="5" Foreground="White" FontWeight="Bold"></TextBlock>
+                <ComboBox Grid.Column="1" x:Name="cbSelectionTeams"></ComboBox>
+            </Grid>
             <StackPanel x:Name="pnlTeamInfo">
                 <Image x:Name="imgFavouriteTeamCountry" Source="Content/CountryImages/CRO.jpg" Margin="20"></Image>
                 <Label x:Name="lblFavouriteTeamCountryName" Content="Country" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>

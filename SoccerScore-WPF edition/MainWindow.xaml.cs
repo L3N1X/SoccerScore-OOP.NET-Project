@@ -38,11 +38,11 @@ namespace SoccerScore_WPF_edition
 
         private async void InitializeControls()
         {
+            ClearPlayersGrid();
+            this.loadingCanvas.Opacity = 1;
             this.gwMatch.Opacity = 0;
-            //this.imgFavouriteTeamCountry.Opacity = 0;
-            //this.lblFavouriteTeamCountryName.Opacity = 0;
             this.pnlTeamInfo.Opacity = 0;
-            this.gwPlayerPositions.Opacity = 0;
+            //this.gwPlayerPositions.Opacity = 0;
 
             this.lbOpponentFifaCodes.SelectionChanged -= MatchChanged;
 
@@ -74,9 +74,13 @@ namespace SoccerScore_WPF_edition
             this.imgFavouriteTeamCountry.Source = new BitmapImage(new Uri($"Content/CountryImages/{DataManager.FavouriteTeam.FifaCode}.jpg", UriKind.Relative));
             this.lblFavouriteTeamCountryName.Content = DataManager.FavouriteTeam.Country;
 
-            this.gwPlayerPositions.Opacity = 1;
+            this.lblGender.Text = DataManager.SelectedGender.ToString();
+            this.lblGender.Background = DataManager.SelectedGender.Equals(Gender.Male) ? Brushes.DarkBlue : Brushes.HotPink;
+
+            //this.gwPlayerPositions.Opacity = 1;
             this.gwMatch.Opacity = 1;
             this.pnlTeamInfo.Opacity = 1;
+            this.loadingCanvas.Opacity = 0;
         }
 
         private void FavoruiteTeamChanged(object sender, SelectionChangedEventArgs e)
