@@ -6,16 +6,17 @@
         xmlns:local="clr-namespace:SoccerScore_WPF_edition"
         Loaded="Window_Loaded"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000">
+        Title="SoccerScore WPF Edition" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ControlTemplate x:Key="listBoxItem" TargetType="ListBoxItem">
             <Grid>
                 <Border Grid.ColumnSpan="1" BorderBrush="DarkCyan" BorderThickness="2"></Border>
             </Grid>
         </ControlTemplate>
-        <Style x:Key="PlayerButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="Margin" Value="0,20,0,20" />
-        </Style>
+        <LinearGradientBrush StartPoint="0, 1" EndPoint="0, 0" x:Key="GreenGradient">
+            <GradientStop x:Name="gs111" Color="DarkGreen" Offset="0.0"/>
+            <GradientStop x:Name="gs112" Color="YellowGreen" Offset="1"/>
+        </LinearGradientBrush>
         <Style x:Key="PlayerColumn" TargetType="{x:Type StackPanel}">
             <Setter Property="Margin" Value="0"></Setter>
         </Style>
@@ -26,7 +27,11 @@
         <Style TargetType="{x:Type ListBoxItem}">
             <Setter Property="Margin" Value="0,5,0,5"></Setter>
             <Setter Property="Height" Value="25"></Setter>
+            <Setter Property="Foreground" Value="{StaticResource GreenGradient}"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
             <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                </Trigger>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
                         <Storyboard>
@@ -75,7 +80,8 @@
             </RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Label Content="SoccerScore" FontSize="18" FontWeight="Bold"/>
+            <TextBlock Text="SoccerScore" FontSize="25" FontWeight="Bold" Foreground="{StaticResource GreenGradient}">
+            </TextBlock>
         </StackPanel>
         <Image Source="Content/Images/soccer-field.jpg" Grid.Row="1" Grid.Column="1" Stretch="Fill"/>
         <Grid Grid.Row="1" Grid.Column="1" x:Name="gwPlayerPositions">
@@ -130,13 +136,7 @@
 
             </StackPanel>
         </Grid>
-        <Grid x:Name="gwMatch" Grid.Row="0" Grid.Column="1">
-            <Grid.Background>
-                <LinearGradientBrush StartPoint="0, 1" EndPoint="0, 0">
-                    <GradientStop x:Name="gs1" Color="DarkGreen" Offset="0.0"/>
-                    <GradientStop x:Name="gs2" Color="YellowGreen" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
+        <Grid x:Name="gwMatch" Grid.Row="0" Grid.Column="1" Background="{StaticResource GreenGradient}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition>
                     <ColumnDefinition.Width>*</ColumnDefinition.Width>
