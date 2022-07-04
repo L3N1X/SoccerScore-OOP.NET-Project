@@ -48,7 +48,7 @@ namespace SoccerScore_WPF_edition
         {
             ClearPlayersGrid();
             this.gwTeamSelection.Opacity = 0;
-            this.loadingCanvas.Opacity = 1;
+            this.loadingCanvas.Visibility = Visibility.Visible;
             this.gwMatch.Opacity = 0;
             this.pnlTeamInfo.Opacity = 0;
 
@@ -88,7 +88,7 @@ namespace SoccerScore_WPF_edition
             //this.gwPlayerPositions.Opacity = 1;
             this.gwMatch.Opacity = 1;
             this.pnlTeamInfo.Opacity = 1;
-            this.loadingCanvas.Opacity = 0;
+            this.loadingCanvas.Visibility = Visibility.Hidden;
             this.gwTeamSelection.Opacity = 1;
         }
 
