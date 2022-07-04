@@ -122,6 +122,8 @@ namespace SoccerScore_WPF_edition
             this.lblStadium.Text = match.Location;
             this.imgHomeCountry.Source = new BitmapImage(new Uri($"Content/CountryImages/{match.HomeTeam.FifaCode}.jpg", UriKind.Relative));
             this.imgAwayCountry.Source = new BitmapImage(new Uri($"Content/CountryImages/{match.AwayTeam.FifaCode}.jpg", UriKind.Relative));
+            this.HomeTeamInfo.Tag = match.HomeTeam.FifaCode;
+            this.AwayTeamInfo.Tag = match.AwayTeam.FifaCode;
 
             foreach (var player in match.HomeTeamStatistics.StartingEleven)
             {

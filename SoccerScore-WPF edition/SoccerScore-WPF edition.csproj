@@ -171,5 +171,8 @@
   <ItemGroup>
     <Resource Include="Content\Images\default_player_image.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Images\info.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
