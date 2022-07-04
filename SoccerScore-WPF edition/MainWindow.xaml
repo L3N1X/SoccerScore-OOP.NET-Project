@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SoccerScore_WPF_edition"
         Loaded="Window_Loaded"
         mc:Ignorable="d"
-        Title="SoccerScore WPF Edition" Height="620" Width="998" WindowStartupLocation="CenterScreen">
+        Title="SoccerScore WPF Edition" Height="620" Width="998" WindowStartupLocation="CenterScreen" Icon="Content/Images/ball_loading.gif">
     <Window.Resources>
         <ControlTemplate x:Key="listBoxItem" TargetType="ListBoxItem">
             <Grid>
@@ -187,7 +187,7 @@
             </StackPanel>
         </Grid>
         <StackPanel Grid.Row="1">
-            <Grid>
+            <Grid x:Name="gwTeamSelection" Opacity="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition>
                         <ColumnDefinition.Width>*</ColumnDefinition.Width>

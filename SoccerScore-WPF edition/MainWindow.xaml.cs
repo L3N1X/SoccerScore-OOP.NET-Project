@@ -39,10 +39,10 @@ namespace SoccerScore_WPF_edition
         private async void InitializeControls()
         {
             ClearPlayersGrid();
+            this.gwTeamSelection.Opacity = 0;
             this.loadingCanvas.Opacity = 1;
             this.gwMatch.Opacity = 0;
             this.pnlTeamInfo.Opacity = 0;
-            //this.gwPlayerPositions.Opacity = 0;
 
             this.lbOpponentFifaCodes.SelectionChanged -= MatchChanged;
 
@@ -81,6 +81,7 @@ namespace SoccerScore_WPF_edition
             this.gwMatch.Opacity = 1;
             this.pnlTeamInfo.Opacity = 1;
             this.loadingCanvas.Opacity = 0;
+            this.gwTeamSelection.Opacity = 1;
         }
 
         private void FavoruiteTeamChanged(object sender, SelectionChangedEventArgs e)
