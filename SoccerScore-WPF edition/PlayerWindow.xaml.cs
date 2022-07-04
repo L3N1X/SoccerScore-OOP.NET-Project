@@ -32,6 +32,10 @@ namespace SoccerScore_WPF_edition
         {
             this.lblPlayerName.Text = _player.Name;
             this.lblShirtNumber.Content = _player.ShirtNumber;
+            this.lblGoals.Content = $"Goals: {_player.Goals}";
+            this.lblYellowCards.Content = $"Yellow cards: {_player.YellowCards}";
+            if (_player.Captain)
+                this.lblCaptain.Visibility = Visibility.Visible;
             if(_player.IconPath != null)
             {
                 //TO DO: SET IMAGE SOURCE

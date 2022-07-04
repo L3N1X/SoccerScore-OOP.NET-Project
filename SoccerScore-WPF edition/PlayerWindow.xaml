@@ -9,6 +9,18 @@
         mc:Ignorable="d"
         Title="" Height="330" Width="200" MaxHeight="330" MaxWidth="200" MinHeight="330" MinWidth="200"
         >
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:.3" />
+                        <DoubleAnimation Storyboard.TargetProperty="(Window.Top)" From="430" To="460" Duration="0:0:.3"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger.Actions>
+        </EventTrigger>
+    </Window.Triggers>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition>
@@ -26,5 +38,10 @@
             <Label x:Name="lblShirtNumber" FontSize="45" FontWeight="Bold">10</Label>
         </StackPanel>
         <TextBlock x:Name="lblPlayerName" Grid.Row="1" Text="PLAYER NAME" HorizontalAlignment="Center" FontWeight="Bold" FontSize="15" Padding="5"></TextBlock>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center">
+            <Label x:Name="lblGoals" Content="Goals: x" Margin="10" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+            <Label x:Name="lblYellowCards" Content="YellowCards: x"  FontWeight="Bold"></Label>
+            <Label x:Name="lblCaptain" Content="Captain" FontWeight="Bold" HorizontalAlignment="Center" Margin="10" Foreground="White" Background="DarkRed" Padding="5" Visibility="Hidden"></Label>
+        </StackPanel>
     </Grid>
 </Window>

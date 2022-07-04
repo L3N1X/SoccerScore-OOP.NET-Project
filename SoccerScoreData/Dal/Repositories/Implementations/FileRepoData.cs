@@ -75,6 +75,21 @@ namespace SoccerScoreData.Dal
             IList<Match> matchesFiltered = new List<Match>();
             foreach (Match match in matchesData)
             {
+                var goalDict = this.GameEventDict(match, CheckIfGoal);
+                var yellowCardDict = this.GameEventDict(match, CheckIfYellowCard);
+
+                foreach (Player player in match.HomeTeamStatistics.StartingEleven)
+                {
+                    player.Goals = goalDict[player.Name];
+                    player.YellowCards = yellowCardDict[player.Name];
+                }
+
+                foreach (Player player in match.AwayTeamStatistics.StartingEleven)
+                {
+                    player.Goals = goalDict[player.Name];
+                    player.YellowCards = yellowCardDict[player.Name];
+                }
+
                 if(match.AwayTeam.FifaCode.Equals(fifaCode) || match.HomeTeam.FifaCode.Equals(fifaCode))
                     matchesFiltered.Add(match);
             }

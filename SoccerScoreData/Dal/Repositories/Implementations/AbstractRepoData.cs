@@ -41,7 +41,8 @@ namespace SoccerScoreData.Dal.Repos
 
             foreach (var team in teamsSet)
             {
-                team.AllPlayers.ForEach(p => {
+                team.AllPlayers.ForEach(p =>
+                {
                     p.Goals = goalDict[p.Name.ToUpper()];
                     p.YellowCards = cardDict[p.Name.ToUpper()];
                 });
@@ -63,13 +64,13 @@ namespace SoccerScoreData.Dal.Repos
 
         public IDictionary<string, int> GameEventDict(IList<Match> matchesData, Predicate<string> eventCondition)
         {
-            IDictionary<string, int> events = new Dictionary<string, int>();
+            IDictionary<string, int> eventDict = new Dictionary<string, int>();
             ISet<string> keys = new HashSet<string>();
             matchesData.ToList().ForEach(m => { m.AwayTeam.AllPlayers.ForEach(p => keys.Add(p.Name.ToUpper())); });
             matchesData.ToList().ForEach(m => { m.HomeTeam.AllPlayers.ForEach(p => keys.Add(p.Name.ToUpper())); });
             foreach (var key in keys)
             {
-                events.Add(key, 0);
+                eventDict.Add(key, 0);
             }
             foreach (var match in matchesData)
             {
@@ -77,20 +78,50 @@ namespace SoccerScoreData.Dal.Repos
                 {
                     if (eventCondition(gameEvent.EventType))
                     {
-                        if (events.ContainsKey(gameEvent.PlayerName.ToUpper()))
-                            events[gameEvent.PlayerName.ToUpper()]++;
+                        if (eventDict.ContainsKey(gameEvent.PlayerName.ToUpper()))
+                            eventDict[gameEvent.PlayerName.ToUpper()]++;
                     }
                 }
                 foreach (var gameEvent in match.HomeTeamEvents)
                 {
                     if (eventCondition(gameEvent.EventType))
                     {
-                        if (events.ContainsKey(gameEvent.PlayerName.ToUpper()))
-                            events[gameEvent.PlayerName.ToUpper()]++;
+                        if (eventDict.ContainsKey(gameEvent.PlayerName.ToUpper()))
+                            eventDict[gameEvent.PlayerName.ToUpper()]++;
                     }
                 }
             }
-            return events;
+            return eventDict;
+        }
+
+        public IDictionary<string, int> GameEventDict(Match match, Predicate<string> eventCondition)
+        {
+            IDictionary<string, int> eventDict = new Dictionary<string, int>();
+            ISet<string> keys = new HashSet<string>();
+            match.HomeTeamStatistics.StartingEleven.ForEach(p => keys.Add(p.Name.ToUpper()));
+            match.AwayTeamStatistics.StartingEleven.ForEach(p => keys.Add(p.Name.ToUpper()));
+            foreach (var key in keys)
+            {
+                eventDict.Add(key, 0);
+            }
+
+            foreach (var gameEvent in match.AwayTeamEvents)
+            {
+                if (eventCondition(gameEvent.EventType))
+                {
+                    if (eventDict.ContainsKey(gameEvent.PlayerName.ToUpper()))
+                        eventDict[gameEvent.PlayerName.ToUpper()]++;
+                }
+            }
+            foreach (var gameEvent in match.HomeTeamEvents)
+            {
+                if (eventCondition(gameEvent.EventType))
+                {
+                    if (eventDict.ContainsKey(gameEvent.PlayerName.ToUpper()))
+                        eventDict[gameEvent.PlayerName.ToUpper()]++;
+                }
+            }
+            return eventDict;
         }
 
         public ISet<NationalTeam> GetFilledTeamsSetWithPlayers(IList<Match> matchesData, Gender gender)

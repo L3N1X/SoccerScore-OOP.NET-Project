@@ -8,7 +8,7 @@
         Closed="Window_Closed"
         mc:Ignorable="d"
         Title="SoccerScore WPF Edition" Height="620" Width="998" WindowStartupLocation="CenterScreen" Icon="Content/Images/ball_loading.gif"
-        MinHeight="570" MinWidth="948">
+        MinHeight="578" MinWidth="956">
     <Window.Resources>
         <ControlTemplate x:Key="listBoxItem" TargetType="ListBoxItem">
             <Grid>
