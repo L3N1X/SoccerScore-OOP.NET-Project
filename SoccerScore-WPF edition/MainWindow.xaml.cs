@@ -117,7 +117,7 @@ namespace SoccerScore_WPF_edition
         {
             ClearPlayersGrid();
             this.lblHomeCountry.Text = match.HomeTeam.Country;
-            this.lblAwayCountry.Text = match.AwayTeam.Country;
+            this.lblAwayCountry.Text = match.AwayTeam.Country; 
             this.lblResult.Text = $"{match.HomeTeam.MatchGoals} : {match.AwayTeam.MatchGoals}";
             this.lblStadium.Text = match.Location;
             this.imgHomeCountry.Source = new BitmapImage(new Uri($"Content/CountryImages/{match.HomeTeam.FifaCode}.jpg", UriKind.Relative));

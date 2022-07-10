@@ -1,0 +1,107 @@
+﻿<Window x:Class="SoccerScore_WPF_edition.NationalTeamWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SoccerScore_WPF_edition"
+        mc:Ignorable="d"
+        Title="NationalTeamWindow" Height="450" Width="450">
+    <Window.Resources>
+        <LinearGradientBrush StartPoint="0, 1" EndPoint="0, 0" x:Key="GreenGradient">
+            <GradientStop x:Name="g1" Color="DarkGreen" Offset="0.0"/>
+            <GradientStop x:Name="g2" Color="YellowGreen" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <Grid Background="{StaticResource GreenGradient}">
+        <Grid.RowDefinitions>
+            <RowDefinition>
+                <RowDefinition.Height>*</RowDefinition.Height>
+            </RowDefinition>
+            <RowDefinition>
+                <RowDefinition.Height>*</RowDefinition.Height>
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Panel.ZIndex="1000" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="Content/Images/ball_loading.gif" Width="200px" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <RotateTransform x:Name="loadingRotation" Angle="0"></RotateTransform>
+                </Image.RenderTransform>
+                <Image.Triggers>
+                    <EventTrigger RoutedEvent="Image.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                        Storyboard.TargetName="loadingRotation"
+                                        Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                        From="0.0" To="360" Duration="0:0:.7" RepeatBehavior="Forever">
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Image.Triggers>
+            </Image>
+        </StackPanel>
+        <StackPanel Grid.Row="0" VerticalAlignment="Center" Background="{StaticResource GreenGradient}">
+            <Image Source="Content/CountryImages/CRO.jpg" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15"></Image>
+            <Label Content="Country name" FontSize="25" Margin="10" HorizontalAlignment="Center" Foreground="White"></Label>
+        </StackPanel>
+        <Grid Background="DarkGreen"  Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition>
+                    <ColumnDefinition.Width>*</ColumnDefinition.Width>
+                </ColumnDefinition>
+                <ColumnDefinition>
+                    <ColumnDefinition.Width>*</ColumnDefinition.Width>
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition>
+                    <RowDefinition.Height>*</RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition>
+                    <RowDefinition.Height>*</RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition>
+                    <RowDefinition.Height>*</RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition>
+                    <RowDefinition.Height>*</RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition>
+                    <RowDefinition.Height>*</RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition>
+                    <RowDefinition.Height>*</RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition>
+                    <RowDefinition.Height>*</RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition>
+                    <RowDefinition.Height>*</RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition>
+                    <RowDefinition.Height>*</RowDefinition.Height>
+                </RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Foreground="White" Content="Fifa code:" HorizontalAlignment="Right" Margin="0 0 5 0"></Label>
+            <Label Grid.Row="1" Foreground="White" Content="Total points:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+            <Label Grid.Row="2" Foreground="White" Content="Wins:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+            <Label Grid.Row="3" Foreground="White" Content="Losses:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+            <Label Grid.Row="4" Foreground="White" Content="Draws:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+            <Label Grid.Row="5" Foreground="White" Content="Games played:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+            <Label Grid.Row="6" Foreground="White" Content="Goals for:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+            <Label Grid.Row="7" Foreground="White" Content="Goals against:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+            <Label Grid.Row="8" Foreground="White" Content="Goal differential:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+
+            <Label x:Name="lblFifaCode" Grid.Column="1" Foreground="White" Content="XXX" HorizontalAlignment="Left" Margin="10 0 0 0"></Label>
+            <Label x:Name="lblTotalPoints" Grid.Column="1" Grid.Row="1" Foreground="White" Content="XXX" HorizontalAlignment="Left" Margin="10 0 0 0"></Label>
+            <Label x:Name="lblWins" Grid.Column="1" Grid.Row="2" Foreground="White" Content="XXX" HorizontalAlignment="Left" Margin="10 0 0 0"></Label>
+            <Label x:Name="lblLosses" Grid.Column="1" Grid.Row="3" Foreground="White" Content="XXX" HorizontalAlignment="Left" Margin="10 0 0 0"></Label>
+            <Label x:Name="lblDraws" Grid.Column="1" Grid.Row="4" Foreground="White" Content="XXX" HorizontalAlignment="Left" Margin="10 0 0 0"></Label>
+            <Label x:Name="lblGamesPlayed" Grid.Column="1" Grid.Row="5" Foreground="White" Content="XXX" HorizontalAlignment="Left" Margin="10 0 0 0"></Label>
+            <Label x:Name="lblGoalsFor" Grid.Column="1" Grid.Row="6" Foreground="White" Content="XXX" HorizontalAlignment="Left" Margin="10 0 0 0"></Label>
+            <Label x:Name="lblGoalsAgainst" Grid.Column="1" Grid.Row="7" Foreground="White" Content="XXX" HorizontalAlignment="Left" Margin="10 0 0 0"></Label>
+            <Label x:Name="lblGoalDifferential" Grid.Column="1" Grid.Row="8" Foreground="White" Content="XXX" HorizontalAlignment="Left" Margin="10 0 0 0"></Label>
+        </Grid>
+    </Grid>
+</Window>
