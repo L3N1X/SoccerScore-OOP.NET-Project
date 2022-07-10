@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SoccerScore_WPF_edition"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="NationalTeamWindow" Height="450" Width="450">
     <Window.Resources>
         <LinearGradientBrush StartPoint="0, 1" EndPoint="0, 0" x:Key="GreenGradient">
@@ -21,7 +22,7 @@
                 <RowDefinition.Height>*</RowDefinition.Height>
             </RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Panel.ZIndex="1000" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel x:Name="pnlLoading" Grid.Row="0" Panel.ZIndex="1000" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Image Source="Content/Images/ball_loading.gif" Width="200px" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <RotateTransform x:Name="loadingRotation" Angle="0"></RotateTransform>
@@ -41,11 +42,11 @@
                 </Image.Triggers>
             </Image>
         </StackPanel>
-        <StackPanel Grid.Row="0" VerticalAlignment="Center" Background="{StaticResource GreenGradient}">
+        <StackPanel x:Name="pnlFlag" Grid.Row="0" VerticalAlignment="Center" Background="{StaticResource GreenGradient}">
             <Image Source="Content/CountryImages/CRO.jpg" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15"></Image>
             <Label Content="Country name" FontSize="25" Margin="10" HorizontalAlignment="Center" Foreground="White"></Label>
         </StackPanel>
-        <Grid Background="DarkGreen"  Grid.Row="1">
+        <Grid x:Name="pnlTeamData" Background="DarkGreen" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition>
                     <ColumnDefinition.Width>*</ColumnDefinition.Width>
