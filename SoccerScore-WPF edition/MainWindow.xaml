@@ -177,7 +177,9 @@
                 </ColumnDefinition>
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="0">
-                <Image x:Name="HomeTeamInfo" Tag="" Source="Content/Images/info.png" Width="23px" Cursor="Hand" VerticalAlignment="Center"></Image>
+                <Button Click="TeamInfoClicked" x:Name="HomeTeamInfo" Tag="" VerticalAlignment="Center" Background="{StaticResource GreenGradient}">
+                    <Image Source="Content/Images/info.png" Width="23px" Cursor="Hand" VerticalAlignment="Center"></Image>
+                </Button>
                 <TextBlock x:Name="lblHomeCountry" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Country" Margin="10,0,20,0" FontSize="20" Foreground="White"></TextBlock>
                 <Image x:Name="imgHomeCountry" Source="/Content/CountryImages/CRO.jpg"></Image>
             </StackPanel>
@@ -188,7 +190,9 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="2">
                 <Image x:Name="imgAwayCountry" Source="/Content/CountryImages/CRO.jpg"></Image>
                 <TextBlock x:Name="lblAwayCountry" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Country" Margin="20,0,10,0" FontSize="20" Foreground="White"></TextBlock>
-                <Image x:Name="AwayTeamInfo" Tag="" Source="Content/Images/info.png" Width="23px" Cursor="Hand" VerticalAlignment="Center"></Image>
+                <Button Click="TeamInfoClicked" x:Name="AwayTeamInfo" Tag="" VerticalAlignment="Center" Background="{StaticResource GreenGradient}">
+                    <Image Source="Content/Images/info.png" Width="23px" Cursor="Hand" VerticalAlignment="Center"></Image>
+                </Button>
             </StackPanel>
         </Grid>
         <StackPanel Grid.Row="1">

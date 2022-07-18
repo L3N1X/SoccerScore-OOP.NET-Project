@@ -180,5 +180,11 @@ namespace SoccerScore_WPF_edition
             DataManager.SetWindowPropertiesWPF((int)this.Width, (int)this.Height, this.WindowState.Equals(WindowState.Maximized) ? true : false);
             DataManager.SaveSettings();
         }
+
+        private void TeamInfoClicked(object sender, RoutedEventArgs e)
+        {
+            string fifacode = (string)(sender as Button).Tag;
+            new NationalTeamWindow(this.DataManager, fifacode).ShowDialog();
+        }
     }
 }

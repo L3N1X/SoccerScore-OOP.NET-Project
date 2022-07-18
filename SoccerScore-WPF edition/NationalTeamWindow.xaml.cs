@@ -48,13 +48,22 @@ namespace SoccerScore_WPF_edition
                 var teams = await _dataManager.GetSelectionTeams();
                 _nationalTeam = teams.Where(team => _fifaCode.Equals(team.FifaCode)).ToList()[0];
             }
+            SetFlagImage();
+
             FillTeamData();
 
             SetVisibiltyAfterLoading();
         }
 
+        private void SetFlagImage()
+        {
+            this.imgFlag.Source = new BitmapImage(new Uri($"Content/CountryImages/{_fifaCode}.jpg", UriKind.Relative));
+        }
+
         private void FillTeamData()
         {
+            this.Title = $"{_nationalTeam.Country} [{_nationalTeam.FifaCode}]";
+            this.lblCountryName.Content = _nationalTeam.Country;
             this.lblFifaCode.Content = _nationalTeam.FifaCode;
             this.lblDraws.Content = _nationalTeam.Draws;
             this.lblGamesPlayed.Content = _nationalTeam.GamesPlayed;
