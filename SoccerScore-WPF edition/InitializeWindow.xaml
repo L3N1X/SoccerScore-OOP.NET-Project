@@ -1,0 +1,67 @@
+﻿<Window x:Class="SoccerScore_WPF_edition.InitializeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SoccerScore_WPF_edition"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Icon="Content/Images/ball_loading.gif"
+        WindowStartupLocation="CenterScreen"
+        Title="InitializeWindow" Height="450" Width="350
+        ">
+    <Window.Resources>
+        <LinearGradientBrush StartPoint="0, 1" EndPoint="0, 0" x:Key="GreenGradient">
+            <GradientStop x:Name="g1" Color="DarkGreen" Offset="0.0"/>
+            <GradientStop x:Name="g2" Color="YellowGreen" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition>
+                <RowDefinition.Height>*</RowDefinition.Height>
+            </RowDefinition>
+            <RowDefinition>
+                <RowDefinition.Height>3*</RowDefinition.Height>
+            </RowDefinition>
+            <RowDefinition>
+                <RowDefinition.Height>*</RowDefinition.Height>
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="SoccerScore"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center" 
+               FontSize="35" FontWeight="Bold" 
+               Foreground="{StaticResource GreenGradient}"
+               ></Label>
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 5" >
+                <Button x:Name="btnCro" Margin="10" Width="40" Background="White">
+                    <Image Source="Content/Images/cro.png" Stretch="UniformToFill"></Image>
+                </Button>
+                <Button x:Name="btnEng" Margin="10" Width="40" Background="White">
+                    <Image Source="Content/Images/uk.png" Stretch="UniformToFill"></Image>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Female" VerticalAlignment="Center" Width="50px"></Label>
+                <RadioButton x:Name="rbFemale" IsChecked="True" Margin="10" GroupName="Gender"></RadioButton>
+                <RadioButton x:Name="rbMale" Margin="10" GroupName="Gender"></RadioButton>
+                <Label Content="Male" VerticalAlignment="Center" Width="50px"></Label>
+            </StackPanel>
+            <ComboBox x:Name="cbSelectionTeams" Width="90px" Margin="30"></ComboBox>
+        </StackPanel>
+        <Label Grid.Row="2" Content="Leon Krušlin OOP.NET" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="10" Padding="10"></Label>
+        <Button 
+            Grid.Row="2" 
+            Content="SELECT" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Padding="10" 
+            Width="150px" 
+            FontWeight="Bold" 
+            Foreground="White"
+            Background="{StaticResource GreenGradient}"
+            ></Button>
+    </Grid>
+</Window>
