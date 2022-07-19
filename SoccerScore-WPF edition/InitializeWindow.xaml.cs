@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SoccerScoreData.Dal;
+using SoccerScoreData.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +21,68 @@ namespace SoccerScore_WPF_edition
     /// </summary>
     public partial class InitializeWindow : Window
     {
-        public InitializeWindow()
+        private DataManager _dataManager;
+        public InitializeWindow(DataManager dataManager)
         {
+            _dataManager = dataManager;
+            /*Localization and globalization*/
             InitializeComponent();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            this.cbSelectionTeams.Items.Clear();
+            if (_dataManager?.FavouriteTeam?.TeamGender == Gender.Male)
+                this.rbMale.IsChecked = true;
+            else
+                this.rbFemale.IsChecked = true;
+            try
+            {
+                FillSelectionTeams();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+            this.lblDataSource.Content = _dataManager.DataSource.ToString();
+        }
 
+        private async void FillSelectionTeams()
+        {
+            this.pnlLoading.Visibility = Visibility.Visible;
+
+            var selectionTeams = await _dataManager.GetSelectionTeams();
+            foreach (var team in selectionTeams)
+            {
+                this.cbSelectionTeams.Items.Add(team);
+            }
+            this.cbSelectionTeams.SelectedIndex = 0;
+
+            this.pnlLoading.Visibility = Visibility.Hidden;
+        }
+
+        private void GenderButton_Click(object sender, RoutedEventArgs e)
+        {
+            _dataManager.SetGender((Gender)Enum.Parse(typeof(Gender), (sender as RadioButton).Tag.ToString()));
+            this.FillSelectionTeams();
+        }
+
+        private void btnConfirm_Click(object sender, RoutedEventArgs e)
+        {
+            _dataManager.ResetFavourtiteTeamSettings();
+            _dataManager.SetFavouriteTeam(this.cbSelectionTeams.SelectedItem as NationalTeam);
+            Close();
+        }
+
+        private void btnCro_Click(object sender, RoutedEventArgs e)
+        {
+            _dataManager.SetLanguage(SoccerScoreData.Models.Language.hr);
+        }
+
+        private void btnEng_Click(object sender, RoutedEventArgs e)
+        {
+            _dataManager.SetLanguage(SoccerScoreData.Models.Language.eng);
         }
     }
 }
