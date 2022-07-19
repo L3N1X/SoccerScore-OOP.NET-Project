@@ -27,7 +27,21 @@ namespace SoccerScore_WPF_edition
         public DataManager DataManager { get; private set; }
         public MainWindow()
         {
-            this.DataManager = new DataManager();
+            try
+            {
+                this.DataManager = new DataManager();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            if (DataManager.HasDefaultSettings())
+            {
+                Window dialog = new InitializeWindow(DataManager);
+                dialog.ShowDialog();
+                /*Unsubscribe closed event if necessary*/
+            }
+            /*Localization and globalization*/
             InitializeComponent();
         }
 

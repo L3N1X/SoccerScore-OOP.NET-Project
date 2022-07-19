@@ -38,28 +38,26 @@ namespace SoccerScore_WPF_edition
                 this.rbFemale.IsChecked = true;
             try
             {
+                this.pnlLoading.Visibility = Visibility.Visible;
                 FillSelectionTeams();
+                this.pnlLoading.Visibility = Visibility.Hidden;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                throw;
             }
             this.lblDataSource.Content = _dataManager.DataSource.ToString();
         }
 
         private async void FillSelectionTeams()
         {
-            this.pnlLoading.Visibility = Visibility.Visible;
-
+            this?.cbSelectionTeams?.Items?.Clear();
             var selectionTeams = await _dataManager.GetSelectionTeams();
             foreach (var team in selectionTeams)
             {
                 this.cbSelectionTeams.Items.Add(team);
             }
             this.cbSelectionTeams.SelectedIndex = 0;
-
-            this.pnlLoading.Visibility = Visibility.Hidden;
         }
 
         private void GenderButton_Click(object sender, RoutedEventArgs e)
