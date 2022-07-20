@@ -33,7 +33,9 @@ namespace SoccerScore_WPF_edition
         {
             this.cbSelectionTeams.Items.Clear();
             if (_dataManager?.FavouriteTeam?.TeamGender == Gender.Male)
+            {
                 this.rbMale.IsChecked = true;
+            }
             else
                 this.rbFemale.IsChecked = true;
             try
