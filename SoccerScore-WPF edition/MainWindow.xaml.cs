@@ -210,7 +210,7 @@ namespace SoccerScore_WPF_edition
             }
         }
 
-        private void Settings_Click(object sender, RoutedEventArgs e)
+        private void Settings_Click(object sender, MouseButtonEventArgs e)
         {
             InitializeWindow window = new InitializeWindow(DataManager);
             bool? result = window.ShowDialog();

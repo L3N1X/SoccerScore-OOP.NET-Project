@@ -43,12 +43,14 @@
             </StackPanel>
             <Label Content="Language" Margin="0 15 0 5" HorizontalAlignment="Center" FontWeight="Bold"></Label>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Click="Cro_Click" x:Name="btnCro" Margin="5" Width="40" Background="White">
-                    <Image Source="Content/Images/cro.png" Stretch="UniformToFill"></Image>
+                <!--<Button Click="Cro_Click" x:Name="btnCro" Margin="5" Width="40" Background="White">
+                    <Image MouseDown="Cro_Click" Source="Content/Images/cro.png" Stretch="UniformToFill"></Image>
                 </Button>
                 <Button Click="Eng_Click" x:Name="btnEng" Margin="5" Width="40" Background="White">
-                    <Image Source="Content/Images/uk.png" Stretch="UniformToFill"></Image>
-                </Button>
+                    <Image MouseDown="Eng_Click" Source="Content/Images/uk.png" Stretch="UniformToFill"></Image>
+                </Button>-->
+                <Image Width="40px" Margin="5" MouseDown="Cro_Click" Source="Content/Images/cro.png" Stretch="UniformToFill"></Image>
+                <Image Width="40px" Margin="5" MouseDown="Eng_Click" Source="Content/Images/uk.png" Stretch="UniformToFill"></Image>
             </StackPanel>
             <Label Content="Window settings" Margin="0 15 0 5" HorizontalAlignment="Center" FontWeight="Bold"></Label>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

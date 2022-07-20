@@ -103,12 +103,12 @@ namespace SoccerScore_WPF_edition
                 return 578;
         }
 
-        private void Cro_Click(object sender, RoutedEventArgs e)
+        private void Cro_Click(object sender, MouseButtonEventArgs e)
         {
             _dataManager.SetLanguage(SoccerScoreData.Models.Language.hr);
         }
 
-        private void Eng_Click(object sender, RoutedEventArgs e)
+        private void Eng_Click(object sender, MouseButtonEventArgs e)
         {
             _dataManager.SetLanguage(SoccerScoreData.Models.Language.eng);
         }

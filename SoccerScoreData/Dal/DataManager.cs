@@ -186,9 +186,22 @@ namespace SoccerScoreData.Dal
 
         public Match GetMatchByOpponentFifaCode(string fifacode)
         {
-            return FavouriteTeamMatches.Where(match =>
+            var selectedMatch = FavouriteTeamMatches.Where(match =>
             match.AwayTeam.FifaCode.Equals(fifacode) ||
             match.HomeTeam.FifaCode.Equals(fifacode)).ToList()[0];
+
+            IList<Player> playersWithSavedImages = repoConfig.GetPlayersWithSavedImage();
+
+            foreach (var playerWithImage in playersWithSavedImages)
+            {
+                var homePlayer = selectedMatch.HomeTeamStatistics.StartingEleven.ToList().Find(p => p.Equals(playerWithImage));
+                var awayPlayer = selectedMatch.AwayTeamStatistics.StartingEleven.ToList().Find(p => p.Equals(playerWithImage));
+                if (homePlayer != null)
+                    homePlayer.IconPath = playerWithImage.IconPath;
+                if (awayPlayer != null)
+                    awayPlayer.IconPath = playerWithImage.IconPath;
+            }
+            return selectedMatch;
         }
 
         public void SaveSettings()

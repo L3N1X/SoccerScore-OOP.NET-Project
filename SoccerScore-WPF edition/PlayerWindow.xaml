@@ -33,7 +33,9 @@
                 <RowDefinition.Height>*</RowDefinition.Height>
             </RowDefinition>
         </Grid.RowDefinitions>
-        <Image Source="Content/Images/default_player_image.png" Margin="10"></Image>
+        <Grid>
+            <Image x:Name="imgPlayerIcon" Source="Content/Images/default_player_image.png" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform"></Image>
+        </Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label x:Name="lblShirtNumber" FontSize="45" FontWeight="Bold">10</Label>
         </StackPanel>

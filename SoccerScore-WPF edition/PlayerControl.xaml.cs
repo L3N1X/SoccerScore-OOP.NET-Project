@@ -1,6 +1,7 @@
 ﻿using SoccerScoreData.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,18 @@ namespace SoccerScore_WPF_edition
             this.lblShirtNumber.Content = player.ShirtNumber;
             if (isHome)
                 this.playerCircle.Fill = new SolidColorBrush(Colors.DarkBlue);
+            SetPlayerIcon();
+        }
+
+        private void SetPlayerIcon()
+        {
+            if (!string.IsNullOrEmpty(_player.IconPath))
+            {
+                ImageBrush imageBrush = new ImageBrush(new ImageSourceConverter().ConvertFromString(_player.IconPath) as ImageSource);
+                imageBrush.Stretch = Stretch.UniformToFill;
+                this.playerCircle.Fill = imageBrush;
+                lblShirtNumber.Visibility = Visibility.Hidden;
+            }
         }
 
         private void PlayerSelected(object sender, MouseButtonEventArgs e)

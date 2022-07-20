@@ -36,9 +36,15 @@ namespace SoccerScore_WPF_edition
             this.lblYellowCards.Content = $"Yellow cards: {_player.YellowCards}";
             if (_player.Captain)
                 this.lblCaptain.Visibility = Visibility.Visible;
-            if(_player.IconPath != null)
+            SetPlayerImage();
+        }
+
+        private void SetPlayerImage()
+        {
+            if (!string.IsNullOrEmpty(_player.IconPath))
             {
-                //TO DO: SET IMAGE SOURCE
+                this.imgPlayerIcon.Source = new BitmapImage(new Uri(_player.IconPath, UriKind.Absolute));
+                this.lblShirtNumber.Visibility = Visibility.Hidden;
             }
         }
     }

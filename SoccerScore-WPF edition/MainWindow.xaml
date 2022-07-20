@@ -210,7 +210,8 @@
                         <ColumnDefinition.Width>2*</ColumnDefinition.Width>
                     </ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Content="SET" Click="Settings_Click"></Button>
+                <Image MouseDown="Settings_Click" Source="Content/Images/settings.png" Stretch="UniformToFill" Width="25px" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"></Image>
+                <!--<Button Content="SET" Click="Settings_Click"></Button>-->
                 <TextBlock x:Name="lblGender" Grid.Column="1" Text="Gender" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Padding="5" Foreground="White" FontWeight="Bold"></TextBlock>
                 <ComboBox Grid.Column="2" x:Name="cbSelectionTeams"></ComboBox>
             </Grid>
