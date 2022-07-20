@@ -67,6 +67,9 @@ namespace SoccerScore_WPF_edition
             this.pnlTeamInfo.Opacity = 0;
 
             this.lbOpponentFifaCodes.SelectionChanged -= MatchChanged;
+            this.cbSelectionTeams.SelectionChanged -= FavoruiteTeamChanged;
+            this.lbOpponentFifaCodes.Items.Clear();
+            this.cbSelectionTeams.Items.Clear();
 
             await DataManager.InitializeDataAsync();
 
@@ -189,16 +192,33 @@ namespace SoccerScore_WPF_edition
             this.pnlAwayForward.Children.Clear();
         }
 
-        private void Window_Closed(object sender, EventArgs e)
+        private void TeamInfoClicked(object sender, MouseButtonEventArgs e)
         {
-            DataManager.SetWindowPropertiesWPF((int)this.Width, (int)this.Height, this.WindowState.Equals(WindowState.Maximized) ? true : false);
-            DataManager.SaveSettings();
+            string fifacode = (string)(sender as Image).Tag;
+            new NationalTeamWindow(this.DataManager, fifacode).ShowDialog();
+        }
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you wan't to exit?", "SoccerScore", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                DataManager.SetWindowPropertiesWPF((int)this.Width, (int)this.Height, this.WindowState.Equals(WindowState.Maximized) ? true : false);
+                DataManager.SaveSettings();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
 
-        private void TeamInfoClicked(object sender, RoutedEventArgs e)
+        private void Settings_Click(object sender, RoutedEventArgs e)
         {
-            string fifacode = (string)(sender as Button).Tag;
-            new NationalTeamWindow(this.DataManager, fifacode).ShowDialog();
+            InitializeWindow window = new InitializeWindow(DataManager);
+            bool? result = window.ShowDialog();
+            if (result ?? true)
+            {
+                InitializeControls();
+                SetWindowPropertiesFromSettings();
+            }
         }
     }
 }

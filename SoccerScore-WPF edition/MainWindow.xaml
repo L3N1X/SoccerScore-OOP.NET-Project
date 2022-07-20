@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SoccerScore_WPF_edition"
         Loaded="Window_Loaded"
-        Closed="Window_Closed"
+        Closing="Window_Closing"
         mc:Ignorable="d"
         Title="SoccerScore WPF Edition" Height="620" Width="998" WindowStartupLocation="CenterScreen" Icon="Content/Images/ball_loading.gif"
         MinHeight="578" MinWidth="956">
@@ -177,9 +177,10 @@
                 </ColumnDefinition>
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="0">
-                <Button Click="TeamInfoClicked" x:Name="HomeTeamInfo" Tag="" VerticalAlignment="Center" Background="{StaticResource GreenGradient}">
-                    <Image Source="Content/Images/info.png" Width="23px" Cursor="Hand" VerticalAlignment="Center"></Image>
-                </Button>
+                <Image x:Name="HomeTeamInfo" Tag="" MouseDown="TeamInfoClicked" Source="Content/Images/info.png" Width="23px" Cursor="Hand" VerticalAlignment="Center"></Image>
+                <!--<Button Click="TeamInfoClicked" x:Name="HomeTeamInfo" Tag="" VerticalAlignment="Center" Background="{StaticResource GreenGradient}">
+                    <Image MouseDown="TeamInfoClicked" Source="Content/Images/info.png" Width="23px" Cursor="Hand" VerticalAlignment="Center"></Image>
+                </Button>-->
                 <TextBlock x:Name="lblHomeCountry" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Country" Margin="10,0,20,0" FontSize="20" Foreground="White"></TextBlock>
                 <Image x:Name="imgHomeCountry" Source="/Content/CountryImages/CRO.jpg"></Image>
             </StackPanel>
@@ -190,9 +191,10 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="2">
                 <Image x:Name="imgAwayCountry" Source="/Content/CountryImages/CRO.jpg"></Image>
                 <TextBlock x:Name="lblAwayCountry" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Country" Margin="20,0,10,0" FontSize="20" Foreground="White"></TextBlock>
-                <Button Click="TeamInfoClicked" x:Name="AwayTeamInfo" Tag="" VerticalAlignment="Center" Background="{StaticResource GreenGradient}">
-                    <Image Source="Content/Images/info.png" Width="23px" Cursor="Hand" VerticalAlignment="Center"></Image>
-                </Button>
+                <!--<Button Click="TeamInfoClicked" x:Name="AwayTeamInfo" Tag="" VerticalAlignment="Center" Background="{StaticResource GreenGradient}">
+                    <Image MouseDown="TeamInfoClicked" Source="Content/Images/info.png" Width="23px" Cursor="Hand" VerticalAlignment="Center"></Image>
+                </Button>-->
+                <Image x:Name="AwayTeamInfo" Tag="" MouseDown="TeamInfoClicked" Source="Content/Images/info.png" Width="23px" Cursor="Hand" VerticalAlignment="Center"></Image>
             </StackPanel>
         </Grid>
         <StackPanel Grid.Row="1">
@@ -204,9 +206,13 @@
                     <ColumnDefinition>
                         <ColumnDefinition.Width>2*</ColumnDefinition.Width>
                     </ColumnDefinition>
+                    <ColumnDefinition>
+                        <ColumnDefinition.Width>2*</ColumnDefinition.Width>
+                    </ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <TextBlock x:Name="lblGender" Grid.Column="0" Text="Gender" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Padding="5" Foreground="White" FontWeight="Bold"></TextBlock>
-                <ComboBox Grid.Column="1" x:Name="cbSelectionTeams"></ComboBox>
+                <Button Content="SET" Click="Settings_Click"></Button>
+                <TextBlock x:Name="lblGender" Grid.Column="1" Text="Gender" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Padding="5" Foreground="White" FontWeight="Bold"></TextBlock>
+                <ComboBox Grid.Column="2" x:Name="cbSelectionTeams"></ComboBox>
             </Grid>
             <StackPanel x:Name="pnlTeamInfo">
                 <Image x:Name="imgFavouriteTeamCountry" Source="Content/CountryImages/CRO.jpg" Margin="20"></Image>

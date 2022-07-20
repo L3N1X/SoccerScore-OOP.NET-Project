@@ -71,6 +71,7 @@ namespace SoccerScore_WPF_edition
             _dataManager.ResetFavourtiteTeamSettings();
             _dataManager.SetFavouriteTeam(this.cbSelectionTeams.SelectedItem as NationalTeam);
             _dataManager.SetWindowPropertiesWPF(GetWidthSelection(), GetHeightSelection(), (bool)(this?.rbFullscreen?.IsChecked));
+            this.DialogResult = true;
             Close();
         }
 

@@ -60,7 +60,7 @@
             <Label Content="National Team" Margin="0 15 0 5" HorizontalAlignment="Center" FontWeight="Bold"></Label>
             <ComboBox x:Name="cbSelectionTeams" Width="90px" Margin="0 5 0 0"></ComboBox>
             <Label x:Name="lblDataSource" Content="" HorizontalAlignment="Center" Margin="0 5 0 0"></Label>
-            <Image x:Name="pnlLoading" Source="Content/Images/ball_loading.gif" Panel.ZIndex="1000" Width="130px" RenderTransformOrigin="0.5,0.5">
+            <Image x:Name="pnlLoading" Source="Content/Images/ball_loading.gif" Panel.ZIndex="1000" Width="150px" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <RotateTransform x:Name="loadingRotation" Angle="0"></RotateTransform>
                 </Image.RenderTransform>
