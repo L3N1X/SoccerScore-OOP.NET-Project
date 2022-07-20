@@ -278,20 +278,20 @@ namespace SoccerScore_TEST_GUI
                 lastPrintIndex = source.Controls.Count - 1;
             }
             this.printPageCalled++;
-            if (this.PrintContent(this.flpMatches, e))
+            if (this.PrintContent(source, e))
                 return;
         }
 
         private bool PrintContent(Control container, PrintPageEventArgs e)
         {
-            int matchWidth = this.flpMatches.Controls[0].Size.Width;
-            int matchHeight = this.flpMatches.Controls[0].Size.Height;
+            int controlWidth = container.Controls[0].Size.Width;
+            int controlHeight = container.Controls[0].Size.Height;
             int totalPrintHeight = 0;
             int offset = 0;
             for (int i = this.lastPrintIndex; i >= 0; i--)
             {
-                var control = container.Controls[i] as MatchView;
-                Bitmap bmp = new Bitmap(matchWidth, matchHeight);
+                var control = container.Controls[i] as Control;
+                Bitmap bmp = new Bitmap(controlWidth, controlHeight);
                 control.DrawToBitmap(bmp,
                     new Rectangle
                     {
@@ -300,7 +300,7 @@ namespace SoccerScore_TEST_GUI
                         Width = bmp.Width,
                         Height = bmp.Height
                     });
-                totalPrintHeight += matchHeight;
+                totalPrintHeight += controlHeight;
                 if (totalPrintHeight > e.PageSettings.PaperSize.Height)
                 {
                     this.lastPrintIndex = i++;
@@ -310,7 +310,7 @@ namespace SoccerScore_TEST_GUI
                 else
                 {
                     e.HasMorePages = false;
-                    e.Graphics.DrawImage(bmp, 0, offset * matchHeight);
+                    e.Graphics.DrawImage(bmp, 0, offset * controlHeight);
                 }
                 offset++;
             }
