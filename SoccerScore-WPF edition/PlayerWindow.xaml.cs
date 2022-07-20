@@ -32,8 +32,10 @@ namespace SoccerScore_WPF_edition
         {
             this.lblPlayerName.Text = _player.Name;
             this.lblShirtNumber.Content = _player.ShirtNumber;
-            this.lblGoals.Content = $"Goals: {_player.Goals}";
-            this.lblYellowCards.Content = $"Yellow cards: {_player.YellowCards}";
+            //this.lblGoals.Content = $"Goals: {_player.Goals}";
+            this.lblGoals.Content = Properties.Resources.goals + " " + _player.Goals;
+            //this.lblYellowCards.Content = $"Yellow cards: {_player.YellowCards}";
+            this.lblYellowCards.Content = Properties.Resources.yellow_cards + " " + _player.YellowCards;
             if (_player.Captain)
                 this.lblCaptain.Visibility = Visibility.Visible;
             SetPlayerImage();

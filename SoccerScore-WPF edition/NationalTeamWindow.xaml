@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SoccerScore_WPF_edition"
+        xmlns:props="clr-namespace:SoccerScore_WPF_edition.Properties"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
         Icon="Content/Images/ball_loading.gif"
@@ -103,15 +104,15 @@
                     <RowDefinition.Height>*</RowDefinition.Height>
                 </RowDefinition>
             </Grid.RowDefinitions>
-            <Label Foreground="White" Content="Fifa code:" HorizontalAlignment="Right" Margin="0 0 5 0"></Label>
-            <Label Grid.Row="1" Foreground="White" Content="Total points:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
-            <Label Grid.Row="2" Foreground="White" Content="Wins:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
-            <Label Grid.Row="3" Foreground="White" Content="Losses:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
-            <Label Grid.Row="4" Foreground="White" Content="Draws:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
-            <Label Grid.Row="5" Foreground="White" Content="Games played:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
-            <Label Grid.Row="6" Foreground="White" Content="Goals for:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
-            <Label Grid.Row="7" Foreground="White" Content="Goals against:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
-            <Label Grid.Row="8" Foreground="White" Content="Goal differential:" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+            <Label Foreground="White" Content="{x:Static props:Resources.fifacode}" HorizontalAlignment="Right" Margin="0 0 5 0"></Label>
+            <Label Grid.Row="1" Foreground="White" Content="{x:Static props:Resources.total_points}" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+            <Label Grid.Row="2" Foreground="White" Content="{x:Static props:Resources.wins}" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+            <Label Grid.Row="3" Foreground="White" Content="{x:Static props:Resources.losses}" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+            <Label Grid.Row="4" Foreground="White" Content="{x:Static props:Resources.draws}" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+            <Label Grid.Row="5" Foreground="White" Content="{x:Static props:Resources.games_played}" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+            <Label Grid.Row="6" Foreground="White" Content="{x:Static props:Resources.goals_for}" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+            <Label Grid.Row="7" Foreground="White" Content="{x:Static props:Resources.goals_against}" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
+            <Label Grid.Row="8" Foreground="White" Content="{x:Static props:Resources.goal_differential}" HorizontalAlignment="Right" Margin="0 0 10 0"></Label>
 
             <Label x:Name="lblFifaCode" Grid.Column="1" Foreground="White" Content="XXX" HorizontalAlignment="Left" Margin="10 0 0 0"></Label>
             <Label x:Name="lblTotalPoints" Grid.Column="1" Grid.Row="1" Foreground="White" Content="XXX" HorizontalAlignment="Left" Margin="10 0 0 0"></Label>

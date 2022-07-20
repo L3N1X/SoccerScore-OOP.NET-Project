@@ -199,7 +199,7 @@ namespace SoccerScore_WPF_edition
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you wan't to exit?", "SoccerScore", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            if (MessageBox.Show(Properties.Resources.exit_question, "SoccerScore", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 DataManager.SetWindowPropertiesWPF((int)this.Width, (int)this.Height, this.WindowState.Equals(WindowState.Maximized) ? true : false);
                 DataManager.SaveSettings();

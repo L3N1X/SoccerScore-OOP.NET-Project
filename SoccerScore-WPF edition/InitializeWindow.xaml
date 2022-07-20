@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SoccerScore_WPF_edition"
+        xmlns:props="clr-namespace:SoccerScore_WPF_edition.Properties"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
         Icon="Content/Images/ball_loading.gif"
@@ -36,12 +37,12 @@
                ></Label>
         <StackPanel Grid.Row="1">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label Content="Women's world cup" VerticalAlignment="Center" Width="120px"></Label>
+                <Label Content="{x:Static props:Resources.womens_wc}" VerticalAlignment="Center" Width="120px"></Label>
                 <RadioButton Checked="GenderButton_Click" x:Name="rbFemale" Tag="Female" IsChecked="True" Margin="10" GroupName="Gender"></RadioButton>
                 <RadioButton Checked="GenderButton_Click" x:Name="rbMale" Tag="Male" Margin="10" GroupName="Gender"></RadioButton>
-                <Label Content="Men's world cup" VerticalAlignment="Center" Width="120px"></Label>
+                <Label Content="{x:Static props:Resources.mens_wc}" VerticalAlignment="Center" Width="120px"></Label>
             </StackPanel>
-            <Label Content="Language" Margin="0 15 0 5" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+            <Label Content="{x:Static props:Resources.language}" Margin="0 15 0 5" HorizontalAlignment="Center" FontWeight="Bold"></Label>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <!--<Button Click="Cro_Click" x:Name="btnCro" Margin="5" Width="40" Background="White">
                     <Image MouseDown="Cro_Click" Source="Content/Images/cro.png" Stretch="UniformToFill"></Image>
@@ -52,14 +53,14 @@
                 <Image Width="40px" Margin="5" MouseDown="Cro_Click" Source="Content/Images/cro.png" Stretch="UniformToFill"></Image>
                 <Image Width="40px" Margin="5" MouseDown="Eng_Click" Source="Content/Images/uk.png" Stretch="UniformToFill"></Image>
             </StackPanel>
-            <Label Content="Window settings" Margin="0 15 0 5" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+            <Label Content="{x:Static props:Resources.window_settings}" Margin="0 15 0 5" HorizontalAlignment="Center" FontWeight="Bold"></Label>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <RadioButton x:Name="rbFullscreen" Margin="10 0 10 0" Content="Fullscreen" Tag="Small" GroupName="WindowSize"></RadioButton>
-                <RadioButton x:Name="rbLarge" Margin="10 0 10 0" Content="Large" Tag="Large" GroupName="WindowSize"></RadioButton>
-                <RadioButton x:Name="rbMedium" Margin="10 0 10 0" Content="Medium" Tag="Medium" GroupName="WindowSize"></RadioButton>
-                <RadioButton x:Name="rbSmall" Margin="10 0 10 0" Content="Small" Tag="Small" GroupName="WindowSize" IsChecked="true"></RadioButton>
+                <RadioButton x:Name="rbFullscreen" Margin="10 0 10 0" Content="{x:Static props:Resources.fullscreen}" Tag="Small" GroupName="WindowSize"></RadioButton>
+                <RadioButton x:Name="rbLarge" Margin="10 0 10 0" Content="{x:Static props:Resources.large}" Tag="Large" GroupName="WindowSize"></RadioButton>
+                <RadioButton x:Name="rbMedium" Margin="10 0 10 0" Content="{x:Static props:Resources.medium}" Tag="Medium" GroupName="WindowSize"></RadioButton>
+                <RadioButton x:Name="rbSmall" Margin="10 0 10 0" Content="{x:Static props:Resources.small}" Tag="Small" GroupName="WindowSize" IsChecked="true"></RadioButton>
             </StackPanel>
-            <Label Content="National Team" Margin="0 15 0 5" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+            <Label Content="{x:Static props:Resources.national_team}" Margin="0 15 0 5" HorizontalAlignment="Center" FontWeight="Bold"></Label>
             <ComboBox x:Name="cbSelectionTeams" Width="90px" Margin="0 5 0 0"></ComboBox>
             <Label x:Name="lblDataSource" Content="" HorizontalAlignment="Center" Margin="0 5 0 0"></Label>
             <Image x:Name="pnlLoading" Source="Content/Images/ball_loading.gif" Panel.ZIndex="1000" Width="150px" RenderTransformOrigin="0.5,0.5">
@@ -85,7 +86,7 @@
         <Button 
             Click="Confirm_Click"
             Grid.Row="2" 
-            Content="CONFIRM" 
+            Content="{x:Static props:Resources.confirm}" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Top"
             Margin="0 35 0 0"
