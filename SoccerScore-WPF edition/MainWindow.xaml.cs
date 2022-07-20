@@ -3,6 +3,7 @@ using SoccerScoreData.Dal;
 using SoccerScoreData.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -39,10 +40,14 @@ namespace SoccerScore_WPF_edition
             {
                 Window dialog = new InitializeWindow(DataManager);
                 dialog.ShowDialog();
-                /*Unsubscribe closed event if necessary*/
             }
-            /*Localization and globalization*/
+            SetCulture();
             InitializeComponent();
+        }
+
+        private void SetCulture()
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(DataManager.GetLanguage().ToString());
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

@@ -118,75 +118,75 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="captain" xml:space="preserve">
-    <value>Captain</value>
+    <value>Kapetan</value>
   </data>
   <data name="confirm" xml:space="preserve">
-    <value>CONFIRM</value>
+    <value>POTVRDI</value>
   </data>
   <data name="draws" xml:space="preserve">
-    <value>Draws:</value>
+    <value>Izjednačeno:</value>
   </data>
   <data name="exit_question" xml:space="preserve">
-    <value>Are you sure you wan't to exit?</value>
+    <value>Jeste li sigurni da želite izaći?</value>
   </data>
   <data name="fifacode" xml:space="preserve">
     <value>Fifa code:</value>
   </data>
   <data name="fullscreen" xml:space="preserve">
-    <value>Fullscreen</value>
+    <value>Puni zaslon</value>
   </data>
   <data name="games_played" xml:space="preserve">
-    <value>Games played:</value>
+    <value>Odigrane utakmice:</value>
   </data>
   <data name="goals" xml:space="preserve">
-    <value>Goals</value>
+    <value>Golovi:</value>
   </data>
   <data name="goals_against" xml:space="preserve">
-    <value>Goals against:</value>
+    <value>Golovi protiv:</value>
   </data>
   <data name="goals_for" xml:space="preserve">
-    <value>Goals for:</value>
+    <value>Golovi za:</value>
   </data>
   <data name="goal_differential" xml:space="preserve">
-    <value>Goal differential:</value>
+    <value>Razlika golova:</value>
   </data>
   <data name="language" xml:space="preserve">
-    <value>Language</value>
+    <value>Jezik aplikacije</value>
   </data>
   <data name="large" xml:space="preserve">
-    <value>Large</value>
+    <value>Veliki</value>
   </data>
   <data name="losses" xml:space="preserve">
-    <value>Losses:</value>
+    <value>Gubici:</value>
   </data>
   <data name="medium" xml:space="preserve">
-    <value>Medium</value>
+    <value>Srednje</value>
   </data>
   <data name="mens_wc" xml:space="preserve">
-    <value>Men's world cup</value>
+    <value>Muško prvenstvo</value>
   </data>
   <data name="national_team" xml:space="preserve">
-    <value>National team</value>
+    <value>Reprezentacija</value>
   </data>
   <data name="opponents" xml:space="preserve">
-    <value>Opponents:</value>
+    <value>Suparnici:</value>
   </data>
   <data name="small" xml:space="preserve">
-    <value>Small</value>
+    <value>Mali</value>
   </data>
   <data name="total_points" xml:space="preserve">
-    <value>Total points:</value>
+    <value>Ukupni bodovi:</value>
   </data>
   <data name="window_settings" xml:space="preserve">
-    <value>Window settings</value>
+    <value>Postavke prozora</value>
   </data>
   <data name="wins" xml:space="preserve">
-    <value>Wins:</value>
+    <value>Pobjede:</value>
   </data>
   <data name="womens_wc" xml:space="preserve">
-    <value>Women's world cup</value>
+    <value>Žensko prvenstvo</value>
   </data>
   <data name="yellow_cards" xml:space="preserve">
-    <value>Yellow Cards</value>
+    <value>Žuti kartoni</value>
   </data>
 </root>

@@ -2,8 +2,10 @@
 using SoccerScoreData.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,6 +28,8 @@ namespace SoccerScore_WPF_edition
         {
             _dataManager = dataManager;
             /*Localization and globalization*/
+            //Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(_dataManager.GetLanguage().ToString());
+            //Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(_dataManager.GetLanguage().ToString());
             InitializeComponent();
         }
 
@@ -106,11 +110,13 @@ namespace SoccerScore_WPF_edition
         private void Cro_Click(object sender, MouseButtonEventArgs e)
         {
             _dataManager.SetLanguage(SoccerScoreData.Models.Language.hr);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(_dataManager.GetLanguage().ToString());
         }
 
         private void Eng_Click(object sender, MouseButtonEventArgs e)
         {
             _dataManager.SetLanguage(SoccerScoreData.Models.Language.eng);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(_dataManager.GetLanguage().ToString());
         }
     }
 }
