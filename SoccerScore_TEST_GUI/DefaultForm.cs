@@ -313,6 +313,7 @@ namespace SoccerScore_TEST_GUI
                     e.Graphics.DrawImage(bmp, 0, offset * controlHeight);
                 }
                 offset++;
+
             }
             return false;
         }
