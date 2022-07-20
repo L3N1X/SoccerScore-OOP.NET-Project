@@ -151,6 +151,9 @@
     <EmbeddedResource Include="PlayerForm.resx">
       <DependentUpon>PlayerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PlayerRankView.hr.resx">
+      <DependentUpon>PlayerRankView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlayerRankView.resx">
       <DependentUpon>PlayerRankView.cs</DependentUpon>
     </EmbeddedResource>

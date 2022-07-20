@@ -102,6 +102,30 @@ namespace SoccerScore_TEST_GUI
 
             InitializeLabelText();
 
+            /**/
+            var allPlayers = new List<Player>(dataManager.FavouriteTeam.StartingEleven);
+            foreach (var substitute in dataManager.FavouriteTeam.Substitutes)
+            {
+                allPlayers.Add(substitute);
+            }
+            var playersByYellowCards = new List<Player>(allPlayers);
+            playersByYellowCards.Sort((left, right) => -left.YellowCards.CompareTo(right.YellowCards));
+            //playersByYellowCards.OrderBy(p => p.YellowCards);
+            var playersByGoals = new List<Player>(allPlayers);
+            playersByGoals.Sort((left, right) => -left.Goals.CompareTo(right.Goals));
+            //playersByGoals.OrderBy(p => p.Goals);
+            foreach (var player in playersByYellowCards)
+            {
+                PlayerView playerViewControl = new PlayerView(player, dataManager.FavouriteTeam);
+                this.flpPlayersYellowCards.Controls.Add(playerViewControl);
+            }
+            foreach (var player in playersByGoals)
+            {
+                PlayerView playerViewControl = new PlayerView(player, dataManager.FavouriteTeam);
+                this.flpPlayersGoals.Controls.Add(playerViewControl);
+            }
+            /**/
+
             Tools.CenterControlInParentHorizontally(this.lblTitle);
 
             this.pbCountryLeft.Image = CountryImages.ResourceManager.GetObject(dataManager.FavouriteTeam.FifaCode) as Image;
