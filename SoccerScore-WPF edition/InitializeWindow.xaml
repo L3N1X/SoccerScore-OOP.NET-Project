@@ -8,7 +8,7 @@
         Loaded="Window_Loaded"
         Icon="Content/Images/ball_loading.gif"
         WindowStartupLocation="CenterScreen"
-        Title="InitializeWindow" Height="450" Width="350
+        Title="Soccer Score WPF Edition" Height="650" Width="350
         ">
     <Window.Resources>
         <LinearGradientBrush StartPoint="0, 1" EndPoint="0, 0" x:Key="GreenGradient">
@@ -19,13 +19,13 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition>
-                <RowDefinition.Height>*</RowDefinition.Height>
+                <RowDefinition.Height>.5*</RowDefinition.Height>
             </RowDefinition>
             <RowDefinition>
                 <RowDefinition.Height>3*</RowDefinition.Height>
             </RowDefinition>
             <RowDefinition>
-                <RowDefinition.Height>*</RowDefinition.Height>
+                <RowDefinition.Height>.8*</RowDefinition.Height>
             </RowDefinition>
         </Grid.RowDefinitions>
         <Label Content="SoccerScore"
@@ -35,23 +35,32 @@
                Foreground="{StaticResource GreenGradient}"
                ></Label>
         <StackPanel Grid.Row="1">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 5" >
-                <Button Click="Cro_Click" x:Name="btnCro" Margin="10" Width="40" Background="White">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Women's world cup" VerticalAlignment="Center" Width="120px"></Label>
+                <RadioButton Checked="GenderButton_Click" x:Name="rbFemale" Tag="Female" IsChecked="True" Margin="10" GroupName="Gender"></RadioButton>
+                <RadioButton Checked="GenderButton_Click" x:Name="rbMale" Tag="Male" Margin="10" GroupName="Gender"></RadioButton>
+                <Label Content="Men's world cup" VerticalAlignment="Center" Width="120px"></Label>
+            </StackPanel>
+            <Label Content="Language" Margin="0 15 0 5" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Click="Cro_Click" x:Name="btnCro" Margin="5" Width="40" Background="White">
                     <Image Source="Content/Images/cro.png" Stretch="UniformToFill"></Image>
                 </Button>
-                <Button Click="Eng_Click" x:Name="btnEng" Margin="10" Width="40" Background="White">
+                <Button Click="Eng_Click" x:Name="btnEng" Margin="5" Width="40" Background="White">
                     <Image Source="Content/Images/uk.png" Stretch="UniformToFill"></Image>
                 </Button>
             </StackPanel>
+            <Label Content="Window settings" Margin="0 15 0 5" HorizontalAlignment="Center" FontWeight="Bold"></Label>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label Content="Female" VerticalAlignment="Center" Width="50px"></Label>
-                <RadioButton Checked="GenderButton_Click" x:Name="rbFemale" Tag="Female" IsChecked="True" Margin="10" GroupName="Gender"></RadioButton>
-                <RadioButton Checked="GenderButton_Click" x:Name="rbMale" Tag="Male" Margin="10" GroupName="Gender"></RadioButton>
-                <Label Content="Male" VerticalAlignment="Center" Width="50px"></Label>
+                <RadioButton x:Name="rbFullscreen" Margin="10 0 10 0" Content="Fullscreen" Tag="Small" GroupName="WindowSize"></RadioButton>
+                <RadioButton x:Name="rbLarge" Margin="10 0 10 0" Content="Large" Tag="Large" GroupName="WindowSize"></RadioButton>
+                <RadioButton x:Name="rbMedium" Margin="10 0 10 0" Content="Medium" Tag="Medium" GroupName="WindowSize"></RadioButton>
+                <RadioButton x:Name="rbSmall" Margin="10 0 10 0" Content="Small" Tag="Small" GroupName="WindowSize" IsChecked="true"></RadioButton>
             </StackPanel>
+            <Label Content="National Team" Margin="0 15 0 5" HorizontalAlignment="Center" FontWeight="Bold"></Label>
             <ComboBox x:Name="cbSelectionTeams" Width="90px" Margin="0 5 0 0"></ComboBox>
             <Label x:Name="lblDataSource" Content="" HorizontalAlignment="Center" Margin="0 5 0 0"></Label>
-            <Image x:Name="pnlLoading" Source="Content/Images/ball_loading.gif" Panel.ZIndex="1000" Width="100px" RenderTransformOrigin="0.5,0.5">
+            <Image x:Name="pnlLoading" Source="Content/Images/ball_loading.gif" Panel.ZIndex="1000" Width="130px" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <RotateTransform x:Name="loadingRotation" Angle="0"></RotateTransform>
                 </Image.RenderTransform>
@@ -70,14 +79,14 @@
                 </Image.Triggers>
             </Image>
         </StackPanel>
-        <Label Grid.Row="2" Content="Leon Krušlin OOP.NET" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="10" Padding="10"></Label>
+        <Label Grid.Row="2" Content="Leon Krušlin OOP.NET" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="8" Padding="10"></Label>
         <Button 
             Click="Confirm_Click"
             Grid.Row="2" 
             Content="CONFIRM" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Top"
-            Margin="0 20 0 0"
+            Margin="0 35 0 0"
             Padding="10" 
             Width="150px" 
             FontWeight="Bold" 

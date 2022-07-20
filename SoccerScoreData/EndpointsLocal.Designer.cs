@@ -61,7 +61,7 @@ namespace SoccerScoreData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to json/mensmatches.json.
+        ///   Looks up a localized string similar to ../../../json/mensmatches.json.
         /// </summary>
         internal static string MensMatches {
             get {
@@ -70,7 +70,7 @@ namespace SoccerScoreData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to json/mensnationalteams.json.
+        ///   Looks up a localized string similar to ../../../json/mensnationalteams.json.
         /// </summary>
         internal static string MensNationalTeams {
             get {
@@ -79,7 +79,7 @@ namespace SoccerScoreData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to json/womensmatches.json.
+        ///   Looks up a localized string similar to ../../../json/womensmatches.json.
         /// </summary>
         internal static string WomensMatches {
             get {
@@ -88,7 +88,7 @@ namespace SoccerScoreData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to json/womensnationalteams.json.
+        ///   Looks up a localized string similar to ../../../json/womensnationalteams.json.
         /// </summary>
         internal static string WomensNationalTeams {
             get {

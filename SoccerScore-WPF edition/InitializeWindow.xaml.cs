@@ -70,7 +70,34 @@ namespace SoccerScore_WPF_edition
         {
             _dataManager.ResetFavourtiteTeamSettings();
             _dataManager.SetFavouriteTeam(this.cbSelectionTeams.SelectedItem as NationalTeam);
+            _dataManager.SetWindowPropertiesWPF(GetWidthSelection(), GetHeightSelection(), (bool)(this?.rbFullscreen?.IsChecked));
             Close();
+        }
+
+        private int GetWidthSelection()
+        {
+            // MinHeight="578" MinWidth="956"
+            if ((bool)(this?.rbSmall?.IsChecked))
+                return 956;
+            else if ((bool)(this?.rbMedium?.IsChecked))
+                return 1000;
+            else if ((bool)(this?.rbLarge?.IsChecked))
+                return 1200;
+            else
+                return 956;
+        }
+
+        private int GetHeightSelection()
+        {
+            // MinHeight="578" MinWidth="956"
+            if ((bool)(this?.rbSmall?.IsChecked))
+                return 578;
+            else if ((bool)(this?.rbMedium?.IsChecked))
+                return 600;
+            else if ((bool)(this?.rbLarge?.IsChecked))
+                return 800;
+            else
+                return 578;
         }
 
         private void Cro_Click(object sender, RoutedEventArgs e)

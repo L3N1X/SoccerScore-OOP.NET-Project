@@ -11,10 +11,10 @@ namespace SoccerScoreData.Dal.Repos
     internal class FileRepoConfig : IRepoConfig
     {
 
-        private const string PLAYER_IMAGES_DIR = "Players/";
-        private const string PLAYERS_IMAGES_PATH =  PLAYER_IMAGES_DIR + "/players_images.txt";
+        private const string PLAYER_IMAGES_DIR = "../../../Players/";
+        private const string PLAYERS_IMAGES_PATH =  PLAYER_IMAGES_DIR + "players_images.txt";
 
-        private const string SETTINGS_DIR = "Settings/";
+        private const string SETTINGS_DIR = "../../../Settings/";
         private const string SETTINGS_PATH = SETTINGS_DIR + "settings.txt";
 
         //TODO: FIX WHEN THERE IS NO PLAYER IMAGE FILE
