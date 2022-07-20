@@ -110,18 +110,16 @@ namespace SoccerScore_TEST_GUI
             }
             var playersByYellowCards = new List<Player>(allPlayers);
             playersByYellowCards.Sort((left, right) => -left.YellowCards.CompareTo(right.YellowCards));
-            //playersByYellowCards.OrderBy(p => p.YellowCards);
             var playersByGoals = new List<Player>(allPlayers);
             playersByGoals.Sort((left, right) => -left.Goals.CompareTo(right.Goals));
-            //playersByGoals.OrderBy(p => p.Goals);
             foreach (var player in playersByYellowCards)
             {
-                PlayerView playerViewControl = new PlayerView(player, dataManager.FavouriteTeam);
+                PlayerViewRankView playerViewControl = new PlayerViewRankView(player, dataManager.FavouriteTeam, "yellowcards");
                 this.flpPlayersYellowCards.Controls.Add(playerViewControl);
             }
             foreach (var player in playersByGoals)
             {
-                PlayerView playerViewControl = new PlayerView(player, dataManager.FavouriteTeam);
+                PlayerViewRankView playerViewControl = new PlayerViewRankView(player, dataManager.FavouriteTeam, "goals");
                 this.flpPlayersGoals.Controls.Add(playerViewControl);
             }
             /**/

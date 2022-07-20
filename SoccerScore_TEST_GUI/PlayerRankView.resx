@@ -147,7 +147,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblName.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="lblShirtNumber.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -177,37 +177,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblShirtNumber.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <metadata name="cmsOptions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="ToggleFavouriteOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="ToggleFavouriteOption.Text" xml:space="preserve">
-    <value>Add to favourites</value>
-  </data>
-  <data name="viewPlayerOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="viewPlayerOption.Text" xml:space="preserve">
-    <value>View player</value>
-  </data>
-  <data name="chooseImageOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="chooseImageOption.Text" xml:space="preserve">
-    <value>Choose image</value>
-  </data>
-  <data name="cmsOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 70</value>
-  </data>
-  <data name="&gt;&gt;cmsOptions.Name" xml:space="preserve">
-    <value>cmsOptions</value>
-  </data>
-  <data name="&gt;&gt;cmsOptions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>2</value>
   </data>
   <data name="lblPositon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -237,7 +207,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblPositon.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="pbCaptain.Location" type="System.Drawing.Point, System.Drawing">
     <value>78, 0</value>
@@ -262,7 +232,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbCaptain.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="pbFavourite.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 3</value>
@@ -286,7 +256,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbFavourite.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="pbPLayer.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 38</value>
@@ -310,7 +280,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbPLayer.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="lblRankValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -350,24 +320,6 @@
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 207</value>
-  </data>
-  <data name="&gt;&gt;ToggleFavouriteOption.Name" xml:space="preserve">
-    <value>ToggleFavouriteOption</value>
-  </data>
-  <data name="&gt;&gt;ToggleFavouriteOption.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;viewPlayerOption.Name" xml:space="preserve">
-    <value>viewPlayerOption</value>
-  </data>
-  <data name="&gt;&gt;viewPlayerOption.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chooseImageOption.Name" xml:space="preserve">
-    <value>chooseImageOption</value>
-  </data>
-  <data name="&gt;&gt;chooseImageOption.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PlayerViewRankView</value>

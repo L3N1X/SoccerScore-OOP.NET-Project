@@ -23,12 +23,14 @@ namespace SoccerScore_TEST_GUI
         public readonly NationalTeam nationalTeam;
 
         public Player Player { get; set; }
+        public string RankValue { get; set; }
 
-        public PlayerViewRankView(Player player, NationalTeam nationalTeam)
+        public PlayerViewRankView(Player player, NationalTeam nationalTeam, string rankvalue)
         {
             InitializeComponent();
             this.Player = player;
             this.nationalTeam = nationalTeam;
+            this.RankValue = rankvalue;
         }
 
         private void PlayerView_Load(object sender, EventArgs e)
@@ -48,6 +50,17 @@ namespace SoccerScore_TEST_GUI
 
         public void InitializeControls()
         {
+            if ("goals".Equals(RankValue))
+            {
+                this.lblRankValue.Text = Player.Goals.ToString();
+                this.lblRankValue.ForeColor = Color.Green;
+            }
+            else
+            {
+                this.lblRankValue.Text = Player.YellowCards.ToString();
+                this.lblRankValue.ForeColor = Color.Orange;
+            }
+
             this.lblName.Text = Player.Name;
             this.lblShirtNumber.Text = Player.ShirtNumber.ToString();
             this.lblPositon.Text = Player.Position.ToString();
@@ -66,10 +79,10 @@ namespace SoccerScore_TEST_GUI
             Tools.CenterControlInParentHorizontally(this.lblName);
             Tools.CenterControlInParentHorizontally(this.lblPositon);
 
-            if (CultureInfo.CurrentCulture.Name == Language.eng.ToString() && Player.IsFavourite)
-                this.ToggleFavouriteOption.Text = "Remove player from favorutites";
-            if (CultureInfo.CurrentCulture.Name == Language.hr.ToString() && Player.IsFavourite)
-                this.ToggleFavouriteOption.Text ="Makni igrača iz omiljenih";
+            //if (CultureInfo.CurrentCulture.Name == Language.eng.ToString() && Player.IsFavourite)
+            //    this.ToggleFavouriteOption.Text = "Remove player from favorutites";
+            //if (CultureInfo.CurrentCulture.Name == Language.hr.ToString() && Player.IsFavourite)
+            //    this.ToggleFavouriteOption.Text ="Makni igrača iz omiljenih";
         }
 
         private void PlayerView_Click(object sender, EventArgs e)
