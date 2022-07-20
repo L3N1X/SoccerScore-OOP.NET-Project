@@ -8,7 +8,7 @@
         Loaded="Window_Loaded"
         Icon="Content/Images/ball_loading.gif"
         WindowStartupLocation="CenterScreen"
-        Title="NationalTeamWindow" Height="500" Width="450">
+        Title="NationalTeamWindow" Height="550" Width="500">
     <Window.Resources>
         <LinearGradientBrush StartPoint="0, 1" EndPoint="0, 0" x:Key="GreenGradient">
             <GradientStop x:Name="g1" Color="DarkGreen" Offset="0.0"/>
@@ -26,7 +26,7 @@
             </EventTrigger.Actions>
         </EventTrigger>
     </Window.Triggers>
-    <Grid Background="{StaticResource GreenGradient}">
+    <Grid Background="DarkGreen">
         <Grid.RowDefinitions>
             <RowDefinition>
                 <RowDefinition.Height>*</RowDefinition.Height>
@@ -55,10 +55,16 @@
                 </Image.Triggers>
             </Image>
         </StackPanel>
-        <StackPanel x:Name="pnlFlag" Grid.Row="0" VerticalAlignment="Center" Background="{StaticResource GreenGradient}">
-            <Image x:Name="imgFlag" Source="Content/CountryImages/CRO.jpg" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15"></Image>
+        <!--<StackPanel x:Name="pnlFlag" Grid.Row="0" VerticalAlignment="Center" Background="{StaticResource GreenGradient}">
+            <Image x:Name="imgFlag" Source="Content/CountryImages/CRO.jpg" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" ></Image>
             <Label x:Name="lblCountryName" Content="Country name" FontSize="25" Margin="10" HorizontalAlignment="Center" Foreground="White"></Label>
-        </StackPanel>
+        </StackPanel>-->
+        <Grid x:Name="pnlFlag" Grid.Row="0"  Background="{StaticResource GreenGradient}" >
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image x:Name="imgFlag" Source="Content/CountryImages/CRO.jpg" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" ></Image>
+                <Label x:Name="lblCountryName" Content="Country name" FontSize="25" Margin="10" HorizontalAlignment="Center" Foreground="White"></Label>
+            </StackPanel>
+        </Grid>
         <Grid x:Name="pnlTeamData" Background="DarkGreen" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition>

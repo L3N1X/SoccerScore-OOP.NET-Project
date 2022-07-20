@@ -66,19 +66,19 @@ namespace SoccerScore_WPF_edition
             this.FillSelectionTeams();
         }
 
-        private void btnConfirm_Click(object sender, RoutedEventArgs e)
+        private void Confirm_Click(object sender, RoutedEventArgs e)
         {
             _dataManager.ResetFavourtiteTeamSettings();
             _dataManager.SetFavouriteTeam(this.cbSelectionTeams.SelectedItem as NationalTeam);
             Close();
         }
 
-        private void btnCro_Click(object sender, RoutedEventArgs e)
+        private void Cro_Click(object sender, RoutedEventArgs e)
         {
             _dataManager.SetLanguage(SoccerScoreData.Models.Language.hr);
         }
 
-        private void btnEng_Click(object sender, RoutedEventArgs e)
+        private void Eng_Click(object sender, RoutedEventArgs e)
         {
             _dataManager.SetLanguage(SoccerScoreData.Models.Language.eng);
         }

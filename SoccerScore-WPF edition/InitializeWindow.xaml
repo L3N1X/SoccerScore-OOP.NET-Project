@@ -36,10 +36,10 @@
                ></Label>
         <StackPanel Grid.Row="1">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 5" >
-                <Button Click="btnCro_Click" x:Name="btnCro" Margin="10" Width="40" Background="White">
+                <Button Click="Cro_Click" x:Name="btnCro" Margin="10" Width="40" Background="White">
                     <Image Source="Content/Images/cro.png" Stretch="UniformToFill"></Image>
                 </Button>
-                <Button Click="btnEng_Click" x:Name="btnEng" Margin="10" Width="40" Background="White">
+                <Button Click="Eng_Click" x:Name="btnEng" Margin="10" Width="40" Background="White">
                     <Image Source="Content/Images/uk.png" Stretch="UniformToFill"></Image>
                 </Button>
             </StackPanel>
@@ -72,7 +72,7 @@
         </StackPanel>
         <Label Grid.Row="2" Content="Leon Krušlin OOP.NET" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="10" Padding="10"></Label>
         <Button 
-            Click="btnConfirm_Click"
+            Click="Confirm_Click"
             Grid.Row="2" 
             Content="CONFIRM" 
             HorizontalAlignment="Center" 
