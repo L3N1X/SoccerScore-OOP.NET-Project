@@ -79,6 +79,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbPlayers = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.flpPlayersGoals = new System.Windows.Forms.FlowLayoutPanel();
             this.flpPlayersYellowCards = new System.Windows.Forms.FlowLayoutPanel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
@@ -90,7 +91,7 @@
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.pbLoading = new System.Windows.Forms.PictureBox();
-            this.flpPlayersGoals = new System.Windows.Forms.FlowLayoutPanel();
+            this.label13 = new System.Windows.Forms.Label();
             this.programTab.SuspendLayout();
             this.playersTab.SuspendLayout();
             this.pnlTitle.SuspendLayout();
@@ -436,10 +437,17 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.flpPlayersGoals);
             this.tabPage1.Controls.Add(this.flpPlayersYellowCards);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
+            // 
+            // flpPlayersGoals
+            // 
+            resources.ApplyResources(this.flpPlayersGoals, "flpPlayersGoals");
+            this.flpPlayersGoals.ContextMenuStrip = this.cmsOptions;
+            this.flpPlayersGoals.Name = "flpPlayersGoals";
             // 
             // flpPlayersYellowCards
             // 
@@ -515,11 +523,10 @@
             this.pbLoading.Name = "pbLoading";
             this.pbLoading.TabStop = false;
             // 
-            // flpPlayersGoals
+            // label13
             // 
-            resources.ApplyResources(this.flpPlayersGoals, "flpPlayersGoals");
-            this.flpPlayersGoals.ContextMenuStrip = this.cmsOptions;
-            this.flpPlayersGoals.Name = "flpPlayersGoals";
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.Name = "label13";
             // 
             // DefaultForm
             // 
@@ -554,6 +561,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCountryStatistics)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
@@ -627,6 +635,7 @@
         private System.Windows.Forms.ToolStripButton btnSettings;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flpPlayersGoals;
+        private System.Windows.Forms.Label label13;
     }
 }
 

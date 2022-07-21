@@ -1509,6 +1509,36 @@
   <data name="&gt;&gt;statisticsTab.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Tai Le, 15.75pt, style=Bold</value>
+  </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 36</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 27</value>
+  </data>
+  <data name="label13.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>label13</value>
+  </data>
+  <data name="&gt;&gt;label13.Name" xml:space="preserve">
+    <value>label13</value>
+  </data>
+  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="flpPlayersGoals.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1516,10 +1546,10 @@
     <value>TopDown</value>
   </data>
   <data name="flpPlayersGoals.Location" type="System.Drawing.Point, System.Drawing">
-    <value>739, 15</value>
+    <value>632, 86</value>
   </data>
   <data name="flpPlayersGoals.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 652</value>
+    <value>277, 581</value>
   </data>
   <data name="flpPlayersGoals.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1537,7 +1567,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;flpPlayersGoals.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="flpPlayersYellowCards.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1546,10 +1576,10 @@
     <value>TopDown</value>
   </data>
   <data name="flpPlayersYellowCards.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 15</value>
+    <value>233, 86</value>
   </data>
   <data name="flpPlayersYellowCards.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 652</value>
+    <value>277, 581</value>
   </data>
   <data name="flpPlayersYellowCards.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1567,7 +1597,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;flpPlayersYellowCards.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
