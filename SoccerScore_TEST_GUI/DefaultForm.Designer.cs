@@ -79,6 +79,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbPlayers = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.flpPlayersGoals = new System.Windows.Forms.FlowLayoutPanel();
             this.flpPlayersYellowCards = new System.Windows.Forms.FlowLayoutPanel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
@@ -91,7 +95,6 @@
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.pbLoading = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.programTab.SuspendLayout();
             this.playersTab.SuspendLayout();
             this.pnlTitle.SuspendLayout();
@@ -110,6 +113,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCountryStatistics)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.statusStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
@@ -117,6 +122,7 @@
             // 
             // playersContainer
             // 
+            this.playersContainer.AllowDrop = true;
             resources.ApplyResources(this.playersContainer, "playersContainer");
             this.playersContainer.Name = "playersContainer";
             // 
@@ -132,6 +138,7 @@
             // 
             // favoruitePLayersContainer
             // 
+            this.favoruitePLayersContainer.AllowDrop = true;
             resources.ApplyResources(this.favoruitePLayersContainer, "favoruitePLayersContainer");
             this.favoruitePLayersContainer.Name = "favoruitePLayersContainer";
             // 
@@ -437,11 +444,40 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.pictureBox4);
+            this.tabPage1.Controls.Add(this.pictureBox3);
+            this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.flpPlayersGoals);
             this.tabPage1.Controls.Add(this.flpPlayersYellowCards);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SoccerScore_TEST_GUI.Images.goal;
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SoccerScore_TEST_GUI.Images.yellow_card;
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.TabStop = false;
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label14.Name = "label14";
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label13.Name = "label13";
             // 
             // flpPlayersGoals
             // 
@@ -523,11 +559,6 @@
             this.pbLoading.Name = "pbLoading";
             this.pbLoading.TabStop = false;
             // 
-            // label13
-            // 
-            resources.ApplyResources(this.label13, "label13");
-            this.label13.Name = "label13";
-            // 
             // DefaultForm
             // 
             resources.ApplyResources(this, "$this");
@@ -562,6 +593,8 @@
             this.groupBox1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
@@ -636,6 +669,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flpPlayersGoals;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 

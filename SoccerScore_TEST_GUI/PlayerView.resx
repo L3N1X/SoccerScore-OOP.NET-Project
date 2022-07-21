@@ -182,32 +182,32 @@
   <metadata name="cmsOptions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="ToggleFavouriteOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="ToggleFavouriteOption.Text" xml:space="preserve">
-    <value>Add to favourites</value>
-  </data>
-  <data name="viewPlayerOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="viewPlayerOption.Text" xml:space="preserve">
-    <value>View player</value>
-  </data>
-  <data name="chooseImageOption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="chooseImageOption.Text" xml:space="preserve">
-    <value>Choose image</value>
-  </data>
   <data name="cmsOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 92</value>
+    <value>166, 70</value>
   </data>
   <data name="&gt;&gt;cmsOptions.Name" xml:space="preserve">
     <value>cmsOptions</value>
   </data>
   <data name="&gt;&gt;cmsOptions.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ToggleFavouriteOption.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="ToggleFavouriteOption.Text" xml:space="preserve">
+    <value>Add to favourites</value>
+  </data>
+  <data name="viewPlayerOption.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="viewPlayerOption.Text" xml:space="preserve">
+    <value>View player</value>
+  </data>
+  <data name="chooseImageOption.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="chooseImageOption.Text" xml:space="preserve">
+    <value>Choose image</value>
   </data>
   <data name="lblPositon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

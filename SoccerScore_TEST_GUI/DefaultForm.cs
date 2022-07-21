@@ -82,7 +82,15 @@ namespace SoccerScore_TEST_GUI
                 playerViewControl.FavoutitePlayerAdded += PlayerViewControl_FavoutitePlayerAdded;
                 playerViewControl.FavouritePlayerRemoved += PlayerViewControl_FavouritePlayerRemoved;
 
-                //Add drag and drop functionality
+                /*Not operational*/
+                //playerViewControl.MouseDown += PlayerViewControl_MouseDown;
+
+                //this.favoruitePLayersContainer.DragDrop += Container_DragDrop;
+                //this.favoruitePLayersContainer.DragEnter += ContainerDragEnter;
+
+                //this.playersContainer.DragDrop += Container_DragDrop;
+                //this.playersContainer.DragEnter += ContainerDragEnter;
+                /*Not operational*/
 
                 if (player.IsFavourite)
                     this.favoruitePLayersContainer.Controls.Add(playerViewControl);
@@ -165,6 +173,29 @@ namespace SoccerScore_TEST_GUI
             this.pbField2.Visible = true;
             this.pnlTitle.Visible = true;
         }
+
+        /*Not operational*/
+        private Control dragableControl;
+
+        private void PlayerViewControl_MouseDown(object sender, MouseEventArgs e)
+        {
+            StartDragAndDrop(sender as PlayerView);
+            MessageBox.Show("aaa");
+        }
+
+        private void StartDragAndDrop(PlayerView playerView)
+        {
+            dragableControl = playerView;
+            playerView.DoDragDrop(playerView, DragDropEffects.Move);
+        }
+
+        private void ContainerDragEnter(object sender, DragEventArgs e)
+        {
+            PlayerView playerView = sender as PlayerView;
+            e.Effect = DragDropEffects.Move;
+        }
+
+        /*Not operational*/
 
         private void PlayerViewControl_FavouritePlayerRemoved(object sender, EventArgs args)
         {
